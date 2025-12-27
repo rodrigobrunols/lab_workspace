@@ -1,0 +1,39 @@
+{
+  "name": "case_13",
+  "input": [
+    {
+      "operation": "sell",
+      "unit-cost": 20,
+      "quantity": 10000
+    },
+    {
+      "operation": "sell",
+      "unit-cost": 20,
+      "quantity": 10000
+    },
+    {
+      "operation": "sell",
+      "unit-cost": 20,
+      "quantity": 10000
+    },
+    {
+      "operation": "buy",
+      "unit-cost": 10,
+      "quantity": 10000
+    }
+  ],
+  "expected": [
+    {
+      "error": "Can't sell more stocks than you have"
+    },
+    {
+      "error": "Can't sell more stocks than you have"
+    },
+    {
+      "error": "Can't sell more stocks than you have"
+    },
+    {
+      "error": "Your account is blocked"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+class Node:
+	
+	def __init__(self, data, right_child : Node = None, left_child : Node = None):
+		
+		self.right = None
+		self.left = None
+		self.data = data
+
+
+class Solution:
+
+	def find_sucessor(self, root, x):
+		sucessor = None
+
+		while root:
+			if root.data > x.data:
+				sucessor = root
+				root = root.left
+			else:
+				root = root.right
+
+		return sucessor

@@ -1,0 +1,48 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw-jetbrains-plugin",
+  "elements": [
+    {
+      "id": "GRW_XpwMmSkTIHtWtgX2N",
+      "type": "text",
+      "x": 473,
+      "y": 74,
+      "width": 1055.135986328125,
+      "height": 660.0000000000001,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 395615750,
+      "version": 638,
+      "versionNonce": 609203354,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1717347781855,
+      "link": null,
+      "locked": false,
+      "text": "queries = [1, 2, 2, 3, 6]\n         0+1, 1+2 , 1 + 2 + 2, 1+2+2+3\n          0 +  1 + 3 + 3 + 2 + 3 + 2 + 3\nprev, total = 0\n\n\nfor time in queries:\n    total += prev + value\n    prev = total\n\nreturn total",
+      "fontSize": 48.00000000000001,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 642,
+      "containerId": null,
+      "originalText": "queries = [1, 2, 2, 3, 6]\n         0+1, 1+2 , 1 + 2 + 2, 1+2+2+3\n          0 +  1 + 3 + 3 + 2 + 3 + 2 + 3\nprev, total = 0\n\n\nfor time in queries:\n    total += prev + value\n    prev = total\n\nreturn total",
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}

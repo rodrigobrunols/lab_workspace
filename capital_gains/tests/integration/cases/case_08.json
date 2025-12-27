@@ -1,0 +1,15 @@
+{
+  "name": "case_08",
+  "input": [
+    {"operation": "buy", "unit-cost": 10.00, "quantity": 10000},
+    {"operation": "sell", "unit-cost": 50.00, "quantity": 10000},
+    {"operation": "buy", "unit-cost": 20.00, "quantity": 10000},
+    {"operation": "sell", "unit-cost": 50.00, "quantity": 10000}
+  ],
+  "expected": [
+    {"tax": 0.0},
+    {"tax": 80000.0},
+    {"tax": 0.0},
+    {"tax": 60000.0}
+  ]
+}

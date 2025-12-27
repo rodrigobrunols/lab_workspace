@@ -1,0 +1,70 @@
+def hasCycle(numVertices, graph):
+    state = [0] * numVertices
+    
+    def dfs(node):
+        if state[node] == 2:
+            return False
+        if state[node] == 1:
+            return True
+
+        state[node] = 1
+        for neighbor in graph[node]:
+                if dfs(neighbor):
+                     return True
+        state[node] = 2
+        return False
+    
+    for node in range(numVertices):
+        if state[node] == 0:
+            if dfs(node):
+                return True
+    return False
+
+from collections import deque
+def findAllCycles(numNodes, graph):
+    visited = set()
+    stack = []
+    cycles = []
+
+    def dfs(node, currentStack):
+        visited.add(node)
+        stack.append(node)
+        currentStack.add(node)
+
+        for neighbor in graph[node]:
+            if neighbor in currentStack:
+                index = stack.index(neighbor)
+                cycles.append(stack[index:])
+            elif neighbor not in visited:
+                dfs(neighbor, currentStack)
+
+        stack.pop()
+        currentStack.remove(node)
+            
+    for node in range(numNodes):
+         if node not in visited:
+              dfs(node, set())
+    
+    unique_cycles = set(tuple(cycle) for cycle in cycles)
+    return [list(cycle) for cycle in unique_cycles]
+    
+
+graph = {
+    0: [1],
+    1: [2],
+    2: [3],
+    3: [1],  # Cycle exists (1 → 2 → 3 → 1)
+}
+
+graph2 = {
+    0: [1],
+    1: [2],
+    2: [3],
+    3: [],  # Cycle exists (1 → 2 → 3 → 1)
+}
+
+# g = Graph()
+print(hasCycle(4,graph))
+print(hasCycle(4,graph2))
+print(findAllCycles(4,graph))
+

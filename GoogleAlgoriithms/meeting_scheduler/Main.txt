@@ -1,0 +1,81 @@
+"""
+Bottom-up approach
+
+1. identify and design the smaller components first (interval and a meeting room)
+2. use small components to design additional and more complex components. (meeting and calendar)
+3. repeat the steps util we design the scheduler
+
+"""
+from scheduler import instance
+from enum import Enum
+
+
+class Status(Enum):
+    WAITING = 1
+    IN_PROGRESS = 2
+    FINISHED = 3
+
+
+class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+
+    def respond_invite(self, invite):
+        pass
+
+
+class Interval:
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+
+
+class MeetingRoom:
+    def __init__(self, id, capacity, is_available):
+        self.id = id
+        self.capacity = capacity
+        self.is_available = is_available
+        self.booked_intervals = []
+
+
+class Calendar:
+    def __init__(self):
+        self.meetings = []
+
+
+class Meeting:
+    def __init__(self, id, participants_count, interval, room, subject):
+        self.__id = id
+        self.__participants_count = participants_count
+        self.__participants = []
+        self.__interval = interval
+        self.__room = room
+        self.__subject = subject
+
+    def add_participants(self, participants):
+        pass
+
+
+class Notification:
+    def __init__(self, notification_id, content, creation_date):
+        self.__notification_id = notification_id
+        self.__content = content
+        self.__creation_date = creation_date
+
+    def send_notification(self, user):
+        pass
+
+    def cancel_notification(self, user):
+        pass
+
+
+def main():
+    # print(instance.release_room())
+    print("Hello")
+    print(Status.WAITING.name, Status.WAITING.value)
+    return "Hello"
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,66 @@
+from  threading import Thread
+import time
+from collections import deque
+
+class MessageStream:
+    def __init__(self):
+        self.messageQueue = deque()  # Stores (timestamp, message)
+        self.running = True
+        self.listener_thread = None
+        self.recent_messages = {}  # Stores message -> last timestamp
+
+    def startListening(self):
+        def listen():
+            while self.running:
+                if self.messageQueue:
+                    timestamp, message = self.messageQueue.popleft()
+
+                    current_time = int(time.time())  # Get current time as integer
+
+                    # Remove messages older than 10 seconds
+                    self.recent_messages = {
+                        msg: ts for msg, ts in self.recent_messages.items()
+                        if current_time - ts < 10
+                    }
+
+                    # Print only if this message was not received in the last 10 seconds
+                    if message not in self.recent_messages:
+                        print(f"[{timestamp}] Message received: {message}")
+                        self.recent_messages[message] = current_time
+
+                time.sleep(0.1)  # Avoid busy-waiting
+
+        self.listener_thread = Thread(target=listen, daemon=True)
+        self.listener_thread.start()
+
+    def sendMessage(self, timestamp: int, message: str):
+        """Sends a message with an integer timestamp."""
+        self.messageQueue.append((timestamp, message))
+
+    def stopListen(self):
+        self.running = False
+        if self.listener_thread:
+            self.listener_thread.join()
+
+
+# Test the implementation
+stream = MessageStream()
+stream.startListening()
+
+# Get the current time as an integer timestamp
+current_time = int(time.time())
+
+stream.sendMessage(current_time, "Hello")
+time.sleep(3)
+stream.sendMessage(int(time.time()), "Hello")  # Should not be printed (within 10 sec)
+time.sleep(7)
+stream.sendMessage(int(time.time()), "Hello")  # Should be printed (after 10 sec)
+time.sleep(5)
+stream.sendMessage(int(time.time()), "Hello")  # Should not be printed (within 10 sec)
+
+time.sleep(3)
+stream.sendMessage(int(time.time()), "New Message")  # Should be printed
+
+time.sleep(5)
+stream.stopListen()
+print("Listener stopped successfully.")
