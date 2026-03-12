@@ -1,0 +1,58 @@
+{
+  "workspace": {
+    "id": "1024b60e-d80c-4e3d-9825-f9896eff012f"
+  },
+  "entities": {
+    "collections": [
+      "../postman/collections/Token Exchange_2195605-0150bcaf-6e43-4b1b-97c4-8cbffb6c4a23.postman_collection.json",
+      "../postman/collections/SICOOB REST SERVICE_2195605-06106ab5-d2f5-4464-b69e-5b237e72e9b9.postman_collection.json",
+      "../postman/collections/Sicoob Authorization Server 2.1_2195605-12c273c3-79df-4c6b-993e-7cc90ec5684e.postman_collection.json",
+      "../postman/collections/KeycloakRestAPI_2195605-1bc8ab0e-4c2c-419a-8742-7800582804a7.postman_collection.json",
+      "../postman/collections/SICOOB INTROSPECT_2195605-380b68d6-6762-40bb-b54c-8c171e315a1e.postman_collection.json",
+      "../postman/collections/Tests_2195605-3a77477c-712a-46c6-97c2-20dac33b8822.postman_collection.json",
+      "../postman/collections/SicoobNet Celular_2195605-404d0ecb-2592-4706-87d1-591f50f7ab24.postman_collection.json",
+      "../postman/collections/Segregacao SSO Canais_2195605-41d165e7-7b41-49ba-a8b3-13703c14b08a.postman_collection.json",
+      "../postman/collections/Sicoob User Info_2195605-4e1168e5-01b1-4188-8ea4-4b5da2dc4055.postman_collection.json",
+      "../postman/collections/Token no RhSSO Sisbr_2195605-51062489-2f5d-4984-85a5-208d336e9e34.postman_collection.json",
+      "../postman/collections/API Conta Corrente_2195605-5307ac2b-220f-44e7-a40a-440532d3b43a.postman_collection.json",
+      "../postman/collections/Token no RhSSO Sisbr Copy_2195605-591028f5-4dac-45c9-bcd4-d58a83716634.postman_collection.json",
+      "../postman/collections/Portal Sicoob For Dev_2195605-5c71437a-11ba-4576-9704-d90649d81110.postman_collection.json",
+      "../postman/collections/Sicoob Push Notification_2195605-6071c858-f735-479f-8389-73efd11289e1.postman_collection.json",
+      "../postman/collections/RHSSO_2195605-632906f1-5d9d-436b-8b4c-b35e1575733a.postman_collection.json",
+      "../postman/collections/Sicoob-idp-example_2195605-76f0e8b1-6afb-48e8-b391-a092204791d8.postman_collection.json",
+      "../postman/collections/Poupança API_2195605-7df37221-13c2-4be5-8fb0-88b597e09c28.postman_collection.json",
+      "../postman/collections/Events API_2195605-8ee7bde7-68f1-4885-b61d-6320d55a1613.postman_collection.json",
+      "../postman/collections/NeoRPG_2195605-91dda23e-931f-4735-a8ba-d41f4134daad.postman_collection.json",
+      "../postman/collections/Api Investidor_2195605-936ff7a0-c2a4-4ec2-822f-060899666083.postman_collection.json",
+      "../postman/collections/SPI-PIX_2195605-97ea316d-c974-4c52-ba9b-ddbb741503c8.postman_collection.json",
+      "../postman/collections/Sicoob IDP RHBK_2195605-9c094f87-ac80-477a-860c-777fd8ae8116.postman_collection.json",
+      "../postman/collections/Integracao Conta Corrente_2195605-ae773d1a-c465-4f2d-84ba-be4ea6ed4619.postman_collection.json",
+      "../postman/collections/SICOOB TRAB_2195605-b75a11d1-785f-4b83-8125-156ac5d125bd.postman_collection.json",
+      "../postman/collections/Sicoob IDP Full_2195605-cb8df188-af09-4c7d-8d92-50594b9701d8.postman_collection.json",
+      "../postman/collections/Openbanking_2195605-d1a6ef19-3672-4016-8ca8-f7b90e5cc22f.postman_collection.json",
+      "../postman/collections/05 - Fluxo Openbanking-Sicoob_2195605-d641d153-39e6-44d5-bba9-880401e673bf.postman_collection.json",
+      "../postman/collections/REST API basics- CRUD, test & variable SIGEDE_2195605-daf29246-587b-4576-b197-105a65351132.postman_collection.json",
+      "../postman/collections/Autenticacao SicoobNet-auth_2195605-e06f6467-a01f-45e4-89e1-02cf8c134b2d.postman_collection.json",
+      "../postman/collections/Token no RHSSO Canais_2195605-e27f18f3-a7c8-4669-8620-0766162f199f.postman_collection.json",
+      "../postman/collections/RHBK_2195605-e71418fb-0c71-43e3-9b2c-41bf230ec569.postman_collection.json",
+      "../postman/collections/Autenticacao_2195605-eb356cc5-09b2-4d58-995c-838a631d8c35.postman_collection.json",
+      "../postman/collections/CAA_2195605-ec67fe42-c0c0-475b-8a04-7e46cf94af8d.postman_collection.json",
+      "../postman/collections/Orders CRUD_2195605-ecdfbdc5-e435-465a-807c-7c3a2760aba7.postman_collection.json",
+      "../postman/collections/Qrcode_2195605-f6c73d49-f66d-4f62-a584-e0bfc668c500.postman_collection.json",
+      "../postman/collections/SICOOB IDP API_2195605-fc26eb4d-00e0-47f7-9f13-d68882e2c0df.postman_collection.json"
+    ],
+    "environments": [
+      "../postman/environments/Homologação_2195605-542f00b9-2041-4342-87da-e384adb2db73.postman_environment.json",
+      "../postman/environments/AWS_2195605-c09463bc-7dc3-4fa5-9b8c-ed11d11d266f.postman_environment.json",
+      "../postman/environments/Producao_2195605-66f19f6a-b8b4-4112-8184-20871cc1771a.postman_environment.json",
+      "../postman/environments/KeycloakRestAPI_2195605-db30be50-6246-4a04-985f-8901a64a95be.postman_environment.json",
+      "../postman/environments/Desenvolvimento_2195605-ea611f65-caa6-43aa-8c38-9a20e45dfc39.postman_environment.json",
+      "../postman/environments/AWS_2195605-6e6a170e-1f00-430e-bc3a-4f3dfb5bce0f.postman_environment.json",
+      "../postman/environments/Teste Integrado_2195605-83d3796d-6dfa-4bd3-9832-344b13f95dea.postman_environment.json",
+      "../postman/environments/RHBK_2195605-642f7734-81d0-4b72-92dd-1868220f9dec.postman_environment.json"
+    ],
+    "specs": [],
+    "flows": [],
+    "globals": []
+  }
+}

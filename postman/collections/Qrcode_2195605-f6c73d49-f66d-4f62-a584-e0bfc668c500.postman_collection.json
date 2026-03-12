@@ -1,0 +1,105 @@
+{
+  "info": {
+    "_postman_id": "f6c73d49-f66d-4f62-a584-e0bfc668c500",
+    "name": "Qrcode",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "obterDados",
+      "id": "7bb96215-0e24-4484-8679-ac5303c1f88e",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://backofficeportalcluster.sicoob.com.br:9080/portal-sisbr/qrcode/dados/rodrigo.leoncio",
+          "protocol": "http",
+          "host": [
+            "backofficeportalcluster",
+            "sicoob",
+            "com",
+            "br"
+          ],
+          "port": "9080",
+          "path": [
+            "portal-sisbr",
+            "qrcode",
+            "dados",
+            "rodrigo.leoncio"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "obterDados Copy",
+      "id": "4c8bd19e-597b-4f96-afc4-308fae22d245",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://backofficeportalcluster-homol.homologacao.com.br:9080/portal-sisbr/qrcode/dados/gearqc0300_00",
+          "protocol": "http",
+          "host": [
+            "backofficeportalcluster-homol",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "port": "9080",
+          "path": [
+            "portal-sisbr",
+            "qrcode",
+            "dados",
+            "gearqc0300_00"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "validacao",
+      "id": "7e57d249-6f48-41c1-a18c-a48407c171a1",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"usr\":\"rodrigo.leoncio\",\n    \"qrCodeCriptografado\":\"{\\\"id\\\":483824,\\\"token\\\":\\\"b78976d2c20228c0\\\",\\\"usuario\\\":\\\"rodrigo.leoncio\\\",\\\"isPossuiPush\\\":false}\",\n    \"qrCodeDigitado\":\"1234\"\n}"
+        },
+        "url": {
+          "raw": "http://backofficeportalcluster-homol.homologacao.com.br:9080/portal-sisbr/qrcode/validacao",
+          "protocol": "http",
+          "host": [
+            "backofficeportalcluster-homol",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "port": "9080",
+          "path": [
+            "portal-sisbr",
+            "qrcode",
+            "validacao"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "info": {
+    "_postman_id": "ec67fe42-c0c0-475b-8a04-7e46cf94af8d",
+    "name": "CAA",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "http://backofficeautenticacaocluster-ti.homologacao.com.br:9080/caa/api/autenticacao/autenticaRHSSO/?idUsuario=gearqc0300_00&senha=Senh@006&ip=192.168.1.250",
+      "id": "f5dd52ed-2c9d-4a18-b25c-cfaeb45f8512",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://backofficeautenticacaocluster-ti.homologacao.com.br:9080/caa/api/autenticacao/autenticaRHSSO/?idUsuario=gearqc0300_00&senha=Senh@006&ip=192.168.1.250",
+          "protocol": "http",
+          "host": [
+            "backofficeautenticacaocluster-ti",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "port": "9080",
+          "path": [
+            "caa",
+            "api",
+            "autenticacao",
+            "autenticaRHSSO",
+            ""
+          ],
+          "query": [
+            {
+              "key": "idUsuario",
+              "value": "gearqc0300_00"
+            },
+            {
+              "key": "senha",
+              "value": "Senh@006"
+            },
+            {
+              "key": "ip",
+              "value": "192.168.1.250"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://backofficeautenticacaocluster-ti.homologacao.com.br:9080/caa/api/autenticacao/autenticaRHSSO/?idUsuario=gearqc0300_00&senha=Senh@006&ip=192.168.1.250 Copy",
+      "id": "dbb4b1d9-2613-488f-a02f-9fc64fd7d6da",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://backofficeautenticacaocluster-homol/caa/api/autenticacao/autenticaRHSSO/?idUsuario=gearqc0300_00&senha=Senh@006&ip=192.168.1.250",
+          "protocol": "https",
+          "host": [
+            "backofficeautenticacaocluster-homol"
+          ],
+          "path": [
+            "caa",
+            "api",
+            "autenticacao",
+            "autenticaRHSSO",
+            ""
+          ],
+          "query": [
+            {
+              "key": "idUsuario",
+              "value": "gearqc0300_00"
+            },
+            {
+              "key": "senha",
+              "value": "Senh@006"
+            },
+            {
+              "key": "ip",
+              "value": "192.168.1.250"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://backofficeautenticacaocluster-ti.homologacao.com.br:9080/caa/api/autenticacao/autenticaRHSSO/?idUsuario=gearqc0300_00&senha=Senh@006&ip=192.168.1.250 Copy 2",
+      "id": "88f14b0b-37ae-4be5-9266-c325ac4d527f",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://wash228.homologacao.com.br:9080/caa/api/autenticacao/autenticaRHSSO/?idUsuario=gearqc0300_00&senha=Senh@006&ip=192.168.1.250",
+          "protocol": "http",
+          "host": [
+            "wash228",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "port": "9080",
+          "path": [
+            "caa",
+            "api",
+            "autenticacao",
+            "autenticaRHSSO",
+            ""
+          ],
+          "query": [
+            {
+              "key": "idUsuario",
+              "value": "gearqc0300_00"
+            },
+            {
+              "key": "senha",
+              "value": "Senh@006"
+            },
+            {
+              "key": "ip",
+              "value": "192.168.1.250"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

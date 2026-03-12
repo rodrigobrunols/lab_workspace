@@ -1,0 +1,223 @@
+{
+  "info": {
+    "_postman_id": "91dda23e-931f-4735-a8ba-d41f4134daad",
+    "name": "NeoRPG",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Stats",
+      "id": "efc2da18-99f6-4261-aae9-27259f06d531",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{server}}/api/v1/stats",
+          "host": [
+            "{{server}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "stats"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Characters",
+      "id": "bc0b623f-6db2-444e-a6f0-3aa9a8d0e9ca",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{server}}/api/v1/characters",
+          "host": [
+            "{{server}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "characters"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Characters by ID",
+      "id": "d73c8963-7c24-464d-b880-20479b9ce8a0",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{server}}/api/v1/characters/:id",
+          "host": [
+            "{{server}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "characters",
+            ":id"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "6cab8586-e125-4aeb-954f-6518cb5427fe",
+              "type": "text",
+              "disabled": true
+            }
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "816b50dd-96c9-4209-8c62-814c16e56adb"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Characters",
+      "id": "b6b6cdfb-6995-46f2-8c3c-85a0c883c191",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "Rodrigo",
+              "type": "text",
+              "uuid": "c9fa244c-8662-445d-9889-e1b8b080457c",
+              "disabled": true
+            },
+            {
+              "key": "job",
+              "value": "Warrior",
+              "type": "text",
+              "uuid": "ddc94a40-c6be-4a0f-8a08-ca18d41599a1",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{server}}/api/v1/characters?name=Rodrigo&job=Warrior",
+          "host": [
+            "{{server}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "characters"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "Rodrigo",
+              "type": "text"
+            },
+            {
+              "key": "job",
+              "value": "Warrior",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Characters",
+      "id": "ac87ed37-f4a8-41c0-b8a7-655dfd44494f",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{server}}/api/v1/characters/:id",
+          "host": [
+            "{{server}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "characters",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "7dd4439d-3dce-4fb1-b03c-0dcfdf1cde35"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Battle",
+      "id": "99ad3dfd-5f7b-4c5a-9672-1c0bbdcd6bfb",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{server}}/api/v1/battle?char1_id=1ef1d016-4fb1-4e13-8828-c81c985e4bd1&char2_id=6627df1e-901b-43bf-8a30-31d415c5ac51",
+          "host": [
+            "{{server}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "battle"
+          ],
+          "query": [
+            {
+              "key": "char1_id",
+              "value": "1ef1d016-4fb1-4e13-8828-c81c985e4bd1"
+            },
+            {
+              "key": "char2_id",
+              "value": "6627df1e-901b-43bf-8a30-31d415c5ac51"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST \"http://127.0.0.1:8000/api/v1/battle?char1_id=2de5a7b8-dc98-4abe-a90a-e4e819ce5de0&char2_id=816b50dd-96c9-4209-8c62-814c16e56adb\" \\\n  -H \"accept: application/json\""
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "server",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

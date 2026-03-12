@@ -1,0 +1,4048 @@
+{
+  "info": {
+    "_postman_id": "6071c858-f735-479f-8389-73efd11289e1",
+    "name": "Sicoob Push Notification",
+    "description": "Contact Support:\n Name: API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "projetos/{id Projeto FCM}/notificacoes",
+      "item": [
+        {
+          "name": "{tag}",
+          "item": [
+            {
+              "name": "/projetos/:idProjetoFCM/notificacoes/:tag",
+              "id": "2ee40fc4-085c-488a-a1cf-546987c5a985",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/projetos/:idProjetoFCM/notificacoes/:tag?pagina=-62195853.977256596&elementosPorPagina=-62195853.977256596",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "projetos",
+                    ":idProjetoFCM",
+                    "notificacoes",
+                    ":tag"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagina",
+                      "value": "-62195853.977256596",
+                      "description": "NÃƒÂºmero da pÃƒÂ¡gina a ser pesquisada."
+                    },
+                    {
+                      "key": "elementosPorPagina",
+                      "value": "-62195853.977256596",
+                      "description": "Quantidade de elementos a ser retornado na pesquisa paginada."
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "5c39c1ff-a2aa-4610-8380-619abaf43020",
+                      "key": "idProjetoFCM",
+                      "value": "in incididunt",
+                      "description": "(Required) Identificador ÃƒÂºnico do projeto."
+                    },
+                    {
+                      "id": "d72eae51-3e10-4627-9d5b-c7e6b22ebc53",
+                      "key": "tag",
+                      "value": "in incididunt",
+                      "description": "(Required) Conta e cooperativa do usuÃƒÂ¡rio no formato conta_cooperativa."
+                    }
+                  ]
+                },
+                "description": "Pesquisa as notificaÃ§Ãµes com paginaÃ§Ã£o. Se a {pagina} e {elementosPorPagina} nÃƒÂ£o forem informados, os 5 primeiros registros serÃƒÂ£o retornados.\n"
+              },
+              "response": [
+                {
+                  "id": "64f0bac6-6a75-4be9-af82-41fb21ce62b6",
+                  "name": "Pesquisa realizada com sucesso.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "client_id",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/projetos/:idProjetoFCM/notificacoes/:tag?pagina=-62195853.977256596&elementosPorPagina=-62195853.977256596",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projetos",
+                        ":idProjetoFCM",
+                        "notificacoes",
+                        ":tag"
+                      ],
+                      "query": [
+                        {
+                          "key": "pagina",
+                          "value": "-62195853.977256596"
+                        },
+                        {
+                          "key": "elementosPorPagina",
+                          "value": "-62195853.977256596"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "idProjetoFCM",
+                          "value": "in incididunt",
+                          "description": "(Required) Identificador ÃƒÂºnico do projeto."
+                        },
+                        {
+                          "key": "tag",
+                          "value": "in incididunt",
+                          "description": "(Required) Conta e cooperativa do usuÃƒÂ¡rio no formato conta_cooperativa."
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": ""
+                },
+                {
+                  "id": "deaab4b8-168a-4286-aa7f-00f65eab683e",
+                  "name": "Erros de validaÃ§Ã£o.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "client_id",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/projetos/:idProjetoFCM/notificacoes/:tag?pagina=-62195853.977256596&elementosPorPagina=-62195853.977256596",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projetos",
+                        ":idProjetoFCM",
+                        "notificacoes",
+                        ":tag"
+                      ],
+                      "query": [
+                        {
+                          "key": "pagina",
+                          "value": "-62195853.977256596"
+                        },
+                        {
+                          "key": "elementosPorPagina",
+                          "value": "-62195853.977256596"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "idProjetoFCM",
+                          "value": "in incididunt",
+                          "description": "(Required) Identificador ÃƒÂºnico do projeto."
+                        },
+                        {
+                          "key": "tag",
+                          "value": "in incididunt",
+                          "description": "(Required) Conta e cooperativa do usuÃƒÂ¡rio no formato conta_cooperativa."
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": ""
+                },
+                {
+                  "id": "8d24e5ea-4a4e-4616-b0e5-da17adc5711f",
+                  "name": "Erros internos",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "client_id",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/projetos/:idProjetoFCM/notificacoes/:tag?pagina=-62195853.977256596&elementosPorPagina=-62195853.977256596",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projetos",
+                        ":idProjetoFCM",
+                        "notificacoes",
+                        ":tag"
+                      ],
+                      "query": [
+                        {
+                          "key": "pagina",
+                          "value": "-62195853.977256596"
+                        },
+                        {
+                          "key": "elementosPorPagina",
+                          "value": "-62195853.977256596"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "idProjetoFCM",
+                          "value": "in incididunt",
+                          "description": "(Required) Identificador ÃƒÂºnico do projeto."
+                        },
+                        {
+                          "key": "tag",
+                          "value": "in incididunt",
+                          "description": "(Required) Conta e cooperativa do usuÃƒÂ¡rio no formato conta_cooperativa."
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": ""
+                }
+              ]
+            },
+            {
+              "name": "/projetos/:idProjetoFCM/notificacoes/:tag/tipos/:tipo/total",
+              "id": "463f5bee-0ae8-4988-81ae-389aee7990e5",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/projetos/:idProjetoFCM/notificacoes/:tag/tipos/:tipo/total",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "projetos",
+                    ":idProjetoFCM",
+                    "notificacoes",
+                    ":tag",
+                    "tipos",
+                    ":tipo",
+                    "total"
+                  ],
+                  "variable": [
+                    {
+                      "id": "bedfdaea-d16d-4488-8de0-af38d74a7ca6",
+                      "key": "idProjetoFCM",
+                      "value": "in incididunt",
+                      "description": "(Required) Identificador ÃƒÂºnico do projeto."
+                    },
+                    {
+                      "id": "00645d95-1834-4684-aed0-86d26c074abf",
+                      "key": "tipo",
+                      "value": "naolidas",
+                      "description": "(Required) Tipo da mensagem"
+                    },
+                    {
+                      "id": "434327ab-7722-4855-8259-b8cd2d07535c",
+                      "key": "tag",
+                      "value": "in incididunt",
+                      "description": "(Required) Conta e cooperativa do usuÃƒÂ¡rio no formato conta_cooperativa ou identificador utilizado pelo produto."
+                    }
+                  ]
+                },
+                "description": "Retorna o total de notificaÃ§Ãµes nÃ£o lidas.\n"
+              },
+              "response": [
+                {
+                  "id": "f23d206b-325b-475f-9f6d-2cc24b03eded",
+                  "name": "Pesquisa realizada com sucesso.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "client_id",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/projetos/:idProjetoFCM/notificacoes/:tag/tipos/:tipo/total",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projetos",
+                        ":idProjetoFCM",
+                        "notificacoes",
+                        ":tag",
+                        "tipos",
+                        ":tipo",
+                        "total"
+                      ],
+                      "variable": [
+                        {
+                          "key": "idProjetoFCM",
+                          "value": "in incididunt",
+                          "description": "(Required) Identificador ÃƒÂºnico do projeto."
+                        },
+                        {
+                          "key": "tipo",
+                          "value": "naolidas",
+                          "description": "(Required) Tipo da mensagem"
+                        },
+                        {
+                          "key": "tag",
+                          "value": "in incididunt",
+                          "description": "(Required) Conta e cooperativa do usuÃƒÂ¡rio no formato conta_cooperativa ou identificador utilizado pelo produto."
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": ""
+                },
+                {
+                  "id": "563a1431-395d-4d6a-95c6-a578bbe3ef53",
+                  "name": "Erros de validaÃ§Ã£o.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "client_id",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/projetos/:idProjetoFCM/notificacoes/:tag/tipos/:tipo/total",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projetos",
+                        ":idProjetoFCM",
+                        "notificacoes",
+                        ":tag",
+                        "tipos",
+                        ":tipo",
+                        "total"
+                      ],
+                      "variable": [
+                        {
+                          "key": "idProjetoFCM",
+                          "value": "in incididunt",
+                          "description": "(Required) Identificador ÃƒÂºnico do projeto."
+                        },
+                        {
+                          "key": "tipo",
+                          "value": "naolidas",
+                          "description": "(Required) Tipo da mensagem"
+                        },
+                        {
+                          "key": "tag",
+                          "value": "in incididunt",
+                          "description": "(Required) Conta e cooperativa do usuÃƒÂ¡rio no formato conta_cooperativa ou identificador utilizado pelo produto."
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": ""
+                },
+                {
+                  "id": "0968e2b3-dc00-423d-8de9-7d864b7de193",
+                  "name": "Erros internos",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "client_id",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/projetos/:idProjetoFCM/notificacoes/:tag/tipos/:tipo/total",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projetos",
+                        ":idProjetoFCM",
+                        "notificacoes",
+                        ":tag",
+                        "tipos",
+                        ":tipo",
+                        "total"
+                      ],
+                      "variable": [
+                        {
+                          "key": "idProjetoFCM",
+                          "value": "in incididunt",
+                          "description": "(Required) Identificador ÃƒÂºnico do projeto."
+                        },
+                        {
+                          "key": "tipo",
+                          "value": "naolidas",
+                          "description": "(Required) Tipo da mensagem"
+                        },
+                        {
+                          "key": "tag",
+                          "value": "in incididunt",
+                          "description": "(Required) Conta e cooperativa do usuÃƒÂ¡rio no formato conta_cooperativa ou identificador utilizado pelo produto."
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": ""
+                }
+              ]
+            }
+          ],
+          "id": "975c1af1-9dd6-4fcf-9e6a-34f0e66e0572"
+        },
+        {
+          "name": "/projetos/:idProjetoFCM/notificacoes",
+          "id": "7b4c378f-97cb-41f9-82cd-bab5afef71d2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"devices\": [\n    {\n      \"id\": \"consectetur proident nisi enim\",\n      \"title\": \"est aliqua\",\n      \"tag\": \"Lorem aute elit\",\n      \"idProjetoFCM\": \"in exercitation eu ea nisi\"\n    },\n    {\n      \"id\": \"ullamco Excepteur anim mollit\",\n      \"title\": \"dolore Duis est officia\",\n      \"tag\": \"eu et ut exercitation\",\n      \"idProjetoFCM\": \"proident\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/projetos/:idProjetoFCM/notificacoes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "projetos",
+                ":idProjetoFCM",
+                "notificacoes"
+              ],
+              "variable": [
+                {
+                  "id": "20cfab75-82b5-4c3d-9194-ced423c0a952",
+                  "key": "idProjetoFCM",
+                  "value": "in incididunt",
+                  "description": "(Required) Identificador unico do projeto."
+                }
+              ]
+            },
+            "description": "Obtem a lista de notificações push para os dispositivos informados. O campo tag deve ser informado para que a pesquisa recupere as notificações"
+          },
+          "response": [
+            {
+              "id": "f220fea0-653d-4585-938b-f450ef3a27c5",
+              "name": "Pesquisa realizada com sucesso.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"devices\": [\n    {\n      \"id\": \"ut quis dolore\",\n      \"title\": \"dolor voluptate proident dolore\",\n      \"tag\": \"aute sunt\",\n      \"idProjetoFCM\": \"esse culpa Excepteur adipisicing\"\n    },\n    {\n      \"id\": \"veniam tempor culpa ex do\",\n      \"title\": \"id quis ex\",\n      \"tag\": \"do reprehenderit Duis\",\n      \"idProjetoFCM\": \"aliquip\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/projetos/:idProjetoFCM/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "projetos",
+                    ":idProjetoFCM",
+                    "notificacoes"
+                  ],
+                  "variable": [
+                    {
+                      "key": "idProjetoFCM",
+                      "value": "in incididunt",
+                      "description": "(Required) Identificador unico do projeto."
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "3d9b9624-61c7-4df7-a5d2-54124cf6316f",
+              "name": "Erro interno",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"devices\": [\n    {\n      \"id\": \"ut quis dolore\",\n      \"title\": \"dolor voluptate proident dolore\",\n      \"tag\": \"aute sunt\",\n      \"idProjetoFCM\": \"esse culpa Excepteur adipisicing\"\n    },\n    {\n      \"id\": \"veniam tempor culpa ex do\",\n      \"title\": \"id quis ex\",\n      \"tag\": \"do reprehenderit Duis\",\n      \"idProjetoFCM\": \"aliquip\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/projetos/:idProjetoFCM/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "projetos",
+                    ":idProjetoFCM",
+                    "notificacoes"
+                  ],
+                  "variable": [
+                    {
+                      "key": "idProjetoFCM",
+                      "value": "in incididunt",
+                      "description": "(Required) Identificador unico do projeto."
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            }
+          ]
+        }
+      ],
+      "id": "7c49486b-b3bd-4441-a28e-038f9cfe2b41"
+    },
+    {
+      "name": "notificacoes",
+      "item": [
+        {
+          "name": "/notificarPorTag",
+          "id": "50df6434-19d1-42d2-b144-7c9b4551b78c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "73d74de8-283b-3aeb-87ae-74a1535c4262",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "client_id",
+                "value": "LPfTQKNv0wtjNWlvSvCkjjCUe0Aa"
+              },
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\n\n\n\"tag\": \"700022538_0001\",\n\n\n\n\"idProjetoFCM\": \"371614312758\",\n\n\n\n\"tipo\": \"chat\",\n\n\n\n\"notificacao\": {\n\n\n\n\"title\": \"Sicoob\",\n\n\n\n\"descricao\": \"Mensagem do Sicoob.\",\n\n\n\n\"dateCreated\": 0\n\n\n\n}\n\n\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://apic-homol.sicoob.com.br/sicoob/interno/push/client/1.0.0/notificarPorTag",
+              "protocol": "https",
+              "host": [
+                "apic-homol",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "interno",
+                "push",
+                "client",
+                "1.0.0",
+                "notificarPorTag"
+              ]
+            },
+            "description": "Registra uma notificaÃ§Ã£o na base de dados nÃ£o empresentando push no device do usuÃ¡rio. A mesma notificaÃ§Ã£o pode ser registrada para vÃ¡rios devices, deste que a lista de devices informada tenham o atributo 'tag' informado.\n"
+          },
+          "response": [
+            {
+              "id": "6bfd6e00-60e1-4b45-92f9-e4f33fb607fa",
+              "name": "NotificaÃ§Ã£o(Ãµes) salva(s) na base de dados.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "ee054789-6707-4371-b04a-1caf45e1d7f9",
+              "name": "Erros de validaÃ§Ã£o",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "09dd1c33-bd64-4782-a4b2-a1ca6a80f73c",
+              "name": "Erros internos",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "/notificarPorTag Backend",
+          "id": "16548bee-9997-4fe9-8f2d-ce3641dd0a1b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "73d74de8-283b-3aeb-87ae-74a1535c4262",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "client_id",
+                "value": "LPfTQKNv0wtjNWlvSvCkjjCUe0Aa"
+              },
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\n\n\n// \"tag\": \"4364_JC0005\",\n\n\"tag\": \"39390_0001\",\n\n\n\n\"idProjetoFCM\": \"371614312758\",\n\n\n\n\"tipo\": \"chat\",\n\n\n\n\"notificacao\": {\n\n\n\n\"title\": \"Sicoob\",\n\n\n\n\"descricao\": \"Mensagem do Sicoob.\",\n\n\n\n\"dateCreated\": 0\n\n\n\n}\n\n\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://sicoob-push-integracao-wildfly-homol.homologacao.com.br:8080/push-fcm/rest/notificarPorTag",
+              "protocol": "http",
+              "host": [
+                "sicoob-push-integracao-wildfly-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8080",
+              "path": [
+                "push-fcm",
+                "rest",
+                "notificarPorTag"
+              ]
+            },
+            "description": "Registra uma notificaÃ§Ã£o na base de dados nÃ£o empresentando push no device do usuÃ¡rio. A mesma notificaÃ§Ã£o pode ser registrada para vÃ¡rios devices, deste que a lista de devices informada tenham o atributo 'tag' informado.\n"
+          },
+          "response": [
+            {
+              "id": "d2f4ebda-3df1-486e-ac68-2ca5010aee7b",
+              "name": "NotificaÃ§Ã£o(Ãµes) salva(s) na base de dados.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "c3c01ebd-2e6d-44d8-b123-9b2e8826e500",
+              "name": "Erros de validaÃ§Ã£o",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "49bd8397-046d-4496-8984-ba7501a321f8",
+              "name": "Erros internos",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "/notificarPorTag Backend Copy",
+          "id": "7137f2b9-301a-465b-a1b8-09bfef8b99b0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "73d74de8-283b-3aeb-87ae-74a1535c4262",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "client_id",
+                "value": "LPfTQKNv0wtjNWlvSvCkjjCUe0Aa"
+              },
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"notificacao\":{\"title\": \"Sicoob - Autenticação\",\"descricao\": \"Seu código de verificação é 135090 e é válido por 5 minutos.\"},\"tag\": \"39390_0001\" ,\"idProjetoFCM\": \"371614312758\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://sicoob-push-integracao-wildfly-homol.homologacao.com.br:8080/push-fcm/rest/notificarPorTag",
+              "protocol": "http",
+              "host": [
+                "sicoob-push-integracao-wildfly-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8080",
+              "path": [
+                "push-fcm",
+                "rest",
+                "notificarPorTag"
+              ]
+            },
+            "description": "Registra uma notificaÃ§Ã£o na base de dados nÃ£o empresentando push no device do usuÃ¡rio. A mesma notificaÃ§Ã£o pode ser registrada para vÃ¡rios devices, deste que a lista de devices informada tenham o atributo 'tag' informado.\n"
+          },
+          "response": [
+            {
+              "id": "a745e76e-4ca7-49a5-8d23-f0aca06f162b",
+              "name": "NotificaÃ§Ã£o(Ãµes) salva(s) na base de dados.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "2caff62f-98af-4d74-a254-e0283fb1cc96",
+              "name": "Erros de validaÃ§Ã£o",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "afe8746d-04f2-4aca-8950-603b8826e71f",
+              "name": "Erros internos",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "/notificarPorTag SISBR",
+          "id": "022c9b06-3557-4f62-87c6-b84876d04e21",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "73d74de8-283b-3aeb-87ae-74a1535c4262",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "client_id",
+                "value": "LPfTQKNv0wtjNWlvSvCkjjCUe0Aa"
+              },
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\n\n\n\"tag\": \"gearqc0300_00\",\n\n\n\n\"idProjetoFCM\": \"421144590931\",\n\n\n\n\"tipo\": \"chat\",\n\n\n\n\"notificacao\": {\n\n\n\n\"title\": \"Sicoob\",\n\n\n\n\"descricao\": \"Mensagem do Sicoob.\",\n\n\n\n\"dateCreated\": 0\n\n\n\n}\n\n\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://sicoob-push-integracao-wildfly-homol.homologacao.com.br:8080/push-fcm/rest/notificarPorTag",
+              "protocol": "http",
+              "host": [
+                "sicoob-push-integracao-wildfly-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8080",
+              "path": [
+                "push-fcm",
+                "rest",
+                "notificarPorTag"
+              ]
+            },
+            "description": "Registra uma notificaÃ§Ã£o na base de dados nÃ£o empresentando push no device do usuÃ¡rio. A mesma notificaÃ§Ã£o pode ser registrada para vÃ¡rios devices, deste que a lista de devices informada tenham o atributo 'tag' informado.\n"
+          },
+          "response": [
+            {
+              "id": "f3422f8b-51b7-4ccd-b34f-a13a80f473da",
+              "name": "NotificaÃ§Ã£o(Ãµes) salva(s) na base de dados.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "8e5da44d-8a9b-4977-b3a0-e2979af213e1",
+              "name": "Erros de validaÃ§Ã£o",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "f75b5aa7-1c7c-4de3-8443-c3db988b05bb",
+              "name": "Erros internos",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "/notificarPorTag SISBR Copy",
+          "id": "b3fc0a55-5d04-4797-b3c2-fb224c9e94fe",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "73d74de8-283b-3aeb-87ae-74a1535c4262",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "client_id",
+                "value": "LPfTQKNv0wtjNWlvSvCkjjCUe0Aa"
+              },
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"tag\": \"gearqc0300_00\",\n\"idProjetoFCM\": \"421144590931\",\n\"tipo\": \"chat\",\n\"notificacao\": {\n\"title\": \"Sicoob - Autenticação\",\n\"descricao\": \"Seu código de verificação é 471224 e é válido por 5 minutos.\"}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://sicoob-push-integracao-wildfly-homol.homologacao.com.br:8080/push-fcm/rest/notificarPorTag",
+              "protocol": "http",
+              "host": [
+                "sicoob-push-integracao-wildfly-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8080",
+              "path": [
+                "push-fcm",
+                "rest",
+                "notificarPorTag"
+              ]
+            },
+            "description": "Registra uma notificaÃ§Ã£o na base de dados nÃ£o empresentando push no device do usuÃ¡rio. A mesma notificaÃ§Ã£o pode ser registrada para vÃ¡rios devices, deste que a lista de devices informada tenham o atributo 'tag' informado.\n"
+          },
+          "response": [
+            {
+              "id": "e4b4d9c1-3023-4e57-a00a-8913c974ec51",
+              "name": "NotificaÃ§Ã£o(Ãµes) salva(s) na base de dados.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "ad176605-be06-449c-b068-676f0a255789",
+              "name": "Erros de validaÃ§Ã£o",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "3a4f8f34-ea97-466a-92a3-d3e7fed893a3",
+              "name": "Erros internos",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "/notificacoes Backend SISBR",
+          "id": "46fdf9a9-a466-4d85-bc68-f486942ec8bb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "8b6b32a5-933f-3a12-b571-f0ab048a423e",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              },
+              {
+                "key": "client_id",
+                "value": "LPfTQKNv0wtjNWlvSvCkjjCUe0Aa",
+                "type": "default"
+              },
+              {
+                "key": "Postman-Token",
+                "value": "8c09ebb9-54aa-4db9-be28-1000e1cdffcc",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "http://sicoob-push-integracao-wildfly-homol.homologacao.com.br:8080/push-fcm/rest/projetos/421144590931/notificacoes/gearqc0300_00?pagina=0&elementosPorPagina=10",
+              "protocol": "http",
+              "host": [
+                "sicoob-push-integracao-wildfly-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8080",
+              "path": [
+                "push-fcm",
+                "rest",
+                "projetos",
+                "421144590931",
+                "notificacoes",
+                "gearqc0300_00"
+              ],
+              "query": [
+                {
+                  "key": "pagina",
+                  "value": "0"
+                },
+                {
+                  "key": "elementosPorPagina",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Registra uma notificaÃ§Ã£o na base de dados nÃ£o empresentando push no device do usuÃ¡rio. A mesma notificaÃ§Ã£o pode ser registrada para vÃ¡rios devices, deste que a lista de devices informada tenham o atributo 'tag' informado.\n"
+          },
+          "response": [
+            {
+              "id": "c51a2107-f129-4074-ad37-0fefea35b529",
+              "name": "NotificaÃ§Ã£o(Ãµes) salva(s) na base de dados.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "29941ea0-3b39-4301-a83d-4566a0afb899",
+              "name": "Erros de validaÃ§Ã£o",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "5474416d-d631-4ab1-a58a-87afcaf216a0",
+              "name": "Erros internos",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "/notificacoes Backend sicoobnet",
+          "id": "74752fa2-bdc2-40f6-a0b0-42404b75b43a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "8b6b32a5-933f-3a12-b571-f0ab048a423e",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              },
+              {
+                "key": "client_id",
+                "value": "LPfTQKNv0wtjNWlvSvCkjjCUe0Aa",
+                "type": "default"
+              },
+              {
+                "key": "Postman-Token",
+                "value": "8c09ebb9-54aa-4db9-be28-1000e1cdffcc",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "http://sicoob-push-integracao-wildfly-homol.homologacao.com.br:8080/push-fcm/rest/projetos/371614312758/notificacoes/{{chave}}?pagina=0&elementosPorPagina=10",
+              "protocol": "http",
+              "host": [
+                "sicoob-push-integracao-wildfly-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8080",
+              "path": [
+                "push-fcm",
+                "rest",
+                "projetos",
+                "371614312758",
+                "notificacoes",
+                "{{chave}}"
+              ],
+              "query": [
+                {
+                  "key": "pagina",
+                  "value": "0"
+                },
+                {
+                  "key": "elementosPorPagina",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Registra uma notificaÃ§Ã£o na base de dados nÃ£o empresentando push no device do usuÃ¡rio. A mesma notificaÃ§Ã£o pode ser registrada para vÃ¡rios devices, deste que a lista de devices informada tenham o atributo 'tag' informado.\n"
+          },
+          "response": [
+            {
+              "id": "f1399596-557b-46b3-a7e3-3f6b383506c5",
+              "name": "NotificaÃ§Ã£o(Ãµes) salva(s) na base de dados.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "8476cfdd-283f-43f5-8bda-87aedbc94b23",
+              "name": "Erros de validaÃ§Ã£o",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "0452ae4b-cb27-4a28-bc95-a2ad9e0485bb",
+              "name": "Erros internos",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "/notificacoes",
+          "id": "9eb2c2e6-c8c2-4de4-9be5-c45d38de8228",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              },
+              {
+                "key": "client_id",
+                "value": "LPfTQKNv0wtjNWlvSvCkjjCUe0Aa",
+                "type": "default"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer 62037630-e981-32ed-bb34-11fc855d9fab",
+                "type": "default"
+              }
+            ],
+            "url": {
+              "raw": "https://apic-homol.sicoob.com.br/sicoob/interno/push/client/1.0.0/projetos/421144590931/notificacoes/gearqc0300_00?pagina=0&elementosPorPagina=20",
+              "protocol": "https",
+              "host": [
+                "apic-homol",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "interno",
+                "push",
+                "client",
+                "1.0.0",
+                "projetos",
+                "421144590931",
+                "notificacoes",
+                "gearqc0300_00"
+              ],
+              "query": [
+                {
+                  "key": "pagina",
+                  "value": "0"
+                },
+                {
+                  "key": "elementosPorPagina",
+                  "value": "20"
+                }
+              ]
+            },
+            "description": "Registra uma notificaÃ§Ã£o na base de dados nÃ£o empresentando push no device do usuÃ¡rio. A mesma notificaÃ§Ã£o pode ser registrada para vÃ¡rios devices, deste que a lista de devices informada tenham o atributo 'tag' informado.\n"
+          },
+          "response": [
+            {
+              "id": "d76458da-9c18-41f4-8d13-d4077f171b9a",
+              "name": "NotificaÃ§Ã£o(Ãµes) salva(s) na base de dados.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "0230ca93-e29b-454a-b8eb-a51e885171c7",
+              "name": "Erros de validaÃ§Ã£o",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "9722e963-23d6-417d-a0b0-a7b78521f4ee",
+              "name": "Erros internos",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"dolor pariatur\",\n  \"tipo\": \"dolore\",\n  \"devices\": [\n    {\n      \"id\": \"culpa anim reprehenderit\",\n      \"title\": \"aliqua sunt\",\n      \"tag\": \"ad labore ex anim nostrud\",\n      \"idProjetoFCM\": \"au\"\n    },\n    {\n      \"id\": \"velit et\",\n      \"title\": \"veniam deserunt adipisicing do\",\n      \"tag\": \"Excepteur voluptate sit commodo ipsum\",\n      \"idProjetoFCM\": \"velit dolor incididunt magna minim\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"cillum ullamc\",\n    \"title\": \"quis laboris\",\n    \"descricao\": \"magna occaecat\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "/notificacoes",
+          "id": "2924b4e5-54bc-49fa-8b55-8552672018b3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "3acbd995-3ee9-3756-947f-19d47088d9eb",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              },
+              {
+                "key": "Be",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"id\": \"aliqua q\"\n  },\n  {\n    \"id\": \"Lorem voluptate ipsum cillum\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/notificacoes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notificacoes"
+              ]
+            },
+            "description": "Remove uma lista de notificaÃ§Ãµes.\n"
+          },
+          "response": [
+            {
+              "id": "de0baba7-d30c-4098-ae40-eccdf561db59",
+              "name": "NotificaÃ§Ãµes excluÃ­das com sucesso.",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "d469d85a-185b-4516-bdf3-a6988d51da32",
+              "name": "Erros de validaÃ§Ã£o",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "c309b8df-d761-42b7-a68d-f17b9d16924b",
+              "name": "Erros internos",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "/notificacoes/leitura",
+          "id": "66de7a35-5440-4e7b-b763-a0dd8424c25b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"id\": \"nisi esse aliqua ex in\"\n  },\n  {\n    \"id\": \"in\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/notificacoes/leitura",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notificacoes",
+                "leitura"
+              ]
+            },
+            "description": "Marca uma lista de notificaÃ§Ãµes como lida pelo usuario.\n"
+          },
+          "response": [
+            {
+              "id": "802e7d41-d67b-47f4-8264-74485169ad2c",
+              "name": "NotificaÃ§Ãµes marcadas como lida.",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes/leitura",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes",
+                    "leitura"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "c0312027-b842-4dd7-b447-9b2892401f62",
+              "name": "Erros de validaÃ§Ã£o",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes/leitura",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes",
+                    "leitura"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "68a23b89-4016-4d42-8972-12163be912da",
+              "name": "Erros internos",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes/leitura",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes",
+                    "leitura"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "/notificacoes/token",
+          "id": "ca4dfdab-1209-4a69-af90-5abb67d7fb22",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idProjetoFCM\": \"aute\",\n  \"tipo\": \"laborum Duis Ut\",\n  \"devices\": [\n    {\n      \"id\": \"qui cupidatat commodo\",\n      \"title\": \"tempor dolor\",\n      \"tag\": \"occaecat culpa non eu Lorem\",\n      \"tokenIdFCM\": \"consectetur ex velit\",\n      \"idProjetoFCM\": \"tempor Excepteur laborum veniam\"\n    },\n    {\n      \"id\": \"minim irure laborum\",\n      \"title\": \"occaecat reprehenderit\",\n      \"tag\": \"consectetur\",\n      \"tokenIdFCM\": \"Ut dolor sun\",\n      \"idProjetoFCM\": \"ipsum sit\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"nisi eu\",\n    \"title\": \"deserunt voluptate dolor\",\n    \"descricao\": \"reprehenderit Duis est\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/notificacoes/token",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notificacoes",
+                "token"
+              ]
+            },
+            "description": "Envia notificaÃ§Ã£o para vÃ¡rios devices utilizando o atributo 'tokenIdFCM' dos devices informados.\n"
+          },
+          "response": [
+            {
+              "id": "4bf3fcdc-1d68-4eba-8f16-b79673ca6395",
+              "name": "NotificaÃ§Ã£o(Ãµes) salva(s) na base de dados.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"ullamco nisi in dolor voluptate\",\n  \"tipo\": \"quis consequat do Ut esse\",\n  \"devices\": [\n    {\n      \"id\": \"eu occaecat ad\",\n      \"title\": \"in irure veniam\",\n      \"tag\": \"cupidatat Excepte\",\n      \"tokenIdFCM\": \"mollit dolore\",\n      \"idProjetoFCM\": \"Excepteur ea quis\"\n    },\n    {\n      \"id\": \"aliqua\",\n      \"title\": \"deserunt ad\",\n      \"tag\": \"commodo\",\n      \"tokenIdFCM\": \"consequat sed commodo\",\n      \"idProjetoFCM\": \"laboris cupidatat culpa\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"et\",\n    \"title\": \"ex nisi\",\n    \"descricao\": \"reprehenderit Duis proident\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes/token",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes",
+                    "token"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "f636c040-26a3-45e6-82de-7e029f4feb75",
+              "name": "Erros de validaÃ§Ã£o",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"ullamco nisi in dolor voluptate\",\n  \"tipo\": \"quis consequat do Ut esse\",\n  \"devices\": [\n    {\n      \"id\": \"eu occaecat ad\",\n      \"title\": \"in irure veniam\",\n      \"tag\": \"cupidatat Excepte\",\n      \"tokenIdFCM\": \"mollit dolore\",\n      \"idProjetoFCM\": \"Excepteur ea quis\"\n    },\n    {\n      \"id\": \"aliqua\",\n      \"title\": \"deserunt ad\",\n      \"tag\": \"commodo\",\n      \"tokenIdFCM\": \"consequat sed commodo\",\n      \"idProjetoFCM\": \"laboris cupidatat culpa\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"et\",\n    \"title\": \"ex nisi\",\n    \"descricao\": \"reprehenderit Duis proident\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes/token",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes",
+                    "token"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "f1466e24-fd04-43b5-a196-a69d82cf019a",
+              "name": "Erros internos",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "client_id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProjetoFCM\": \"ullamco nisi in dolor voluptate\",\n  \"tipo\": \"quis consequat do Ut esse\",\n  \"devices\": [\n    {\n      \"id\": \"eu occaecat ad\",\n      \"title\": \"in irure veniam\",\n      \"tag\": \"cupidatat Excepte\",\n      \"tokenIdFCM\": \"mollit dolore\",\n      \"idProjetoFCM\": \"Excepteur ea quis\"\n    },\n    {\n      \"id\": \"aliqua\",\n      \"title\": \"deserunt ad\",\n      \"tag\": \"commodo\",\n      \"tokenIdFCM\": \"consequat sed commodo\",\n      \"idProjetoFCM\": \"laboris cupidatat culpa\"\n    }\n  ],\n  \"notificacao\": {\n    \"id\": \"et\",\n    \"title\": \"ex nisi\",\n    \"descricao\": \"reprehenderit Duis proident\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notificacoes/token",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notificacoes",
+                    "token"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            }
+          ]
+        }
+      ],
+      "id": "1724399b-f41c-413b-8989-5a6f4db43619"
+    },
+    {
+      "name": "/device/:idProjetoFCM",
+      "id": "2532bdab-e29e-4374-bf8e-7e87665b146c",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/device/:idProjetoFCM?id=in incididunt&tag=in incididunt",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "device",
+            ":idProjetoFCM"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "in incididunt",
+              "description": "Id device"
+            },
+            {
+              "key": "tag",
+              "value": "in incididunt",
+              "description": "Filtra devices com a mesma tag. Conta e cooperativa do usuÃƒÂ¡rio no formato conta_cooperativa"
+            }
+          ],
+          "variable": [
+            {
+              "id": "136ea4e3-7ccc-4369-a310-5dd1afe0f666",
+              "key": "idProjetoFCM",
+              "value": "in incididunt",
+              "description": "(Required) Id objeto"
+            }
+          ]
+        },
+        "description": "Gets `Devices` objecto.\nParametro obrigatorio.\n"
+      },
+      "response": [
+        {
+          "id": "964a68c2-6a25-4cab-bf84-f733854d80a3",
+          "name": "Successful response",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/device/:idProjetoFCM?id=in incididunt&tag=in incididunt",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "device",
+                ":idProjetoFCM"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "in incididunt"
+                },
+                {
+                  "key": "tag",
+                  "value": "in incididunt"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "idProjetoFCM",
+                  "value": "in incididunt",
+                  "description": "(Required) Id objeto"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "*/*"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "/addDevice",
+      "id": "d34a118f-0b1e-4673-a5bf-ca914cc1edca",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"tempor\",\n  \"title\": \"est exercitation elit\",\n  \"tag\": \"irure ex Ut sed\",\n  \"tokenIdFCM\": \"anim cillum aliqua nisi\",\n  \"idProjetoFCM\": \"pariatur ipsum id sed ut\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/addDevice",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "addDevice"
+          ]
+        },
+        "description": "Add `Device` object.\n"
+      },
+      "response": [
+        {
+          "id": "a6b10d52-026f-4d9f-814a-314ab3fe66f9",
+          "name": "Successful response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/addDevice",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "addDevice"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        },
+        {
+          "id": "419fc2b9-da44-441b-b6e5-032ba0774c3a",
+          "name": "Erro return add object",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/addDevice",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "addDevice"
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        },
+        {
+          "id": "c19238ef-2867-4ddc-b924-26f35034170a",
+          "name": "Invalid input",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/addDevice",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "addDevice"
+              ]
+            }
+          },
+          "status": "Method Not Allowed",
+          "code": 405,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "/updateDevice",
+      "id": "8a30675a-2fe0-4739-9c3d-d6cd95b49a11",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"tempor\",\n  \"title\": \"est exercitation elit\",\n  \"tag\": \"irure ex Ut sed\",\n  \"tokenIdFCM\": \"anim cillum aliqua nisi\",\n  \"idProjetoFCM\": \"pariatur ipsum id sed ut\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/updateDevice",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "updateDevice"
+          ]
+        },
+        "description": "Update `Device` object.\n"
+      },
+      "response": [
+        {
+          "id": "b780b320-903f-4944-bb96-fb6c92c63308",
+          "name": "Successful response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/updateDevice",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "updateDevice"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        },
+        {
+          "id": "762132f2-77b1-4db4-a423-c0a5067bf623",
+          "name": "Invalid input",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/updateDevice",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "updateDevice"
+              ]
+            }
+          },
+          "status": "Method Not Allowed",
+          "code": 405,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "/deleteDevice",
+      "id": "451a5ab0-53b7-4686-8cfb-37076700837d",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"tempor\",\n  \"title\": \"est exercitation elit\",\n  \"tag\": \"irure ex Ut sed\",\n  \"tokenIdFCM\": \"anim cillum aliqua nisi\",\n  \"idProjetoFCM\": \"pariatur ipsum id sed ut\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/deleteDevice",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "deleteDevice"
+          ]
+        },
+        "description": "Delete `Device` object.\n"
+      },
+      "response": [
+        {
+          "id": "e2baa38a-3bbb-4bbb-a115-b532accd4337",
+          "name": "Successful response",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/deleteDevice",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "deleteDevice"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        },
+        {
+          "id": "9df6cf16-72a3-45bf-8199-d76fc0a31143",
+          "name": "Invalid input",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/deleteDevice",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "deleteDevice"
+              ]
+            }
+          },
+          "status": "Method Not Allowed",
+          "code": 405,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "/notificacaoHistorico/:idProjetoFCM",
+      "id": "603f52fa-d457-4230-9ebd-c97f3c813e42",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"tempor\",\n  \"title\": \"est exercitation elit\",\n  \"tag\": \"irure ex Ut sed\",\n  \"tokenIdFCM\": \"anim cillum aliqua nisi\",\n  \"idProjetoFCM\": \"pariatur ipsum id sed ut\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/notificacaoHistorico/:idProjetoFCM",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "notificacaoHistorico",
+            ":idProjetoFCM"
+          ],
+          "variable": [
+            {
+              "id": "d35b8959-68fe-4ee7-b698-6c169d2db7ca",
+              "key": "idProjetoFCM",
+              "value": "in incididunt",
+              "description": "(Required) Id projeto sicoob cadastrado para utilizar sistema de notificacao"
+            }
+          ]
+        },
+        "description": "Update `Device` object.\n"
+      },
+      "response": [
+        {
+          "id": "83c2163f-37e2-4fb9-8694-1baa5346a083",
+          "name": "Successful response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/notificacaoHistorico/:idProjetoFCM",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notificacaoHistorico",
+                ":idProjetoFCM"
+              ],
+              "variable": [
+                {
+                  "key": "idProjetoFCM",
+                  "value": "in incididunt",
+                  "description": "(Required) Id projeto sicoob cadastrado para utilizar sistema de notificacao"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        },
+        {
+          "id": "96e49129-f63b-4bcd-8c46-e233563e9510",
+          "name": "Invalid input",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/notificacaoHistorico/:idProjetoFCM",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notificacaoHistorico",
+                ":idProjetoFCM"
+              ],
+              "variable": [
+                {
+                  "key": "idProjetoFCM",
+                  "value": "in incididunt",
+                  "description": "(Required) Id projeto sicoob cadastrado para utilizar sistema de notificacao"
+                }
+              ]
+            }
+          },
+          "status": "Method Not Allowed",
+          "code": 405,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "/notificarPorTag",
+      "id": "43e26493-b932-46f6-90e4-b62a6c711989",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tag\": \"aliqua deserunt laborum sunt\",\n  \"idProjetoFCM\": \"in ut\",\n  \"tipo\": \"labore tempor non quis laborum\",\n  \"notificacao\": {\n    \"id\": \"consequat aliqua velit in\",\n    \"title\": \"in labore id nisi aute\",\n    \"descricao\": \"dolore nulla\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/notificarPorTag",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "notificarPorTag"
+          ]
+        },
+        "description": "Notificar objects."
+      },
+      "response": [
+        {
+          "id": "5e5664a9-96b4-4eb2-9988-382835f79494",
+          "name": "Successful response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tag\": \"aliqua deserunt laborum sunt\",\n  \"idProjetoFCM\": \"in ut\",\n  \"tipo\": \"labore tempor non quis laborum\",\n  \"notificacao\": {\n    \"id\": \"consequat aliqua velit in\",\n    \"title\": \"in labore id nisi aute\",\n    \"descricao\": \"dolore nulla\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/notificarPorTag",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notificarPorTag"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        },
+        {
+          "id": "3de3aa1b-2730-4c7b-b230-e6f111f283cc",
+          "name": "Invalid input",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tag\": \"aliqua deserunt laborum sunt\",\n  \"idProjetoFCM\": \"in ut\",\n  \"tipo\": \"labore tempor non quis laborum\",\n  \"notificacao\": {\n    \"id\": \"consequat aliqua velit in\",\n    \"title\": \"in labore id nisi aute\",\n    \"descricao\": \"dolore nulla\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/notificarPorTag",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notificarPorTag"
+              ]
+            }
+          },
+          "status": "Method Not Allowed",
+          "code": 405,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "/notificacao/:idProjetoFCM",
+      "id": "63b12811-37b3-4265-942e-e18266e4e476",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/notificacoes/:idProjeto",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "notificacoes",
+            ":idProjeto"
+          ],
+          "variable": [
+            {
+              "id": "5b2f08bf-7395-491c-a742-11a9b3526c17",
+              "key": "idProjeto",
+              "value": ""
+            }
+          ]
+        },
+        "description": "Gets `Person` objects.\nOptional query param of **size** determines\nsize of returned array\n"
+      },
+      "response": [
+        {
+          "id": "042e7475-86d0-41d3-96d7-a2d271f620a8",
+          "name": "Successful response",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/notificacao/:idProjetoFCM?id=-62195853.977256596",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notificacao",
+                ":idProjetoFCM"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "-62195853.977256596"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "idProjetoFCM",
+                  "value": "in incididunt",
+                  "description": "(Required) id objeto"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "*/*"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "/notificarPorJsonListaTokens",
+      "id": "4a10f2a4-9965-41a8-8374-844feac44a93",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"listTokens\": [\n    \"ut in\",\n    \"consequat nostrud Duis Lorem con\"\n  ],\n  \"idProjetoFCM\": \"laboris\",\n  \"tipo\": \"occaecat non elit adipisicing\",\n  \"notificacao\": {\n    \"id\": \"qui\",\n    \"title\": \"ut in\",\n    \"descricao\": \"tempor officia dolor\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/notificarPorJsonListaTokens",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "notificarPorJsonListaTokens"
+          ]
+        },
+        "description": "Gets `Person` objects.\nOptional query param of **size** determines\nsize of returned array\n"
+      },
+      "response": [
+        {
+          "id": "077bd2ec-d1f5-43b4-94bc-bd156c87ecc9",
+          "name": "Successful response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"listTokens\": [\n    \"sunt id enim\",\n    \"veniam\"\n  ],\n  \"idProjetoFCM\": \"consequat\",\n  \"tipo\": \"enim dolor velit id\",\n  \"notificacao\": {\n    \"id\": \"deserunt\",\n    \"title\": \"mollit exercitation esse deserunt\",\n    \"descricao\": \"sit eiusmod\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/notificarPorJsonListaTokens",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notificarPorJsonListaTokens"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        },
+        {
+          "id": "233ce7d9-7b19-473f-9575-2eeedfc7c438",
+          "name": "Invalid input",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"listTokens\": [\n    \"sunt id enim\",\n    \"veniam\"\n  ],\n  \"idProjetoFCM\": \"consequat\",\n  \"tipo\": \"enim dolor velit id\",\n  \"notificacao\": {\n    \"id\": \"deserunt\",\n    \"title\": \"mollit exercitation esse deserunt\",\n    \"descricao\": \"sit eiusmod\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/notificarPorJsonListaTokens",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notificarPorJsonListaTokens"
+              ]
+            }
+          },
+          "status": "Method Not Allowed",
+          "code": 405,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "/notificar",
+      "id": "06dec812-275d-4c65-9a6f-3e808e46a9d6",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"segmentacao\": \"consequat minim\",\n  \"idProjetoFCM\": \"do fugiat et\",\n  \"tipo\": \"enim\",\n  \"notificacao\": {\n    \"id\": \"proident veniam fugiat sunt\",\n    \"title\": \"culpa aliqua n\",\n    \"descricao\": \"sunt in dolore\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/notificar",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "notificar"
+          ]
+        },
+        "description": "Gets `Person` objects.\nOptional query param of **size** determines\nsize of returned array\n"
+      },
+      "response": [
+        {
+          "id": "cf34147e-e935-4741-8ea9-d16790c0809b",
+          "name": "Successful response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"segmentacao\": \"consequat minim\",\n  \"idProjetoFCM\": \"do fugiat et\",\n  \"tipo\": \"enim\",\n  \"notificacao\": {\n    \"id\": \"proident veniam fugiat sunt\",\n    \"title\": \"culpa aliqua n\",\n    \"descricao\": \"sunt in dolore\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/notificar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notificar"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        },
+        {
+          "id": "b47435de-6071-4f04-943d-29b0a6bdafe0",
+          "name": "Invalid input",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"segmentacao\": \"consequat minim\",\n  \"idProjetoFCM\": \"do fugiat et\",\n  \"tipo\": \"enim\",\n  \"notificacao\": {\n    \"id\": \"proident veniam fugiat sunt\",\n    \"title\": \"culpa aliqua n\",\n    \"descricao\": \"sunt in dolore\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/notificar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notificar"
+              ]
+            }
+          },
+          "status": "Method Not Allowed",
+          "code": 405,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "/notifica",
+      "id": "a01fd417-2844-40c8-9f7f-af5decdb3aa2",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "*/*"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tag\": \"consequat ut culpa ut\",\n  \"idProjetoFCM\": \"reprehenderit non consectetur\",\n  \"tipo\": \"sunt ex elit dolor\",\n  \"notificacao\": {\n    \"id\": \"ad et ex aute non\",\n    \"title\": \"qui occaecat fugiat nostrud ullamco\",\n    \"descricao\": \"irure eu quis adipisicing consectetur\"\n  },\n  \"devices\": [\n    {\n      \"id\": \"in culpa\",\n      \"title\": \"officia ullamco minim\",\n      \"tag\": \"laborum commodo nulla conseq\",\n      \"idProjetoFCM\": \"Lorem minim elit\"\n    },\n    {\n      \"id\": \"magna\",\n      \"title\": \"enim proident ullamco reprehenderit\",\n      \"tag\": \"voluptate\",\n      \"idProjetoFCM\": \"in\"\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/notifica",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "notifica"
+          ]
+        },
+        "description": "Envia a notificação push para o usuário.\n"
+      },
+      "response": [
+        {
+          "id": "74dd8823-d639-40f0-aa85-9251acbad2e2",
+          "name": "Mensagens de sucesso ou erros de validação no envio da notificação. O atributo <sucesso> deve ser verificado para garantir que o objeto <notificacao> foi validado e enviado pela aplicação.",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tag\": \"in occaecat sunt\",\n  \"idProjetoFCM\": \"quis pariatur nostrud\",\n  \"tipo\": \"qui occaecat cillum ess\",\n  \"notificacao\": {\n    \"id\": \"pariatur ex eu\",\n    \"title\": \"cupidatat commodo\",\n    \"descricao\": \"dolore et\"\n  },\n  \"devices\": [\n    {\n      \"id\": \"aliquip incididunt voluptate\",\n      \"title\": \"minim ullamco sit id Duis\",\n      \"tag\": \"in enim sit laboris\",\n      \"idProjetoFCM\": \"ullamco quis mollit\"\n    },\n    {\n      \"id\": \"veniam enim\",\n      \"title\": \"ipsum sint Excepteur consectetur\",\n      \"tag\": \"aute velit exercitation nulla laborum\",\n      \"idProjetoFCM\": \"consectetur ea cillum reprehenderit\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/notifica",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notifica"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "*/*"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        },
+        {
+          "id": "d3d27fd1-8181-46df-a560-04c9f41673ca",
+          "name": "Erro interno",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "Added as a part of security scheme: apikey",
+                "key": "client_id",
+                "value": "<API Key>"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tag\": \"in occaecat sunt\",\n  \"idProjetoFCM\": \"quis pariatur nostrud\",\n  \"tipo\": \"qui occaecat cillum ess\",\n  \"notificacao\": {\n    \"id\": \"pariatur ex eu\",\n    \"title\": \"cupidatat commodo\",\n    \"descricao\": \"dolore et\"\n  },\n  \"devices\": [\n    {\n      \"id\": \"aliquip incididunt voluptate\",\n      \"title\": \"minim ullamco sit id Duis\",\n      \"tag\": \"in enim sit laboris\",\n      \"idProjetoFCM\": \"ullamco quis mollit\"\n    },\n    {\n      \"id\": \"veniam enim\",\n      \"title\": \"ipsum sint Excepteur consectetur\",\n      \"tag\": \"aute velit exercitation nulla laborum\",\n      \"idProjetoFCM\": \"consectetur ea cillum reprehenderit\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/notifica",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notifica"
+              ]
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "*/*"
+            }
+          ],
+          "cookie": [],
+          "responseTime": null,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "http://vsprodsicoobpush.sicoob.com.br/push-fcm/rest/projetos/371614312758/notificacoes",
+      "id": "93da72f7-4e66-421a-b9a9-454eeca98248",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"devices\": [\n     { \"tag\": \"700022538_0001\"}\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://vsprodsicoobpush.sicoob.com.br/push-fcm/rest/projetos/371614312758/notificacoes?pagina=0&elementosPorPagina=20",
+          "protocol": "http",
+          "host": [
+            "vsprodsicoobpush",
+            "sicoob",
+            "com",
+            "br"
+          ],
+          "path": [
+            "push-fcm",
+            "rest",
+            "projetos",
+            "371614312758",
+            "notificacoes"
+          ],
+          "query": [
+            {
+              "key": "pagina",
+              "value": "0"
+            },
+            {
+              "key": "elementosPorPagina",
+              "value": "20"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "tokenType",
+        "value": "Bearer",
+        "type": "string"
+      },
+      {
+        "key": "accessToken",
+        "value": "8b6b32a5-933f-3a12-b571-f0ab048a423e",
+        "type": "string"
+      },
+      {
+        "key": "tokenName",
+        "value": "SICOOB_API_TOKEN_HOMOL",
+        "type": "string"
+      },
+      {
+        "key": "clientSecret",
+        "value": "LlSf2OpfaHG70gtiJCdjhm1LMGga",
+        "type": "string"
+      },
+      {
+        "key": "clientId",
+        "value": "LPfTQKNv0wtjNWlvSvCkjjCUe0Aa",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "apimanager-homol.homologacao.com.br:8280/token",
+        "type": "string"
+      },
+      {
+        "key": "challengeAlgorithm",
+        "value": "S256",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      },
+      {
+        "key": "addTokenTo",
+        "value": "queryParams",
+        "type": "string"
+      },
+      {
+        "key": "client_authentication",
+        "value": "body",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ],
+        "id": "57f47660-2106-4f24-a0f9-8d8cb8a4a686"
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ],
+        "id": "2aea2584-83c9-451b-9fe7-1e3e69009b31"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://apicinterno-homol.sicoob.com.br/sicoob/interno/push/client/1.0.0",
+      "type": "string"
+    }
+  ]
+}

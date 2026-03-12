@@ -1,0 +1,3256 @@
+{
+  "info": {
+    "_postman_id": "eb356cc5-09b2-4d58-995c-838a631d8c35",
+    "name": "Autenticacao",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Canais Usuario Cooperado",
+      "item": [
+        {
+          "name": "Homol",
+          "item": [
+            {
+              "name": "1º TGT HOMOL",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "try {\r",
+                      "    let response = pm.response.text();    \r",
+                      "    let tgt = response.split(\"tickets/\")[1].split(\"method=\")[0].replace(\"\\\"\" , \"\").replace(\" \" , \"\");\r",
+                      "    console.log(tgt);\r",
+                      "    pm.collectionVariables.set(\"TGT_CAS\", tgt);\r",
+                      "    console.log(\"Request executada com sucesso !!\");\r",
+                      "    return;\r",
+                      "} catch (e) {}\r",
+                      "\r",
+                      "let response = console.log(pm.response.json());\r",
+                      "\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "id": "02c8e648-8ab1-43fa-8ea9-7629a1595017"
+                  }
+                }
+              ],
+              "id": "f9c17ad6-2dca-4b3f-9a16-14baf329bb0f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "descServidor",
+                      "value": "10.238.36.49",
+                      "type": "text"
+                    },
+                    {
+                      "key": "cooperativa",
+                      "value": "4364",
+                      "type": "text"
+                    },
+                    {
+                      "key": "conta",
+                      "value": "9916409005",
+                      "type": "text"
+                    },
+                    {
+                      "key": "senha",
+                      "value": "88888888",
+                      "type": "text"
+                    },
+                    {
+                      "key": "titularidade",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "versaoHash",
+                      "value": "9",
+                      "type": "text"
+                    },
+                    {
+                      "key": "idCanal",
+                      "value": "6",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://cas-homol.homologacao.com.br:8080/cas/v1/tickets",
+                  "protocol": "http",
+                  "host": [
+                    "cas-homol",
+                    "homologacao",
+                    "com",
+                    "br"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "1º TGT PJ HOMOL",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "try {\r",
+                      "    let response = pm.response.text();    \r",
+                      "    let tgt = response.split(\"tickets/\")[1].split(\"method=\")[0].replace(\"\\\"\" , \"\").replace(\" \" , \"\");\r",
+                      "    console.log(tgt);\r",
+                      "    pm.collectionVariables.set(\"TGT_CAS\", tgt);\r",
+                      "    console.log(\"Request executada com sucesso !!\");\r",
+                      "    return;\r",
+                      "} catch (e) {}\r",
+                      "\r",
+                      "let response = console.log(pm.response.json());\r",
+                      "\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "id": "bbe1e9eb-f545-4250-8ce3-a319049778b8"
+                  }
+                }
+              ],
+              "id": "b5bfd762-0c6e-4adc-9d3e-2e9aaa7428d0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "content-type",
+                    "value": "application/x-www-form-urlencoded"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer b340226f-3281-33c8-8aa6-2c0592ef096c"
+                  },
+                  {
+                    "key": "Cookie",
+                    "value": "9de3e40418ddd2091b573e6b9487c57f=7f78ffd2fb5fe930284659f677bde275"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "chaveAcesso",
+                      "value": "QO2121",
+                      "type": "text"
+                    },
+                    {
+                      "key": "titularidade",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "cooperativa",
+                      "value": "3084",
+                      "type": "text"
+                    },
+                    {
+                      "key": "senha",
+                      "value": "88888888",
+                      "type": "text"
+                    },
+                    {
+                      "key": "idDispositivo",
+                      "value": "372398f7-6d02-4f7a-8b46-423c1ce8899f",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://cas-homol.homologacao.com.br:8080/cas/v1/tickets/",
+                  "protocol": "http",
+                  "host": [
+                    "cas-homol",
+                    "homologacao",
+                    "com",
+                    "br"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "1º TGT PFNC HOMOL",
+              "id": "6b8a5b86-f880-4eb3-b149-f63c25b04937",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "content-type",
+                    "value": "application/x-www-form-urlencoded"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer b340226f-3281-33c8-8aa6-2c0592ef096c"
+                  },
+                  {
+                    "key": "Cookie",
+                    "value": "9de3e40418ddd2091b573e6b9487c57f=7f78ffd2fb5fe930284659f677bde275"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "titularidade",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "cooperativa",
+                      "value": "4001",
+                      "type": "text"
+                    },
+                    {
+                      "key": "senha",
+                      "value": "10101010",
+                      "type": "text"
+                    },
+                    {
+                      "key": "idDispositivo",
+                      "value": "372398f7-6d02-4f7a-8b46-423c1ce8899f",
+                      "type": "text"
+                    },
+                    {
+                      "key": "cpfCnpj",
+                      "value": "04743746108",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://cas-homol.homologacao.com.br:8080/cas/v1/tickets/",
+                  "protocol": "http",
+                  "host": [
+                    "cas-homol",
+                    "homologacao",
+                    "com",
+                    "br"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "2º ST HOMOL",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.collectionVariables.set(\"ST_CAS\", pm.response.text());\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "id": "e56c25a1-5d94-4002-8f8c-76c565339412"
+                  }
+                }
+              ],
+              "id": "bddc7c7c-f69c-4087-bf40-6f1ca6841237",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "url": {
+                  "raw": "http://cas-homol.homologacao.com.br:8080/cas/v1/tickets/{{TGT_CAS}}?service=https://wap.sicoobnet.com.br/",
+                  "protocol": "http",
+                  "host": [
+                    "cas-homol",
+                    "homologacao",
+                    "com",
+                    "br"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets",
+                    "{{TGT_CAS}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "service",
+                      "value": "https://wap.sicoobnet.com.br/"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "3º TOKEN HOMOL",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "f784ca4f-7d1c-4810-baf3-19a0620d5db7",
+                    "exec": [
+                      "pm.collectionVariables.set(\"TOKEN_APIM\", pm.response.json()['access_token']);\r",
+                      "\r",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "id": "df03bb37-7130-42ba-b2f7-7bfd0a8472cb",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Basic TFBmVFFLTnYwd3RqTldsdlN2Q2tqakNVZTBBYTpMbFNmMk9wZmFIRzcwZ3RpSkNkamhtMUxNR2dh"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "grant_type",
+                      "value": "st",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ST",
+                      "value": "ST-5761-sz1at2SYIzdvdHbiyPgK-sicoob-cas-seguranca-springboot-100-6crhh",
+                      "type": "text"
+                    },
+                    {
+                      "key": "service",
+                      "value": "https://wap.sicoobnet.com.br/",
+                      "type": "text"
+                    },
+                    {
+                      "key": "dadospoupanca",
+                      "value": "true",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://apimanager-homol.homologacao.com.br:8280/token",
+                  "protocol": "http",
+                  "host": [
+                    "apimanager-homol",
+                    "homologacao",
+                    "com",
+                    "br"
+                  ],
+                  "port": "8280",
+                  "path": [
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "4º Exemplo Request",
+              "id": "59ecb81e-9891-42ff-8720-338da6b623bd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{TOKEN_APIM}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "http://apimanager-homol.homologacao.com.br:8280/creditos/financiamentos/veiculos/1.0.0/simulacoes",
+                  "protocol": "http",
+                  "host": [
+                    "apimanager-homol",
+                    "homologacao",
+                    "com",
+                    "br"
+                  ],
+                  "port": "8280",
+                  "path": [
+                    "creditos",
+                    "financiamentos",
+                    "veiculos",
+                    "1.0.0",
+                    "simulacoes"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "584e8e0e-3364-45c6-a840-a0cac7041bec"
+        },
+        {
+          "name": "TI",
+          "item": [
+            {
+              "name": "1º TGT TI",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "try {\r",
+                      "    let response = pm.response.text();    \r",
+                      "    let tgt = response.split(\"tickets/\")[1].split(\"method=\")[0].replace(\"\\\"\" , \"\").replace(\" \" , \"\");\r",
+                      "    console.log(tgt);\r",
+                      "    pm.collectionVariables.set(\"TGT_CAS\", tgt);\r",
+                      "    console.log(\"Request executada com sucesso !!\");\r",
+                      "    return;\r",
+                      "} catch (e) {}\r",
+                      "\r",
+                      "let response = console.log(pm.response.json());\r",
+                      "\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "id": "a59fa826-1d02-40c2-b15f-df1f10522a14"
+                  }
+                }
+              ],
+              "id": "7918d0f3-cb75-47d7-b4c0-bf9a6934f355",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "descServidor",
+                      "value": "10.238.36.49",
+                      "type": "text"
+                    },
+                    {
+                      "key": "cooperativa",
+                      "value": "3105",
+                      "type": "text"
+                    },
+                    {
+                      "key": "conta",
+                      "value": "27",
+                      "type": "text"
+                    },
+                    {
+                      "key": "senha",
+                      "value": "88888888",
+                      "type": "text"
+                    },
+                    {
+                      "key": "titularidade",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "versaoHash",
+                      "value": "9",
+                      "type": "text"
+                    },
+                    {
+                      "key": "idCanal",
+                      "value": "6",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://cas-ti.homologacao.com.br:8080/cas/v1/tickets",
+                  "protocol": "http",
+                  "host": [
+                    "cas-ti",
+                    "homologacao",
+                    "com",
+                    "br"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "2º ST TI",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.collectionVariables.set(\"ST_CAS\", pm.response.text());\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "id": "48b62145-0649-438e-ab8b-12b0f9d609a6"
+                  }
+                }
+              ],
+              "id": "606131db-935b-4251-8b31-ffb3d9170bd0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "url": {
+                  "raw": "http://cas-ti.homologacao.com.br:8080/cas/v1/tickets/{{TGT_CAS}}?service=https://wap.sicoobnet.com.br/",
+                  "protocol": "http",
+                  "host": [
+                    "cas-ti",
+                    "homologacao",
+                    "com",
+                    "br"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets",
+                    "{{TGT_CAS}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "service",
+                      "value": "https://wap.sicoobnet.com.br/"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "3º TOKEN TI",
+              "id": "1a2d6195-d21b-4539-a6e2-19262862ee08",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Basic R19qME1ubVRONk9JYWltTkNGSHRSS2R6bU8wYTpwdWNMZmZzNXVPMXdua2Z1Q01xZG83M0FCSDhh"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "grant_type",
+                      "value": "st",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ST",
+                      "value": "ST-3-JJFobeUQjfEF1JLGgYvA-sicoob-cas-seguranca-springboot-304-rrwtx",
+                      "type": "text"
+                    },
+                    {
+                      "key": "service",
+                      "value": "https://wap.sicoobnet.com.br/",
+                      "type": "text"
+                    },
+                    {
+                      "key": "",
+                      "value": "",
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://apit.homologacao.com.br:8280/token",
+                  "protocol": "http",
+                  "host": [
+                    "apit",
+                    "homologacao",
+                    "com",
+                    "br"
+                  ],
+                  "port": "8280",
+                  "path": [
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "1º TGT PJ TI",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "try {\r",
+                      "    let response = pm.response.text();    \r",
+                      "    let tgt = response.split(\"tickets/\")[1].split(\"method=\")[0].replace(\"\\\"\" , \"\").replace(\" \" , \"\");\r",
+                      "    console.log(tgt);\r",
+                      "    pm.collectionVariables.set(\"TGT_CAS\", tgt);\r",
+                      "    console.log(\"Request executada com sucesso !!\");\r",
+                      "    return;\r",
+                      "} catch (e) {}\r",
+                      "\r",
+                      "let response = console.log(pm.response.json());\r",
+                      "\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "id": "1a220240-5060-41ed-ad2e-f74862def8fa"
+                  }
+                }
+              ],
+              "id": "6699dfd6-7b6d-4d70-81ca-96d75572fd37",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "content-type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "chaveAcesso",
+                      "value": "XG0002",
+                      "type": "text"
+                    },
+                    {
+                      "key": "titularidade",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "cooperativa",
+                      "value": "3105",
+                      "type": "text"
+                    },
+                    {
+                      "key": "senha",
+                      "value": "88888888",
+                      "type": "text"
+                    },
+                    {
+                      "key": "idDispositivo",
+                      "value": "372398f7-6d02-4f7a-8b46-423c1ce8899f",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://cas-ti.homologacao.com.br:8080/cas/v1/tickets/",
+                  "protocol": "http",
+                  "host": [
+                    "cas-ti",
+                    "homologacao",
+                    "com",
+                    "br"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "e93a41a1-d89c-4f1d-95b6-2e41e8db0b84"
+        }
+      ],
+      "id": "bf5008bb-e065-45c7-b009-b602a304d5c1"
+    },
+    {
+      "name": "Servico Usuario CTA",
+      "item": [
+        {
+          "name": "TI",
+          "item": [
+            {
+              "name": "1º TGT TI",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "try {\r",
+                      "    let response = pm.response.text();    \r",
+                      "    let tgt = response.split(\"tickets/\")[1].split(\"method=\")[0].replace(\"\\\"\" , \"\").replace(\" \" , \"\");\r",
+                      "    console.log(tgt);\r",
+                      "    pm.collectionVariables.set(\"TGT_CAS\", tgt);\r",
+                      "    console.log(\"Request executada com sucesso !!\");\r",
+                      "    return;\r",
+                      "} catch (e) {}\r",
+                      "\r",
+                      "let response = console.log(pm.response.json());\r",
+                      "\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "id": "b81402e6-42c0-4d26-a0a9-8d7e200242df"
+                  }
+                }
+              ],
+              "id": "c2b1c999-8653-4d4f-a3da-ce4ac7f92468",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "username",
+                      "value": "acomp0300_00",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "Sicoob*0",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://cas-ti.homologacao.com.br/cas/v1/tickets",
+                  "protocol": "https",
+                  "host": [
+                    "cas-ti",
+                    "homologacao",
+                    "com",
+                    "br"
+                  ],
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "2º ST TI",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.environment.set(\"ST_CAS\", pm.response.text());\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "id": "a6aa6b70-1c5d-4c3c-b543-d385fc668538"
+                  }
+                }
+              ],
+              "id": "7c61ac49-3603-429f-b4bd-aca018ed386f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "url": {
+                  "raw": "http://cas-ti.homologacao.com.br:8080/cas/v1/tickets/{{TGT_CAS}}?service=http://ccg-end-backoffice-nodejs.appdev.homologacao.com.br/ccg-frontend",
+                  "protocol": "http",
+                  "host": [
+                    "cas-ti",
+                    "homologacao",
+                    "com",
+                    "br"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets",
+                    "{{TGT_CAS}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "service",
+                      "value": "http://ccg-end-backoffice-nodejs.appdev.homologacao.com.br/ccg-frontend"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "3º TOKEN TI",
+              "id": "034164a0-b610-4184-9dbf-d94cb891d850",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Basic ZlR6d3IxWTNoMUtrZzVWWlhVVEVRR3RBOHZJYTpmYXN0d3pCaGVrQlY3R3pkZDQ5bVdPd2N1Vmdh"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "grant_type",
+                      "value": "st",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ST",
+                      "value": "{{ST_CAS}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "service",
+                      "value": "http://ccg-end-backoffice-nodejs.appdev.homologacao.com.br/ccg-frontend",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://apit.homologacao.com.br:8280/token/",
+                  "protocol": "http",
+                  "host": [
+                    "apit",
+                    "homologacao",
+                    "com",
+                    "br"
+                  ],
+                  "port": "8280",
+                  "path": [
+                    "token",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "TOKEN TI Permisao",
+              "id": "1569bdb6-77ab-4c14-b65d-3334971b025c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json, text/plain, */*"
+                  },
+                  {
+                    "key": "Accept-Language",
+                    "value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Basic ZlR6d3IxWTNoMUtrZzVWWlhVVEVRR3RBOHZJYTpmYXN0d3pCaGVrQlY3R3pkZDQ5bVdPd2N1Vmdh"
+                  },
+                  {
+                    "key": "Connection",
+                    "value": "keep-alive"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  },
+                  {
+                    "key": "Cookie",
+                    "value": "TGC=eyJhbGciOiJIUzUxMiJ9.WlhsS05tRllRV2xQYVVwRlVsVlphVXhEU21oaVIyTnBUMmxLYTJGWVNXbE1RMHBzWW0xTmFVOXBTa0pOVkVrMFVUQktSRXhWYUZSTmFsVXlTVzR3TGk1blRVWlJXRmh6V2pCU2FrbGhWMDFLV2pkSVRrbFJMbFZSWVhaUGFYYzROSE00YzBKNU9EQnJMWE5WYkhkeVNWWmlNVkJYTWtzNFVFeGhTRk5PZVVsSlJrcDJkRUpPUWtOcU1WTm9WVVpPT1ZZNFRFdzBOMEp2YjJzelFqTmxNSEp4T0RKTFZYaGhXazVvVDE5V2IxSkdaM1pzWlcxaGN6aHlaRXQzWlZGMlVHZGFjMjVNT1RkWlRVNDBTMnMyVEV0c1NHbEZhVUpSWVc0d2IyZDRlbkJsT0hWbGNHbFFMWHAzTVVSMk1VOXBlazFqVEZwWVZuWm5hVUl3VDJRNVFtWmpWVWsxTldWV1dYQXhUbWRZWm1KWGNtRlZUVUZUUnpsd1NGSkViMFJ2VFdSak1HNXZhMFZyTWxGbE1sOXFSMVZEZERSUFdUQnRSME5GVjFvMWFWQnFaa2xRT0hsYVRVbElkMDE0VlRkV2FuZEpTMVZSTVdZMFIxUkhkMjlEY2t0cVJqVkZPSFEyTm0wdGNqTm5Ma3M1YjBSeVdtRnFZVGxvYm1kUVZYaDVVRkE1U25jPQ.Sjlnlss2BYxkXTlHrQSje26mt-PFo79wGXcvDqIiefhIugjBp6e6FFfH4XUJihqXQ0UI1PhW8cGYOT_r_K0vAQ"
+                  },
+                  {
+                    "key": "Origin",
+                    "value": "http://bps-previdencia-social-angular-backoffice-nodejs.appdev.homologacao.com.br"
+                  },
+                  {
+                    "key": "Referer",
+                    "value": "http://bps-previdencia-social-angular-backoffice-nodejs.appdev.homologacao.com.br/"
+                  },
+                  {
+                    "key": "Sec-Fetch-Dest",
+                    "value": "empty"
+                  },
+                  {
+                    "key": "Sec-Fetch-Mode",
+                    "value": "cors"
+                  },
+                  {
+                    "key": "Sec-Fetch-Site",
+                    "value": "cross-site"
+                  },
+                  {
+                    "key": "User-Agent",
+                    "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+                  },
+                  {
+                    "key": "sec-ch-ua",
+                    "value": "\"Google Chrome\";v=\"117\", \"Not;A=Brand\";v=\"8\", \"Chromium\";v=\"117\""
+                  },
+                  {
+                    "key": "sec-ch-ua-mobile",
+                    "value": "?0"
+                  },
+                  {
+                    "key": "sec-ch-ua-platform",
+                    "value": "\"Windows\""
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "service",
+                      "value": "http://bps-previdencia-social-angular-backoffice-nodejs.appdev.homologacao.com.br/bps-previdencia-social-angular/",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ticket",
+                      "value": "{{ST_CAS}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "formulario",
+                      "value": "MDIBPSANG",
+                      "type": "text"
+                    },
+                    {
+                      "key": "integracoes",
+                      "value": "",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://boti.sisbr.coop.br/cas/auth/token",
+                  "protocol": "https",
+                  "host": [
+                    "boti",
+                    "sisbr",
+                    "coop",
+                    "br"
+                  ],
+                  "path": [
+                    "cas",
+                    "auth",
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "9f669645-ce2b-402b-8496-f9044752edd7"
+        },
+        {
+          "name": "PRD",
+          "item": [
+            {
+              "name": "1º TGT PRD",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "try {\r",
+                      "    let response = pm.response.text();    \r",
+                      "    let tgt = response.split(\"tickets/\")[1].split(\"method=\")[0].replace(\"\\\"\" , \"\").replace(\" \" , \"\");\r",
+                      "    console.log(tgt);\r",
+                      "    pm.collectionVariables.set(\"TGT_CAS\", tgt);\r",
+                      "    console.log(\"Request executada com sucesso !!\");\r",
+                      "    return;\r",
+                      "} catch (e) {}\r",
+                      "\r",
+                      "let response = console.log(pm.response.json());\r",
+                      "\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "id": "84b266dc-30c2-469b-8444-9cad6b72e3ab"
+                  }
+                }
+              ],
+              "id": "e1dbc9bf-71bf-41cd-be1d-25254aa8eaa9",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "username",
+                      "value": "thiagol.carvalho",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "Je01ss!ca.20",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://portal.sisbr.coop.br/cas/v1/tickets",
+                  "protocol": "https",
+                  "host": [
+                    "portal",
+                    "sisbr",
+                    "coop",
+                    "br"
+                  ],
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "2º ST PRD",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.environment.set(\"ST_CAS\", pm.response.text());\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "id": "cfed52c6-a218-4b63-8402-7f3b7f27f8aa"
+                  }
+                }
+              ],
+              "id": "cb3afbf1-9454-4e67-82cb-cb2e786d59e2",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "url": {
+                  "raw": "https://portal.sisbr.coop.br/cas/v1/tickets/{{TGT_CAS}}?service=http://par-conducao-angular-backoffice.appdev.homologacao.com.br/",
+                  "protocol": "https",
+                  "host": [
+                    "portal",
+                    "sisbr",
+                    "coop",
+                    "br"
+                  ],
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets",
+                    "{{TGT_CAS}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "service",
+                      "value": "http://par-conducao-angular-backoffice.appdev.homologacao.com.br/"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "3º TOKEN PRD",
+              "id": "5c716de2-6686-49a8-9200-1101172420bd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Basic M2liMXJudFlBRGVYalp1MDJmTHY4enc4bHY0YTp4MTBla1praDMwb21CcGdrUnBGUVZ6SXRZRFVh"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "grant_type",
+                      "value": "st",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ST",
+                      "value": "{{ST_CAS}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "service",
+                      "value": "http://par-conducao-angular-backoffice.appdev.homologacao.com.br/",
+                      "type": "text"
+                    },
+                    {
+                      "key": "scope",
+                      "value": "default cnv_arrec_arquivos_extinguir cnv_arrec_arquivos_reenviar cnv_arrec_convenio_instituicao_cadastrar cnv_arrec_convenio_instituicao_excluir cnv_arrec_regra_repasse_alterar cnv_arrecadacao_debauto_desefetivar cnv_fin_conf_tarifa_contrato_alterar cnv_fin_conf_tarifa_contrato_excluir cnv_fin_conf_tarifa_contrato_incluir cnv_fin_conf_trfa_ctrto_stm_alterar cnv_fin_conf_trfa_ctrto_stm_excluir cnv_fin_conf_trfa_ctrto_stm_incluir cnv_fin_regra_tarifa_incluir cnv_fin_repasse_mun_alterar cnv_fin_repasse_mun_incluir cnv_fin_repasse_mun_vinculo_excluir cnv_fin_repasse_mun_vinculo_incluir convenios_arrecadacao_cnvlocal_alterar convenios_arrecadacao_cnvlocal_desativar convenios_arrecadacao_cnvlocal_incluir convenios_arrecadacao_cnvlocal_reativar convenios_arrecadacao_debauto_bancoob_ar convenios_arrecadacao_debauto_cancelar convenios_arrecadacao_debauto_efetivar convenios_arrecadacao_debauto_reativar convenios_controle_vencimento_excluir convenios_controle_vencimento_incluir convenios_financeiro_previas_cancelar convenios_financeiro_previas_gerar convenios_financeiro_previas_liquidar convenios_optantes_atualizar convenios_optantes_cadastro convenios_optantes_delete convenios_optantes_reativar convenios_dominio_produtos_movimento"
+                    },
+                    {
+                      "key": "ssotoken",
+                      "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0aGlhZ29sLmNhcnZhbGhvIiwiYXVkIjoiaHR0cHM6XC9cL3BvcnRhbC5zaXNici5jb29wLmJyIiwiaXNzIjoiaHR0cHM6XC9cL3BvcnRhbC5zaXNici5jb29wLmJyIiwidXN1YXJpbyI6ImV5SjFjM1ZoY21sdklqcDdJbXh2WjJsdUlqb2lkR2hwWVdkdmJDNWpZWEoyWVd4b2J5SXNJbTV2YldVaU9pSlVTRWxCUjA4Z1RGVkpVeUJHUlZKU1JVbFNRU0JFUlNCRFFWSldRVXhJVHlJc0ltTndaaUk2SWpBek5qY3dNVFl3TVRBNElpd2laVzFoYVd3aU9pSlVhR2xoWjI5TUxrTmhjblpoYkdodlFITnBZMjl2WWk1amIyMHVZbklpTENKdWRXMWxjbTlEYjI5d1pYSmhkR2wyWVNJNk9UZ3dOU3dpYVdSSmJuTjBhWFIxYVdOaGIwOXlhV2RsYlNJNk1URTVNQ3dpYVdSVmJtbGtZV1JsU1c1emRFOXlhV2RsYlNJNk1Dd2laR0YwWVVodmNtRlZiSFJwYlc5TWIyZHBiaUk2TVRZNU1UVTBNVFUzTkRNek5pd2ljR1Z5YldsemMyOWxjeUk2ZXlKemFYTjBaVzFoY3lJNlcxMHNJbWx1ZEdWbmNtRmpiMlZ6SWpwYlhYMTlmUSIsImV4cCI6MTY5MTU0NTE5NSwiaWF0IjoxNjkxNTQxNTk1fQ.fRD2TW-SDYYK0UGWnL-o-AdbtijqkPj473algT0yZZYaELw8irMaf3qPziFzEuVY78oTe70TZpsb31lOrHZmHMRX19TWrnPuAWVbDKpn_EnDc4OLCqu9HNSN6yPMDVvNBPa19LFtzDrata7hqxRjZiC0xGDyv8-TlYQHcRUNmmss-TcA6luHBdyWRdINwoMyJg3Su4qlMZzruC-xzrgVQWsXeREqylza0VL-ZRB7HNIddtUgzqF7HU79XpCR6P62UfpVSmFVcDsFvAR4y8sOGa4TR-iOcfxzFfQqDKT7Qd0F-sWamXkQZ7U2Z5z_Jwn5mhlE93vh2rg4uw8CQIiAWQ",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://portal.sisbr.coop.br/auth/token",
+                  "protocol": "https",
+                  "host": [
+                    "portal",
+                    "sisbr",
+                    "coop",
+                    "br"
+                  ],
+                  "path": [
+                    "auth",
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "TOKEN PRD Permisao",
+              "id": "bd16b002-6947-43ba-b5e6-ec6f00dd4533",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Basic M2liMXJudFlBRGVYalp1MDJmTHY4enc4bHY0YTp4MTBla1praDMwb21CcGdrUnBGUVZ6SXRZRFVh"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "service",
+                      "value": "http://par-conducao-angular-backoffice.appdev.homologacao.com.br/",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ticket",
+                      "value": "{{ST_CAS}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "formulario",
+                      "value": "MDIPARWEB",
+                      "type": "text"
+                    },
+                    {
+                      "key": "integracoes",
+                      "value": "escopo1",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://portal.sisbr.coop.br/cas/auth/token",
+                  "protocol": "https",
+                  "host": [
+                    "portal",
+                    "sisbr",
+                    "coop",
+                    "br"
+                  ],
+                  "path": [
+                    "cas",
+                    "auth",
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "802f9906-94f5-458d-8b74-f983a6ac12a7"
+        },
+        {
+          "name": "TI  Https NewCon",
+          "item": [
+            {
+              "name": "1º TGT TI",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "try {\r",
+                      "    let response = pm.response.text();    \r",
+                      "    let tgt = response.split(\"tickets/\")[1].split(\"method=\")[0].replace(\"\\\"\" , \"\").replace(\" \" , \"\");\r",
+                      "    console.log(tgt);\r",
+                      "    pm.collectionVariables.set(\"TGT_CAS\", tgt);\r",
+                      "    console.log(\"Request executada com sucesso !!\");\r",
+                      "    return;\r",
+                      "} catch (e) {}\r",
+                      "\r",
+                      "let response = console.log(pm.response.json());\r",
+                      "\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "id": "4de0e5b4-f6d8-46fe-a4e4-e84f7e85946c"
+                  }
+                }
+              ],
+              "id": "07618b46-906e-4f2f-b775-6b2b22b05b05",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "username",
+                      "value": "Newconb3353_00",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "Sic##b123",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://cas-ti-newcon.sisbr.coop.br/cas/v1/tickets",
+                  "protocol": "https",
+                  "host": [
+                    "cas-ti-newcon",
+                    "sisbr",
+                    "coop",
+                    "br"
+                  ],
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "2º ST TI",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.environment.set(\"ST_CAS\", pm.response.text());\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "id": "8dce243d-3727-4824-8772-8686743a0bb2"
+                  }
+                }
+              ],
+              "id": "4be8a9d7-beaa-44f2-b3f5-f181b3be20ac",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "service",
+                      "value": "http://dev2-ws.sicoobconsorcios.com.br/ws_LoginCAS.asmx?wsdl",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://cas-ti-newcon.sisbr.coop.br/cas/v1/tickets/TGT-257-5SdTwfn12dCqMk6KaDn1JACvvfh9OcFbzHvqjSCictHhelhTad-sicoob-cas-seguranca-springboot-274-tsbsv",
+                  "protocol": "https",
+                  "host": [
+                    "cas-ti-newcon",
+                    "sisbr",
+                    "coop",
+                    "br"
+                  ],
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets",
+                    "TGT-257-5SdTwfn12dCqMk6KaDn1JACvvfh9OcFbzHvqjSCictHhelhTad-sicoob-cas-seguranca-springboot-274-tsbsv"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "3º GET Info ST TI",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.environment.set(\"ST_CAS\", pm.response.text());\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "id": "bbf233a2-4ca5-4ec0-b2ea-08d997c77842"
+                  }
+                }
+              ],
+              "id": "ca0ebdfc-eada-4fb0-881e-8edf77095083",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "service",
+                      "value": "http://dev2-ws.sicoobconsorcios.com.br/ws_LoginCAS.asmx?wsdl",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://cas-ti-newcon.sisbr.coop.br/cas/serviceValidate?service=http://dev2-ws.sicoobconsorcios.com.br/ws_LoginCAS.asmx?wsdl&ticket=ST-909-ulciq0JaGQEFdWdAe2q5-sicoob-cas-seguranca-springboot-274-tsbsv&format=JSON",
+                  "protocol": "https",
+                  "host": [
+                    "cas-ti-newcon",
+                    "sisbr",
+                    "coop",
+                    "br"
+                  ],
+                  "path": [
+                    "cas",
+                    "serviceValidate"
+                  ],
+                  "query": [
+                    {
+                      "key": "service",
+                      "value": "http://dev2-ws.sicoobconsorcios.com.br/ws_LoginCAS.asmx?wsdl"
+                    },
+                    {
+                      "key": "ticket",
+                      "value": "ST-909-ulciq0JaGQEFdWdAe2q5-sicoob-cas-seguranca-springboot-274-tsbsv"
+                    },
+                    {
+                      "key": "format",
+                      "value": "JSON"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "cf73c2c3-188a-45b4-b411-987beb101a44"
+        },
+        {
+          "name": "HML Https NewCon",
+          "item": [
+            {
+              "name": "1º TGT HML",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "try {\r",
+                      "    let response = pm.response.text();    \r",
+                      "    let tgt = response.split(\"tickets/\")[1].split(\"method=\")[0].replace(\"\\\"\" , \"\").replace(\" \" , \"\");\r",
+                      "    console.log(tgt);\r",
+                      "    pm.collectionVariables.set(\"TGT_CAS\", tgt);\r",
+                      "    console.log(\"Request executada com sucesso !!\");\r",
+                      "    return;\r",
+                      "} catch (e) {}\r",
+                      "\r",
+                      "let response = console.log(pm.response.json());\r",
+                      "\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "id": "e521ea0b-f702-4950-9acd-8899813afad5"
+                  }
+                }
+              ],
+              "id": "015f209c-22b5-4a48-aa22-91d5c58cb2f3",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "username",
+                      "value": "gearqc0300_00",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "Senh@007",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://cas-homol-newcon.sisbr.coop.br/cas/v1/tickets",
+                  "protocol": "https",
+                  "host": [
+                    "cas-homol-newcon",
+                    "sisbr",
+                    "coop",
+                    "br"
+                  ],
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "2º ST HML",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.environment.set(\"ST_CAS\", pm.response.text());\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "id": "50765017-9715-4ec1-9b7d-1c85ce3e8f0e"
+                  }
+                }
+              ],
+              "id": "0f31d219-3380-43c2-860d-92ff528e6725",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "service",
+                      "value": "http://dev2-ws.sicoobconsorcios.com.br",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://cas-homol-newcon.sisbr.coop.br/cas/v1/tickets/TGT-4263-awhxgd5RLxYEsauqvWzTdTDcnAigBRd9tOHZJpHb1CBrIYX4jS-sicoob-cas-seguranca-springboot-214-xgr2t",
+                  "protocol": "https",
+                  "host": [
+                    "cas-homol-newcon",
+                    "sisbr",
+                    "coop",
+                    "br"
+                  ],
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets",
+                    "TGT-4263-awhxgd5RLxYEsauqvWzTdTDcnAigBRd9tOHZJpHb1CBrIYX4jS-sicoob-cas-seguranca-springboot-214-xgr2t"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "3º GET Info ST HML",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.environment.set(\"ST_CAS\", pm.response.text());\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "id": "9fab72cf-d11f-4558-b429-3f1b46f6e796"
+                  }
+                }
+              ],
+              "id": "22ca3009-ea78-4231-ad0a-819f818e4e9e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "service",
+                      "value": "http://dev2-ws.sicoobconsorcios.com.br/ws_LoginCAS.asmx?wsdl",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://cas-homol-newcon.sisbr.coop.br/cas/serviceValidate?service=https://dev2-ws.sicoobconsorcios.com.br&ticket=ST-9193-s2USr6S43Und6HFSCBI5-sicoob-cas-seguranca-springboot-214-xgr2t&format=JSON",
+                  "protocol": "https",
+                  "host": [
+                    "cas-homol-newcon",
+                    "sisbr",
+                    "coop",
+                    "br"
+                  ],
+                  "path": [
+                    "cas",
+                    "serviceValidate"
+                  ],
+                  "query": [
+                    {
+                      "key": "service",
+                      "value": "https://dev2-ws.sicoobconsorcios.com.br"
+                    },
+                    {
+                      "key": "ticket",
+                      "value": "ST-9193-s2USr6S43Und6HFSCBI5-sicoob-cas-seguranca-springboot-214-xgr2t"
+                    },
+                    {
+                      "key": "format",
+                      "value": "JSON"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "7a22a7fb-eace-4d9c-8498-b910b7aefaef"
+        },
+        {
+          "name": "PRD Https NewCon",
+          "item": [
+            {
+              "name": "1º TGT PRD",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "try {\r",
+                      "    let response = pm.response.text();    \r",
+                      "    let tgt = response.split(\"tickets/\")[1].split(\"method=\")[0].replace(\"\\\"\" , \"\").replace(\" \" , \"\");\r",
+                      "    console.log(tgt);\r",
+                      "    pm.collectionVariables.set(\"TGT_CAS\", tgt);\r",
+                      "    console.log(\"Request executada com sucesso !!\");\r",
+                      "    return;\r",
+                      "} catch (e) {}\r",
+                      "\r",
+                      "let response = console.log(pm.response.json());\r",
+                      "\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "id": "dbd77e22-dcaf-42e1-8bc8-b41aae0e326c"
+                  }
+                }
+              ],
+              "id": "8ce8c9fb-0017-42a8-bea8-03e2d773d3c3",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "username",
+                      "value": "EDUARDO.PEREIRA",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "Biel0612%Edu70",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://cas-newcon.sisbr.coop.br/cas/v1/tickets",
+                  "protocol": "https",
+                  "host": [
+                    "cas-newcon",
+                    "sisbr",
+                    "coop",
+                    "br"
+                  ],
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "2º ST PRD",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.environment.set(\"ST_CAS\", pm.response.text());\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "id": "472f7128-438c-4df8-8f9b-9b9ce20098ed"
+                  }
+                }
+              ],
+              "id": "f096658d-2248-4e62-a7b1-21d17a5f5880",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "service",
+                      "value": "http://dev2-ws.sicoobconsorcios.com.br",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://cas-newcon.sisbr.coop.br/cas/v1/tickets/TGT-226958-bukQA4gh6nx0xgLUqhsNL4D6IeNDPcm602PNpklF31SItuzq3P-sicoob-cas-seguranca-springboot-607-9g94w",
+                  "protocol": "https",
+                  "host": [
+                    "cas-newcon",
+                    "sisbr",
+                    "coop",
+                    "br"
+                  ],
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets",
+                    "TGT-226958-bukQA4gh6nx0xgLUqhsNL4D6IeNDPcm602PNpklF31SItuzq3P-sicoob-cas-seguranca-springboot-607-9g94w"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "3º GET Info ST PRD",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.environment.set(\"ST_CAS\", pm.response.text());\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "id": "47691a5d-b621-4587-a540-dc9c3e9c8f3b"
+                  }
+                }
+              ],
+              "id": "2ebed40e-4cc5-4457-92f6-5e687bf96e2b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "service",
+                      "value": "http://dev2-ws.sicoobconsorcios.com.br/ws_LoginCAS.asmx?wsdl",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://cas-newcon.sisbr.coop.br/cas/serviceValidate?service=http://dev2-ws.sicoobconsorcios.com.br&ticket=ST-254934-HogtZtdRzDcXHyrIWflk-sicoob-cas-seguranca-springboot-607-9g94w&format=JSON",
+                  "protocol": "https",
+                  "host": [
+                    "cas-newcon",
+                    "sisbr",
+                    "coop",
+                    "br"
+                  ],
+                  "path": [
+                    "cas",
+                    "serviceValidate"
+                  ],
+                  "query": [
+                    {
+                      "key": "service",
+                      "value": "http://dev2-ws.sicoobconsorcios.com.br"
+                    },
+                    {
+                      "key": "ticket",
+                      "value": "ST-254934-HogtZtdRzDcXHyrIWflk-sicoob-cas-seguranca-springboot-607-9g94w"
+                    },
+                    {
+                      "key": "format",
+                      "value": "JSON"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "079ca2f2-99e0-4c46-a5f5-8fcb1610ec70"
+        },
+        {
+          "name": "HML",
+          "item": [
+            {
+              "name": "1º TGT HML",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "try {\r",
+                      "    let response = pm.response.text();    \r",
+                      "    let tgt = response.split(\"tickets/\")[1].split(\"method=\")[0].replace(\"\\\"\" , \"\").replace(\" \" , \"\");\r",
+                      "    console.log(tgt);\r",
+                      "    pm.collectionVariables.set(\"TGT_CAS\", tgt);\r",
+                      "    console.log(\"Request executada com sucesso !!\");\r",
+                      "    return;\r",
+                      "} catch (e) {}\r",
+                      "\r",
+                      "let response = console.log(pm.response.json());\r",
+                      "\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "id": "4c9103a1-dec9-45bb-8177-f47c5635f302"
+                  }
+                }
+              ],
+              "id": "770508fa-6928-40c9-96fa-61b722659cca",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "username",
+                      "value": "alexandre.santana",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "Sicoob0012345",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://cas-homol.homologacao.com.br:8080/cas/v1/tickets",
+                  "protocol": "http",
+                  "host": [
+                    "cas-homol",
+                    "homologacao",
+                    "com",
+                    "br"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "2º ST HML",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.environment.set(\"ST_CAS\", pm.response.text());\r",
+                      "    "
+                    ],
+                    "type": "text/javascript",
+                    "id": "9bf627df-02a7-4846-9fc9-e90b249e36b6"
+                  }
+                }
+              ],
+              "id": "130419e0-6f8a-4cf6-8092-f830f6a98772",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "service",
+                      "value": "http://cre-concessao-bndes-app-web-backoffice-nodejs-homol.homologacao.com.br/cre-concessao-bndes/",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://cas-homol.homologacao.com.br:8080/cas/v1/tickets/{{TGT_CAS}}",
+                  "protocol": "http",
+                  "host": [
+                    "cas-homol",
+                    "homologacao",
+                    "com",
+                    "br"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "cas",
+                    "v1",
+                    "tickets",
+                    "{{TGT_CAS}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "3º TOKEN HML",
+              "id": "790ace8f-35c0-476d-86a3-3073aa6cae79",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Basic R0xTaTR1VHdLTTVnOVRldndvaGNndVJVTWdjYTpKRmlydTlSN3c5UF9pNUswQ2lHbjQzZzZQbkFh"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "grant_type",
+                      "value": "st",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ST",
+                      "value": "{{ST_CAS}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "service",
+                      "value": "http://cre-concessao-bndes-app-web-backoffice-nodejs-homol.homologacao.com.br/cre-concessao-bndes/",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://apimanager-homol.homologacao.com.br:8280/token",
+                  "protocol": "http",
+                  "host": [
+                    "apimanager-homol",
+                    "homologacao",
+                    "com",
+                    "br"
+                  ],
+                  "port": "8280",
+                  "path": [
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "3ae6efc2-470c-49ac-b536-6aa5878f26ea"
+        }
+      ],
+      "id": "f49efff1-942b-41ab-9118-05bb894dac05"
+    },
+    {
+      "name": "Entre servicos",
+      "item": [
+        {
+          "name": "POST - OAuth Bearer TI",
+          "id": "119d22ce-6323-46fc-bf71-5847e702ea91",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "headerPrefix",
+                  "value": "Basic",
+                  "type": "string"
+                },
+                {
+                  "key": "accessToken",
+                  "value": "SjV3NW5MUnBfZjZKS2xRNU9hWHdweGROaVBBYTpfaHdmYmcwQ0RLT3NfOVZkTGtTWmpZekR2Umdh",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://apit.homologacao.com.br:8280/token/",
+              "protocol": "http",
+              "host": [
+                "apit",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8280",
+              "path": [
+                "token",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "ticket",
+                  "value": "Bearer e1fd5a9c-4011-3c17-a1ed-0ba77f2fdb67",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST - OAuth Bearer HML",
+          "id": "d8886f4c-1aee-40db-ab86-999e4cee8910",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "headerPrefix",
+                  "value": "Basic",
+                  "type": "string"
+                },
+                {
+                  "key": "accessToken",
+                  "value": "SjV3NW5MUnBfZjZKS2xRNU9hWHdweGROaVBBYTpfaHdmYmcwQ0RLT3NfOVZkTGtTWmpZekR2Umdh",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://apimanager-homol.homologacao.com.br:8280/token",
+              "protocol": "http",
+              "host": [
+                "apimanager-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8280",
+              "path": [
+                "token"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "ticket",
+                  "value": "Bearer e1fd5a9c-4011-3c17-a1ed-0ba77f2fdb67",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST - OAuth Bearer PRD",
+          "id": "4f87ed7a-0ee1-4277-a219-6fd9ced8de51",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic RVhTZmQxR1JmNlNwSVBIX1JYdDR2MzZ5TzBzYTpVYXpTWmhLZGFoczRtWG9nZDdrQUJrOVB0bU9XeDB2MQ=="
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api.sisbr.com.br/auth/token",
+              "protocol": "https",
+              "host": [
+                "api",
+                "sisbr",
+                "com",
+                "br"
+              ],
+              "path": [
+                "auth",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST - OAuth Bearer PRD PIX",
+          "id": "b2390e92-8b70-4336-8052-12ec7950e09c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic c2RuMGR4eE9OS243M1FtVWNRdWduemtMQkRFYTp2Zk1hQXgyME5BMGJPQWxoNGYybzU2RV9JbWdh"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api-internopix.sicoob.com.br/auth/token",
+              "protocol": "https",
+              "host": [
+                "api-internopix",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "auth",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "0943440c-8fe0-4f93-a1e1-b459d9c04721"
+    },
+    {
+      "name": "WSO2 - HML",
+      "item": [
+        {
+          "name": "1º Obtem o Access Token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.collectionVariables.set(\"wso2_token\", \"Bearer \" + JSON.parse(responseBody).access_token);"
+                ],
+                "type": "text/javascript",
+                "id": "28420510-44d3-4712-a3ee-b3a172d46701"
+              }
+            }
+          ],
+          "id": "b181d01d-f9a3-4de1-98ed-803833e1a679",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic VzZNZk42YkxtY0hGbkVFT0RJd2dKZTNtQjl3YToxM3ZsM0FCVl9zMVJsRU1JVDNyVmZlak5aSG9h"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://apimanager-homol.homologacao.com.br:8280/token",
+              "protocol": "http",
+              "host": [
+                "apimanager-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8280",
+              "path": [
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "2º Gerar o TGT",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "70eec886-5f6e-4f48-bd11-97b00e4725c0",
+                "exec": [
+                  "try {\r",
+                  "    let response = pm.response.text();    \r",
+                  "    let tgt = response.split(\"tickets/\")[1].split(\"method=\")[0].replace(\"\\\"\" , \"\").replace(\" \" , \"\");\r",
+                  "    console.log(tgt);\r",
+                  "    pm.collectionVariables.set(\"wso2_tgt\", tgt);\r",
+                  "    console.log(\"Request executada com sucesso !!\");\r",
+                  "    return;\r",
+                  "} catch (e) {}\r",
+                  "\r",
+                  "let response = console.log(pm.response.json());\r",
+                  "\r",
+                  "    "
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "5f025bf5-d43b-4624-a63e-6418a46be084",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{wso2_token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://cas-homol.homologacao.com.br:8080/cas/v1/tickets?username=GEARQC0300_00&password=Senh@001",
+              "protocol": "http",
+              "host": [
+                "cas-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8080",
+              "path": [
+                "cas",
+                "v1",
+                "tickets"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "GEARQC0300_00"
+                },
+                {
+                  "key": "password",
+                  "value": "Senh@001"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3º Gerar o ST",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.collectionVariables.set(\"wso2_st\", pm.response.text());"
+                ],
+                "type": "text/javascript",
+                "id": "7b733b60-4e2a-4cb9-9109-44505ed6888f"
+              }
+            }
+          ],
+          "id": "4e6e627c-2d08-428f-b423-f5e73ca7f93b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{wso2_token}}"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "service",
+                  "value": "http://moob-sisbr-web-backoffice-nodejs-homol:80/moob",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://cas-homol.homologacao.com.br:8080/cas/v1/tickets/{{wso2_tgt}}?service=http://moob-sisbr-web-backoffice-nodejs-homol.homologacao.com.br/moob",
+              "protocol": "http",
+              "host": [
+                "cas-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8080",
+              "path": [
+                "cas",
+                "v1",
+                "tickets",
+                "{{wso2_tgt}}"
+              ],
+              "query": [
+                {
+                  "key": "service",
+                  "value": "http://moob-sisbr-web-backoffice-nodejs-homol.homologacao.com.br/moob"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4º Recupera o Token com o ST",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.collectionVariables.set(\"wso2_access_token\", \"Bearer \" + JSON.parse(responseBody).access_token);"
+                ],
+                "type": "text/javascript",
+                "id": "760576cb-232b-4e81-9454-dc0daec024e9"
+              }
+            }
+          ],
+          "id": "9de999ef-df7e-41ad-982f-6ff89d60665f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic VzZNZk42YkxtY0hGbkVFT0RJd2dKZTNtQjl3YToxM3ZsM0FCVl9zMVJsRU1JVDNyVmZlak5aSG9h"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "st",
+                  "type": "text"
+                },
+                {
+                  "key": "ST",
+                  "value": "{{wso2_st}}",
+                  "type": "text"
+                },
+                {
+                  "key": "service",
+                  "value": "http://moob-sisbr-web-backoffice-nodejs-homol.homologacao.com.br/moob",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://apimanager-homol.homologacao.com.br:8280/token",
+              "protocol": "http",
+              "host": [
+                "apimanager-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8280",
+              "path": [
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Recuperar Parametro APIC",
+          "id": "7f07d78f-2581-4c1b-97d9-454321d50365",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer 7faf65e8-e539-3fe0-b2eb-108a45a61fc1"
+              },
+              {
+                "key": "client_id",
+                "value": "W6MfN6bLmcHFnEEODIwgJe3mB9wa"
+              }
+            ],
+            "url": {
+              "raw": "https://apicinterno-homol.sicoob.com.br/sicoob/interno/moob-evento-sisbr/v1/parametros?nome=config.usuario.menu",
+              "protocol": "https",
+              "host": [
+                "apicinterno-homol",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "interno",
+                "moob-evento-sisbr",
+                "v1",
+                "parametros"
+              ],
+              "query": [
+                {
+                  "key": "nome",
+                  "value": "config.usuario.menu"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Recuperar Parametro MOB",
+          "id": "d6f15083-68d1-4735-a1e9-fa9f6ec4bef5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-JWT-Assertion",
+                "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImFfamhOdXMyMUtWdW9GeDY1TG1rVzJPX2wxMCJ9.eyJhcGxpY2FjYW8iOiJUVzl2WWlCUWNtbDJZV1J2SUZOcGMySnlcclxuIiwiaXNzIjoid3NvMi5vcmdcL3Byb2R1Y3RzXC9hbSIsImh0dHA6XC9cL3dzbzIub3JnXC9jbGFpbXNcL2FwcGxpY2F0aW9ubmFtZSI6Ik1vb2IgUHJpdmFkbyBTaXNiciIsInVzdWFyaW8iOiJleUp5WlhOMWJIUmhaRzhpT25zaWFXUWlPaUp0YjI5aUxtaHZiVzlzSWl3aVpHVnpZM0pwWTJGdklqb2lUVTlQUWlCSVQwMVBUQ0lzXHJcbkluTnBkSFZoWTJGdklqcDdJbU52WkdsbmJ5STZNU3dpWkdWelkzSnBZMkZ2SWpvaVFYUnBkbThpZlN3aVkzQm1Jam9pTURBNE56VTVcclxuT0RFeE5qQWlMQ0psYldGcGJDSTZJbkpvWVc1dVpTNXpZVzFwY2tCbWIzSnVaV05sWkc5eVpYTXVjMmxqYjI5aUxtTnZiUzVpY2lJc1xyXG5JbTUxYldWeWIwTnZiM0JsY21GMGFYWmhJam96TURBc0ltbGtTVzV6ZEdsMGRXbGpZVzlQY21sblpXMGlPaklzSW1sa1ZXNXBaR0ZrXHJcblpVbHVjM1JQY21sblpXMGlPakFzSW1SaGRHRkliM0poVld4MGFXMXZURzluYVc0aU9qRTJOell3TXpZNE16QTVOVE1zSW01MWJXVnlcclxuYjBOdmIzQmxjbUYwYVhaaFQzSnBaMlZ0SWpvek1EQjlmUT09XHJcbiIsImh0dHA6XC9cL3dzbzIub3JnXC9jbGFpbXNcL2VuZHVzZXIiOiJtb29iLmhvbW9sQGNhcmJvbi5zdXBlciIsImh0dHA6XC9cL3dzbzIub3JnXC9jbGFpbXNcL2VuZHVzZXJUZW5hbnRJZCI6Ii0xMjM0IiwiaHR0cDpcL1wvd3NvMi5vcmdcL2NsYWltc1wvYXBwbGljYXRpb25pZCI6IjU5IiwiaHR0cDpcL1wvd3NvMi5vcmdcL2NsYWltc1wvdXNlcnR5cGUiOiJBUFBMSUNBVElPTl9VU0VSIiwidXN1YXJpb01vbml0b3JhY2FvQXVkaXRvcmlhIjoiZXlKdWRXMWxjbTlEYjI5d1pYSmhkR2wyWVNJNklqTXdNQ0lzSW1sa1pXNTBhV1pwWTJGa2IzSWlPaUp0YjI5aUxtaHZiVzlzSWl3aVxyXG5hV1JKYm5OMGFYUjFhV05oYnlJNk1pd2lZMnhwWlc1MFNXUWlPaUpYTmsxbVRqWmlURzFqU0VadVJVVlBSRWwzWjBwbE0yMUNPWGRoXHJcbkluMD1cclxuIiwiZXhwIjoxNjc2MDM4MjIyfQ==.W1CUhF/p/0ZJfzUMJarz9dhjImbYW1/E9S98km/8+wzswjR+fauJ13XzmLgqmLYsLnE9jiytVUdDbHlwzwBRV/dx4+gUv7937cOUW6bW5Dx9WdWFHrvkuGvAozv+/hFxKhsGuc9bQnr/OhegV/8u34b0KL1rvrixYFp7OC6FSCg="
+              },
+              {
+                "key": "Cookie",
+                "value": "021d5eb13a9830db98d2182919e8820d=a455de5fe55b6995f7ddb631714341e6"
+              }
+            ],
+            "url": {
+              "raw": "http://moob-evento-server-backoffice-nodejs-homol.homologacao.com.br:8080/parametros?nome=config.usuario.menu",
+              "protocol": "http",
+              "host": [
+                "moob-evento-server-backoffice-nodejs-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8080",
+              "path": [
+                "parametros"
+              ],
+              "query": [
+                {
+                  "key": "nome",
+                  "value": "config.usuario.menu"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "78baec10-091f-4e8d-9a82-e5cd829dca8a"
+    },
+    {
+      "name": "WhatsApp",
+      "item": [
+        {
+          "name": "Gerar Push HML",
+          "id": "f8cbcfe0-9f3d-47a0-be6a-901f347d7530",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url_wso2_https}}/sicoob-authentication-endpoint/authorize-pushotp?client_id=fWV8VMAEzElfNNBqHkoydXjX7I0a&titularidade=1&numcooperativa=3105&numcontacorrente=8596333231&canal=6",
+              "host": [
+                "{{url_wso2_https}}"
+              ],
+              "path": [
+                "sicoob-authentication-endpoint",
+                "authorize-pushotp"
+              ],
+              "query": [
+                {
+                  "key": "client_id",
+                  "value": "fWV8VMAEzElfNNBqHkoydXjX7I0a"
+                },
+                {
+                  "key": "titularidade",
+                  "value": "1"
+                },
+                {
+                  "key": "numcooperativa",
+                  "value": "3105"
+                },
+                {
+                  "key": "numcontacorrente",
+                  "value": "8596333231"
+                },
+                {
+                  "key": "canal",
+                  "value": "6"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Gerar token",
+          "id": "3033d865-df5d-4071-b8b2-7deda107db88",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Cache-Control",
+                "value": "no-cache"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic ZldWOFZNQUV6RWxmTk5CcUhrb3lkWGpYN0kwYTpkTmNVSjJXNEZacnAzbnZva0RWaEtFYWdSYmth"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "otp",
+                  "type": "text"
+                },
+                {
+                  "key": "otpcode",
+                  "value": "472138",
+                  "type": "text"
+                },
+                {
+                  "key": "otptoken",
+                  "value": "e6f6155768c848be9088df9ec9ffefaf",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "cco_saldo cco_extrato poupanca_saldo poupanca_contas poupanca_extrato cobrancabancaria_lstcomage sdda_ddalistarboleto scxa_codsegsaqsemcto cco_agendatransfcco alexa_usuario default",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_wso2_http}}/token",
+              "host": [
+                "{{url_wso2_http}}"
+              ],
+              "path": [
+                "token"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "703f40e7-f5cc-4fbe-8362-233c4ed4de81"
+    },
+    {
+      "name": "Google",
+      "item": [
+        {
+          "name": "GET Captcha Token",
+          "id": "a61985b8-f4e3-46fa-bfb7-0f0d8616989c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Referer",
+                "value": "https://sca.sicoob.com.br/"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+              }
+            ],
+            "url": {
+              "raw": "https://www.google.com/recaptcha/api.js?onload=ReCaptchaCallbackV3&render=6Ld6uMMZAAAAAKreO6wyg8zcEd7fIGTcmUsomfzh",
+              "protocol": "https",
+              "host": [
+                "www",
+                "google",
+                "com"
+              ],
+              "path": [
+                "recaptcha",
+                "api.js"
+              ],
+              "query": [
+                {
+                  "key": "onload",
+                  "value": "ReCaptchaCallbackV3"
+                },
+                {
+                  "key": "render",
+                  "value": "6Ld6uMMZAAAAAKreO6wyg8zcEd7fIGTcmUsomfzh"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Validate Captcha",
+          "id": "0eb207e1-33c8-4dd3-92c0-12e417a7e6f8",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+              },
+              {
+                "key": "Accept-Language",
+                "value": "en-US,en;q=0.5"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "secret",
+                  "value": "6Ld6uMMZAAAAACrfHwcOgajP-Rina2IunzMxjnUy",
+                  "type": "text"
+                },
+                {
+                  "key": "response",
+                  "value": "03AFcWeA58dTzotAeCa0c3ztVI7SIuQfHbGIh7s2Bbs1Zw_06YMvKZJ0b_OLXA1xtb7bjeHPDfSnRu1h4DvLf2AENPauxJFtADBqOU3HFaszC4dVz9N3edELfmcKm-KOUbGl_lEYtVeQ-r2y26SVwuidru7ORSZDYa1URg6kxllwEQ4X1YhRoGZqqCdeEbGlJtdai9mZrpTdcBcJgjT8gH3SxtFRkMSoEz0tm687m0C8B6Ufj_YFacJwApKPZ7kM6rOaOh0jiriG-KVvJucfMj8Lg9ROjjqbm2D4Ivl3LSyoH_AuPxyihr8AZQFkc5rNosHztSydZzrm7yWD_5FkrDxS-79my9SOvCpY7Ktmwfs4eoN0gHjQPVso-qccGwohGo1nwwj9QUTKI7cVGtgnur8SMIEgyQxAzznYN5tTNENv0rF3BxeE0AEUzI3kSPGeDnsFspoOSwOTNMKPjstrD241AawmnoCiZC6yAdcNIocIu_3tFVGBViiYRdPI4voRYiWZ6Yah7evYPkV28ffIjtr0_aPMu9V_uhxy_SKQONimng1fn8qJNjv4s",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://www.google.com/recaptcha/api/siteverify",
+              "protocol": "https",
+              "host": [
+                "www",
+                "google",
+                "com"
+              ],
+              "path": [
+                "recaptcha",
+                "api",
+                "siteverify"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "c52d5092-69f3-4e0e-b3a3-0d931cd2552a"
+    },
+    {
+      "name": "1 - TGT",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "id": "713e7f4b-bddf-4d52-9278-0954e7588b11"
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// Load the HTML response to $",
+              "const $ = cheerio.load(pm.response.text());",
+              "",
+              "pm.collectionVariables.set(\"urlST\", $(\"form\").attr('action'));",
+              "",
+              "pm.test(\"TGT - Sucesso\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "id": "e30baf3c-4c6c-44ec-a21a-13a5a6572a20"
+          }
+        }
+      ],
+      "id": "18199ab9-3cfd-4771-986e-857fddc95ebc",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "b340226f-3281-33c8-8aa6-2c0592ef096c",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "content-type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "cooperativa",
+              "value": "3105",
+              "type": "text"
+            },
+            {
+              "key": "senha",
+              "value": "88888888",
+              "type": "text"
+            },
+            {
+              "key": "idDispositivo",
+              "value": "tosh",
+              "type": "text"
+            },
+            {
+              "key": "chaveAcesso",
+              "value": "XG0002",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://cas-ti.homologacao.com.br:8080/cas/v1/tickets/",
+          "protocol": "http",
+          "host": [
+            "cas-ti",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "port": "8080",
+          "path": [
+            "cas",
+            "v1",
+            "tickets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2 - ST",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// Load the HTML response to $",
+              "const $ = cheerio.load(pm.response.text());",
+              "",
+              "pm.collectionVariables.set(\"ST\", pm.response.text());",
+              "",
+              "pm.test(\"ST - Sucesso\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "id": "d8054dbf-73b4-4598-bccb-6a35371be5e4"
+          }
+        }
+      ],
+      "id": "5d5bc4e6-1b6a-4350-8366-219c32e935ee",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "content-type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "service",
+              "value": "https://wap.sicoobnet.com.br/",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{urlST}}",
+          "host": [
+            "{{urlST}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3 - Token",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json();",
+              "pm.collectionVariables.set(\"token\", jsonData.access_token);",
+              "",
+              "pm.test(\"Token - Sucesso\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "id": "1d6b7e96-0857-4f56-8dc3-4c6ba4fffd79"
+          }
+        }
+      ],
+      "id": "5c944b25-2f6b-46d0-b48d-240f256e2132",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic R19qME1ubVRONk9JYWltTkNGSHRSS2R6bU8wYTpwdWNMZmZzNXVPMXdua2Z1Q01xZG83M0FCSDhh"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "value": "st",
+              "type": "text"
+            },
+            {
+              "key": "ST",
+              "value": "{{ST}}",
+              "type": "text"
+            },
+            {
+              "key": "service",
+              "value": "https://wap.sicoobnet.com.br/",
+              "type": "text"
+            },
+            {
+              "key": "dadospoupanca",
+              "value": "true",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://apit.homologacao.com.br:8280/token",
+          "protocol": "http",
+          "host": [
+            "apit",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "port": "8280",
+          "path": [
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4 - Pix",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json();",
+              "pm.collectionVariables.set(\"token\", jsonData.access_token);",
+              "",
+              "pm.test(\"Pix - Sucesso\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "id": "9493087f-ec5c-4d17-9665-65bd97883d68"
+          }
+        }
+      ],
+      "id": "277f09f8-cee8-4a51-a1d5-cee1494cd433",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "client_id",
+            "value": "G_j0MnmTN6OIaimNCFHtRKdzmO0a"
+          }
+        ],
+        "url": {
+          "raw": "https://apic-ti.sicoob.com.br:9443/sicoob/interno/spi-cliente/v1/participantes?situacao=ATIVO",
+          "protocol": "https",
+          "host": [
+            "apic-ti",
+            "sicoob",
+            "com",
+            "br"
+          ],
+          "port": "9443",
+          "path": [
+            "sicoob",
+            "interno",
+            "spi-cliente",
+            "v1",
+            "participantes"
+          ],
+          "query": [
+            {
+              "key": "situacao",
+              "value": "ATIVO"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "TGT",
+      "value": "TGT-2173-IGzsbDSIbrjZHgELmzDZkN7O1rDRNvqJh16e7Tv4h3bXkeSmDZ-sicoob-cas-seguranca-springboot-50-lzmkz?service=https://wap.sicoobnet.com.br/"
+    },
+    {
+      "key": "TGT",
+      "value": ""
+    },
+    {
+      "key": "TGT_CAS",
+      "value": ""
+    },
+    {
+      "key": "ST_CAS",
+      "value": ""
+    },
+    {
+      "key": "TOKEN_APIM",
+      "value": ""
+    },
+    {
+      "key": "wso2_tgt",
+      "value": ""
+    },
+    {
+      "key": "wso2_token",
+      "value": ""
+    },
+    {
+      "key": "wso2_st",
+      "value": ""
+    },
+    {
+      "key": "wso2_access_token",
+      "value": ""
+    },
+    {
+      "key": "url_wso2_https",
+      "value": "http://apimanager-homol.homologacao.com.br:8280"
+    },
+    {
+      "key": "url_wso2_http",
+      "value": "http://apimanager-homol.homologacao.com.br:8280"
+    },
+    {
+      "key": "st-homol",
+      "value": "ST-4578-UKvrXe3VJdD41FTQOgCo-sicoob-cas-seguranca-springboot-80-8x62m"
+    }
+  ]
+}

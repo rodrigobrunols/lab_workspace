@@ -1,0 +1,560 @@
+{
+  "info": {
+    "_postman_id": "5c71437a-11ba-4576-9704-d90649d81110",
+    "name": "Portal Sicoob For Dev",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Token",
+      "id": "be5e53b3-ec55-4cc6-b192-57958ef75a52",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          },
+          {
+            "key": "client_secret",
+            "value": "",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "value": "client_credentials",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "teste-cco",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "bbzm0ejrXmd0Tuw1PeXN3QUP56eZPMMr",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "openid",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "auth-hom",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "cooperado",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Saldo",
+      "id": "47c7067c-ef02-4e1a-80d2-6d5776dcf037",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": " application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-jwt-assertion",
+            "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2Q1pZNXZvTmpmZzhNbXZ5SUhzS3U5Um8xaWZfMU5jckVqOTJVNEc1eGJNIn0.eyJleHAiOjE2NjU0NjY3MTEsImlhdCI6MTY2NTQzMDcxMSwiYXV0aF90aW1lIjowLCJqdGkiOiIxMTM5NjIzZi0zODY5LTQyNzItYjA4OC03OTYwZTQ5Y2E0ZDUiLCJpc3MiOiJodHRwczovL2F1dGgtaG9tLmhvbW9sb2dhY2FvLmNvbS5ici9hdXRoL3JlYWxtcy9jb29wZXJhZG8iLCJhdWQiOiJ0ZXN0ZS1jY28iLCJzdWIiOiIyZjhiNzAyMC05MjgzLTQ5MTItOWNkMC05ZmFhMDc0ZDg2NTMiLCJ0eXAiOiJJRCIsImF6cCI6InRlc3RlLWNjbyIsImF0X2hhc2giOiJRUEhrZHpiRFZvNEdzMGpseU5lUDFBIiwiaWRfdGl0dWxhciI6IjEiLCJpZEluc3RpdHVpY2FvIjoiMzQ0IiwiY2lkYWRlIjoiQnJhc8OtbGlhIiwiY2xpZW50SG9zdCI6IjEwLjEzMC4yLjEiLCJjbGllbnRJZCI6InRlc3RlLWNjbyIsInNlcU51bSI6IjAxMDg1OTBhLTY4YWQtNGJhMi04ZjRhLWNiMzY2NzhmOTY1YyIsIm51bUNwZkNucGoiOiIxNDYwNDE2MjM2MCIsImRlc2NOb21lUGVzc29hIjoiQU5UT05JTyBET01JQ0lBTk8gREUgTUFUT1MgQU1BUkFMIiwibnVtQ2xpZW50ZSI6IjI0MjAwMjIiLCJpbmZyYUNvbnRyb2wiOiIxNi8wNS8yMDIyIiwiY2xpZW50QWRkcmVzcyI6IjEwLjEzMC4yLjEiLCJpc3BiIjoiMDIwMzgyMzIiLCJjZXAiOiI3MTIwMDAzMCIsImNvZFBhcmNlaXJvIjoiNTU2NDk0MDQwMDAxMDAiLCJ1ZiI6IkRGIiwiaWRSZXNwb25zYWJpbGlkYWRlIjoiMSIsIm5vbWVGYW50YXNpYSI6IkFOVE9OSU8gRE9NSUNJQU5PIERFIE1BVE9TIEFNQSIsIm51bWVyb19wYWMiOiIwIiwiY29vcGVyYXRpdmExIjoiNDAwMiIsImxvZ3JhZG91cm8iOiJTSUEgVHJlY2hvIDMiLCJjb250YUNvcnJlbnRlIjoiMTAyMDMyIiwiaWRVbmlkYWRlSW5zdGl0dWljYW8iOiIwIiwibnVtQ29vcGVyYXRpdmEiOiI0MDAyIn0.VB64hxjOaI7_7V23f1_L7V7nDfYoRz95DUKpAosW32fVsuUhhT3ZBozhqMou-GrkJba1nnHGWekcVJNfXOY0fhf2QAVZKXBNphdtZate-2gm2VZuHrVT90cbtHc9cIUSwHJK2aSVGBoZtTL9KvQGhw9mxiHiLVlkBaSCxDOjUljsqUyLKT8slKlU7s-QkS2ZyzsD80TTlMeb9PcgNCUeAC_szqDpPDfE_EdfF1pa61JnnsZ-vKYAtVZ_lSBUpR52aNEMTskQ1p6dVy4mKB25MF_bA4M5HgZU5D7h73SOyVVja4WuVohANEMkRVcfqnOgLJJqSeXzuQvCKAx6ljREug",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://apicv10-homol.homologacao.com.br/sicoob/cooperado/conta-corrente/v2/saldo?numeroContaCorrente=19",
+          "protocol": "http",
+          "host": [
+            "apicv10-homol",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "sicoob",
+            "cooperado",
+            "conta-corrente",
+            "v2",
+            "saldo"
+          ],
+          "query": [
+            {
+              "key": "numeroContaCorrente",
+              "value": "19"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Saldo RHSSO backend",
+      "id": "a1170f8c-65b3-4d3c-8c7d-9e12a183ffca",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-jwt-assertion",
+            "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2Q1pZNXZvTmpmZzhNbXZ5SUhzS3U5Um8xaWZfMU5jckVqOTJVNEc1eGJNIn0.eyJleHAiOjE2NjU0ODQxNTEsImlhdCI6MTY2NTQ0ODE1MSwiYXV0aF90aW1lIjowLCJqdGkiOiI4ZjAyOWQ4ZS1kNDIyLTRhYzgtYTYzNi1jZTI0OWE4MWRlZGMiLCJpc3MiOiJodHRwczovL2F1dGgtaG9tLmhvbW9sb2dhY2FvLmNvbS5ici9hdXRoL3JlYWxtcy9jb29wZXJhZG8iLCJhdWQiOiJ0ZXN0ZS1jY28iLCJzdWIiOiIyZjhiNzAyMC05MjgzLTQ5MTItOWNkMC05ZmFhMDc0ZDg2NTMiLCJ0eXAiOiJJRCIsImF6cCI6InRlc3RlLWNjbyIsImF0X2hhc2giOiI4ejViVWE2aldFeWEwOUJ0UDVLTTRnIiwiaWRfdGl0dWxhciI6IjEiLCJpZEluc3RpdHVpY2FvIjoiMzQ0IiwiY2lkYWRlIjoiQnJhc8OtbGlhIiwiY2xpZW50SG9zdCI6IjEwLjEzMC4yLjEiLCJjbGllbnRJZCI6InRlc3RlLWNjbyIsInNlcU51bSI6IjAxMDg1OTBhLTY4YWQtNGJhMi04ZjRhLWNiMzY2NzhmOTY1YyIsImFwbGljYWNhbyI6ImRHVnpkR1V0WTJOdiIsIm51bUNwZkNucGoiOiIxNDYwNDE2MjM2MCIsImRlc2NOb21lUGVzc29hIjoiQU5UT05JTyBET01JQ0lBTk8gREUgTUFUT1MgQU1BUkFMIiwibnVtQ2xpZW50ZSI6IjI0MjAwMjIiLCJpbmZyYUNvbnRyb2wiOiIxNi8wNS8yMDIyIiwiY2xpZW50QWRkcmVzcyI6IjEwLjEzMC4yLjEiLCJpc3BiIjoiMDIwMzgyMzIiLCJjZXAiOiI3MTIwMDAzMCIsImNvZFBhcmNlaXJvIjoiNTU2NDk0MDQwMDAxMDAiLCJ1ZiI6IkRGIiwiaWRSZXNwb25zYWJpbGlkYWRlIjoiMSIsIm5vbWVGYW50YXNpYSI6IkFOVE9OSU8gRE9NSUNJQU5PIERFIE1BVE9TIEFNQSIsIm51bWVyb19wYWMiOiIwIiwiY29vcGVyYXRpdmExIjoiNDAwMiIsImxvZ3JhZG91cm8iOiJTSUEgVHJlY2hvIDMiLCJjb250YUNvcnJlbnRlIjoiMTAyMDMyIiwiaWRVbmlkYWRlSW5zdGl0dWljYW8iOiIwIiwibnVtQ29vcGVyYXRpdmEiOiI0MDAyIn0.F-Jl6pSU4EHcXfkeFCVpvIPZVSwA00-i9VHWFcEr2Fjk-JNSkPguWRO7CO6n77qRmZVa96R-CTYidSCsQjzqnMbMzA_gO8oxsC6tBz3yPibpvLaLvClKPFBHMc5Pig1SBLmomKIVKeQB_Y8Yh64SgvOsKNo42ckaZ8V5Q16ihbpY_ND96SJXAIrzDvr6UTurKxGonWAoTWiEq3lYhdjPfdf7k0Pnc6SEVdcXypL3ida8Nf56ngQLkrznKMbFCnm4jIR0y4vQoD1MZ4Jre7zJg-z_O6IGhKjTY6s0rE1FhTxvh-EUzqQg1YpgA8wOqmOkYpNHQ1TNup_r0_9uo1saeQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://cco-minhasfinancas-integracao-wildfly-homol/cco-openbanking-api/api/saldo?numeroContaCorrente=19",
+          "protocol": "http",
+          "host": [
+            "cco-minhasfinancas-integracao-wildfly-homol"
+          ],
+          "path": [
+            "cco-openbanking-api",
+            "api",
+            "saldo"
+          ],
+          "query": [
+            {
+              "key": "numeroContaCorrente",
+              "value": "19"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Extrato",
+      "id": "dbbd9509-d129-4efc-9e9b-48535ecc6523",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "client_id",
+            "value": "14f9c7b63ddea50ef8d02f3ceb0db033",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer xxxxxxxxxxx",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://apicv10-homol.homologacao.com.br/sicoob/cooperado/conta-corrente/v2/extrato/2/2022?numeroContaCorrente=19",
+          "protocol": "http",
+          "host": [
+            "apicv10-homol",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "sicoob",
+            "cooperado",
+            "conta-corrente",
+            "v2",
+            "extrato",
+            "2",
+            "2022"
+          ],
+          "query": [
+            {
+              "key": "numeroContaCorrente",
+              "value": "19"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token",
+      "id": "6c795c7d-48d5-4b93-8574-db7f10461b21",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "type": "text",
+              "key": "grant_type",
+              "value": "client_credentials"
+            },
+            {
+              "type": "text",
+              "key": "client_id",
+              "value": "0007f9cd-28d2-4c56-98bf-697445b545f8"
+            },
+            {
+              "type": "text",
+              "key": "scope",
+              "value": "openid"
+            },
+            {
+              "key": "client_secret",
+              "value": "0007f9cd-28d2-4c56-98bf-697445b545f8",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "auth-hom",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "cooperado",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token Copy",
+      "id": "10ff8726-310f-485f-977d-863bfef5dc0e",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "type": "text",
+              "key": "grant_type",
+              "value": "client_credentials"
+            },
+            {
+              "type": "text",
+              "key": "client_id",
+              "value": "e7031598-71e8-4ca1-aab4-1e1045756c5e"
+            },
+            {
+              "type": "text",
+              "key": "scope",
+              "value": "openid"
+            },
+            {
+              "key": "client_secret",
+              "value": "0007f9cd-28d2-4c56-98bf-697445b545f8",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "auth-hom",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "cooperado",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token Copy",
+      "id": "dced5e2e-cbc5-46f1-9bb2-0b9ef4c1d8cd",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "type": "text",
+              "key": "grant_type",
+              "value": "client_credentials"
+            },
+            {
+              "type": "text",
+              "key": "client_id",
+              "value": "test"
+            },
+            {
+              "type": "text",
+              "key": "scope",
+              "value": "openid"
+            },
+            {
+              "key": "client_secret",
+              "value": "41eb3049-8d40-42ef-b07f-32ff89e2f4f5",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://localhost:8443/auth/realms/x509/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "8443",
+          "path": [
+            "auth",
+            "realms",
+            "x509",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "cooperado/protocol/openid-connect/token",
+      "id": "13a00e2b-dde3-4005-8b20-e6a604d67df0",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "type": "text",
+              "key": "grant_type",
+              "value": "client_credentials"
+            },
+            {
+              "type": "text",
+              "key": "client_id",
+              "value": "e7031598-71e8-4ca1-aab4-1e1045756c5e"
+            },
+            {
+              "type": "text",
+              "key": "scope",
+              "value": "openid"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "auth-hom",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "cooperado",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://auth-hom.sicoob.com.br/auth/realms/cooperado/protocol/openid-connect/token",
+      "id": "31cb90d5-65a8-4bd8-b473-ca2bef25bcec",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "type": "text",
+              "key": "grant_type",
+              "value": "client_credentials"
+            },
+            {
+              "type": "text",
+              "key": "client_id",
+              "value": "e7031598-71e8-4ca1-aab4-1e1045756c5e"
+            },
+            {
+              "type": "text",
+              "key": "scope",
+              "value": "openid"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://auth-hom.sicoob.com.br/auth/realms/cooperado/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "auth-hom",
+            "sicoob",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "cooperado",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://auth-hom.sicoob.com.br/auth/realms/cooperado/protocol/openid-connect/token Copy",
+      "id": "3cb1efb8-d73f-4028-b1fa-ebf9237f5282",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "type": "text",
+              "key": "grant_type",
+              "value": "client_credentials"
+            },
+            {
+              "type": "text",
+              "key": "client_id",
+              "value": "e7031598-71e8-4ca1-aab4-1e1045756c5e"
+            },
+            {
+              "type": "text",
+              "key": "scope",
+              "value": "openid"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://localhost:8443/auth/realms/cooperado/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "8443",
+          "path": [
+            "auth",
+            "realms",
+            "cooperado",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

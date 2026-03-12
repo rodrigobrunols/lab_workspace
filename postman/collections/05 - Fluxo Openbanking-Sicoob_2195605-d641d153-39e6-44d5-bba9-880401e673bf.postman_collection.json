@@ -1,0 +1,2259 @@
+{
+  "info": {
+    "_postman_id": "d641d153-39e6-44d5-bba9-880401e673bf",
+    "name": "05 - Fluxo Openbanking-Sicoob",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Consentimento - PJ",
+      "item": [
+        {
+          "name": "4364 SL0001  para 0001 MW3863",
+          "item": [
+            {
+              "name": "1 - Login Token RH-SSO Finansystech",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Token gerado com sucesso\", function() {",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+                      "    pm.environment.set(\"access_token_finansystech\", json.access_token);",
+                      "    pm.environment.set(\"id_token_finansystech\", json.id_token);",
+                      "});",
+                      "//pm.collectionVariables.clear()"
+                    ],
+                    "type": "text/javascript",
+                    "id": "ae324429-4536-4b28-9d67-7c014fce3f8a"
+                  }
+                }
+              ],
+              "id": "9afe4b96-d395-42a9-9122-d34b8253eb51",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "grant_type",
+                      "value": "client_credentials",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "{{client_id}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_secret",
+                      "value": "{{client_secret}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "scope",
+                      "value": "openid",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://{{host_sso}}/auth/realms/sicoob/protocol/openid-connect/token",
+                  "protocol": "https",
+                  "host": [
+                    "{{host_sso}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "realms",
+                    "sicoob",
+                    "protocol",
+                    "openid-connect",
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "2 - Login Token RH-SSO Sicoob",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.collectionVariables.clear()",
+                      "",
+                      "pm.test(\"Token gerado com sucesso\", function() {",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+                      "    pm.environment.set(\"access_token_sicoob\", json.access_token);",
+                      "    pm.environment.set(\"id_token_sicoob\", json.id_token);",
+                      "});",
+                      "",
+                      "function jwt_decode(jwt) {",
+                      "    var partes = jwt.split('.'); // header, payload, signature",
+                      "    return JSON.parse(atob(partes[1]));",
+                      "}",
+                      "",
+                      "pm.test(\"Mostra dados\", function () {  ",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    console.log(\"Chaves: \" + Object.keys(json));",
+                      "",
+                      "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+                      "    let decodificado = jwt_decode(json.access_token);",
+                      "    console.log(\"Access Token: \" + JSON.stringify(decodificado));",
+                      "",
+                      "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;  ",
+                      "     decodificado = jwt_decode(json.id_token);",
+                      "    console.log(\"Id Token: \" + JSON.stringify(decodificado));",
+                      "});"
+                    ],
+                    "type": "text/javascript",
+                    "id": "b34090d3-0232-41af-a8bf-08fd7330ef17"
+                  }
+                }
+              ],
+              "id": "ed6f3b53-b319-480b-bd24-1ef71fa45a37",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer  {{access_token_finansystech}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "client_secret",
+                      "value": "{{client_secret}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "scope",
+                      "value": "openid",
+                      "type": "text"
+                    },
+                    {
+                      "key": "username",
+                      "value": "{{rhsso.usuario}}",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "username",
+                      "value": "pfc:1:1:700011510",
+                      "description": "TI",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "username",
+                      "value": "pfc:4364:1:39390",
+                      "description": "HOMOL",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "username",
+                      "value": "pj:4364:SL0001",
+                      "description": "HOMOL CNPJ",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "88888888",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "{{client_id}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "grant_type",
+                      "value": "password",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://{{host_sso}}/auth/realms/sicoob/protocol/openid-connect/token",
+                  "protocol": "https",
+                  "host": [
+                    "{{host_sso}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "realms",
+                    "sicoob",
+                    "protocol",
+                    "openid-connect",
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "3 - Receptor - Cadastrar",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Call Authorization Url\", function() {",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    pm.sendRequest(json.deepLink, function (err, response) {",
+                      "        console.log(response.text());",
+                      "        var interactionId = response.text().replace('Redirecting to ', '').split('>')[0].split('interactionId=')[1].split('&amp;')[0].replace('\"', '');",
+                      "//      var interactionId = response.text().replace('Redirecting to <a href=\"', '').split('>')[0].split('/')[4].replace('\"', '');",
+                      "",
+                      "        pm.environment.set(\"interaction_id\", interactionId);",
+                      "        console.log(pm.environment.get(\"interaction_id\"));",
+                      "    });",
+                      "});",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "id": "ca108e5c-a54d-494a-98d8-2a1e11b0b5ab"
+                  }
+                }
+              ],
+              "id": "be25dc83-0340-48e5-812b-0c7fc06c4b9b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-token-integracao-consentimento",
+                    "value": "{{access_token_finansystech}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "id_token",
+                    "value": "{{id_token_sicoob}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"organizationId\": \"{{organizationId_Sicoob}}\", \r\n    \"authorizationServerId\": \"{{authorizationServerId_Sicoob}}\",\r\n    \"codigoTermoAceite\": \"4\",\r\n    \"codigoFinalidade\": \"5\",\r\n    \"quantidadeMesesVigencia\": \"6\",\r\n    \"numCpfCnpjConsentimento\":\"03043646000144\",\r\n    \"permissoes\": [\r\n        \"CUSTOMERS_BUSINESS_ADITTIONALINFO_READ\",\r\n        \"CUSTOMERS_BUSINESS_IDENTIFICATIONS_READ\",\r\n        \"ACCOUNTS_READ\",\r\n        \"ACCOUNTS_OVERDRAFT_LIMITS_READ\",\r\n        \"ACCOUNTS_BALANCES_READ\",\r\n        \"ACCOUNTS_TRANSACTIONS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_BILLS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_LIMITS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ\",\r\n        \"LOANS_READ\",\r\n        \"LOANS_WARRANTIES_READ\",\r\n        \"LOANS_SCHEDULED_INSTALMENTS_READ\",\r\n        \"LOANS_PAYMENTS_READ\",\r\n        \"FINANCINGS_READ\",\r\n        \"FINANCINGS_WARRANTIES_READ\",\r\n        \"FINANCINGS_SCHEDULED_INSTALMENTS_READ\",\r\n        \"FINANCINGS_PAYMENTS_READ\",\r\n        \"UNARRANGED_ACCOUNTS_OVERDRAFT_READ\",\r\n        \"UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ\",\r\n        \"UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ\",\r\n        \"UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ\",\r\n        \"INVOICE_FINANCINGS_READ\",\r\n        \"INVOICE_FINANCINGS_WARRANTIES_READ\",\r\n        \"INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ\",\r\n        \"INVOICE_FINANCINGS_PAYMENTS_READ\",\r\n        \"RESOURCES_READ\"\r\n    ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{url_consentimento}}/consentimento/v1/consentimento",
+                  "protocol": "http",
+                  "host": [
+                    "{{url_consentimento}}"
+                  ],
+                  "path": [
+                    "consentimento",
+                    "v1",
+                    "consentimento"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "4 - Token Transmissor RH-SSO",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Token gerado com sucesso\", function() {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "    const json = pm.response.json();\r",
+                      "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  \r",
+                      "    pm.globals.set(\"access_token_sicoob_using_client_credentials\", json.access_token);\r",
+                      "});\r",
+                      "pm.collectionVariables.clear()"
+                    ],
+                    "type": "text/javascript",
+                    "id": "91519859-80e6-4796-aa4c-d5ab60af8723"
+                  }
+                }
+              ],
+              "id": "f3874a3a-0421-4662-9e3f-76dd58cf17a8",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "grant_type",
+                      "value": "client_credentials",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "mobile",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_secret",
+                      "value": "{{client_secret}}",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://{{host_sso}}/auth/realms/sicoob/protocol/openid-connect/token",
+                  "protocol": "https",
+                  "host": [
+                    "{{host_sso}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "realms",
+                    "sicoob",
+                    "protocol",
+                    "openid-connect",
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "5 - Login Transmissor",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Token gerado com sucesso\", function() {\r",
+                      "    \r",
+                      "    pm.response.to.have.status(200);\r",
+                      "    const json = pm.response.json();\r",
+                      "\r",
+                      "    pm.expect(json).to.have.property('url').and.to.not.be.undefined;  \r",
+                      "    let params = {};\r",
+                      "    json.url.split('?')[1].split('&').map(it => { params[it.split('=')[0]] = it.split('=')[1] });    \r",
+                      "    pm.globals.set(\"interaction_id_openfinance_sicoob\", params.interactionId);\r",
+                      "    console.log(pm.globals.get(\"interaction_id_openfinance_sicoob\"));\r",
+                      "\r",
+                      "    pm.expect(json).to.have.property('metadata').and.to.not.be.undefined;  \r",
+                      "    console.log(json);\r",
+                      "    pm.environment.set(\"access_token_openfinance_sicoob\", json.metadata.access_token);\r",
+                      "    pm.environment.set(\"id_token_openfinance_sicoob\", json.metadata.id_token);\r",
+                      "    pm.environment.set(\"consent_id\",json.consent.consentId);\r",
+                      "});\r",
+                      "pm.collectionVariables.clear()\r",
+                      "\r",
+                      "// USUARIO=CPF\r",
+                      "// user01=57784518064 \r",
+                      "// user02=02802848020\r",
+                      "// user03=33206818931\r",
+                      "// user04=03368094173\r",
+                      "// user05=01755434103\r",
+                      "// conta 39390 cliente 309001"
+                    ],
+                    "type": "text/javascript",
+                    "id": "5fbdde58-f1b2-4909-8b53-a7616f623ca9"
+                  }
+                }
+              ],
+              "id": "e40636d3-9555-4a42-9b90-f16ce474333a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token_sicoob_using_client_credentials}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-interaction-id",
+                    "value": "{{interaction_id}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "x-interaction-id",
+                    "value": "Oon2ayNEWTSIJOjwjet9n",
+                    "type": "text",
+                    "disabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"numCooperativa\": \"0001\",\r\n    \"chaveAcesso\": \"MW3863\",\r\n    \"senha\": \"88888888\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://{{URL_OPENFINANCE}}/sicoob/auth/login",
+                  "protocol": "https",
+                  "host": [
+                    "{{URL_OPENFINANCE}}"
+                  ],
+                  "path": [
+                    "sicoob",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "6 - Aprovar Transmissor",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      " pm.collectionVariables.clear()\r",
+                      " \r",
+                      " pm.test(\"Get New Interaction Id\", function() {\r",
+                      "    pm.response.to.have.status(302);\r",
+                      "    const json = pm.response.json();\r",
+                      "\r",
+                      "    pm.environment.set(\"code_receiver\", json.url.split('#')[1].split('&')[0].replace('code=', ''));\r",
+                      "    pm.environment.set(\"id_token_receiver\", json.url.split('&')[1].replace('id_token=', ''));\r",
+                      "    pm.environment.set(\"state_receiver\", json.url.split('&')[2].replace('state=', ''));\r",
+                      "\r",
+                      "    console.log(\"code_receiver\", pm.environment.get(\"code_receiver\"));\r",
+                      "    console.log(\"id_token_receiver\", pm.environment.get(\"id_token_receiver\"));\r",
+                      "    console.log(\"state_receiver\", pm.environment.get(\"state_receiver\"));\r",
+                      " });\r",
+                      "\r",
+                      "\r",
+                      "\r",
+                      "\r",
+                      "\r",
+                      "/*\r",
+                      "Essas informaçoes pegamos na api de contas\r",
+                      " [\r",
+                      "    {\r",
+                      "            \"idNegocio\": \"0801002692130002\",\r",
+                      "            \"tipo\": \"CONTA_PRE_PAGA\"\r",
+                      "        },\r",
+                      "        {\r",
+                      "            \"idNegocio\": \"628376901\",\r",
+                      "            \"tipo\": \"CONTA_POUPANCA\"\r",
+                      "        },\r",
+                      "        {\r",
+                      "            \"idNegocio\": \"CCO-4364-95478\",\r",
+                      "            \"tipo\": \"CONTA_CORRENTE\"\r",
+                      "        },\r",
+                      "              {\r",
+                      "        \"idNegocio\": \"75620171113105734020001\",\r",
+                      "        \"tipo\": \"CARTAO_CREDITO\"\r",
+                      "      }\r",
+                      "]\r",
+                      "*/"
+                    ],
+                    "type": "text/javascript",
+                    "id": "9852c7fd-6af9-4190-b58b-546bcd79779b"
+                  }
+                }
+              ],
+              "id": "b3aa1f2b-53de-4520-aeb2-3efd9447b58b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-token-integracao-consentimento",
+                    "value": "{{access_token_openfinance_sicoob}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "id_token",
+                    "value": "{{id_token_openfinance_sicoob}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\r\n    \r\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{url_consentimento}}/consentimento/v1/{{interaction_id_openfinance_sicoob}}/autorizar/{{consent_id}}",
+                  "protocol": "http",
+                  "host": [
+                    "{{url_consentimento}}"
+                  ],
+                  "path": [
+                    "consentimento",
+                    "v1",
+                    "{{interaction_id_openfinance_sicoob}}",
+                    "autorizar",
+                    "{{consent_id}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "7 - Comprovante Receptor",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      " pm.test(\"Get New Interaction Id\", function() {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      " });"
+                    ],
+                    "type": "text/javascript",
+                    "id": "0bbe9bac-6100-4be2-a38f-710032b797be"
+                  }
+                }
+              ],
+              "id": "34676f06-5975-4d6d-b0d8-085cdd6a5864",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"state\": \"{{state_receiver}}\",\r\n    \"code\": \"{{code_receiver}}\",\r\n    \"idToken\": \"{{id_token_receiver}}\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{url_consentimento}}/consentimento/v1/consentimento/callback/",
+                  "protocol": "http",
+                  "host": [
+                    "{{url_consentimento}}"
+                  ],
+                  "path": [
+                    "consentimento",
+                    "v1",
+                    "consentimento",
+                    "callback",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "9e49438a-6f3a-43d3-86f9-14fc0d8db2e9"
+        },
+        {
+          "name": "0001 MW3863 para 4364 SL0001",
+          "item": [
+            {
+              "name": "1 - Login Token RH-SSO Finansystech",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Token gerado com sucesso\", function() {",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+                      "    pm.environment.set(\"access_token_finansystech\", json.access_token);",
+                      "    pm.environment.set(\"id_token_finansystech\", json.id_token);",
+                      "});",
+                      "//pm.collectionVariables.clear()"
+                    ],
+                    "type": "text/javascript",
+                    "id": "c3110e91-5341-4d26-b27e-223e78aa5ba8"
+                  }
+                }
+              ],
+              "id": "2bd84fed-444a-4542-9588-84efdccfb3a0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "grant_type",
+                      "value": "client_credentials",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "{{client_id}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_secret",
+                      "value": "{{client_secret}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "scope",
+                      "value": "openid",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://{{host_sso}}/auth/realms/sicoob/protocol/openid-connect/token",
+                  "protocol": "https",
+                  "host": [
+                    "{{host_sso}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "realms",
+                    "sicoob",
+                    "protocol",
+                    "openid-connect",
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "2 - Login Token RH-SSO Sicoob",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.collectionVariables.clear()",
+                      "",
+                      "pm.test(\"Token gerado com sucesso\", function() {",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+                      "    pm.environment.set(\"access_token_sicoob\", json.access_token);",
+                      "    pm.environment.set(\"id_token_sicoob\", json.id_token);",
+                      "});",
+                      "",
+                      "function jwt_decode(jwt) {",
+                      "    var partes = jwt.split('.'); // header, payload, signature",
+                      "    return JSON.parse(atob(partes[1]));",
+                      "}",
+                      "",
+                      "pm.test(\"Mostra dados\", function () {  ",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    console.log(\"Chaves: \" + Object.keys(json));",
+                      "",
+                      "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+                      "    let decodificado = jwt_decode(json.access_token);",
+                      "    console.log(\"Access Token: \" + JSON.stringify(decodificado));",
+                      "",
+                      "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;  ",
+                      "     decodificado = jwt_decode(json.id_token);",
+                      "    console.log(\"Id Token: \" + JSON.stringify(decodificado));",
+                      "});"
+                    ],
+                    "type": "text/javascript",
+                    "id": "d9bf0cd5-501a-459c-b7c6-f15e928f7269"
+                  }
+                }
+              ],
+              "id": "ecd9253e-6662-4593-ad1e-3918afb5f187",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer  {{access_token_finansystech}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "client_secret",
+                      "value": "{{client_secret}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "scope",
+                      "value": "openid",
+                      "type": "text"
+                    },
+                    {
+                      "key": "username",
+                      "value": "{{rhsso.usuario}}",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "username",
+                      "value": "pfc:1:1:700011510",
+                      "description": "TI",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "username",
+                      "value": "pfc:4364:1:39390",
+                      "description": "HOMOL",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "username",
+                      "value": "pj:0001:MW3863",
+                      "description": "HOMOL CNPJ",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "88888888",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "{{client_id}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "grant_type",
+                      "value": "password",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://{{host_sso}}/auth/realms/sicoob/protocol/openid-connect/token",
+                  "protocol": "https",
+                  "host": [
+                    "{{host_sso}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "realms",
+                    "sicoob",
+                    "protocol",
+                    "openid-connect",
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "3 - Receptor - Cadastrar",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Call Authorization Url\", function() {",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    pm.sendRequest(json.deepLink, function (err, response) {",
+                      "        console.log(response.text());",
+                      "        var interactionId = response.text().replace('Redirecting to ', '').split('>')[0].split('interactionId=')[1].split('&amp;')[0].replace('\"', '');",
+                      "//      var interactionId = response.text().replace('Redirecting to <a href=\"', '').split('>')[0].split('/')[4].replace('\"', '');",
+                      "",
+                      "        pm.environment.set(\"interaction_id\", interactionId);",
+                      "        console.log(pm.environment.get(\"interaction_id\"));",
+                      "    });",
+                      "});",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "id": "f44c1ab2-9b0b-463b-99dc-33d6fadb23d8"
+                  }
+                }
+              ],
+              "id": "5b1556b2-98c0-4d1e-b85e-1fd45dabbd5f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-token-integracao-consentimento",
+                    "value": "{{access_token_finansystech}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "id_token",
+                    "value": "{{id_token_sicoob}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"organizationId\": \"{{organizationId_Sicoob}}\", \r\n    \"authorizationServerId\": \"{{authorizationServerId_Sicoob}}\",\r\n    \"codigoTermoAceite\": \"1\",\r\n    \"codigoFinalidade\": \"5\",\r\n    \"quantidadeMesesVigencia\": \"6\",\r\n     \"numCpfCnpjConsentimento\":\"03043646000144\",\r\n    \"permissoes\": [\r\n        \"CUSTOMERS_BUSINESS_ADITTIONALINFO_READ\",\r\n        \"CUSTOMERS_BUSINESS_IDENTIFICATIONS_READ\",\r\n        \"ACCOUNTS_READ\",\r\n        \"ACCOUNTS_OVERDRAFT_LIMITS_READ\",\r\n        \"ACCOUNTS_BALANCES_READ\",\r\n        \"ACCOUNTS_TRANSACTIONS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_BILLS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_LIMITS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ\",\r\n        \"LOANS_READ\",\r\n        \"LOANS_WARRANTIES_READ\",\r\n        \"LOANS_SCHEDULED_INSTALMENTS_READ\",\r\n        \"LOANS_PAYMENTS_READ\",\r\n        \"FINANCINGS_READ\",\r\n        \"FINANCINGS_WARRANTIES_READ\",\r\n        \"FINANCINGS_SCHEDULED_INSTALMENTS_READ\",\r\n        \"FINANCINGS_PAYMENTS_READ\",\r\n        \"UNARRANGED_ACCOUNTS_OVERDRAFT_READ\",\r\n        \"UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ\",\r\n        \"UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ\",\r\n        \"UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ\",\r\n        \"INVOICE_FINANCINGS_READ\",\r\n        \"INVOICE_FINANCINGS_WARRANTIES_READ\",\r\n        \"INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ\",\r\n        \"INVOICE_FINANCINGS_PAYMENTS_READ\",\r\n        \"RESOURCES_READ\"\r\n    ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{url_consentimento}}/consentimento/v1/consentimento",
+                  "protocol": "http",
+                  "host": [
+                    "{{url_consentimento}}"
+                  ],
+                  "path": [
+                    "consentimento",
+                    "v1",
+                    "consentimento"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "4 - Token Transmissor RH-SSO",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Token gerado com sucesso\", function() {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "    const json = pm.response.json();\r",
+                      "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  \r",
+                      "    pm.globals.set(\"access_token_sicoob_using_client_credentials\", json.access_token);\r",
+                      "});\r",
+                      "pm.collectionVariables.clear()"
+                    ],
+                    "type": "text/javascript",
+                    "id": "590784d3-0ea7-41ac-bce9-1f907bab68ce"
+                  }
+                }
+              ],
+              "id": "bc4966d6-3564-4697-a251-16978fab54e3",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "grant_type",
+                      "value": "client_credentials",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "mobile",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_secret",
+                      "value": "{{client_secret}}",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://{{host_sso}}/auth/realms/sicoob/protocol/openid-connect/token",
+                  "protocol": "https",
+                  "host": [
+                    "{{host_sso}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "realms",
+                    "sicoob",
+                    "protocol",
+                    "openid-connect",
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "5 - Login Transmissor",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Token gerado com sucesso\", function() {\r",
+                      "    \r",
+                      "    pm.response.to.have.status(200);\r",
+                      "    const json = pm.response.json();\r",
+                      "\r",
+                      "    pm.expect(json).to.have.property('url').and.to.not.be.undefined;  \r",
+                      "    let params = {};\r",
+                      "    json.url.split('?')[1].split('&').map(it => { params[it.split('=')[0]] = it.split('=')[1] });    \r",
+                      "    pm.globals.set(\"interaction_id_openfinance_sicoob\", params.interactionId);\r",
+                      "    console.log(pm.globals.get(\"interaction_id_openfinance_sicoob\"));\r",
+                      "\r",
+                      "    pm.expect(json).to.have.property('metadata').and.to.not.be.undefined;  \r",
+                      "    console.log(json);\r",
+                      "    pm.environment.set(\"access_token_openfinance_sicoob\", json.metadata.access_token);\r",
+                      "    pm.environment.set(\"id_token_openfinance_sicoob\", json.metadata.id_token);\r",
+                      "    pm.environment.set(\"consent_id\",json.consent.consentId);\r",
+                      "});\r",
+                      "pm.collectionVariables.clear()\r",
+                      "\r",
+                      "// USUARIO=CPF\r",
+                      "// user01=57784518064 \r",
+                      "// user02=02802848020\r",
+                      "// user03=33206818931\r",
+                      "// user04=03368094173\r",
+                      "// user05=01755434103\r",
+                      "// conta 39390 cliente 309001"
+                    ],
+                    "type": "text/javascript",
+                    "id": "061b5aa1-91cb-45eb-8914-d3cf0d34b025"
+                  }
+                }
+              ],
+              "id": "31ee8c95-b488-4ee8-9661-ffb8cd254b17",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token_sicoob_using_client_credentials}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-interaction-id",
+                    "value": "{{interaction_id}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "x-interaction-id",
+                    "value": "Oon2ayNEWTSIJOjwjet9n",
+                    "type": "text",
+                    "disabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"numCooperativa\": \"4364\",\r\n    \"chaveAcesso\": \"SL0001\",\r\n    \"senha\": \"88888888\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://{{URL_OPENFINANCE}}/sicoob/auth/login",
+                  "protocol": "https",
+                  "host": [
+                    "{{URL_OPENFINANCE}}"
+                  ],
+                  "path": [
+                    "sicoob",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "6 - Aprovar Transmissor",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      " pm.collectionVariables.clear()\r",
+                      " \r",
+                      " pm.test(\"Get New Interaction Id\", function() {\r",
+                      "    pm.response.to.have.status(302);\r",
+                      "    const json = pm.response.json();\r",
+                      "\r",
+                      "    pm.environment.set(\"code_receiver\", json.url.split('#')[1].split('&')[0].replace('code=', ''));\r",
+                      "    pm.environment.set(\"id_token_receiver\", json.url.split('&')[1].replace('id_token=', ''));\r",
+                      "    pm.environment.set(\"state_receiver\", json.url.split('&')[2].replace('state=', ''));\r",
+                      "\r",
+                      "    console.log(\"code_receiver\", pm.environment.get(\"code_receiver\"));\r",
+                      "    console.log(\"id_token_receiver\", pm.environment.get(\"id_token_receiver\"));\r",
+                      "    console.log(\"state_receiver\", pm.environment.get(\"state_receiver\"));\r",
+                      " });"
+                    ],
+                    "type": "text/javascript",
+                    "id": "98676556-d4fd-4a3b-8908-e3938d9e60de"
+                  }
+                }
+              ],
+              "id": "f23cd4ff-994f-410c-bd03-6a5cac7bf73f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-token-integracao-consentimento",
+                    "value": "{{access_token_openfinance_sicoob}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "id_token",
+                    "value": "{{id_token_openfinance_sicoob}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\r\n    \r\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{url_consentimento}}/consentimento/v1/{{interaction_id_openfinance_sicoob}}/autorizar/{{consent_id}}",
+                  "protocol": "http",
+                  "host": [
+                    "{{url_consentimento}}"
+                  ],
+                  "path": [
+                    "consentimento",
+                    "v1",
+                    "{{interaction_id_openfinance_sicoob}}",
+                    "autorizar",
+                    "{{consent_id}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "7 - Comprovante Receptor",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      " pm.test(\"Get New Interaction Id\", function() {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      " });"
+                    ],
+                    "type": "text/javascript",
+                    "id": "d19fc3c2-d324-436f-b3a8-1f1a4ddaa1b9"
+                  }
+                }
+              ],
+              "id": "cc55a86b-8e44-47b1-8acb-67c06a54884c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"state\": \"{{state_receiver}}\",\r\n    \"code\": \"{{code_receiver}}\",\r\n    \"idToken\": \"{{id_token_receiver}}\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{url_consentimento}}/consentimento/v1/consentimento/callback/",
+                  "protocol": "http",
+                  "host": [
+                    "{{url_consentimento}}"
+                  ],
+                  "path": [
+                    "consentimento",
+                    "v1",
+                    "consentimento",
+                    "callback",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "755d4dce-fcbb-4701-8b27-40b8e0af6bad"
+        }
+      ],
+      "id": "3ee005a5-15aa-4f7c-a4c6-1cf284936df5"
+    },
+    {
+      "name": "Consentimento - PF",
+      "item": [
+        {
+          "name": "4364 138541 para 0001 9764313",
+          "item": [
+            {
+              "name": "1 - Login Token RH-SSO Finansystech",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Token gerado com sucesso\", function() {",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+                      "    pm.environment.set(\"access_token_finansystech\", json.access_token);",
+                      "    pm.environment.set(\"id_token_finansystech\", json.id_token);",
+                      "});",
+                      "//pm.collectionVariables.clear()"
+                    ],
+                    "type": "text/javascript",
+                    "id": "9da3a7a3-397c-4db0-a4e7-a35b4836a45c"
+                  }
+                }
+              ],
+              "id": "44ccf2db-ca1c-4862-8bac-4779bc2a29c4",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "grant_type",
+                      "value": "client_credentials",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "{{client_id}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_secret",
+                      "value": "{{client_secret}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "scope",
+                      "value": "openid",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://{{host_sso}}/auth/realms/sicoob/protocol/openid-connect/token",
+                  "protocol": "https",
+                  "host": [
+                    "{{host_sso}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "realms",
+                    "sicoob",
+                    "protocol",
+                    "openid-connect",
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "2 - Login Token RH-SSO Sicoob",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.collectionVariables.clear()",
+                      "",
+                      "pm.test(\"Token gerado com sucesso\", function() {",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+                      "    pm.environment.set(\"access_token_sicoob\", json.access_token);",
+                      "    pm.environment.set(\"id_token_sicoob\", json.id_token);",
+                      "});",
+                      "",
+                      "function jwt_decode(jwt) {",
+                      "    var partes = jwt.split('.'); // header, payload, signature",
+                      "    return JSON.parse(atob(partes[1]));",
+                      "}",
+                      "",
+                      "pm.test(\"Mostra dados\", function () {  ",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    console.log(\"Chaves: \" + Object.keys(json));",
+                      "",
+                      "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+                      "    let decodificado = jwt_decode(json.access_token);",
+                      "    console.log(\"Access Token: \" + JSON.stringify(decodificado));",
+                      "",
+                      "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;  ",
+                      "     decodificado = jwt_decode(json.id_token);",
+                      "    console.log(\"Id Token: \" + JSON.stringify(decodificado));",
+                      "});"
+                    ],
+                    "type": "text/javascript",
+                    "id": "b8faa1ba-63e1-46c5-b142-5e76bbbbdbb4"
+                  }
+                }
+              ],
+              "id": "c2b12524-e89c-471c-b2a3-2342c8d562e1",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer  {{access_token_finansystech}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "client_secret",
+                      "value": "{{client_secret}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "scope",
+                      "value": "openid",
+                      "type": "text"
+                    },
+                    {
+                      "key": "username",
+                      "value": "{{rhsso.usuario}}",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "username",
+                      "value": "pfc:1:1:700011510",
+                      "description": "TI",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "username",
+                      "value": "pfc:4364:1:138541",
+                      "description": "HOMOL",
+                      "type": "text"
+                    },
+                    {
+                      "key": "username",
+                      "value": "pj:4364:SL0001",
+                      "description": "HOMOL CNPJ",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "password",
+                      "value": "88888888",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "{{client_id}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "grant_type",
+                      "value": "password",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://{{host_sso}}/auth/realms/sicoob/protocol/openid-connect/token",
+                  "protocol": "https",
+                  "host": [
+                    "{{host_sso}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "realms",
+                    "sicoob",
+                    "protocol",
+                    "openid-connect",
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "3 - Receptor - Cadastrar",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Call Authorization Url\", function() {",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    pm.sendRequest(json.deepLink, function (err, response) {",
+                      "        console.log(response.text());",
+                      "        var interactionId = response.text().replace('Redirecting to ', '').split('>')[0].split('interactionId=')[1].split('&amp;')[0].replace('\"', '');",
+                      "//      var interactionId = response.text().replace('Redirecting to <a href=\"', '').split('>')[0].split('/')[4].replace('\"', '');",
+                      "",
+                      "        pm.environment.set(\"interaction_id\", interactionId);",
+                      "        console.log(pm.environment.get(\"interaction_id\"));",
+                      "    });",
+                      "});",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "id": "31afc86c-9508-4149-979a-aad754e366f8"
+                  }
+                }
+              ],
+              "id": "04606788-8014-4b70-aad4-27f9d06b5f6b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-token-integracao-consentimento",
+                    "value": "{{access_token_finansystech}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "id_token",
+                    "value": "{{id_token_sicoob}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"organizationId\": \"{{organizationId_Sicoob}}\", \r\n    \"authorizationServerId\": \"{{authorizationServerId_Sicoob}}\",\r\n    \"codigoTermoAceite\": \"1\",\r\n    \"codigoFinalidade\": \"5\",\r\n    \"quantidadeMesesVigencia\": \"6\",\r\n    \"permissoes\": [\r\n        \"CUSTOMERS_PERSONAL_ADITTIONALINFO_READ\",\r\n        \"CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ\",\r\n        \"ACCOUNTS_READ\",\r\n        \"ACCOUNTS_OVERDRAFT_LIMITS_READ\",\r\n        \"ACCOUNTS_BALANCES_READ\",\r\n        \"ACCOUNTS_TRANSACTIONS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_BILLS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_LIMITS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ\",\r\n        \"LOANS_READ\",\r\n        \"LOANS_WARRANTIES_READ\",\r\n        \"LOANS_SCHEDULED_INSTALMENTS_READ\",\r\n        \"LOANS_PAYMENTS_READ\",\r\n        \"FINANCINGS_READ\",\r\n        \"FINANCINGS_WARRANTIES_READ\",\r\n        \"FINANCINGS_SCHEDULED_INSTALMENTS_READ\",\r\n        \"FINANCINGS_PAYMENTS_READ\",\r\n        \"UNARRANGED_ACCOUNTS_OVERDRAFT_READ\",\r\n        \"UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ\",\r\n        \"UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ\",\r\n        \"UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ\",\r\n        \"INVOICE_FINANCINGS_READ\",\r\n        \"INVOICE_FINANCINGS_WARRANTIES_READ\",\r\n        \"INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ\",\r\n        \"INVOICE_FINANCINGS_PAYMENTS_READ\",\r\n        \"RESOURCES_READ\"\r\n    ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{url_consentimento}}/consentimento/v1/consentimento",
+                  "protocol": "http",
+                  "host": [
+                    "{{url_consentimento}}"
+                  ],
+                  "path": [
+                    "consentimento",
+                    "v1",
+                    "consentimento"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "4 - Token Transmissor RH-SSO",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Token gerado com sucesso\", function() {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "    const json = pm.response.json();\r",
+                      "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  \r",
+                      "    pm.globals.set(\"access_token_sicoob_using_client_credentials\", json.access_token);\r",
+                      "});\r",
+                      "pm.collectionVariables.clear()"
+                    ],
+                    "type": "text/javascript",
+                    "id": "a676983e-1af1-4ad6-a5d0-e205eb6cdb00"
+                  }
+                }
+              ],
+              "id": "4c16b75c-dee2-41cf-b658-3395732317f9",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "grant_type",
+                      "value": "client_credentials",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "mobile",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_secret",
+                      "value": "{{client_secret}}",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://{{host_sso}}/auth/realms/sicoob/protocol/openid-connect/token",
+                  "protocol": "https",
+                  "host": [
+                    "{{host_sso}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "realms",
+                    "sicoob",
+                    "protocol",
+                    "openid-connect",
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "5 - Login Transmissor",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Token gerado com sucesso\", function() {\r",
+                      "    \r",
+                      "    pm.response.to.have.status(200);\r",
+                      "    const json = pm.response.json();\r",
+                      "\r",
+                      "    pm.expect(json).to.have.property('url').and.to.not.be.undefined;  \r",
+                      "    let params = {};\r",
+                      "    json.url.split('?')[1].split('&').map(it => { params[it.split('=')[0]] = it.split('=')[1] });    \r",
+                      "    pm.globals.set(\"interaction_id_openfinance_sicoob\", params.interactionId);\r",
+                      "    console.log(pm.globals.get(\"interaction_id_openfinance_sicoob\"));\r",
+                      "\r",
+                      "    pm.expect(json).to.have.property('metadata').and.to.not.be.undefined;  \r",
+                      "    console.log(json);\r",
+                      "    pm.environment.set(\"access_token_openfinance_sicoob\", json.metadata.access_token);\r",
+                      "    pm.environment.set(\"id_token_openfinance_sicoob\", json.metadata.id_token);\r",
+                      "    pm.environment.set(\"consent_id\",json.consent.consentId);\r",
+                      "});\r",
+                      "pm.collectionVariables.clear()\r",
+                      "\r",
+                      "// USUARIO=CPF\r",
+                      "// user01=57784518064 \r",
+                      "// user02=02802848020\r",
+                      "// user03=33206818931\r",
+                      "// user04=03368094173\r",
+                      "// user05=01755434103\r",
+                      "// conta 39390 cliente 309001"
+                    ],
+                    "type": "text/javascript",
+                    "id": "cdb433b6-f9e9-4e27-91d7-e8033960bd03"
+                  }
+                }
+              ],
+              "id": "933fa7fd-a2ff-4007-9ad4-ebb94fd46b1e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token_sicoob_using_client_credentials}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-interaction-id",
+                    "value": "{{interaction_id}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "x-interaction-id",
+                    "value": "Oon2ayNEWTSIJOjwjet9n",
+                    "type": "text",
+                    "disabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"numCooperativa\": \"0001\",\r\n    \"numContaCorrente\": \"9764313\",\r\n    \"titularidade\": 1,\r\n    \"senha\": \"88888888\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://{{URL_OPENFINANCE}}/sicoob/auth/login",
+                  "protocol": "https",
+                  "host": [
+                    "{{URL_OPENFINANCE}}"
+                  ],
+                  "path": [
+                    "sicoob",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "6 - Aprovar Transmissor",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      " pm.collectionVariables.clear()\r",
+                      " \r",
+                      " pm.test(\"Get New Interaction Id\", function() {\r",
+                      "    pm.response.to.have.status(302);\r",
+                      "    const json = pm.response.json();\r",
+                      "\r",
+                      "    pm.environment.set(\"code_receiver\", json.url.split('#')[1].split('&')[0].replace('code=', ''));\r",
+                      "    pm.environment.set(\"id_token_receiver\", json.url.split('&')[1].replace('id_token=', ''));\r",
+                      "    pm.environment.set(\"state_receiver\", json.url.split('&')[2].replace('state=', ''));\r",
+                      "\r",
+                      "    console.log(\"code_receiver\", pm.environment.get(\"code_receiver\"));\r",
+                      "    console.log(\"id_token_receiver\", pm.environment.get(\"id_token_receiver\"));\r",
+                      "    console.log(\"state_receiver\", pm.environment.get(\"state_receiver\"));\r",
+                      " });"
+                    ],
+                    "type": "text/javascript",
+                    "id": "52c800ef-e4c5-45f1-badf-fe712d3e7930"
+                  }
+                }
+              ],
+              "id": "7f864bc8-2385-481b-a14d-0a6856ad6f05",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-token-integracao-consentimento",
+                    "value": "{{access_token_openfinance_sicoob}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "id_token",
+                    "value": "{{id_token_openfinance_sicoob}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\r\n    \r\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{url_consentimento}}/consentimento/v1/{{interaction_id_openfinance_sicoob}}/autorizar/{{consent_id}}",
+                  "protocol": "http",
+                  "host": [
+                    "{{url_consentimento}}"
+                  ],
+                  "path": [
+                    "consentimento",
+                    "v1",
+                    "{{interaction_id_openfinance_sicoob}}",
+                    "autorizar",
+                    "{{consent_id}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "7 - Comprovante Receptor",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      " pm.test(\"Get New Interaction Id\", function() {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      " });"
+                    ],
+                    "type": "text/javascript",
+                    "id": "850af885-31fc-4fa1-9c32-f9cddcb306ff"
+                  }
+                }
+              ],
+              "id": "2ba672fd-a7a7-4945-91bb-f23b319657ec",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"state\": \"{{state_receiver}}\",\r\n    \"code\": \"{{code_receiver}}\",\r\n    \"idToken\": \"{{id_token_receiver}}\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{url_consentimento}}/consentimento/v1/consentimento/callback/",
+                  "protocol": "http",
+                  "host": [
+                    "{{url_consentimento}}"
+                  ],
+                  "path": [
+                    "consentimento",
+                    "v1",
+                    "consentimento",
+                    "callback",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "17ee3346-8232-4d32-86fe-ddb58530aafa"
+        },
+        {
+          "name": "0001 9764313 para 4364 138541",
+          "item": [
+            {
+              "name": "1 - Login Token RH-SSO Finansystech",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Token gerado com sucesso\", function() {",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+                      "    pm.environment.set(\"access_token_finansystech\", json.access_token);",
+                      "    pm.environment.set(\"id_token_finansystech\", json.id_token);",
+                      "});",
+                      "//pm.collectionVariables.clear()"
+                    ],
+                    "type": "text/javascript",
+                    "id": "e2959d36-016b-4a02-bbda-8d0ca57cc732"
+                  }
+                }
+              ],
+              "id": "ffbd338d-8f31-48e2-a5cf-ea8bb9fab513",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "grant_type",
+                      "value": "client_credentials",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "{{client_id}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_secret",
+                      "value": "{{client_secret}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "scope",
+                      "value": "openid",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://{{host_sso}}/auth/realms/sicoob/protocol/openid-connect/token",
+                  "protocol": "https",
+                  "host": [
+                    "{{host_sso}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "realms",
+                    "sicoob",
+                    "protocol",
+                    "openid-connect",
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "2 - Login Token RH-SSO Sicoob",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.collectionVariables.clear()",
+                      "",
+                      "pm.test(\"Token gerado com sucesso\", function() {",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+                      "    pm.environment.set(\"access_token_sicoob\", json.access_token);",
+                      "    pm.environment.set(\"id_token_sicoob\", json.id_token);",
+                      "});",
+                      "",
+                      "function jwt_decode(jwt) {",
+                      "    var partes = jwt.split('.'); // header, payload, signature",
+                      "    return JSON.parse(atob(partes[1]));",
+                      "}",
+                      "",
+                      "pm.test(\"Mostra dados\", function () {  ",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    console.log(\"Chaves: \" + Object.keys(json));",
+                      "",
+                      "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+                      "    let decodificado = jwt_decode(json.access_token);",
+                      "    console.log(\"Access Token: \" + JSON.stringify(decodificado));",
+                      "",
+                      "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;  ",
+                      "     decodificado = jwt_decode(json.id_token);",
+                      "    console.log(\"Id Token: \" + JSON.stringify(decodificado));",
+                      "});"
+                    ],
+                    "type": "text/javascript",
+                    "id": "3c1d72b5-b0a6-4f94-bf57-66843e521b52"
+                  }
+                }
+              ],
+              "id": "44c19609-f21b-4863-8e58-7fc72e5d0329",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer  {{access_token_finansystech}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "client_secret",
+                      "value": "{{client_secret}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "scope",
+                      "value": "openid",
+                      "type": "text"
+                    },
+                    {
+                      "key": "username",
+                      "value": "{{rhsso.usuario}}",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "username",
+                      "value": "pfc:1:1:700011510",
+                      "description": "TI",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "username",
+                      "value": "pfc:0001:1:9764313",
+                      "description": "HOMOL",
+                      "type": "text"
+                    },
+                    {
+                      "key": "username",
+                      "value": "pj:0001:MW3863",
+                      "description": "HOMOL CNPJ",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "password",
+                      "value": "88888888",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "{{client_id}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "grant_type",
+                      "value": "password",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://{{host_sso}}/auth/realms/sicoob/protocol/openid-connect/token",
+                  "protocol": "https",
+                  "host": [
+                    "{{host_sso}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "realms",
+                    "sicoob",
+                    "protocol",
+                    "openid-connect",
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "3 - Receptor - Cadastrar",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Call Authorization Url\", function() {",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    pm.sendRequest(json.deepLink, function (err, response) {",
+                      "        console.log(response.text());",
+                      "        var interactionId = response.text().replace('Redirecting to ', '').split('>')[0].split('interactionId=')[1].split('&amp;')[0].replace('\"', '');",
+                      "//      var interactionId = response.text().replace('Redirecting to <a href=\"', '').split('>')[0].split('/')[4].replace('\"', '');",
+                      "",
+                      "        pm.environment.set(\"interaction_id\", interactionId);",
+                      "        console.log(pm.environment.get(\"interaction_id\"));",
+                      "    });",
+                      "});",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "id": "1be74a62-e889-44a9-b6f4-fdeeed17b4f0"
+                  }
+                }
+              ],
+              "id": "6c383b73-473b-468c-8b4a-51951d43e8dd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-token-integracao-consentimento",
+                    "value": "{{access_token_finansystech}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "id_token",
+                    "value": "{{id_token_sicoob}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"organizationId\": \"{{organizationId_Sicoob}}\", \r\n    \"authorizationServerId\": \"{{authorizationServerId_Sicoob}}\",\r\n    \"codigoTermoAceite\": \"1\",\r\n    \"codigoFinalidade\": \"5\",\r\n    \"quantidadeMesesVigencia\": \"6\",\r\n    \"permissoes\": [\r\n        \"CUSTOMERS_PERSONAL_ADITTIONALINFO_READ\",\r\n        \"CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ\",\r\n        \"ACCOUNTS_READ\",\r\n        \"ACCOUNTS_OVERDRAFT_LIMITS_READ\",\r\n        \"ACCOUNTS_BALANCES_READ\",\r\n        \"ACCOUNTS_TRANSACTIONS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_BILLS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_BILLS_TRANSACTIONS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_LIMITS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_READ\",\r\n        \"CREDIT_CARDS_ACCOUNTS_TRANSACTIONS_READ\",\r\n        \"LOANS_READ\",\r\n        \"LOANS_WARRANTIES_READ\",\r\n        \"LOANS_SCHEDULED_INSTALMENTS_READ\",\r\n        \"LOANS_PAYMENTS_READ\",\r\n        \"FINANCINGS_READ\",\r\n        \"FINANCINGS_WARRANTIES_READ\",\r\n        \"FINANCINGS_SCHEDULED_INSTALMENTS_READ\",\r\n        \"FINANCINGS_PAYMENTS_READ\",\r\n        \"UNARRANGED_ACCOUNTS_OVERDRAFT_READ\",\r\n        \"UNARRANGED_ACCOUNTS_OVERDRAFT_WARRANTIES_READ\",\r\n        \"UNARRANGED_ACCOUNTS_OVERDRAFT_SCHEDULED_INSTALMENTS_READ\",\r\n        \"UNARRANGED_ACCOUNTS_OVERDRAFT_PAYMENTS_READ\",\r\n        \"INVOICE_FINANCINGS_READ\",\r\n        \"INVOICE_FINANCINGS_WARRANTIES_READ\",\r\n        \"INVOICE_FINANCINGS_SCHEDULED_INSTALMENTS_READ\",\r\n        \"INVOICE_FINANCINGS_PAYMENTS_READ\",\r\n        \"RESOURCES_READ\"\r\n    ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{url_consentimento}}/consentimento/v1/consentimento",
+                  "protocol": "http",
+                  "host": [
+                    "{{url_consentimento}}"
+                  ],
+                  "path": [
+                    "consentimento",
+                    "v1",
+                    "consentimento"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "4 - Token Transmissor RH-SSO",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Token gerado com sucesso\", function() {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "    const json = pm.response.json();\r",
+                      "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  \r",
+                      "    pm.globals.set(\"access_token_sicoob_using_client_credentials\", json.access_token);\r",
+                      "});\r",
+                      "pm.collectionVariables.clear()"
+                    ],
+                    "type": "text/javascript",
+                    "id": "2e377d93-e09d-4260-95ad-21238eadecbc"
+                  }
+                }
+              ],
+              "id": "a5066221-4728-40dd-a371-0a89cc904300",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "grant_type",
+                      "value": "client_credentials",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "mobile",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_secret",
+                      "value": "{{client_secret}}",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://{{host_sso}}/auth/realms/sicoob/protocol/openid-connect/token",
+                  "protocol": "https",
+                  "host": [
+                    "{{host_sso}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "realms",
+                    "sicoob",
+                    "protocol",
+                    "openid-connect",
+                    "token"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "5 - Login Transmissor",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Token gerado com sucesso\", function() {\r",
+                      "    \r",
+                      "    pm.response.to.have.status(200);\r",
+                      "    const json = pm.response.json();\r",
+                      "\r",
+                      "    pm.expect(json).to.have.property('url').and.to.not.be.undefined;  \r",
+                      "    let params = {};\r",
+                      "    json.url.split('?')[1].split('&').map(it => { params[it.split('=')[0]] = it.split('=')[1] });    \r",
+                      "    pm.globals.set(\"interaction_id_openfinance_sicoob\", params.interactionId);\r",
+                      "    console.log(pm.globals.get(\"interaction_id_openfinance_sicoob\"));\r",
+                      "\r",
+                      "    pm.expect(json).to.have.property('metadata').and.to.not.be.undefined;  \r",
+                      "    console.log(json);\r",
+                      "    pm.environment.set(\"access_token_openfinance_sicoob\", json.metadata.access_token);\r",
+                      "    pm.environment.set(\"id_token_openfinance_sicoob\", json.metadata.id_token);\r",
+                      "    pm.environment.set(\"consent_id\",json.consent.consentId);\r",
+                      "});\r",
+                      "pm.collectionVariables.clear()\r",
+                      "\r",
+                      "// USUARIO=CPF\r",
+                      "// user01=57784518064 \r",
+                      "// user02=02802848020\r",
+                      "// user03=33206818931\r",
+                      "// user04=03368094173\r",
+                      "// user05=01755434103\r",
+                      "// conta 39390 cliente 309001"
+                    ],
+                    "type": "text/javascript",
+                    "id": "e3785212-9e2a-4e4e-ab63-bddc0fad64e5"
+                  }
+                }
+              ],
+              "id": "4bcc9728-2301-4822-8b2e-736578c2605b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token_sicoob_using_client_credentials}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-interaction-id",
+                    "value": "{{interaction_id}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "x-interaction-id",
+                    "value": "Oon2ayNEWTSIJOjwjet9n",
+                    "type": "text",
+                    "disabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"numCooperativa\": \"4364\",\r\n    \"numContaCorrente\": \"138541\",\r\n    \"senha\": \"88888888\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://{{URL_OPENFINANCE}}/sicoob/auth/login",
+                  "protocol": "https",
+                  "host": [
+                    "{{URL_OPENFINANCE}}"
+                  ],
+                  "path": [
+                    "sicoob",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "6 - Aprovar Transmissor",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      " pm.collectionVariables.clear()\r",
+                      " \r",
+                      " pm.test(\"Get New Interaction Id\", function() {\r",
+                      "    pm.response.to.have.status(302);\r",
+                      "    const json = pm.response.json();\r",
+                      "\r",
+                      "    pm.environment.set(\"code_receiver\", json.url.split('#')[1].split('&')[0].replace('code=', ''));\r",
+                      "    pm.environment.set(\"id_token_receiver\", json.url.split('&')[1].replace('id_token=', ''));\r",
+                      "    pm.environment.set(\"state_receiver\", json.url.split('&')[2].replace('state=', ''));\r",
+                      "\r",
+                      "    console.log(\"code_receiver\", pm.environment.get(\"code_receiver\"));\r",
+                      "    console.log(\"id_token_receiver\", pm.environment.get(\"id_token_receiver\"));\r",
+                      "    console.log(\"state_receiver\", pm.environment.get(\"state_receiver\"));\r",
+                      " });"
+                    ],
+                    "type": "text/javascript",
+                    "id": "7255cac8-59cf-4f72-9875-9cd031e96e74"
+                  }
+                }
+              ],
+              "id": "433f69c8-15d4-47f2-9487-d1f6fd24763a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-token-integracao-consentimento",
+                    "value": "{{access_token_openfinance_sicoob}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "id_token",
+                    "value": "{{id_token_openfinance_sicoob}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\r\n    \r\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{url_consentimento}}/consentimento/v1/{{interaction_id_openfinance_sicoob}}/autorizar/{{consent_id}}",
+                  "protocol": "http",
+                  "host": [
+                    "{{url_consentimento}}"
+                  ],
+                  "path": [
+                    "consentimento",
+                    "v1",
+                    "{{interaction_id_openfinance_sicoob}}",
+                    "autorizar",
+                    "{{consent_id}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "7 - Comprovante Receptor",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      " pm.test(\"Get New Interaction Id\", function() {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      " });"
+                    ],
+                    "type": "text/javascript",
+                    "id": "9787da3e-683d-483d-8b3f-48c59528e544"
+                  }
+                }
+              ],
+              "id": "c5ee65e1-3ed4-4468-95b2-06acd83db257",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"state\": \"{{state_receiver}}\",\r\n    \"code\": \"{{code_receiver}}\",\r\n    \"idToken\": \"{{id_token_receiver}}\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{url_consentimento}}/consentimento/v1/consentimento/callback/",
+                  "protocol": "http",
+                  "host": [
+                    "{{url_consentimento}}"
+                  ],
+                  "path": [
+                    "consentimento",
+                    "v1",
+                    "consentimento",
+                    "callback",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "c45d5b3e-e6e6-462d-a570-785d312a83b9"
+        }
+      ],
+      "id": "ae985b4d-dd61-458b-b60b-93ae742fa48d"
+    }
+  ]
+}

@@ -1,0 +1,1690 @@
+{
+  "info": {
+    "_postman_id": "12c273c3-79df-4c6b-993e-7cc90ec5684e",
+    "name": "Sicoob Authorization Server 2.1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Token",
+      "item": [
+        {
+          "name": "/token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "bf8cd32e-9714-4398-ac2b-0739e64adc46",
+                "exec": [
+                  "try {\r",
+                  "    var jsonData = pm.response.json()\r",
+                  "} catch (err) {\r",
+                  "    pm.test(`Retorno Inexperado: ${err.message}`, () => pm.expect(true).to.eql(false))\r",
+                  "    console.log(err)\r",
+                  "    console.log(responseBody)\r",
+                  "    return\r",
+                  "}\r",
+                  "\r",
+                  "pm.collectionVariables.set(\"id_tokenAuthorization\", jsonData.id_token);\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "02c20063-5609-4ec0-aaff-ed540c7f0edb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "user_info",
+                "value": "eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoyNDIxNzksImlkUmVzcG9uc2FiaWxpZGFkZSI6MSwiY3BmQ25waiI6IjEzOTMwODU2MDE4In1dLCJjb250YXNQb3VwYW5jYSI6W3sibnVtZXJvIjo2MjgzOTg1NzMsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzOTMyNzAsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzNjY2OTgsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzOTExOTYsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzOTE5MDAsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9XSwibnVtY29udGFDb3JyZW50ZSI6MjQyMTc5LCJudW1Db29wZXJhdGl2YSI6NDM2NCwibnVtUGFjIjoxLCJpZEluc3RpdHVpY2FvIjo3MDAsImlkVW5pZGFkZUluc3RpdHVpY2FvIjoxLCJpc3BiIjoiMDU4NTY3MzYiLCJjb2RUaXBvUGVzc29hIjowLCJudW1DcGZDbnBqIjoiMTM5MzA4NTYwMTgiLCJudW1DTGllbnRlIjo4ODY2OCwiZGVzY05vbWVQZXNzb2EiOiJNQVJJQSBDUklTVElOQSBBTFZFUyBERSAzIiwiZGRkIjoiNDEzIiwidGVsZWZvbmUiOiIzMDcxMzQyMCIsInJhbWFsIjoiIiwiZGF0YU5hc2NpbWVudG8iOiIxOTY2LTA5LTE2IiwiaWREaXNwb3NpdGl2byI6IiJ9",
+                "description": "pf",
+                "disabled": true
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "user_info",
+                "value": "eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoxMzEzMjkwLCJjcGZDbnBqIjoiNDI5OTEwNTIwMDAxMTciLCJpZFJlc3BvbnNhYmlsaWRhZGUiOjF9XSwibnVtQ29udGFDb3JyZW50ZSI6MTMxMzI5MCwibnVtQ29vcGVyYXRpdmEiOiI0MzY0IiwiaWRJbnN0aXR1aWNhbyI6NzAwLCJpZFVuaWRhZGVJbnN0aXR1aWNhbyI6MSwiZGVzY05vbWVQZXNzb2EiOiJBTkRSRUlBIENOQUJQSVgiLCJpc3BiIjoiMDU4NTY3MzYiLCJjb2RUaXBvUGVzc29hIjowLCJjaGF2ZUFjZXNzbyI6IkFTNjEyNyIsIm51bUNwZkNucGoiOiI4NTU1MjQ1NzUzNiIsImlkRGlzcG9zaXRpdm8iOiJiYWE3MDZiZDc2N2MwNGY2ZDg0NDVmYTNjOTE3ZmU5NjUzODY3YmI0NWNhOTg1MzgyOGI0NzA5NTAzYjA3YjE5Iiwic2VndXJhbmNhIjp7IjAwMjEyIjoiYmFhNzA2YmQ3NjdjMDRmNmQ4NDQ1ZmEzYzkxN2ZlOTY1Mzg2N2JiNDVjYTk4NTM4MjhiNDcwOTUwM2IwN2IxOSIsIjA5MDIwIjoiKjEwLjIyMC4xLjE1NzoyOTkyMCIsIjA5ODUzIjpmYWxzZX19",
+                "description": "pj",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_secret",
+                  "value": "gcaeC3Yh7jE6B4nJnjj9bcG82TKDqHoS",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "app-sicoob-pessoal",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid profile",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "pfc:0001:1:2001000014",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "88888888",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "grant_type",
+                  "value": "password",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "pfc:0001:1:700022538",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "pfnc:0001:94377695966855",
+                  "type": "text",
+                  "uuid": "8a1de263-856d-416c-990f-b0986061eed7",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "700022538",
+                  "type": "text",
+                  "uuid": "c28ddffe-f7dc-482a-b435-97452f5a3ad8"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{authorization-server-url}}/auth/realms/sicoob/protocol/openid-connect/token",
+              "host": [
+                "{{authorization-server-url}}"
+              ],
+              "path": [
+                "auth",
+                "realms",
+                "sicoob",
+                "protocol",
+                "openid-connect",
+                "token"
+              ]
+            },
+            "description": "Generated from cURL: curl --location 'http://localhost:8080/token' \\\n--header 'Authorization: Bearer <access_token>' \\\n--header 'user_info: eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoyMzIzMTMzLCJpZFJlc3BvbnNhYmlsaWRhZGUiOjAsImNwZkNucGoiOiI4ODIxMjA3MjAwMDE0MyJ9XSwibnVtY29udGFDb3JyZW50ZTIzMjMxMzMsIm51bUNvb3BlcmF0aXZlIjoxNjQsImlkSW5zdGl0dWljYW8iOjE3MSwiY29kVGlwb1Blc3NvYSI6MSwibnVtQ3BmQ25waiI6IjQ4MDE5OTI1MDE1IiwiaWREaXNwb3NpdGl2byI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCJzZWd1cmFuY2EiOnsiMDk4NTMiOmZhbHNlLCIwMDIxMiI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCIwOTAyMCI6IjEwLjIyMC4xLjE1NyJ9fQ==' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'client_secret=1MizTA1LlpDEVcMAZ8G6kDvYIUYTqDUA' \\\n--data-urlencode 'scope=openid profile' \\\n--data-urlencode 'username=pfc:1:1:700009310' \\\n--data-urlencode 'password=xxxxxxxx' \\\n--data-urlencode 'client_id=app-sicoob-pessoal' \\\n--data-urlencode 'grant_type=password'"
+          },
+          "response": []
+        },
+        {
+          "name": "/token Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "bf8cd32e-9714-4398-ac2b-0739e64adc46",
+                "exec": [
+                  "try {\r",
+                  "    var jsonData = pm.response.json()\r",
+                  "} catch (err) {\r",
+                  "    pm.test(`Retorno Inexperado: ${err.message}`, () => pm.expect(true).to.eql(false))\r",
+                  "    console.log(err)\r",
+                  "    console.log(responseBody)\r",
+                  "    return\r",
+                  "}\r",
+                  "\r",
+                  "pm.collectionVariables.set(\"id_tokenAuthorization\", jsonData.id_token);\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "0fd0e09b-f2a1-4f28-8d6b-ab7396e0c505",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "user_info",
+                "value": "eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoyNDIxNzksImlkUmVzcG9uc2FiaWxpZGFkZSI6MSwiY3BmQ25waiI6IjEzOTMwODU2MDE4In1dLCJjb250YXNQb3VwYW5jYSI6W3sibnVtZXJvIjo2MjgzOTg1NzMsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzOTMyNzAsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzNjY2OTgsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzOTExOTYsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzOTE5MDAsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9XSwibnVtY29udGFDb3JyZW50ZSI6MjQyMTc5LCJudW1Db29wZXJhdGl2YSI6NDM2NCwibnVtUGFjIjoxLCJpZEluc3RpdHVpY2FvIjo3MDAsImlkVW5pZGFkZUluc3RpdHVpY2FvIjoxLCJpc3BiIjoiMDU4NTY3MzYiLCJjb2RUaXBvUGVzc29hIjowLCJudW1DcGZDbnBqIjoiMTM5MzA4NTYwMTgiLCJudW1DTGllbnRlIjo4ODY2OCwiZGVzY05vbWVQZXNzb2EiOiJNQVJJQSBDUklTVElOQSBBTFZFUyBERSAzIiwiZGRkIjoiNDEzIiwidGVsZWZvbmUiOiIzMDcxMzQyMCIsInJhbWFsIjoiIiwiZGF0YU5hc2NpbWVudG8iOiIxOTY2LTA5LTE2IiwiaWREaXNwb3NpdGl2byI6IiJ9",
+                "description": "pf",
+                "disabled": true
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "user_info",
+                "value": "eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoxMzEzMjkwLCJjcGZDbnBqIjoiNDI5OTEwNTIwMDAxMTciLCJpZFJlc3BvbnNhYmlsaWRhZGUiOjF9XSwibnVtQ29udGFDb3JyZW50ZSI6MTMxMzI5MCwibnVtQ29vcGVyYXRpdmEiOiI0MzY0IiwiaWRJbnN0aXR1aWNhbyI6NzAwLCJpZFVuaWRhZGVJbnN0aXR1aWNhbyI6MSwiZGVzY05vbWVQZXNzb2EiOiJBTkRSRUlBIENOQUJQSVgiLCJpc3BiIjoiMDU4NTY3MzYiLCJjb2RUaXBvUGVzc29hIjowLCJjaGF2ZUFjZXNzbyI6IkFTNjEyNyIsIm51bUNwZkNucGoiOiI4NTU1MjQ1NzUzNiIsImlkRGlzcG9zaXRpdm8iOiJiYWE3MDZiZDc2N2MwNGY2ZDg0NDVmYTNjOTE3ZmU5NjUzODY3YmI0NWNhOTg1MzgyOGI0NzA5NTAzYjA3YjE5Iiwic2VndXJhbmNhIjp7IjAwMjEyIjoiYmFhNzA2YmQ3NjdjMDRmNmQ4NDQ1ZmEzYzkxN2ZlOTY1Mzg2N2JiNDVjYTk4NTM4MjhiNDcwOTUwM2IwN2IxOSIsIjA5MDIwIjoiKjEwLjIyMC4xLjE1NzoyOTkyMCIsIjA5ODUzIjpmYWxzZX19",
+                "description": "pj",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_secret",
+                  "value": "6mfTiRb0CUfWPCIYQtxcxPR3agLeYnRr",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "mobile",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid profile",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "pfc:3055:1:894567",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "88888888",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "password",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "pj:0001:XG0002",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "username",
+                  "value": "pfnc:0001:94377695966855",
+                  "type": "text",
+                  "uuid": "8a1de263-856d-416c-990f-b0986061eed7",
+                  "disabled": true
+                },
+                {
+                  "key": "username",
+                  "value": "pfc:0001:1:2001000014",
+                  "type": "text",
+                  "uuid": "ac322c46-57db-4759-b3ad-98201204eb7d",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{authorization-server-url}}/auth/realms/sicoob/protocol/openid-connect/token",
+              "host": [
+                "{{authorization-server-url}}"
+              ],
+              "path": [
+                "auth",
+                "realms",
+                "sicoob",
+                "protocol",
+                "openid-connect",
+                "token"
+              ]
+            },
+            "description": "Generated from cURL: curl --location 'http://localhost:8080/token' \\\n--header 'Authorization: Bearer <access_token>' \\\n--header 'user_info: eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoyMzIzMTMzLCJpZFJlc3BvbnNhYmlsaWRhZGUiOjAsImNwZkNucGoiOiI4ODIxMjA3MjAwMDE0MyJ9XSwibnVtY29udGFDb3JyZW50ZTIzMjMxMzMsIm51bUNvb3BlcmF0aXZlIjoxNjQsImlkSW5zdGl0dWljYW8iOjE3MSwiY29kVGlwb1Blc3NvYSI6MSwibnVtQ3BmQ25waiI6IjQ4MDE5OTI1MDE1IiwiaWREaXNwb3NpdGl2byI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCJzZWd1cmFuY2EiOnsiMDk4NTMiOmZhbHNlLCIwMDIxMiI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCIwOTAyMCI6IjEwLjIyMC4xLjE1NyJ9fQ==' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'client_secret=1MizTA1LlpDEVcMAZ8G6kDvYIUYTqDUA' \\\n--data-urlencode 'scope=openid profile' \\\n--data-urlencode 'username=pfc:1:1:700009310' \\\n--data-urlencode 'password=xxxxxxxx' \\\n--data-urlencode 'client_id=app-sicoob-pessoal' \\\n--data-urlencode 'grant_type=password'"
+          },
+          "response": []
+        },
+        {
+          "name": "/token client_credentials",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "bf8cd32e-9714-4398-ac2b-0739e64adc46",
+                "exec": [
+                  "try {\r",
+                  "    var jsonData = pm.response.json()\r",
+                  "} catch (err) {\r",
+                  "    pm.test(`Retorno Inexperado: ${err.message}`, () => pm.expect(true).to.eql(false))\r",
+                  "    console.log(err)\r",
+                  "    console.log(responseBody)\r",
+                  "    return\r",
+                  "}\r",
+                  "\r",
+                  "pm.collectionVariables.set(\"id_tokenAuthorization\", jsonData.id_token);\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "d1bb13c6-3ffc-40c3-8de0-579d6ab20b2d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "user_info",
+                "value": "eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoyNDIxNzksImlkUmVzcG9uc2FiaWxpZGFkZSI6MSwiY3BmQ25waiI6IjEzOTMwODU2MDE4In1dLCJjb250YXNQb3VwYW5jYSI6W3sibnVtZXJvIjo2MjgzOTg1NzMsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzOTMyNzAsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzNjY2OTgsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzOTExOTYsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzOTE5MDAsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9XSwibnVtY29udGFDb3JyZW50ZSI6MjQyMTc5LCJudW1Db29wZXJhdGl2YSI6NDM2NCwibnVtUGFjIjoxLCJpZEluc3RpdHVpY2FvIjo3MDAsImlkVW5pZGFkZUluc3RpdHVpY2FvIjoxLCJpc3BiIjoiMDU4NTY3MzYiLCJjb2RUaXBvUGVzc29hIjowLCJudW1DcGZDbnBqIjoiMTM5MzA4NTYwMTgiLCJudW1DTGllbnRlIjo4ODY2OCwiZGVzY05vbWVQZXNzb2EiOiJNQVJJQSBDUklTVElOQSBBTFZFUyBERSAzIiwiZGRkIjoiNDEzIiwidGVsZWZvbmUiOiIzMDcxMzQyMCIsInJhbWFsIjoiIiwiZGF0YU5hc2NpbWVudG8iOiIxOTY2LTA5LTE2IiwiaWREaXNwb3NpdGl2byI6IiJ9",
+                "description": "pf",
+                "disabled": true
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "user_info",
+                "value": "eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoxMzEzMjkwLCJjcGZDbnBqIjoiNDI5OTEwNTIwMDAxMTciLCJpZFJlc3BvbnNhYmlsaWRhZGUiOjF9XSwibnVtQ29udGFDb3JyZW50ZSI6MTMxMzI5MCwibnVtQ29vcGVyYXRpdmEiOiI0MzY0IiwiaWRJbnN0aXR1aWNhbyI6NzAwLCJpZFVuaWRhZGVJbnN0aXR1aWNhbyI6MSwiZGVzY05vbWVQZXNzb2EiOiJBTkRSRUlBIENOQUJQSVgiLCJpc3BiIjoiMDU4NTY3MzYiLCJjb2RUaXBvUGVzc29hIjowLCJjaGF2ZUFjZXNzbyI6IkFTNjEyNyIsIm51bUNwZkNucGoiOiI4NTU1MjQ1NzUzNiIsImlkRGlzcG9zaXRpdm8iOiJiYWE3MDZiZDc2N2MwNGY2ZDg0NDVmYTNjOTE3ZmU5NjUzODY3YmI0NWNhOTg1MzgyOGI0NzA5NTAzYjA3YjE5Iiwic2VndXJhbmNhIjp7IjAwMjEyIjoiYmFhNzA2YmQ3NjdjMDRmNmQ4NDQ1ZmEzYzkxN2ZlOTY1Mzg2N2JiNDVjYTk4NTM4MjhiNDcwOTUwM2IwN2IxOSIsIjA5MDIwIjoiKjEwLjIyMC4xLjE1NzoyOTkyMCIsIjA5ODUzIjpmYWxzZX19",
+                "description": "pj",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_secret",
+                  "value": "gcaeC3Yh7jE6B4nJnjj9bcG82TKDqHoS",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "app-sicoob-pessoal",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "pfc:4364:1:27",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "88888888",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "pfnc:3105:77963164100",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "username",
+                  "value": "pj:4364:KP9684",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{authorization-server-url}}/auth/realms/sicoob/protocol/openid-connect/token",
+              "host": [
+                "{{authorization-server-url}}"
+              ],
+              "path": [
+                "auth",
+                "realms",
+                "sicoob",
+                "protocol",
+                "openid-connect",
+                "token"
+              ]
+            },
+            "description": "Generated from cURL: curl --location 'http://localhost:8080/token' \\\n--header 'Authorization: Bearer <access_token>' \\\n--header 'user_info: eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoyMzIzMTMzLCJpZFJlc3BvbnNhYmlsaWRhZGUiOjAsImNwZkNucGoiOiI4ODIxMjA3MjAwMDE0MyJ9XSwibnVtY29udGFDb3JyZW50ZTIzMjMxMzMsIm51bUNvb3BlcmF0aXZlIjoxNjQsImlkSW5zdGl0dWljYW8iOjE3MSwiY29kVGlwb1Blc3NvYSI6MSwibnVtQ3BmQ25waiI6IjQ4MDE5OTI1MDE1IiwiaWREaXNwb3NpdGl2byI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCJzZWd1cmFuY2EiOnsiMDk4NTMiOmZhbHNlLCIwMDIxMiI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCIwOTAyMCI6IjEwLjIyMC4xLjE1NyJ9fQ==' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'client_secret=1MizTA1LlpDEVcMAZ8G6kDvYIUYTqDUA' \\\n--data-urlencode 'scope=openid profile' \\\n--data-urlencode 'username=pfc:1:1:700009310' \\\n--data-urlencode 'password=xxxxxxxx' \\\n--data-urlencode 'client_id=app-sicoob-pessoal' \\\n--data-urlencode 'grant_type=password'"
+          },
+          "response": []
+        },
+        {
+          "name": "/token rhsso redirecionado",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "bf8cd32e-9714-4398-ac2b-0739e64adc46",
+                "exec": [
+                  "try {\r",
+                  "    var jsonData = pm.response.json()\r",
+                  "} catch (err) {\r",
+                  "    pm.test(`Retorno Inexperado: ${err.message}`, () => pm.expect(true).to.eql(false))\r",
+                  "    console.log(err)\r",
+                  "    console.log(responseBody)\r",
+                  "    return\r",
+                  "}\r",
+                  "\r",
+                  "pm.collectionVariables.set(\"id_tokenAuthorization\", jsonData.id_token);\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "feea5e9b-6ce3-4d73-9ea1-17d80388321a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "user_info",
+                "value": "eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoyNDIxNzksImlkUmVzcG9uc2FiaWxpZGFkZSI6MSwiY3BmQ25waiI6IjEzOTMwODU2MDE4In1dLCJjb250YXNQb3VwYW5jYSI6W3sibnVtZXJvIjo2MjgzOTg1NzMsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzOTMyNzAsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzNjY2OTgsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzOTExOTYsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzOTE5MDAsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9XSwibnVtY29udGFDb3JyZW50ZSI6MjQyMTc5LCJudW1Db29wZXJhdGl2YSI6NDM2NCwibnVtUGFjIjoxLCJpZEluc3RpdHVpY2FvIjo3MDAsImlkVW5pZGFkZUluc3RpdHVpY2FvIjoxLCJpc3BiIjoiMDU4NTY3MzYiLCJjb2RUaXBvUGVzc29hIjowLCJudW1DcGZDbnBqIjoiMTM5MzA4NTYwMTgiLCJudW1DTGllbnRlIjo4ODY2OCwiZGVzY05vbWVQZXNzb2EiOiJNQVJJQSBDUklTVElOQSBBTFZFUyBERSAzIiwiZGRkIjoiNDEzIiwidGVsZWZvbmUiOiIzMDcxMzQyMCIsInJhbWFsIjoiIiwiZGF0YU5hc2NpbWVudG8iOiIxOTY2LTA5LTE2IiwiaWREaXNwb3NpdGl2byI6IiJ9",
+                "description": "pf",
+                "disabled": true
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "user_info",
+                "value": "eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoxMzEzMjkwLCJjcGZDbnBqIjoiNDI5OTEwNTIwMDAxMTciLCJpZFJlc3BvbnNhYmlsaWRhZGUiOjF9XSwibnVtQ29udGFDb3JyZW50ZSI6MTMxMzI5MCwibnVtQ29vcGVyYXRpdmEiOiI0MzY0IiwiaWRJbnN0aXR1aWNhbyI6NzAwLCJpZFVuaWRhZGVJbnN0aXR1aWNhbyI6MSwiZGVzY05vbWVQZXNzb2EiOiJBTkRSRUlBIENOQUJQSVgiLCJpc3BiIjoiMDU4NTY3MzYiLCJjb2RUaXBvUGVzc29hIjowLCJjaGF2ZUFjZXNzbyI6IkFTNjEyNyIsIm51bUNwZkNucGoiOiI4NTU1MjQ1NzUzNiIsImlkRGlzcG9zaXRpdm8iOiJiYWE3MDZiZDc2N2MwNGY2ZDg0NDVmYTNjOTE3ZmU5NjUzODY3YmI0NWNhOTg1MzgyOGI0NzA5NTAzYjA3YjE5Iiwic2VndXJhbmNhIjp7IjAwMjEyIjoiYmFhNzA2YmQ3NjdjMDRmNmQ4NDQ1ZmEzYzkxN2ZlOTY1Mzg2N2JiNDVjYTk4NTM4MjhiNDcwOTUwM2IwN2IxOSIsIjA5MDIwIjoiKjEwLjIyMC4xLjE1NzoyOTkyMCIsIjA5ODUzIjpmYWxzZX19",
+                "description": "pj",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_secret",
+                  "value": "gcaeC3Yh7jE6B4nJnjj9bcG82TKDqHoS",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "app-sicoob-pessoal",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid profile",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "pfc:4364:1:27",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "88888888",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "password",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "pfnc:1:17780423689",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "username",
+                  "value": "pj:4364:KP9684",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_rhsso_canais}}/realms/sicoob/protocol/openid-connect/token",
+              "host": [
+                "{{url_rhsso_canais}}"
+              ],
+              "path": [
+                "realms",
+                "sicoob",
+                "protocol",
+                "openid-connect",
+                "token"
+              ]
+            },
+            "description": "Generated from cURL: curl --location 'http://localhost:8080/token' \\\n--header 'Authorization: Bearer <access_token>' \\\n--header 'user_info: eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoyMzIzMTMzLCJpZFJlc3BvbnNhYmlsaWRhZGUiOjAsImNwZkNucGoiOiI4ODIxMjA3MjAwMDE0MyJ9XSwibnVtY29udGFDb3JyZW50ZTIzMjMxMzMsIm51bUNvb3BlcmF0aXZlIjoxNjQsImlkSW5zdGl0dWljYW8iOjE3MSwiY29kVGlwb1Blc3NvYSI6MSwibnVtQ3BmQ25waiI6IjQ4MDE5OTI1MDE1IiwiaWREaXNwb3NpdGl2byI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCJzZWd1cmFuY2EiOnsiMDk4NTMiOmZhbHNlLCIwMDIxMiI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCIwOTAyMCI6IjEwLjIyMC4xLjE1NyJ9fQ==' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'client_secret=1MizTA1LlpDEVcMAZ8G6kDvYIUYTqDUA' \\\n--data-urlencode 'scope=openid profile' \\\n--data-urlencode 'username=pfc:1:1:700009310' \\\n--data-urlencode 'password=xxxxxxxx' \\\n--data-urlencode 'client_id=app-sicoob-pessoal' \\\n--data-urlencode 'grant_type=password'"
+          },
+          "response": []
+        },
+        {
+          "name": "/token rhsso",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "2e29be28-f834-49c3-85e4-1994a94696b8",
+                "exec": [
+                  "try {\r",
+                  "    var jsonData = pm.response.json()\r",
+                  "} catch (err) {\r",
+                  "    pm.test(`Retorno Inexperado: ${err.message}`, () => pm.expect(true).to.eql(false))\r",
+                  "    console.log(err)\r",
+                  "    console.log(responseBody)\r",
+                  "    return\r",
+                  "}\r",
+                  "\r",
+                  "pm.collectionVariables.set(\"id_tokenSSO\", jsonData.id_token);\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "f440e1a3-1b6d-42db-9820-a448fe920efd",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "user_info",
+                "value": "eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoyNDIxNzksImlkUmVzcG9uc2FiaWxpZGFkZSI6MSwiY3BmQ25waiI6IjEzOTMwODU2MDE4In1dLCJjb250YXNQb3VwYW5jYSI6W3sibnVtZXJvIjo2MjgzOTg1NzMsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzOTMyNzAsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzNjY2OTgsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzOTExOTYsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9LHsibnVtZXJvIjo2MjgzOTE5MDAsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9XSwibnVtY29udGFDb3JyZW50ZSI6MjQyMTc5LCJudW1Db29wZXJhdGl2YSI6NDM2NCwibnVtUGFjIjoxLCJpZEluc3RpdHVpY2FvIjo3MDAsImlkVW5pZGFkZUluc3RpdHVpY2FvIjoxLCJpc3BiIjoiMDU4NTY3MzYiLCJjb2RUaXBvUGVzc29hIjowLCJudW1DcGZDbnBqIjoiMTM5MzA4NTYwMTgiLCJudW1DTGllbnRlIjo4ODY2OCwiZGVzY05vbWVQZXNzb2EiOiJNQVJJQSBDUklTVElOQSBBTFZFUyBERSAzIiwiZGRkIjoiNDEzIiwidGVsZWZvbmUiOiIzMDcxMzQyMCIsInJhbWFsIjoiIiwiZGF0YU5hc2NpbWVudG8iOiIxOTY2LTA5LTE2IiwiaWREaXNwb3NpdGl2byI6IiJ9"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_secret",
+                  "value": "gcaeC3Yh7jE6B4nJnjj9bcG82TKDqHoS",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "app-sicoob-pessoal",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid profile",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "pfc:4364:1:242179",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "88888888",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "password",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_rhsso_canais}}/realms/sicoob/protocol/openid-connect/token",
+              "host": [
+                "{{url_rhsso_canais}}"
+              ],
+              "path": [
+                "realms",
+                "sicoob",
+                "protocol",
+                "openid-connect",
+                "token"
+              ]
+            },
+            "description": "Generated from cURL: curl --location 'http://localhost:8080/token' \\\n--header 'Authorization: Bearer <access_token>' \\\n--header 'user_info: eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoyMzIzMTMzLCJpZFJlc3BvbnNhYmlsaWRhZGUiOjAsImNwZkNucGoiOiI4ODIxMjA3MjAwMDE0MyJ9XSwibnVtY29udGFDb3JyZW50ZTIzMjMxMzMsIm51bUNvb3BlcmF0aXZlIjoxNjQsImlkSW5zdGl0dWljYW8iOjE3MSwiY29kVGlwb1Blc3NvYSI6MSwibnVtQ3BmQ25waiI6IjQ4MDE5OTI1MDE1IiwiaWREaXNwb3NpdGl2byI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCJzZWd1cmFuY2EiOnsiMDk4NTMiOmZhbHNlLCIwMDIxMiI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCIwOTAyMCI6IjEwLjIyMC4xLjE1NyJ9fQ==' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'client_secret=1MizTA1LlpDEVcMAZ8G6kDvYIUYTqDUA' \\\n--data-urlencode 'scope=openid profile' \\\n--data-urlencode 'username=pfc:1:1:700009310' \\\n--data-urlencode 'password=xxxxxxxx' \\\n--data-urlencode 'client_id=app-sicoob-pessoal' \\\n--data-urlencode 'grant_type=password'"
+          },
+          "response": []
+        },
+        {
+          "name": "/certs",
+          "id": "db37376d-b25b-43ac-ad66-dcd0949b472f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{authorization-server-url}}/auth/realms/sicoob/protocol/openid-connect/certs",
+              "host": [
+                "{{authorization-server-url}}"
+              ],
+              "path": [
+                "auth",
+                "realms",
+                "sicoob",
+                "protocol",
+                "openid-connect",
+                "certs"
+              ]
+            },
+            "description": "Generated from cURL: curl -X GET http://localhost:8080/certs"
+          },
+          "response": []
+        },
+        {
+          "name": "/certs rhsso",
+          "id": "b5acfe43-1a98-4866-a013-9e87702f796c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url_rhsso_canais}}/realms/sicoob/protocol/openid-connect/certs",
+              "host": [
+                "{{url_rhsso_canais}}"
+              ],
+              "path": [
+                "realms",
+                "sicoob",
+                "protocol",
+                "openid-connect",
+                "certs"
+              ]
+            },
+            "description": "Generated from cURL: curl -X GET http://localhost:8080/certs"
+          },
+          "response": []
+        },
+        {
+          "name": "/introspect",
+          "id": "eacfc93c-50ba-409c-9724-b3234082cce3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "token",
+                  "value": "{{id_tokenAuthorization}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{authorization-server-url}}/auth/realms/sicoob/protocol/openid-connect/token/introspect",
+              "host": [
+                "{{authorization-server-url}}"
+              ],
+              "path": [
+                "auth",
+                "realms",
+                "sicoob",
+                "protocol",
+                "openid-connect",
+                "token",
+                "introspect"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST http://localhost:8080/introspect \\\n     -H \"Content-Type: application/x-www-form-urlencoded\" \\\n     -d \"token=<JWT_TOKEN>\""
+          },
+          "response": []
+        },
+        {
+          "name": "/introspect rhsso",
+          "id": "d8ed4d3d-1d54-4dd1-bec3-edaf4087c38c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "token",
+                  "value": "eyJraWQiOiJEd0t6R3FpbDV2N1k1OTkwWm9jdEtwVGxpTzduZUNuTEE5T3FZSUgtZHNZIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJwZmM6NDM2NDoxOjI3IiwiaWRJbnN0aXR1aWNhbyI6NzAwLCJjb2RUaXBvUGVzc29hIjowLCJhcGxpY2FjYW8iOiJiVzlpYVd4bENnPT0iLCJpZERpc3Bvc2l0aXZvIjoiYmFhNzA2YmQ3NjdjMDRmNmQ4NDQ1ZmEzYzkxN2ZlOTY1Mzg2N2JiNDVjYTk4NTM4MjhiNDcwOTUwM2IwN2IxOSIsImlzcyI6Imh0dHBzOi8vc3NvLmhvbW9sb2dhY2FvLmNvbS5ici9hdXRoL3JlYWxtcy9zaWNvb2IiLCJ0eXAiOiJpZF90b2tlbiIsInByZWZlcnJlZF91c2VybmFtZSI6InBmYzo0MzY0OjE6MjciLCJudW1DcGZDbnBqIjoiODU1NTI0NTc1MzYiLCJkZXNjTm9tZVBlc3NvYSI6IkFORFJFSUEgQ05BQlBJWCIsInNlZ3VyYW5jYSI6eyIwMDIxMiI6ImJhYTcwNmJkNzY3YzA0ZjZkODQ0NWZhM2M5MTdmZTk2NTM4NjdiYjQ1Y2E5ODUzODI4YjQ3MDk1MDNiMDdiMTkiLCIwOTAyMCI6IioxMC4yMjAuMS4xNTc6Mjk5MjAiLCIwOTg1MyI6ZmFsc2V9LCJub25jZSI6IjA4NTljZGIxLTZhMTMtNDkzYy05NDAwLTljZmQxZmQ0OTU4MiIsImlzcGIiOiIwNTg1NjczNiIsImF1ZCI6ImFjY291bnQiLCJjaGF2ZUFjZXNzbyI6IkFTNjEyNyIsImF6cCI6ImFwcC1zaWNvb2ItcGVzc29hbCIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUiLCJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoxMzEzMjkwLCJjcGZDbnBqIjoiNDI5OTEwNTIwMDAxMTciLCJpZFJlc3BvbnNhYmlsaWRhZGUiOjF9XSwiaWRVbmlkYWRlSW5zdGl0dWljYW8iOjEsImV4cCI6MTczMTUyMzQwOCwiaWF0IjoxNzMxNTE5ODA4LCJudW1Db29wZXJhdGl2YSI6IjQzNjQiLCJudW1Db250YUNvcnJlbnRlIjoxMzEzMjkwfQ.UajwbnbFiIWqTWte984eb0AWkDIE7BqbuVw82-pcWCyr1OeC25mZ75DmgnzNTOhpXKbtrxsOAX4JWuihZkB36qOqY-1I_5aLULsFGee6G_EWUwHEkTs-vq7iUFwm8Z_AZKIqe25b3lTvd-W-n2NPvEO-SggrkfeaXnu_hxUpaRykgB_hmzE1R5I9lnBOJz4ncPz1I1dV5zFnPkt-UWaUiCOwGgTiJS1CAO4Z9xgkSOfmsTQiRShzTBQM5PKxe5SCPDvO1BWNEgECtufDmrEEZK89dMDYZd-u_hNub_XcTZIdtKvKrCcD7bNCPIbxoCWTXKp8gJvGT9aGx97Xlm13jQ",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_rhsso_canais}}/realms/sicoob/protocol/openid-connect/token/introspect",
+              "host": [
+                "{{url_rhsso_canais}}"
+              ],
+              "path": [
+                "realms",
+                "sicoob",
+                "protocol",
+                "openid-connect",
+                "token",
+                "introspect"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST http://localhost:8080/introspect \\\n     -H \"Content-Type: application/x-www-form-urlencoded\" \\\n     -d \"token=<JWT_TOKEN>\""
+          },
+          "response": []
+        },
+        {
+          "name": "/actuator",
+          "id": "0b9fa2f5-ba2a-4279-b18d-b30933090cac",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{authorization-server-url}}/actuator",
+              "host": [
+                "{{authorization-server-url}}"
+              ],
+              "path": [
+                "actuator"
+              ]
+            },
+            "description": "Generated from cURL: curl --location 'http://localhost:8080/token' \\\n--header 'Authorization: Bearer <access_token>' \\\n--header 'user_info: eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoyMzIzMTMzLCJpZFJlc3BvbnNhYmlsaWRhZGUiOjAsImNwZkNucGoiOiI4ODIxMjA3MjAwMDE0MyJ9XSwibnVtY29udGFDb3JyZW50ZTIzMjMxMzMsIm51bUNvb3BlcmF0aXZlIjoxNjQsImlkSW5zdGl0dWljYW8iOjE3MSwiY29kVGlwb1Blc3NvYSI6MSwibnVtQ3BmQ25waiI6IjQ4MDE5OTI1MDE1IiwiaWREaXNwb3NpdGl2byI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCJzZWd1cmFuY2EiOnsiMDk4NTMiOmZhbHNlLCIwMDIxMiI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCIwOTAyMCI6IjEwLjIyMC4xLjE1NyJ9fQ==' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'client_secret=1MizTA1LlpDEVcMAZ8G6kDvYIUYTqDUA' \\\n--data-urlencode 'scope=openid profile' \\\n--data-urlencode 'username=pfc:1:1:700009310' \\\n--data-urlencode 'password=xxxxxxxx' \\\n--data-urlencode 'client_id=app-sicoob-pessoal' \\\n--data-urlencode 'grant_type=password'"
+          },
+          "response": []
+        },
+        {
+          "name": "/health",
+          "id": "9b88bffa-83ca-4d47-85db-1e09baf613eb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{authorization-server-url}}/actuator/health",
+              "host": [
+                "{{authorization-server-url}}"
+              ],
+              "path": [
+                "actuator",
+                "health"
+              ]
+            },
+            "description": "Generated from cURL: curl --location 'http://localhost:8080/token' \\\n--header 'Authorization: Bearer <access_token>' \\\n--header 'user_info: eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoyMzIzMTMzLCJpZFJlc3BvbnNhYmlsaWRhZGUiOjAsImNwZkNucGoiOiI4ODIxMjA3MjAwMDE0MyJ9XSwibnVtY29udGFDb3JyZW50ZTIzMjMxMzMsIm51bUNvb3BlcmF0aXZlIjoxNjQsImlkSW5zdGl0dWljYW8iOjE3MSwiY29kVGlwb1Blc3NvYSI6MSwibnVtQ3BmQ25waiI6IjQ4MDE5OTI1MDE1IiwiaWREaXNwb3NpdGl2byI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCJzZWd1cmFuY2EiOnsiMDk4NTMiOmZhbHNlLCIwMDIxMiI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCIwOTAyMCI6IjEwLjIyMC4xLjE1NyJ9fQ==' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'client_secret=1MizTA1LlpDEVcMAZ8G6kDvYIUYTqDUA' \\\n--data-urlencode 'scope=openid profile' \\\n--data-urlencode 'username=pfc:1:1:700009310' \\\n--data-urlencode 'password=xxxxxxxx' \\\n--data-urlencode 'client_id=app-sicoob-pessoal' \\\n--data-urlencode 'grant_type=password'"
+          },
+          "response": []
+        },
+        {
+          "name": "/env",
+          "id": "fbb8ce66-706f-4fc4-b15d-cc93a2576f3a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{authorization-server-url}}/actuator/env",
+              "host": [
+                "{{authorization-server-url}}"
+              ],
+              "path": [
+                "actuator",
+                "env"
+              ]
+            },
+            "description": "Generated from cURL: curl --location 'http://localhost:8080/token' \\\n--header 'Authorization: Bearer <access_token>' \\\n--header 'user_info: eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoyMzIzMTMzLCJpZFJlc3BvbnNhYmlsaWRhZGUiOjAsImNwZkNucGoiOiI4ODIxMjA3MjAwMDE0MyJ9XSwibnVtY29udGFDb3JyZW50ZTIzMjMxMzMsIm51bUNvb3BlcmF0aXZlIjoxNjQsImlkSW5zdGl0dWljYW8iOjE3MSwiY29kVGlwb1Blc3NvYSI6MSwibnVtQ3BmQ25waiI6IjQ4MDE5OTI1MDE1IiwiaWREaXNwb3NpdGl2byI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCJzZWd1cmFuY2EiOnsiMDk4NTMiOmZhbHNlLCIwMDIxMiI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCIwOTAyMCI6IjEwLjIyMC4xLjE1NyJ9fQ==' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'client_secret=1MizTA1LlpDEVcMAZ8G6kDvYIUYTqDUA' \\\n--data-urlencode 'scope=openid profile' \\\n--data-urlencode 'username=pfc:1:1:700009310' \\\n--data-urlencode 'password=xxxxxxxx' \\\n--data-urlencode 'client_id=app-sicoob-pessoal' \\\n--data-urlencode 'grant_type=password'"
+          },
+          "response": []
+        }
+      ],
+      "id": "5027fbc2-d8d4-427f-83a1-d599868174fe"
+    },
+    {
+      "name": "Realizar PIX + APIC",
+      "item": [
+        {
+          "name": "gerarIdLancamento",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const idLancamento = pm.response.text();\r",
+                  "pm.expect(idLancamento).to.not.be.undefined;\r",
+                  "\r",
+                  "pm.collectionVariables.set(\"e2ebySSO\", idLancamento);\r",
+                  "\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "id": "569947c6-f9ce-408f-a9cf-86bf720d2ba3"
+              }
+            }
+          ],
+          "id": "fc505ed8-1ce0-4e1b-bd64-196d9fde12b5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "ispb",
+                "value": "05856736",
+                "type": "text"
+              },
+              {
+                "key": "client_id",
+                "value": "app-sicoob-pessoal",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{id_tokenAuthorization}}",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{id_tokenSSO}}",
+                "type": "text",
+                "disabled": true
+              },
+              {
+                "key": "X-JWT-From-Rhsso",
+                "value": "true",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://apicv10-homol.homologacao.com.br/sicoob/spi/spi-cliente/v2/id-lancamentos?tipo=lancamento",
+              "protocol": "https",
+              "host": [
+                "apicv10-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "spi",
+                "spi-cliente",
+                "v2",
+                "id-lancamentos"
+              ],
+              "query": [
+                {
+                  "key": "tipo",
+                  "value": "lancamento"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Consultar Chave",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "try {",
+                  "    var jsonData = pm.response.json()",
+                  "} catch (err) {",
+                  "    pm.test(`Retorno Inexperado: ${err.message}`, () => pm.expect(true).to.eql(false))",
+                  "    console.log(err)",
+                  "    console.log(responseBody)",
+                  "    return",
+                  "}",
+                  "",
+                  "/** Header **/",
+                  "pm.test('200 Status Code', () => pm.response.to.have.status(200));",
+                  "pm.test('Status code name has OK', () => pm.response.to.have.status('OK'));",
+                  "pm.test('Content-Type header is present', () => pm.response.to.have.header('Content-Type'));",
+                  "",
+                  "",
+                  "pm.collectionVariables.set(\"ispbDestinoCollection\", jsonData.conta.ispb);",
+                  "pm.collectionVariables.set(\"agenciaDestinoCollection\", jsonData.conta.agencia);",
+                  "pm.collectionVariables.set(\"contaDestinoCollection\", jsonData.conta.conta);",
+                  "pm.collectionVariables.set(\"tipoContaDestinoCollection\", jsonData.conta.tipo);",
+                  "pm.collectionVariables.set(\"cpfCnpjDestinoCollection\", jsonData.proprietario.identificador);",
+                  "pm.collectionVariables.set(\"nomeDestinoCollection\", jsonData.proprietario.nome);",
+                  "pm.collectionVariables.set(\"chaveDestinoCollection\", jsonData.chave);",
+                  "",
+                  "",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "id": "dace3435-8318-4f57-8f3c-4624a6e277bf"
+              }
+            }
+          ],
+          "id": "74e3e07d-6ba4-4b40-b9c9-6005fbc7ad45",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "id-lancamento",
+                "value": "{{e2ebySSO}}",
+                "type": "text"
+              },
+              {
+                "key": "id-pagador",
+                "value": "13930856018",
+                "type": "text"
+              },
+              {
+                "key": "ispb",
+                "value": "05856736",
+                "type": "text"
+              },
+              {
+                "key": "client_id",
+                "value": "app-sicoob-pessoal",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{id_tokenAuthorization}}",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{id_tokenSSO}}",
+                "type": "text",
+                "disabled": true
+              },
+              {
+                "key": "X-JWT-From-Rhsso",
+                "value": "true",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://apicv10-homol.homologacao.com.br/sicoob/spi/spi-cliente/v2/contas-transacionais/:chave",
+              "protocol": "https",
+              "host": [
+                "apicv10-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "spi",
+                "spi-cliente",
+                "v2",
+                "contas-transacionais",
+                ":chave"
+              ],
+              "variable": [
+                {
+                  "id": "b06cb90d-ca5a-4138-b2a9-bad2e01fb32f",
+                  "key": "chave",
+                  "value": "41187646966893"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar Lancamento",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "const getRandomAmount = (min, max) => (Math.random() * (max - min) + min).toFixed(2)",
+                  "const valor = `${_.random(1, 100)},${_.random(1, 99)}`",
+                  "",
+                  "pm.environment.set(\"valor\", valor)"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "id": "f5111fa5-4bac-4866-ab71-2511f9405e00"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "try {",
+                  "    var jsonData = pm.response.json()",
+                  "} catch (err) {",
+                  "    pm.test(`Retorno Inexperado: ${err.message}`, () => pm.expect(true).to.eql(false))",
+                  "    console.log(err)",
+                  "    console.log(responseBody)",
+                  "    return",
+                  "}",
+                  "",
+                  "let cpfCnpj = jsonData.destino.cpfCnpj",
+                  "pm.environment.set(\"cpfCnpjRelato\", cpfCnpj);",
+                  "",
+                  "let ispb = jsonData.origem.ispb",
+                  "pm.environment.set(\"ispb\", ispb);",
+                  "",
+                  "let valorCriado = jsonData.valor",
+                  "pm.collectionVariables.set(\"valorCriadoC\", valorCriado.replace(',', '.'));",
+                  "",
+                  "",
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "id": "9a6c4325-3be3-43c6-9328-2fade8c6ee53"
+              }
+            }
+          ],
+          "id": "b48f4dd4-1673-4c6f-af48-bb07ad1751de",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "ispb",
+                "value": "05856736",
+                "type": "text"
+              },
+              {
+                "key": "client_id",
+                "value": "app-sicoob-pessoal",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{id_tokenAuthorization}}",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{id_tokenSSO}}",
+                "type": "text",
+                "disabled": true
+              },
+              {
+                "key": "X-JWT-From-Rhsso",
+                "value": "true",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"{{e2ebySSO}}\",\n    \"valor\": \"1,00\",   \n    \"descricao\": \"Envio de Lançamento.\",\n    \"origem\": {\n        \"nome\": \"Rafael PIX\",\n        \"cpfCnpj\": \"13930856018\",\n        \"ispb\": \"05856736\",\n        \"conta\": \"242179\",\n        \"agencia\": \"4364\",\n        \"tipo\": \"CORRENTE\"\n    },\n    \"destino\": {\n        \"cpfCnpj\": \"{{cpfCnpjDestinoCollection}}\",\n        \"nome\": \"{{nomeDestinoCollection}}\",\n        \"conta\": \"{{contaDestinoCollection}}\",\n        \"ispb\": \"{{ispbDestinoCollection}}\",\n        \"agencia\": \"{{agenciaDestinoCollection}}\",\n        \"tipo\": \"{{tipoContaDestinoCollection}}\",\n        \"chaveDict\": \"{{chaveDestinoCollection}}\"\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://apicv10-homol.homologacao.com.br/sicoob/spi/spi-cliente/v2/lancamentos",
+              "protocol": "https",
+              "host": [
+                "apicv10-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "spi",
+                "spi-cliente",
+                "v2",
+                "lancamentos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Confirmar Lançamento por ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(`${pm.response.code} Status Code`, () => pm.response.to.have.status(202));",
+                  "pm.test(`Status code name: ${pm.response.status}`, () => pm.response.to.have.status('Accepted'));",
+                  "pm.test(`Content-Type: ${pm.response.headers.get('Content-Type')}`, () => pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json'));"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "id": "2665decd-b5e4-4b8c-bb27-6f0b79f8568b"
+              }
+            }
+          ],
+          "id": "8d2de1bc-fd3b-40b5-a0dd-6890c56d89a4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "ispb",
+                "value": "05856736",
+                "type": "text"
+              },
+              {
+                "key": "client_id",
+                "value": "app-sicoob-pessoal",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{id_tokenAuthorization}}",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{id_tokenSSO}}",
+                "type": "text",
+                "disabled": true
+              },
+              {
+                "key": "codigo-canal",
+                "value": "6",
+                "type": "text"
+              },
+              {
+                "key": "X-JWT-From-Rhsso",
+                "value": "true",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://apicv10-homol.homologacao.com.br/sicoob/spi/spi-cliente/v2/lancamentos/{{e2ebySSO}}/confirmacao",
+              "protocol": "https",
+              "host": [
+                "apicv10-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "spi",
+                "spi-cliente",
+                "v2",
+                "lancamentos",
+                "{{e2ebySSO}}",
+                "confirmacao"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar lancamento por ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "id": "288744ce-d7ca-47f4-8646-ec792d7268aa"
+              }
+            }
+          ],
+          "id": "4255ae26-1250-4a98-a46c-4e31c9132e13",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "ispb",
+                "value": "05856736",
+                "type": "text"
+              },
+              {
+                "key": "client_id",
+                "value": "app-sicoob-pessoal",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{id_tokenAuthorization}}",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{id_tokenSSO}}",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "https://apicv10-homol.homologacao.com.br/sicoob/spi/spi-cliente/v2/lancamentos/{{e2ebySSO}}",
+              "protocol": "https",
+              "host": [
+                "apicv10-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "spi",
+                "spi-cliente",
+                "v2",
+                "lancamentos",
+                "{{e2ebySSO}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "201f9b7b-0aba-447a-9458-588c8b5427c8"
+    },
+    {
+      "name": "Realizar PIX Sem APIC",
+      "item": [
+        {
+          "name": "P - Gerar IdLancamento",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const idLancamento = pm.response.text();\r",
+                  "\r",
+                  "pm.collectionVariables.set(\"idLancamentoCollection\", idLancamento);\r",
+                  "\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "id": "890eec7c-7b78-49db-b470-b95f03290a69"
+              }
+            }
+          ],
+          "id": "5694013e-cf17-4999-9f0a-eb145b8e4e5b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "ispb",
+                "value": "05856736",
+                "type": "text"
+              },
+              {
+                "key": "client_id",
+                "value": "app-sicoob-pessoal",
+                "type": "text"
+              },
+              {
+                "key": "x-jwt-assertion",
+                "value": "{{id_tokenAuthorization}}",
+                "type": "text"
+              },
+              {
+                "key": "x-jwt-assertion",
+                "value": "{{id_tokenSSO}}",
+                "type": "text",
+                "disabled": true
+              },
+              {
+                "key": "X-JWT-From-Rhsso",
+                "value": "true",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://spi-cliente-api-integracao-nodejs-hom.homologacao.com.br/api/id-lancamentos?tipo=lancamento",
+              "protocol": "http",
+              "host": [
+                "spi-cliente-api-integracao-nodejs-hom",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "api",
+                "id-lancamentos"
+              ],
+              "query": [
+                {
+                  "key": "tipo",
+                  "value": "lancamento"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "P - Consultar Chave",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json()\r",
+                  "\r",
+                  "pm.collectionVariables.set(\"ispbDestinoC\", jsonData.conta.ispb);\r",
+                  "pm.collectionVariables.set(\"agenciaDestinoC\", jsonData.conta.agencia);\r",
+                  "pm.collectionVariables.set(\"contaDestinoC\", jsonData.conta.conta);\r",
+                  "pm.collectionVariables.set(\"tipoContaDestinoC\", jsonData.conta.tipo);\r",
+                  "pm.collectionVariables.set(\"cpfCnpjDestinoC\", jsonData.proprietario.identificador);\r",
+                  "pm.collectionVariables.set(\"nomeDestinoC\", jsonData.proprietario.nome);\r",
+                  "pm.collectionVariables.set(\"chaveDestinoC\", jsonData.chave);\r",
+                  "\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "id": "46698fba-1b63-41c4-85bc-2deb032603e5"
+              }
+            }
+          ],
+          "id": "b0d761d6-3747-4182-b565-781e2204df77",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "id-lancamento",
+                "value": "{{idLancamentoCollection}}",
+                "type": "text"
+              },
+              {
+                "key": "id-pagador",
+                "value": "13930856018",
+                "type": "text"
+              },
+              {
+                "key": "ispb",
+                "value": "05856736",
+                "type": "text"
+              },
+              {
+                "key": "client_id",
+                "value": "app-sicoob-pessoal",
+                "type": "text"
+              },
+              {
+                "key": "x-jwt-assertion",
+                "value": "{{id_tokenAuthorization}}",
+                "type": "text"
+              },
+              {
+                "key": "x-jwt-assertion",
+                "value": "{{id_tokenSSO}}",
+                "type": "text",
+                "disabled": true
+              },
+              {
+                "key": "X-JWT-From-Rhsso",
+                "value": "true",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://spi-cliente-api-integracao-nodejs-hom.homologacao.com.br/api/contas-transacionais/97302392900",
+              "protocol": "http",
+              "host": [
+                "spi-cliente-api-integracao-nodejs-hom",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "api",
+                "contas-transacionais",
+                "97302392900"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "P - Criar Lancamento",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "id": "22bf57b1-295a-4bf0-a544-2fa3a311dcf2"
+              }
+            }
+          ],
+          "id": "12dfaaf6-f6a8-4743-9c1f-dbe87eceb5db",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "ispb",
+                "value": "05856736",
+                "type": "text"
+              },
+              {
+                "key": "client_id",
+                "value": "app-sicoob-pessoal",
+                "type": "text"
+              },
+              {
+                "key": "x-jwt-assertion",
+                "value": "{{id_tokenAuthorization}}",
+                "type": "text"
+              },
+              {
+                "key": "x-jwt-assertion",
+                "value": "{{id_tokenSSO}}",
+                "type": "text",
+                "disabled": true
+              },
+              {
+                "key": "X-JWT-From-Rhsso",
+                "value": "true",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": \"{{idLancamentoCollection}}\",\r\n    \"valor\": \"1,00\",  \r\n    \"descricao\": \"Envio de Lançamento.\",\r\n    \"origem\": {\r\n        \"nome\": \"Rafael PIX\",\r\n        \"cpfCnpj\": \"13930856018\",\r\n        \"ispb\": \"05856736\",\r\n        \"conta\": \"242179\",\r\n        \"agencia\": \"4364\",\r\n        \"tipo\": \"CORRENTE\"\r\n    },\r\n    \"destino\": {\r\n        \"cpfCnpj\": \"{{cpfCnpjDestinoC}}\",\r\n        \"nome\": \"{{nomeDestinoC}}\",\r\n        \"conta\": \"{{contaDestinoC}}\",\r\n        \"ispb\": \"{{ispbDestinoC}}\",\r\n        \"agencia\": \"{{agenciaDestinoC}}\",\r\n        \"tipo\": \"{{tipoContaDestinoC}}\",\r\n        \"chaveDict\": \"{{chaveDestinoC}}\"\r\n    }\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://spi-cliente-api-integracao-nodejs-hom.homologacao.com.br/api/lancamentos",
+              "protocol": "http",
+              "host": [
+                "spi-cliente-api-integracao-nodejs-hom",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "api",
+                "lancamentos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "P - Confirmar Lancamento",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 202\", function () {\r",
+                  "    pm.response.to.have.status(202);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "id": "7560cb0e-7d64-4d09-8ca0-48e6b7c2f972"
+              }
+            }
+          ],
+          "id": "928f9111-8fb4-4174-b086-eecf768eac07",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "ispb",
+                "value": "05856736",
+                "type": "text"
+              },
+              {
+                "key": "client_id",
+                "value": "app-sicoob-pessoal",
+                "type": "text"
+              },
+              {
+                "key": "x-jwt-assertion",
+                "value": "{{id_tokenAuthorization}}",
+                "type": "text"
+              },
+              {
+                "key": "x-jwt-assertion",
+                "value": "{{id_tokenSSO}}",
+                "type": "text",
+                "disabled": true
+              },
+              {
+                "key": "X-JWT-From-Rhsso",
+                "value": "true",
+                "type": "text"
+              },
+              {
+                "key": "codigo-canal",
+                "value": "6",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://spi-cliente-api-integracao-nodejs-hom.homologacao.com.br/api/lancamentos/{{idLancamentoCollection}}/confirmacao",
+              "protocol": "http",
+              "host": [
+                "spi-cliente-api-integracao-nodejs-hom",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "api",
+                "lancamentos",
+                "{{idLancamentoCollection}}",
+                "confirmacao"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "P - Consultar Lancamento",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "id": "9e9d0aae-ab54-49bb-ad42-d16518e78f02"
+              }
+            }
+          ],
+          "id": "15ee1403-9b35-4daf-854a-ab3952f73c3c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "ispb",
+                "value": "05856736",
+                "type": "text"
+              },
+              {
+                "key": "client_id",
+                "value": "app-sicoob-pessoal",
+                "type": "text"
+              },
+              {
+                "key": "x-jwt-assertion",
+                "value": "{{id_tokenAuthorization}}",
+                "type": "text"
+              },
+              {
+                "key": "x-jwt-assertion",
+                "value": "{{id_tokenSSO}}",
+                "type": "text",
+                "disabled": true
+              },
+              {
+                "key": "X-JWT-From-Rhsso",
+                "value": "true",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://spi-cliente-api-integracao-nodejs-hom.homologacao.com.br/api/lancamentos/{{idLancamentoCollection}}",
+              "protocol": "http",
+              "host": [
+                "spi-cliente-api-integracao-nodejs-hom",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "api",
+                "lancamentos",
+                "{{idLancamentoCollection}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "1b3d7449-b1b8-478b-9aca-192cb1a33f83"
+    }
+  ],
+  "variable": [
+    {
+      "key": "e2ebySSO",
+      "value": ""
+    },
+    {
+      "key": "id_tokenAuthorization",
+      "value": ""
+    },
+    {
+      "key": "id_tokenSSO",
+      "value": ""
+    },
+    {
+      "key": "idLancamentoCollection",
+      "value": ""
+    },
+    {
+      "key": "ispbDestinoC",
+      "value": ""
+    },
+    {
+      "key": "agenciaDestinoC",
+      "value": ""
+    },
+    {
+      "key": "contaDestinoC",
+      "value": ""
+    },
+    {
+      "key": "tipoContaDestinoC",
+      "value": ""
+    },
+    {
+      "key": "cpfCnpjDestinoC",
+      "value": ""
+    },
+    {
+      "key": "nomeDestinoC",
+      "value": ""
+    },
+    {
+      "key": "chaveDestinoC",
+      "value": ""
+    }
+  ]
+}

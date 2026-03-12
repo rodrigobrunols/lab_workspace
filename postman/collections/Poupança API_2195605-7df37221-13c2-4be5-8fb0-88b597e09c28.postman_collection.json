@@ -1,0 +1,827 @@
+{
+  "info": {
+    "_postman_id": "7df37221-13c2-4be5-8fb0-88b597e09c28",
+    "name": "Poupança API",
+    "description": "# Poupança API\nSistema que faz a gestão das contas de poupança através de transãções como Aplicação, Resgate, Saldo, Extrato e Controle de Rentabilidade.\n",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "contas",
+      "item": [
+        {
+          "name": "{conta Poupanca}",
+          "item": [
+            {
+              "name": "Consulta de Extrato",
+              "id": "474f1e2e-6779-43e6-ba55-f76ae0ee1e4f",
+              "request": {
+                "auth": {
+                  "type": "oauth2"
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/contas/:contaPoupanca/extrato/:mes/:ano",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contas",
+                    ":contaPoupanca",
+                    "extrato",
+                    ":mes",
+                    ":ano"
+                  ],
+                  "variable": [
+                    {
+                      "id": "f27e1f22-317a-42f5-9e0d-49c31b6952ca",
+                      "key": "contaPoupanca",
+                      "value": "64235293",
+                      "description": "(Required) Número da conta poupança"
+                    },
+                    {
+                      "id": "a7dc0f4c-8804-4d79-b586-8edbc73b0f6f",
+                      "key": "mes",
+                      "value": "10",
+                      "description": "(Required) Mês de consulta do extrato"
+                    },
+                    {
+                      "id": "af7beb66-abab-4f65-9e45-196f58448b17",
+                      "key": "ano",
+                      "value": "8220",
+                      "description": "(Required) Ano de consulta do extrato"
+                    }
+                  ]
+                },
+                "description": "Consulta o extrato de um mês e ano de uma conta poupança."
+              },
+              "response": [
+                {
+                  "id": "f9b298f3-cf27-4828-8787-e936d9f4ecb7",
+                  "name": "Retorna o extrato da conta poupança informada no devido mês e ano.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/contas/:contaPoupanca/extrato/:mes/:ano",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contas",
+                        ":contaPoupanca",
+                        "extrato",
+                        ":mes",
+                        ":ano"
+                      ],
+                      "variable": [
+                        {
+                          "key": "contaPoupanca",
+                          "value": "64235293",
+                          "description": "(Required) Número da conta poupança"
+                        },
+                        {
+                          "key": "mes",
+                          "value": "10",
+                          "description": "(Required) Mês de consulta do extrato"
+                        },
+                        {
+                          "key": "ano",
+                          "value": "8220",
+                          "description": "(Required) Ano de consulta do extrato"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"resultado\": {\n    \"resumo\": {\n      \"dataExtrato\": \"1985-01-07T03:56:52.876Z\",\n      \"dataInicial\": \"2003-02-02T07:22:04.629Z\",\n      \"dataFinal\": \"1998-01-30T23:31:45.708Z\",\n      \"saldoTotal\": -42476510.77117185,\n      \"saldoBloqueado\": -12033016.515445858,\n      \"saldoDisponivel\": 76300301.31221119\n    },\n    \"transacoes\": [\n      {\n        \"tipo\": \"DEBITO\",\n        \"valor\": -80796781.57546519,\n        \"data\": \"2011-10-18T11:16:11.647Z\",\n        \"descricao\": \"ipsum laboris id ex commodo\",\n        \"descricaoAutenticacaoDigital\": \"fugiat\",\n        \"descricaoObservacaoLancamento\": \"occaecat amet\",\n        \"descricaoNomeOrigemDestino\": \"eiusmod Excepteur Lorem anim\"\n      },\n      {\n        \"tipo\": \"DEBITO\",\n        \"valor\": -81259205.1864255,\n        \"data\": \"2020-04-12T22:43:00.652Z\",\n        \"descricao\": \"aute ex pariatur\",\n        \"descricaoAutenticacaoDigital\": \"Excepteur eiusmod consectetur\",\n        \"descricaoObservacaoLancamento\": \"ex pariatur minim Ut dolore\",\n        \"descricaoNomeOrigemDestino\": \"veniam adipisicing in id qui\"\n      }\n    ]\n  }\n}"
+                },
+                {
+                  "id": "c9d51ccb-9e20-4886-825f-4c18526fcdab",
+                  "name": "Conta poupança não encontrada. [Página de erros](/#!/erros)",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/contas/:contaPoupanca/extrato/:mes/:ano",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contas",
+                        ":contaPoupanca",
+                        "extrato",
+                        ":mes",
+                        ":ano"
+                      ],
+                      "variable": [
+                        {
+                          "key": "contaPoupanca",
+                          "value": "64235293",
+                          "description": "(Required) Número da conta poupança"
+                        },
+                        {
+                          "key": "mes",
+                          "value": "10",
+                          "description": "(Required) Mês de consulta do extrato"
+                        },
+                        {
+                          "key": "ano",
+                          "value": "8220",
+                          "description": "(Required) Ano de consulta do extrato"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"mensagens\": [\n    {\n      \"mensagem\": \"ullamco pariatur qui deserunt\",\n      \"codigo\": \"dolor adipisicing sunt ut\"\n    },\n    {\n      \"mensagem\": \"id nostrud\",\n      \"codigo\": \"ut Lorem dolor\"\n    }\n  ]\n}"
+                },
+                {
+                  "id": "74a49b19-76cd-4911-b200-6bc4be793bf4",
+                  "name": "Erro interno. [Página de erros](/#!/erros)",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/contas/:contaPoupanca/extrato/:mes/:ano",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contas",
+                        ":contaPoupanca",
+                        "extrato",
+                        ":mes",
+                        ":ano"
+                      ],
+                      "variable": [
+                        {
+                          "key": "contaPoupanca",
+                          "value": "64235293",
+                          "description": "(Required) Número da conta poupança"
+                        },
+                        {
+                          "key": "mes",
+                          "value": "10",
+                          "description": "(Required) Mês de consulta do extrato"
+                        },
+                        {
+                          "key": "ano",
+                          "value": "8220",
+                          "description": "(Required) Ano de consulta do extrato"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"mensagens\": [\n    {\n      \"mensagem\": \"ullamco pariatur qui deserunt\",\n      \"codigo\": \"dolor adipisicing sunt ut\"\n    },\n    {\n      \"mensagem\": \"id nostrud\",\n      \"codigo\": \"ut Lorem dolor\"\n    }\n  ]\n}"
+                },
+                {
+                  "id": "8289fc09-a15c-48a5-a82f-4ac082fec678",
+                  "name": "Serviço indisponível. [Página de erros](/#!/erros)",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/contas/:contaPoupanca/extrato/:mes/:ano",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contas",
+                        ":contaPoupanca",
+                        "extrato",
+                        ":mes",
+                        ":ano"
+                      ],
+                      "variable": [
+                        {
+                          "key": "contaPoupanca",
+                          "value": "64235293",
+                          "description": "(Required) Número da conta poupança"
+                        },
+                        {
+                          "key": "mes",
+                          "value": "10",
+                          "description": "(Required) Mês de consulta do extrato"
+                        },
+                        {
+                          "key": "ano",
+                          "value": "8220",
+                          "description": "(Required) Ano de consulta do extrato"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Service Unavailable",
+                  "code": 503,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"mensagens\": [\n    {\n      \"mensagem\": \"ullamco pariatur qui deserunt\",\n      \"codigo\": \"dolor adipisicing sunt ut\"\n    },\n    {\n      \"mensagem\": \"id nostrud\",\n      \"codigo\": \"ut Lorem dolor\"\n    }\n  ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "Consulta de Saldo",
+              "id": "64af6f9d-cad8-4932-bdde-2e5d9b1bd9a3",
+              "request": {
+                "auth": {
+                  "type": "oauth2"
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/contas/:contaPoupanca/saldo",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contas",
+                    ":contaPoupanca",
+                    "saldo"
+                  ],
+                  "variable": [
+                    {
+                      "id": "04386e4c-b83c-4fdc-a6f8-da274c567910",
+                      "key": "contaPoupanca",
+                      "value": "64235293",
+                      "description": "(Required) Número da conta poupança"
+                    }
+                  ]
+                },
+                "description": "Consulta o saldo atual de uma conta poupança."
+              },
+              "response": [
+                {
+                  "id": "d876d8b7-07a1-4f6d-ab92-719fc69d145d",
+                  "name": "Retorna o saldo atual da conta poupança informada.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/contas/:contaPoupanca/saldo",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contas",
+                        ":contaPoupanca",
+                        "saldo"
+                      ],
+                      "variable": [
+                        {
+                          "key": "contaPoupanca",
+                          "value": "64235293",
+                          "description": "(Required) Número da conta poupança"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"resultado\": {\n    \"data\": \"1955-12-23T07:41:14.957Z\",\n    \"saldoTotal\": -71735584.96163745,\n    \"saldoBloqueado\": -31345094.74036032,\n    \"saldoDisponivel\": 56021505.89436832\n  }\n}"
+                },
+                {
+                  "id": "27f44dd4-0e8f-42de-bac7-42cd9f642c5b",
+                  "name": "Conta poupança não encontrada.  [Página de erros](/#!/erros)",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/contas/:contaPoupanca/saldo",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contas",
+                        ":contaPoupanca",
+                        "saldo"
+                      ],
+                      "variable": [
+                        {
+                          "key": "contaPoupanca",
+                          "value": "64235293",
+                          "description": "(Required) Número da conta poupança"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"mensagens\": [\n    {\n      \"mensagem\": \"ullamco pariatur qui deserunt\",\n      \"codigo\": \"dolor adipisicing sunt ut\"\n    },\n    {\n      \"mensagem\": \"id nostrud\",\n      \"codigo\": \"ut Lorem dolor\"\n    }\n  ]\n}"
+                },
+                {
+                  "id": "894ae2b7-fa95-4a36-839c-94b4ff77d503",
+                  "name": "Erro interno. [Página de erros](/#!/erros)",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/contas/:contaPoupanca/saldo",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contas",
+                        ":contaPoupanca",
+                        "saldo"
+                      ],
+                      "variable": [
+                        {
+                          "key": "contaPoupanca",
+                          "value": "64235293",
+                          "description": "(Required) Número da conta poupança"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"mensagens\": [\n    {\n      \"mensagem\": \"ullamco pariatur qui deserunt\",\n      \"codigo\": \"dolor adipisicing sunt ut\"\n    },\n    {\n      \"mensagem\": \"id nostrud\",\n      \"codigo\": \"ut Lorem dolor\"\n    }\n  ]\n}"
+                },
+                {
+                  "id": "51900f12-b211-4668-aeb4-30bb8318ba3a",
+                  "name": "Serviço indisponível. [Página de erros](/#!/erros)",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/contas/:contaPoupanca/saldo",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contas",
+                        ":contaPoupanca",
+                        "saldo"
+                      ],
+                      "variable": [
+                        {
+                          "key": "contaPoupanca",
+                          "value": "64235293",
+                          "description": "(Required) Número da conta poupança"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Service Unavailable",
+                  "code": 503,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"mensagens\": [\n    {\n      \"mensagem\": \"ullamco pariatur qui deserunt\",\n      \"codigo\": \"dolor adipisicing sunt ut\"\n    },\n    {\n      \"mensagem\": \"id nostrud\",\n      \"codigo\": \"ut Lorem dolor\"\n    }\n  ]\n}"
+                }
+              ]
+            }
+          ],
+          "id": "6c2707cd-954e-48e1-ad10-602e95fb4bd4"
+        },
+        {
+          "name": "Consulta de Contas de Poupança",
+          "id": "3d39493e-bd1f-40e0-85ac-980e96e1b5cb",
+          "request": {
+            "auth": {
+              "type": "oauth2"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/contas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "contas"
+              ]
+            },
+            "description": "Pesquisa as contas de poupança que pertencem a um CPF ou CNPJ."
+          },
+          "response": [
+            {
+              "id": "5452781b-28ce-44f1-88ff-b004dc05be77",
+              "name": "Retorna as contas de poupança do cliente.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/contas",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contas"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"resultado\": [\n    21915790,\n    -35435391\n  ]\n}"
+            },
+            {
+              "id": "7e7be540-55c3-4d8c-9382-cf9567035186",
+              "name": "O cliente informado não possui conta poupança. [Página de erros](/#!/erros)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/contas",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contas"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"mensagens\": [\n    {\n      \"mensagem\": \"exercitation anim ex voluptate\",\n      \"codigo\": \"mollit laboris\"\n    },\n    {\n      \"mensagem\": \"in dolor Ut\",\n      \"codigo\": \"consectetur eiusmod sed\"\n    }\n  ]\n}"
+            },
+            {
+              "id": "b7449704-014d-4e2f-bc75-7662502e270f",
+              "name": "Erro interno. [Página de erros](/#!/erros)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/contas",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contas"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"mensagens\": [\n    {\n      \"mensagem\": \"ullamco pariatur qui deserunt\",\n      \"codigo\": \"dolor adipisicing sunt ut\"\n    },\n    {\n      \"mensagem\": \"id nostrud\",\n      \"codigo\": \"ut Lorem dolor\"\n    }\n  ]\n}"
+            },
+            {
+              "id": "e6c8bcb7-9e53-426e-8782-0a23137f0215",
+              "name": "Serviço indisponível. [Página de erros](/#!/erros)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/contas",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contas"
+                  ]
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"mensagens\": [\n    {\n      \"mensagem\": \"ullamco pariatur qui deserunt\",\n      \"codigo\": \"dolor adipisicing sunt ut\"\n    },\n    {\n      \"mensagem\": \"id nostrud\",\n      \"codigo\": \"ut Lorem dolor\"\n    }\n  ]\n}"
+            }
+          ]
+        }
+      ],
+      "id": "a6a039be-8a2d-48fd-ab5e-62538b32976e"
+    },
+    {
+      "name": "Obter Token Pops",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "cbb0f64d-2df9-419c-86de-5d615303316f",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "9a302b08-aa59-41a1-9cf8-c9508ea6b858",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "value": "client_credentials",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "openid",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "27f74afa-15f5-4cb9-b216-d0ebe41a0469",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "bbzm0ejrXmd0Tuw1PeXN3QUP56eZPMMr",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "auth-hom",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "cooperado",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://backofficepoupancacluster-homol.homologacao.com.br:9080/pop/contas/628375964/saldo",
+      "id": "856efe5c-21d7-4986-b475-1bded4f4406b",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "authorization",
+            "value": "Bearer cb357e48-3bdb-3f1e-8642-9f55dcb5d6a2"
+          },
+          {
+            "key": "client_id",
+            "value": "mcqZKPF0JLBon7vEcbq5d7ff1QAa"
+          },
+          {
+            "key": "Cookie",
+            "value": "BIGipServerpool-homol-backoffice-poupanca-cluster-9080=!hWy+wqEg3B69qPOGEzzEf2l/rpYsyCF1bkklAdc0vRxvmX1wT1o+8sNKdiMGEjw/3wZ9NrJrK0Ft9ak="
+          }
+        ],
+        "url": {
+          "raw": "http://backofficepoupancacluster-homol.homologacao.com.br:9080/pop/contas/628375964/saldo",
+          "protocol": "http",
+          "host": [
+            "backofficepoupancacluster-homol",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "port": "9080",
+          "path": [
+            "pop",
+            "contas",
+            "628375964",
+            "saldo"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "client_id",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "<API Key>",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "id": "a4fbc6c9-a089-4692-a0a8-c159db4496ad",
+      "key": "baseUrl",
+      "value": "https://apicinterno-homol.sicoob.com.br/sicoob/interno/poupanca/v1",
+      "type": "string"
+    }
+  ]
+}

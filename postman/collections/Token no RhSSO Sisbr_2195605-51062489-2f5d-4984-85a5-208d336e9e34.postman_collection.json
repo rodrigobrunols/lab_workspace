@@ -1,0 +1,785 @@
+{
+  "info": {
+    "_postman_id": "51062489-2f5d-4984-85a5-208d336e9e34",
+    "name": "Token no RhSSO Sisbr",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "/Token - Grant Password",
+      "id": "63348f08-20c2-4ba2-a171-3deaddf77700",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "sisbr",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "cIU2iVdfH1aIxPRFdVcDdmc62q9huIxJ",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text"
+            },
+            {
+              "key": "username",
+              "value": "gearqc0300_00",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "Senh@006",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "sisbr",
+              "description": "ti",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "NgLkFU1qc3PJLMDRY1XVZRMF5ROGcGor",
+              "description": "ti",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "openid",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{sso-sisbr}}/realms/sisbr/protocol/openid-connect/token",
+          "host": [
+            "{{sso-sisbr}}"
+          ],
+          "path": [
+            "realms",
+            "sisbr",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/Token - Grant Password Copy",
+      "id": "ccfafce4-5bbd-4317-9611-ee1d8691bd20",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "sisbr",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "cIU2iVdfH1aIxPRFdVcDdmc62q9huIxJ",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text"
+            },
+            {
+              "key": "username",
+              "value": "gearqc0300_00",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "Senh@006",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "caa",
+              "description": "ti",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "{{caa-client-secret}}",
+              "description": "ti",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "openid",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{sso-sisbr}}/realms/teste/protocol/openid-connect/token",
+          "host": [
+            "{{sso-sisbr}}"
+          ],
+          "path": [
+            "realms",
+            "teste",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/Token - Grant Client Credentials",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "bb031ed0-621f-477e-9938-11130e7cce8e",
+            "exec": [
+              "pm.collectionVariables.clear()",
+              "",
+              "pm.test(\"Token gerado com sucesso\", function() {",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    pm.environment.set(\"access_token_sicoob\", json.access_token);",
+              "    pm.environment.set(\"id_token_sicoob\", json.id_token);",
+              "});",
+              "",
+              "function jwt_decode(jwt) {",
+              "    var partes = jwt.split('.'); // header, payload, signature",
+              "    return JSON.parse(atob(partes[1]));",
+              "}",
+              "",
+              "pm.test(\"Mostra dados\", function () {  ",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    console.log(\"Chaves: \" + Object.keys(json));",
+              "",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    let decodificado = jwt_decode(json.access_token);",
+              "    console.log(\"Access Token: \" + JSON.stringify(decodificado));",
+              "",
+              "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;  ",
+              "     decodificado = jwt_decode(json.id_token);",
+              "    console.log(\"Id Token: \" + JSON.stringify(decodificado));",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "76703634-37a5-47ce-a909-ffe92f20cf7e",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer  {{access_token_finansystech}}",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "sisbr",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "sisbr3",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "cIU2iVdfH1aIxPRFdVcDdmc62q9huIxJ",
+              "description": "sisbr homologacao",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "NgLkFU1qc3PJLMDRY1XVZRMF5ROGcGor",
+              "description": "sisbr teste integrado",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "O5mUZdys7dkPoLqU2ehGDz4uQbiq6No8",
+              "description": "sisbr3 homologacao",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "E61MRy0wNTv4byLF1NHhwCrbmJi6U8xk",
+              "description": "Sisbr3 teste integrado",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "grant_type",
+              "value": "client_credentials",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "openid",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{sso-sisbr}}/realms/sisbr/protocol/openid-connect/token",
+          "host": [
+            "{{sso-sisbr}}"
+          ],
+          "path": [
+            "realms",
+            "sisbr",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/Token - Grant Authorization Code",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "bb031ed0-621f-477e-9938-11130e7cce8e",
+            "exec": [
+              "pm.collectionVariables.clear()",
+              "",
+              "pm.test(\"Token gerado com sucesso\", function() {",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    pm.environment.set(\"access_token_sicoob\", json.access_token);",
+              "    pm.environment.set(\"id_token_sicoob\", json.id_token);",
+              "});",
+              "",
+              "function jwt_decode(jwt) {",
+              "    var partes = jwt.split('.'); // header, payload, signature",
+              "    return JSON.parse(atob(partes[1]));",
+              "}",
+              "",
+              "pm.test(\"Mostra dados\", function () {  ",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    console.log(\"Chaves: \" + Object.keys(json));",
+              "",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    let decodificado = jwt_decode(json.access_token);",
+              "    console.log(\"Access Token: \" + JSON.stringify(decodificado));",
+              "",
+              "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;  ",
+              "     decodificado = jwt_decode(json.id_token);",
+              "    console.log(\"Id Token: \" + JSON.stringify(decodificado));",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "688fa1ae-bad1-475e-9c18-fdb9ff1eb9a6",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer  {{access_token_finansystech}}",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "sisbr",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "sisbr3",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "cIU2iVdfH1aIxPRFdVcDdmc62q9huIxJ",
+              "description": "sisbr homologacao",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "NgLkFU1qc3PJLMDRY1XVZRMF5ROGcGor",
+              "description": "sisbr teste integrado",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "O5mUZdys7dkPoLqU2ehGDz4uQbiq6No8",
+              "description": "sisbr3 homologacao",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "E61MRy0wNTv4byLF1NHhwCrbmJi6U8xk",
+              "description": "Sisbr3 teste integrado",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "grant_type",
+              "value": "authorization_code",
+              "type": "text"
+            },
+            {
+              "key": "code",
+              "value": "08dedc9f-a2c5-49c0-b476-69aab863a372.5c0baacf-4a09-46a5-8b9a-ca40bee46717.e85cb16e-1f2b-469c-a9af-ff8e915dba5e",
+              "type": "text"
+            },
+            {
+              "key": "redirect_uri",
+              "value": "https://www.gov.br/pt-br",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{sso-sisbr}}/realms/sisbr/protocol/openid-connect/token",
+          "host": [
+            "{{sso-sisbr}}"
+          ],
+          "path": [
+            "realms",
+            "sisbr",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/Token - Refresh Token Grant",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "bb031ed0-621f-477e-9938-11130e7cce8e",
+            "exec": [
+              "pm.collectionVariables.clear()",
+              "",
+              "pm.test(\"Token gerado com sucesso\", function() {",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    pm.environment.set(\"access_token_sicoob\", json.access_token);",
+              "    pm.environment.set(\"id_token_sicoob\", json.id_token);",
+              "});",
+              "",
+              "function jwt_decode(jwt) {",
+              "    var partes = jwt.split('.'); // header, payload, signature",
+              "    return JSON.parse(atob(partes[1]));",
+              "}",
+              "",
+              "pm.test(\"Mostra dados\", function () {  ",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    console.log(\"Chaves: \" + Object.keys(json));",
+              "",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    let decodificado = jwt_decode(json.access_token);",
+              "    console.log(\"Access Token: \" + JSON.stringify(decodificado));",
+              "",
+              "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;  ",
+              "     decodificado = jwt_decode(json.id_token);",
+              "    console.log(\"Id Token: \" + JSON.stringify(decodificado));",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "a8d91d91-98ae-464c-990f-bd0202d7a3ce",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer  {{access_token_finansystech}}",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "sisbr",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "cIU2iVdfH1aIxPRFdVcDdmc62q9huIxJ",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "refresh_token",
+              "type": "text"
+            },
+            {
+              "key": "refresh_token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0NTlkYTM5MC1kOWIxLTQ4MTEtYmY2YS1iN2UzMTdlNzZkZTYifQ.eyJleHAiOjE2ODc4NzQ1MjUsImlhdCI6MTY4Nzg3MjcyNSwianRpIjoiOGM2MTg3MTItMWFhOC00NjFlLTkyZTUtMzBlN2NlM2IzM2RkIiwiaXNzIjoiaHR0cHM6Ly9pZHAtc2lzYnIuaG9tb2xvZ2FjYW8uY29tLmJyL2F1dGgvcmVhbG1zL3Npc2JyIiwiYXVkIjoiaHR0cHM6Ly9pZHAtc2lzYnIuaG9tb2xvZ2FjYW8uY29tLmJyL2F1dGgvcmVhbG1zL3Npc2JyIiwic3ViIjoiYmE2MDYzZjktMmNiNi00OTdlLWE4YjYtYzM3OWQyMDkzZjNhIiwidHlwIjoiUmVmcmVzaCIsImF6cCI6InNpc2JyIiwic2Vzc2lvbl9zdGF0ZSI6IjQxMjY4NjEzLTI4NWItNDEwZC04MzI3LWQ2NGU0NjAzMmE3MSIsInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiI0MTI2ODYxMy0yODViLTQxMGQtODMyNy1kNjRlNDYwMzJhNzEifQ.XtpGIQ2V0B7CtEoHJCJX5V3hAlBBNE1gmRIStiXV078",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "openid",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{sso-sisbr}}/realms/sisbr/protocol/openid-connect/token",
+          "host": [
+            "{{sso-sisbr}}"
+          ],
+          "path": [
+            "realms",
+            "sisbr",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/UserInfo",
+      "id": "bc13845d-ab34-4cbb-8348-4ab9b96f1be4",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNdG9YWC1kd25IdEVHdlpZVHpybkxveFhzLUJYTjJObWlFazQyVDNNTDdZIn0.eyJleHAiOjE2ODc4NzY0MDUsImlhdCI6MTY4Nzg3MjgwNSwianRpIjoiYWM1NjVjMGMtMTdhOC00ODFhLTk2MDItZWFlYWNiYTBkMjBkIiwiaXNzIjoiaHR0cHM6Ly9pZHAtc2lzYnIuaG9tb2xvZ2FjYW8uY29tLmJyL2F1dGgvcmVhbG1zL3Npc2JyIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImJhNjA2M2Y5LTJjYjYtNDk3ZS1hOGI2LWMzNzlkMjA5M2YzYSIsInR5cCI6IkJlYXJlciIsImF6cCI6InNpc2JyIiwic2Vzc2lvbl9zdGF0ZSI6IjZiNGQ5NzUxLTgzZWItNDBkOC1iMTA1LTUwNmRhNzA5MDFmZiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1zaXNiciIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiNmI0ZDk3NTEtODNlYi00MGQ4LWIxMDUtNTA2ZGE3MDkwMWZmIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6ImdlYXJxYzAzMDBfMDAifQ.ZmWAPU3A-TkkalPd1VH4qGIiVZYVGdPGKxivk5aRd0JhFXT1VUD2vswjsyPoE9cxW1eWpyp5YpzbLKTnNsZpUsJyaDFv0Trl6U0MsFtL3UpUrqh1dwVlrKMxnoDmWVxLGOZ4lahAACCHDJcmQ2vz23hatrjljwTW39g_gGzG1Qm4lXo1ayc8VvT2D7MftLlfLExM8qFo2qPM5O_Bqlkqlpo2KD1a6TiruXROcPxMbvFFwPcIeco4nVOnmNvZpreaBBUleGUiWbBmfP46L7jPuQxWFtvtPvNJMXLhykyKtLRogdR7mEHOp_-one103E3dOTD6SmYrvuiX3uNBbcuxfg",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{sso-sisbr}}/realms/sisbr/protocol/openid-connect/userinfo",
+          "host": [
+            "{{sso-sisbr}}"
+          ],
+          "path": [
+            "realms",
+            "sisbr",
+            "protocol",
+            "openid-connect",
+            "userinfo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/OpenId-configuration",
+      "id": "1cce4487-006c-4c07-bea5-023eab2f7b46",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{acess_token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{sso-sisbr}}/realms/sisbr/.well-known/openid-configuration",
+          "host": [
+            "{{sso-sisbr}}"
+          ],
+          "path": [
+            "realms",
+            "sisbr",
+            ".well-known",
+            "openid-configuration"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/Certs - Recuperar Chaves",
+      "id": "7a32176a-6784-49c3-a966-9c9ce12ca57e",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{sso-sisbr}}/realms/sisbr/protocol/openid-connect/certs",
+          "host": [
+            "{{sso-sisbr}}"
+          ],
+          "path": [
+            "realms",
+            "sisbr",
+            "protocol",
+            "openid-connect",
+            "certs"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/Introspect - Token Introspect",
+      "id": "4e990f59-a1de-426d-8e92-da617000e05d",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic c2lzYnI6Y0lVMmlWZGZIMWFJeFBSRmRWY0RkbWM2MnE5aHVJeEo="
+          },
+          {
+            "key": "client_id",
+            "value": "mobile",
+            "type": "text",
+            "disabled": true
+          },
+          {
+            "key": "client_secret",
+            "value": "6mfTiRb0CUfWPCIYQtxcxPR3agLeYnRr",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNdG9YWC1kd25IdEVHdlpZVHpybkxveFhzLUJYTjJObWlFazQyVDNNTDdZIn0.eyJleHAiOjE2ODc4NzY0MDUsImlhdCI6MTY4Nzg3MjgwNSwianRpIjoiYWM1NjVjMGMtMTdhOC00ODFhLTk2MDItZWFlYWNiYTBkMjBkIiwiaXNzIjoiaHR0cHM6Ly9pZHAtc2lzYnIuaG9tb2xvZ2FjYW8uY29tLmJyL2F1dGgvcmVhbG1zL3Npc2JyIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImJhNjA2M2Y5LTJjYjYtNDk3ZS1hOGI2LWMzNzlkMjA5M2YzYSIsInR5cCI6IkJlYXJlciIsImF6cCI6InNpc2JyIiwic2Vzc2lvbl9zdGF0ZSI6IjZiNGQ5NzUxLTgzZWItNDBkOC1iMTA1LTUwNmRhNzA5MDFmZiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1zaXNiciIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiNmI0ZDk3NTEtODNlYi00MGQ4LWIxMDUtNTA2ZGE3MDkwMWZmIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6ImdlYXJxYzAzMDBfMDAifQ.ZmWAPU3A-TkkalPd1VH4qGIiVZYVGdPGKxivk5aRd0JhFXT1VUD2vswjsyPoE9cxW1eWpyp5YpzbLKTnNsZpUsJyaDFv0Trl6U0MsFtL3UpUrqh1dwVlrKMxnoDmWVxLGOZ4lahAACCHDJcmQ2vz23hatrjljwTW39g_gGzG1Qm4lXo1ayc8VvT2D7MftLlfLExM8qFo2qPM5O_Bqlkqlpo2KD1a6TiruXROcPxMbvFFwPcIeco4nVOnmNvZpreaBBUleGUiWbBmfP46L7jPuQxWFtvtPvNJMXLhykyKtLRogdR7mEHOp_-one103E3dOTD6SmYrvuiX3uNBbcuxfg",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{sso-sisbr}}/realms/sisbr/protocol/openid-connect/token/introspect",
+          "host": [
+            "{{sso-sisbr}}"
+          ],
+          "path": [
+            "realms",
+            "sisbr",
+            "protocol",
+            "openid-connect",
+            "token",
+            "introspect"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/Auth - Authorization Code Request",
+      "id": "85e61e2e-bcc0-4bc6-8606-736cd7cc1cd0",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://idp-sisbr-ti.homologacao.com.br/auth/realms/sisbr/protocol/openid-connect/auth?&scope=openid&client_id=sisbr&response_type=code&redirect_uri=https://www.gov.br/pt-br",
+          "protocol": "https",
+          "host": [
+            "idp-sisbr-ti",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "sisbr",
+            "protocol",
+            "openid-connect",
+            "auth"
+          ],
+          "query": [
+            {
+              "key": null,
+              "value": null
+            },
+            {
+              "key": "scope",
+              "value": "openid"
+            },
+            {
+              "key": "client_id",
+              "value": "sisbr"
+            },
+            {
+              "key": "response_type",
+              "value": "code"
+            },
+            {
+              "key": "redirect_uri",
+              "value": "https://www.gov.br/pt-br"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "\nhttps://idp-sisbr.homologacao.com.br/auth/realms/sisbr/protocol/openid-connect/token",
+      "id": "7c19919d-df49-4354-b8bf-6fcb22765b40",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "type": "text",
+              "key": "client_secret",
+              "value": "3EZvfWBCFZHHu7W9GDyDCmwAnANlY8vo"
+            },
+            {
+              "type": "text",
+              "key": "client_id",
+              "value": "plataforma-caixa"
+            },
+            {
+              "type": "text",
+              "key": "grant_type",
+              "value": "password"
+            },
+            {
+              "type": "text",
+              "key": "username",
+              "value": "g3114"
+            },
+            {
+              "type": "text",
+              "key": "password",
+              "value": "1234"
+            },
+            {
+              "type": "text",
+              "key": "scope",
+              "value": "openid"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://idp-sisbr.homologacao.com.br/auth/realms/sisbr/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "idp-sisbr",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "sisbr",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,3581 @@
+{
+  "info": {
+    "_postman_id": "b75a11d1-785f-4b83-8125-156ac5d125bd",
+    "name": "SICOOB TRAB",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "TOKEN / INTROSPECT TI",
+      "item": [
+        {
+          "name": "TOKEN",
+          "id": "33da647e-37c4-4f5b-a42d-d2c14def5aa7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic VDFxQlFqYVMyckdfVE9qMWJoNWdHQnRVZjRrYTpSZlVlb29zRGhRcVVoT2NFZHVoeExFT09mOElh",
+                "type": "text"
+              },
+              {
+                "key": "scope",
+                "value": "default convenios_listagem",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "scope",
+                  "value": "convenios_codigo_barras_consultar",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://apit.homologacao.com.br:8280/token?grant_type=client_credentials",
+              "protocol": "http",
+              "host": [
+                "apit",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8280",
+              "path": [
+                "token"
+              ],
+              "query": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "INTROSPECT",
+          "id": "10f4c289-2ad3-4d77-be0e-2e211b626cd0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "client_id",
+                "value": "yYf3ugOhy97Yt4HgmYWSHm6fEDca",
+                "disabled": true
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer e4ec6da1-4cc6-3558-815b-3c7983743fe9",
+                "disabled": true
+              },
+              {
+                "key": "token",
+                "value": "83895a01-f591-3758-8438-2a58b65dc193",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "token",
+                  "value": "79c2cde1-1162-336d-8885-9483f888048c",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://apit.homologacao.com.br:9443/oauth2/introspect",
+              "protocol": "https",
+              "host": [
+                "apit",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "9443",
+              "path": [
+                "oauth2",
+                "introspect"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "15cd6fe4-492c-4294-b790-92f603a645af"
+    },
+    {
+      "name": "TOKEN / INTROSPECT HOMOL",
+      "item": [
+        {
+          "name": "TOKEN",
+          "id": "b3ff2a78-921d-4266-a883-98958ff039f3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic aVhLNlU1akRFQktYaVFjb0U3VWxrd2c3Um9NYTpET0RTb2Vqb1hDTEdfODJqd3pQTlNHRW1ZOE1h",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "scope",
+                  "value": "poupanca_saldo poupanca_contas poupanca_extrato",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "scope",
+                  "value": "cco_saldo cco_extrato",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "scope",
+                  "value": "default cobranca_boletos_consultar cobranca_boletos_incluir cobranca_boletos_pagador cobranca_boletos_segunda_via cobranca_boletos_descontos cobranca_boletos_abatimentos cobranca_boletos_valor_nominal cobranca_boletos_seu_numero cobranca_boletos_especie_documento cobranca_boletos_baixa cobranca_boletos_rateio_credito cobranca_pagadores cobranca_boletos_negativacoes_incluir cobranca_boletos_negativacoes_alterar cobranca_boletos_negativacoes_baixar cobranca_boletos_protestos_incluir cobranca_boletos_protestos_alterar cobranca_boletos_protestos_desistir cobranca_boletos_solicitacao_movimentacao_incluir cobranca_boletos_solicitacao_movimentacao_consultar cobranca_boletos_solicitacao_movimentacao_download cobranca_boletos_prorrogacoes_data_vencimento cobranca_boletos_prorrogacoes_data_limite_pagamento cobranca_boletos_encargos_multas cobranca_boletos_encargos_juros_mora",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://apimanager-homol.homologacao.com.br:8280/token?grant_type=client_credentials",
+              "protocol": "http",
+              "host": [
+                "apimanager-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8280",
+              "path": [
+                "token"
+              ],
+              "query": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "INTROSPECT",
+          "id": "ec431698-2fe6-405a-a518-91f64e860334",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "token",
+                  "value": "516a53e6-3dcd-37e1-ab1a-fab7aae0901a",
+                  "type": "text"
+                },
+                {
+                  "key": "X-JWT-Assertion",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImFfamhOdXMyMUtWdW9GeDY1TG1rVzJPX2wxMCJ9.eyJhcGxpY2FjYW8iOiJVMmxqYjI5aWJtVjBUVzlpYVd4bFxyXG4iLCJpc3MiOiJ3c28yLm9yZ1wvcHJvZHVjdHNcL2FtIiwiaHR0cDpcL1wvd3NvMi5vcmdcL2NsYWltc1wvYXBwbGljYXRpb25uYW1lIjoiU2ljb29ibmV0TW9iaWxlIiwiaHR0cDpcL1wvd3NvMi5vcmdcL2NsYWltc1wvZW5kdXNlciI6ImVtbWFudWVsLmtpYW1ldGlzQGNhcmJvbi5zdXBlciIsImh0dHA6XC9cL3dzbzIub3JnXC9jbGFpbXNcL2VuZHVzZXJUZW5hbnRJZCI6Ii0xMjM0IiwiaHR0cDpcL1wvd3NvMi5vcmdcL2NsYWltc1wvYXBwbGljYXRpb25pZCI6IjEyIiwiaHR0cDpcL1wvd3NvMi5vcmdcL2NsYWltc1wvdXNlcnR5cGUiOiJBUFBMSUNBVElPTiIsInVzdWFyaW9Nb25pdG9yYWNhb0F1ZGl0b3JpYSI6ImV5SnVkVzFsY205RGIyOXdaWEpoZEdsMllTSTZJakF6TURBaUxDSnBaR1Z1ZEdsbWFXTmhaRzl5SWpvaVEwczZJRXhRWmxSUlMwNTJcclxuTUhkMGFrNVhiSFpUZGtOcmFtcERWV1V3UVdFaUxDSnBaRWx1YzNScGRIVnBZMkZ2SWpveUxDSmpiR2xsYm5SSlpDSTZJa3hRWmxSUlxyXG5TMDUyTUhkMGFrNVhiSFpUZGtOcmFtcERWV1V3UVdFaWZRPT1cclxuIiwiZXhwIjoxNjQ5MjU5MDEzfQ==.Adm7To5BJOJAQbbD6ziRJtDUuCK8GuVXtN1ot3GW+AnIrLvqHBPgEZ9etLsu4q+eK6udDhD3mchQf+Rt/4yTUBRfKJybMl7jKZSljs8ZqLqK73e9svA3BAjSelDo8TW1mjmCwoSf6YdjOz2k0DOYpBryUkt01DEGjz4Sh+BtD9k=",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://apimanager-homol.homologacao.com.br:9443/oauth2/introspect",
+              "protocol": "https",
+              "host": [
+                "apimanager-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "9443",
+              "path": [
+                "oauth2",
+                "introspect"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "69d1e276-893a-4cbd-adf3-71d0f6f7fb29"
+    },
+    {
+      "name": "TOKEN / INTROSPECT HOMOL Copy",
+      "item": [
+        {
+          "name": "TOKEN",
+          "id": "45432376-2e07-4a3f-a165-591d26f94910",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic aVhLNlU1akRFQktYaVFjb0U3VWxrd2c3Um9NYTpET0RTb2Vqb1hDTEdfODJqd3pQTlNHRW1ZOE1h",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "scope",
+                  "value": "poupanca_saldo poupanca_contas poupanca_extrato",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "scope",
+                  "value": "cco_saldo cco_extrato",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "scope",
+                  "value": "default cobranca_boletos_consultar cobranca_boletos_incluir cobranca_boletos_pagador cobranca_boletos_segunda_via cobranca_boletos_descontos cobranca_boletos_abatimentos cobranca_boletos_valor_nominal cobranca_boletos_seu_numero cobranca_boletos_especie_documento cobranca_boletos_baixa cobranca_boletos_rateio_credito cobranca_pagadores cobranca_boletos_negativacoes_incluir cobranca_boletos_negativacoes_alterar cobranca_boletos_negativacoes_baixar cobranca_boletos_protestos_incluir cobranca_boletos_protestos_alterar cobranca_boletos_protestos_desistir cobranca_boletos_solicitacao_movimentacao_incluir cobranca_boletos_solicitacao_movimentacao_consultar cobranca_boletos_solicitacao_movimentacao_download cobranca_boletos_prorrogacoes_data_vencimento cobranca_boletos_prorrogacoes_data_limite_pagamento cobranca_boletos_encargos_multas cobranca_boletos_encargos_juros_mora",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://apimanager-homol.homologacao.com.br:8280/token?grant_type=client_credentials",
+              "protocol": "http",
+              "host": [
+                "apimanager-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8280",
+              "path": [
+                "token"
+              ],
+              "query": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "INTROSPECT",
+          "id": "256e53e9-e7d3-445d-bf5b-9332a9e97d66",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "token",
+                  "value": "516a53e6-3dcd-37e1-ab1a-fab7aae0901a",
+                  "type": "text"
+                },
+                {
+                  "key": "X-JWT-Assertion",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImFfamhOdXMyMUtWdW9GeDY1TG1rVzJPX2wxMCJ9.eyJhcGxpY2FjYW8iOiJVMmxqYjI5aWJtVjBUVzlpYVd4bFxyXG4iLCJpc3MiOiJ3c28yLm9yZ1wvcHJvZHVjdHNcL2FtIiwiaHR0cDpcL1wvd3NvMi5vcmdcL2NsYWltc1wvYXBwbGljYXRpb25uYW1lIjoiU2ljb29ibmV0TW9iaWxlIiwiaHR0cDpcL1wvd3NvMi5vcmdcL2NsYWltc1wvZW5kdXNlciI6ImVtbWFudWVsLmtpYW1ldGlzQGNhcmJvbi5zdXBlciIsImh0dHA6XC9cL3dzbzIub3JnXC9jbGFpbXNcL2VuZHVzZXJUZW5hbnRJZCI6Ii0xMjM0IiwiaHR0cDpcL1wvd3NvMi5vcmdcL2NsYWltc1wvYXBwbGljYXRpb25pZCI6IjEyIiwiaHR0cDpcL1wvd3NvMi5vcmdcL2NsYWltc1wvdXNlcnR5cGUiOiJBUFBMSUNBVElPTiIsInVzdWFyaW9Nb25pdG9yYWNhb0F1ZGl0b3JpYSI6ImV5SnVkVzFsY205RGIyOXdaWEpoZEdsMllTSTZJakF6TURBaUxDSnBaR1Z1ZEdsbWFXTmhaRzl5SWpvaVEwczZJRXhRWmxSUlMwNTJcclxuTUhkMGFrNVhiSFpUZGtOcmFtcERWV1V3UVdFaUxDSnBaRWx1YzNScGRIVnBZMkZ2SWpveUxDSmpiR2xsYm5SSlpDSTZJa3hRWmxSUlxyXG5TMDUyTUhkMGFrNVhiSFpUZGtOcmFtcERWV1V3UVdFaWZRPT1cclxuIiwiZXhwIjoxNjQ5MjU5MDEzfQ==.Adm7To5BJOJAQbbD6ziRJtDUuCK8GuVXtN1ot3GW+AnIrLvqHBPgEZ9etLsu4q+eK6udDhD3mchQf+Rt/4yTUBRfKJybMl7jKZSljs8ZqLqK73e9svA3BAjSelDo8TW1mjmCwoSf6YdjOz2k0DOYpBryUkt01DEGjz4Sh+BtD9k=",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://apimanager-homol.homologacao.com.br:9443/oauth2/introspect",
+              "protocol": "https",
+              "host": [
+                "apimanager-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "9443",
+              "path": [
+                "oauth2",
+                "introspect"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "d61a0e79-58f1-49c6-926f-76fa0005e6b6"
+    },
+    {
+      "name": "TOKEN / INTROSPECT PROD INT",
+      "item": [
+        {
+          "name": "TOKEN",
+          "id": "42d6bdd6-4973-4ed7-81b4-09a2e4d8302d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic bHJkT0VpR3FpWFlUMnp0eHo3VGdBazFfSHprYTpFd1RYcEpnREFWbEJqUmNEbV8xR0NfMVNxZjRh",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://apim-interno.sicoob.com.br/auth/token?grant_type=client_credentials",
+              "protocol": "https",
+              "host": [
+                "apim-interno",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "auth",
+                "token"
+              ],
+              "query": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TOKEN Copy",
+          "id": "50deffd6-3244-4c65-842e-4de296e397bc",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic bDdmOTh5VWtzbGlHaHduYmk3ZlRDQUpwVGxzYTpMQ0JUNnRyVkE4N2pFNjdSVzg5WkFWMmMwRlFh",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://apim-interno.sicoob.com.br/auth/token?grant_type=client_credentials",
+              "protocol": "https",
+              "host": [
+                "apim-interno",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "auth",
+                "token"
+              ],
+              "query": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "INTROSPECT",
+          "id": "8904cd99-c922-4418-b6e8-72fbee25aa48",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "disabled": true
+              },
+              {
+                "key": "Cookie",
+                "value": "BIGipServerpool-dmz-datapower-homol-9443=!p+Uf5ec5OvZCM1I7hwgmtNHbGIIMcITFNNpr2r5YV8O8UydsgRMga0SyecZdHLHxquMikS/N13iesZs=",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "token",
+                  "value": "b98d55d8-4fb0-3383-b6ab-7dbcc3dbb495",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "client_id",
+                  "value": "17f4adb79cdbc9eed248767e875ff849",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "client_secret",
+                  "value": "25b12c92f9d613050f9871f355194a68",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "scope",
+                  "value": "cob.read",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "token",
+                  "value": "1b7811a7-8624-3f71-8c19-15550cff8345",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://apim-interno.sicoob.com.br/auth/oauth2/introspect",
+              "protocol": "https",
+              "host": [
+                "apim-interno",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "auth",
+                "oauth2",
+                "introspect"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "99196d31-4fb7-4dec-938d-d566941f337e"
+    },
+    {
+      "name": "TOKEN / INTROSPECT PROD EXT",
+      "item": [
+        {
+          "name": "TOKEN",
+          "id": "2cf881f8-e176-4d69-9126-586e4f7c6fe6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic SnhBQmhYbDdrNFZXQ20xU2J0Z3pTSzNQdEx3YTpVZms0Z3g4QTRpeHpwVmtBdjg2NUZsbGQ2blVh",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://api.sisbr.com.br/auth/token?grant_type=client_credentials",
+              "protocol": "https",
+              "host": [
+                "api",
+                "sisbr",
+                "com",
+                "br"
+              ],
+              "path": [
+                "auth",
+                "token"
+              ],
+              "query": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "INTROSPECT",
+          "id": "955c16c2-3435-4ef9-953f-3925fcbf1059",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "token",
+                  "value": "e5416bba-be3d-3040-9b07-aec5ce9499ef",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api.sisbr.com.br/auth/oauth2/introspect",
+              "protocol": "https",
+              "host": [
+                "api",
+                "sisbr",
+                "com",
+                "br"
+              ],
+              "path": [
+                "auth",
+                "oauth2",
+                "introspect"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "756a6bdc-ec2b-44f9-8450-136b3066661e"
+    },
+    {
+      "name": "COOPERADO PIX",
+      "item": [
+        {
+          "name": "TOKEN",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"access_token\", json.access_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "8f8a6f3d-d05a-414d-901c-684fd24230fd"
+              }
+            }
+          ],
+          "id": "3184fa3e-2125-47f9-908b-f9eb6c89664f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "{{client_id}}",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "{{scope}}",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "aac0e48b-00be-4074-9f66-4cdb2a482208",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{URL}}",
+              "host": [
+                "{{URL}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PIX PERIODO",
+          "id": "3c2e1139-6ffe-4b68-87da-011258ec22b5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Client-Certificate",
+                "value": "{{certificado}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{URL_IBM_PERIODO}}",
+              "host": [
+                "{{URL_IBM_PERIODO}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PIX COB",
+          "id": "9e08e9c8-9b45-49d4-a348-31fa044a5c4b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Client-Certificate",
+                "value": "{{certificado}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{URL_COB}}",
+              "host": [
+                "{{URL_COB}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TXID",
+          "id": "89473674-b31a-4f40-97b1-9b74411f0251",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\n  \"calendario\": {\n\n    \"expiracao\": 3600\n\n  },\n\n  \"devedor\": {\n\n    \"cpf\": \"21952893097\",\n\n    \"nome\": \"VINICIUS SEBASTIÃO KAUÊ ARAGÃO\",\n\n    \"cnpj\": \"54879606000178\"\n\n  },\n\n  \"valor\": {\n\n    \"original\": \"37.00\"\n\n  },\n\n  \"chave\": \"teste-api-pix@sicoob.com.br\",\n\n  \"solicitacaoPagador\": \"cobrança\"\n\n}"
+            },
+            "url": {
+              "raw": "{{URL_TXID}}",
+              "host": [
+                "{{URL_TXID}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "ec3edda6-c98e-4c99-8002-d12a0e1e0a45"
+    },
+    {
+      "name": "TOKEN NATIVO",
+      "item": [
+        {
+          "name": "TOKEN NATIVO",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "id": "c5b34ffe-ff12-434e-838f-a36e5e081cff"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"access_token\", json.access_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "d747457b-a8f4-41d2-9e30-c3647dcffa28"
+              }
+            }
+          ],
+          "id": "c35f8972-3f24-408e-b796-f06779a28fc0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "{{client_id}}",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret}}",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "default",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{URL}}",
+              "host": [
+                "{{URL}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TOKEN NATIVO GW",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "id": "237ae9de-27e6-41d8-bbf0-64c028e84094"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"access_token\", json.access_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "71bc0f61-e273-413a-8b8b-9212e6a6dd0b"
+              }
+            }
+          ],
+          "id": "3f6a3800-d6ad-4837-b6f4-be1e581e63c0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "{{client_id}}",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret}}",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "default",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://acip104:9443/sicoob/interno/oauth/oauth2/token",
+              "protocol": "https",
+              "host": [
+                "acip104"
+              ],
+              "port": "9443",
+              "path": [
+                "sicoob",
+                "interno",
+                "oauth",
+                "oauth2",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TOKEN NATIVO GW V10",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "id": "1cfca6ce-eb99-4827-a9e8-c69076358599"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"access_token\", json.access_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "cba3772b-3678-44f8-973b-86deec5f5e9a"
+              }
+            }
+          ],
+          "id": "c0e0c961-6387-4421-b6a6-898dcb638b68",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "{{client_id}}",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret}}",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "default",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://acgp4021:9443/sicoob/interno/oauth/oauth2/token",
+              "protocol": "https",
+              "host": [
+                "acgp4021"
+              ],
+              "port": "9443",
+              "path": [
+                "sicoob",
+                "interno",
+                "oauth",
+                "oauth2",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TOKEN NATIVO RETAGUA",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "id": "7f520bbf-cb8e-42c4-a48c-1cae2d40984b"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"access_token\", json.access_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "f4bff418-d8cd-4cb9-836f-c8e7131ff9c7"
+              }
+            }
+          ],
+          "id": "af4f8185-88c0-46c6-b048-535f9f9ab08e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "{{client_id}}",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret}}",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "default",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{URL}}",
+              "host": [
+                "{{URL}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TOKEN NATIVO PAA CUST",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "id": "4055bfb6-3310-41e2-9085-7839544e2dbe"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"access_token\", json.access_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "b62f05b3-0a03-4cde-810a-66cef7b42bb1"
+              }
+            }
+          ],
+          "id": "29ce1c18-cc93-4c0e-b7d7-10465ab8e097",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "{{client_id_paa}}",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret_paa}}",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "default",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{URL}}",
+              "host": [
+                "{{URL}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "INTROSPECT NATIVO",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "id": "57e4d27b-e3a0-4bec-953e-49628de392de"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "id": "7b8995f1-4b6a-47b2-a856-ecb0294b6595"
+              }
+            }
+          ],
+          "id": "5952d4ad-834e-432a-be32-d63bc7ff1be5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "{{client_id}}",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret}}",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "default",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "token",
+                  "value": "AAIccmZlaGxnT25LUUxTcmJsRVIzWVEzd01id1h3YSslJfna1LB7ivLN-_Cxvwb1o9xlZ8VUQ8ewUc_VA4_C6xTiHs32IAw-6vHNfcmiqNcBklhS4L4YXbMPjx_pWl_VP4OlKUSTp5AOu07jaDGZqH2k54qNT115rlWjXr2zcA",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{URL_INTROSPECT}}",
+              "host": [
+                "{{URL_INTROSPECT}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SEG. FATOR AUT",
+          "id": "6e5837d4-e7b7-4bd4-a323-32cfa9c3e26e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "client_id",
+                "value": "{{client_id}}",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "{{URL_API_SEG_FATOR}}",
+              "host": [
+                "{{URL_API_SEG_FATOR}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SEG. FATOR AUT GW",
+          "id": "62b77410-2a18-4029-98be-d845b080d777",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "client_id",
+                "value": "{{client_id}}",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "https://acip106:9443/sicoob/interno/qrcode/v2/1234/cas",
+              "protocol": "https",
+              "host": [
+                "acip106"
+              ],
+              "port": "9443",
+              "path": [
+                "sicoob",
+                "interno",
+                "qrcode",
+                "v2",
+                "1234",
+                "cas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SEG. FATOR AUT GW V10",
+          "id": "17106c23-5853-4b7c-82cf-6ce9abf7efe2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "client_id",
+                "value": "{{client_id}}",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "https://acgp4021:9443/sicoob/interno/qrcode/v2/1234/cas",
+              "protocol": "https",
+              "host": [
+                "acgp4021"
+              ],
+              "port": "9443",
+              "path": [
+                "sicoob",
+                "interno",
+                "qrcode",
+                "v2",
+                "1234",
+                "cas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POUPADOR",
+          "id": "0941719f-df9f-4ded-ae78-1ab8917a22c2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "client_id",
+                "value": "{{client_id}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "{{URL_API_POUPADOR}}",
+              "host": [
+                "{{URL_API_POUPADOR}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TOKEN NATIVO V1",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "id": "73bd8fba-1489-466c-b843-c0e168b47c47"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"access_token\", json.access_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "20d61e14-878b-4308-adb5-f8e8680ffa60"
+              }
+            }
+          ],
+          "id": "2643dadd-e536-4b39-ab09-202df4545555",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "{{client_id}}",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret}}",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "default",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{URL_V1}}",
+              "host": [
+                "{{URL_V1}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Retaguarda",
+          "id": "d11acb9d-efa7-4029-a82f-9551c8505eb3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "client_id",
+                "value": "{{client_id_ret}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\r\n  \"numCooperativa\": 3105,\r\n\r\n  \"dataInicio\": \"2022-07-01\",\r\n\r\n  \"dataFim\": \"2022-07-30\",\r\n\r\n  \"tipoRelatorio\": \"EMPRESARIAL_CADASTRO_MOBILE\",\r\n\r\n  \"tipoRetornoRelatorio\": \"JSON\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://apic-ti.sicoob.com.br/sicoob/interno/canais-retaguarda/v1/retaguardacanais/relatorios",
+              "protocol": "https",
+              "host": [
+                "apic-ti",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "interno",
+                "canais-retaguarda",
+                "v1",
+                "retaguardacanais",
+                "relatorios"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "d37379cb-781d-40f1-84e8-0581f175b6d4"
+    },
+    {
+      "name": "HOMOL TOKEN REALMS EXTERNO",
+      "item": [
+        {
+          "name": "HOMOL TOKEN REALMS EXTERNO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"access_token\", json.access_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "886c1694-12b5-4487-ae6f-623f79f1f9f5"
+              }
+            }
+          ],
+          "id": "3d15db99-b55c-4b82-b754-e6253a8d1b09",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "{{client_id}}",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "default",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret}}",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}",
+              "host": [
+                "{{url}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "HOMOL TOKEN REALMS EXTERNO GATEWAY",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"id_token\", json.id_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "f00ec0be-ba5a-4c1c-85c7-20322adab5f9"
+              }
+            }
+          ],
+          "id": "04467401-a33d-4a55-aac8-9c6287029180",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "JdNllyePfIWoyx_B94MGYEFN3fca",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid default",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "DJ3558V23r5tDpRWSy3aUjV1cZhbwnFg",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}",
+              "host": [
+                "{{url}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "HOMOL TOKEN REALMS EXTERNO OPEN",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"access_token\", json.access_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "de46212e-94e2-4184-b642-b12b1fe2747f"
+              }
+            }
+          ],
+          "id": "5358700b-dcfb-4811-8f96-8f401ab841d0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "{{client_id_openbank}}",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "default",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret}}",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}",
+              "host": [
+                "{{url}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "HOMOL TOKEN REALMS COOPERADO OPEN",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"id_token\", json.id_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "0f5228b4-0efe-42ac-8f65-c3c6eaf35369"
+              }
+            }
+          ],
+          "id": "54f0721c-4cb8-4396-93ab-42fe8c4d9365",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "{{client_id_opem_coope}}",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid default",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "KIhHggYyYbMz8Fw2kOpmU0S3sbqQmv0X",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token",
+              "protocol": "https",
+              "host": [
+                "auth-hom",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "auth",
+                "realms",
+                "cooperado",
+                "protocol",
+                "openid-connect",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "HOMOL TOKEN REALMS EXTERNO FISCAL",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"access_token\", json.access_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "9ed4276f-f2b8-43a2-9361-7b4df8614143"
+              }
+            }
+          ],
+          "id": "14938c18-3352-434c-895f-90c997d30a53",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "{{client_id_fiscal}}",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "default openid",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret_fiscal}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}",
+              "host": [
+                "{{url}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "HOMOL TOKEN NEC SENS.",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"id_token\", json.id_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "b91098ca-c97c-407e-aab9-cebfa7391c80"
+              }
+            }
+          ],
+          "id": "ac32e6dd-e1d1-4d7c-8d00-f3f66186283c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "{{client_id_nec}}",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid default",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret_nec}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}",
+              "host": [
+                "{{url}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "https://apic-homol.sicoob.com.br/sicoob/externo/v1/nec/cards/unblock",
+          "id": "913a4817-25ac-4e90-9e77-618e3c37fbc4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "accept",
+                "value": "*/*"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"additional\": 1,\r\n  \"authorizationToken\": \"fe6b05c68581322910384c652365b04d1335825615928f8e5c4cb3a0cd2a67e6\",\r\n  \"componentId\": \"00000000000000000000000\",\r\n  \"cvv\": \"maju\",\r\n  \"partnerCode\": 63661177,\r\n  \"user\": \"Cora\"\r\n}"
+            },
+            "url": {
+              "raw": "https://apic-homol.sicoob.com.br/sicoob/externo/v1/nec/cards/unblock",
+              "protocol": "https",
+              "host": [
+                "apic-homol",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "externo",
+                "v1",
+                "nec",
+                "cards",
+                "unblock"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "INTROSPECT HOMOL REALM",
+          "id": "05035f68-38a8-43b7-924d-eb7ab7cb5f88",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_secret",
+                  "value": "cd1adea7-6104-43d8-b15f-e09645de70ad",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "svc-ibm-api-connect",
+                  "type": "text"
+                },
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJwRWVUamdxX3JiaXFYcWdCODRtU3BMLXVSQ3pEaFpha25RWVdmelBRbjFZIn0.eyJleHAiOjE2NTkxMDUwNTEsImlhdCI6MTY1OTEwNDc1MSwianRpIjoiMzQ2Zjg1Y2MtMjgxZi00NGVlLWIwOGEtNTVhZDA0NTE3NDkzIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLWhvbS5ob21vbG9nYWNhby5jb20uYnIvYXV0aC9yZWFsbXMvZXh0ZXJubyIsInN1YiI6ImE5NDE3ZjViLTk2OTUtNDRlZC05NDdkLTg3YTFkYTczMzBiOSIsInR5cCI6IkJlYXJlciIsImF6cCI6Im1vYmlsZSIsImFjciI6IjEiLCJzY29wZSI6Im9wZW5pZCBkZWZhdWx0IiwiY2xpZW50SG9zdCI6IjEwLjEzMC4yLjEiLCJjbGllbnRJZCI6Im1vYmlsZSIsImNsaWVudEFkZHJlc3MiOiIxMC4xMzAuMi4xIn0.IQMG88tHSR8WgASpfOkLmqSX8-huUYEmSohYJcd6pUQ3ImB1Rc5Xipq6F0wwRQ3B0SPJbbEkeha66vPJ_bQgCrvcRGPT06RL3qLJNJDusYFIRDokTTSitfJT9rZi6ROZGXu28rU3CiJEqLDEN9WDN7ICiWAbRWZIS2PY5znWP1zE5CB_1x2mVklPjWNnqP5xq2tzukP2riEciLKpyrQxdzMs1fbRJduqCVLLisc0v3gk-cdw0_hzTJ2VhxTAehkoZCBp3Dh2IIN1V9PH4Gf9e1rb216F9go-EmRK-g5fTKw0uK1hIOOZqPF4nmctm_2IItPLN_-EvjUcYw-W2Dk9uw",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://auth-hom.homologacao.com.br/auth/realms/externo/protocol/openid-connect/token/introspect",
+              "protocol": "https",
+              "host": [
+                "auth-hom",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "auth",
+                "realms",
+                "externo",
+                "protocol",
+                "openid-connect",
+                "token",
+                "introspect"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "INTROSPECT HOMOL REALM COOPERADO",
+          "id": "c2d0f479-9499-487d-ad0f-1301e451191e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_secret",
+                  "value": "ec88436c-c7e2-4f15-8fd9-07cf97d31cbe",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "svc-ibm-api-connect",
+                  "type": "text"
+                },
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2Q1pZNXZvTmpmZzhNbXZ5SUhzS3U5Um8xaWZfMU5jckVqOTJVNEc1eGJNIn0.eyJleHAiOjE2NjMxNzgxOTMsImlhdCI6MTY2MzE3Nzg5MywiYXV0aF90aW1lIjowLCJqdGkiOiJhN2U3YjhmOS0wNmY4LTRiMGYtYmFlOS1iYjk2Yzk2OTVkMzIiLCJpc3MiOiJodHRwczovL2F1dGgtaG9tLmhvbW9sb2dhY2FvLmNvbS5ici9hdXRoL3JlYWxtcy9jb29wZXJhZG8iLCJhdWQiOiJlNzAzMTU5OC03MWU4LTRjYTEtYWFiNC0xZTEwNDU3NTZjNWUiLCJzdWIiOiI3N2RiYzdiYS03ZDc3LTQ1N2YtOTJjZi1jN2M2MjU2Zjg2N2IiLCJ0eXAiOiJJRCIsImF6cCI6ImU3MDMxNTk4LTcxZTgtNGNhMS1hYWI0LTFlMTA0NTc1NmM1ZSIsImF0X2hhc2giOiJNN2Q1azIzZ1AzSGJrZmFLbmNWV3ZRIiwiY29kaWdvSVNQQkZhdm9yZWNpZG8iOiIwMjAzODIzMiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiY2xpZW50SG9zdCI6IjEwLjEzMC4yLjEiLCJjbGllbnRJZCI6ImU3MDMxNTk4LTcxZTgtNGNhMS1hYWI0LTFlMTA0NTc1NmM1ZSIsImZpbmFsaWRhZGUiOiIxMCIsIm51bWVyb0FnZW5jaWFGYXZvcmVjaWRvIjoiMzE2NCIsImhpc3RvcmljbyI6IlRFU1RFIERFIEhJU1RPUklDTyIsInZhbG9yIjoiMS4yMyIsIm51bWVyb0Nvb3BlcmF0aXZhIjoiNDM2NCIsIm51bWVyb0NQRkNOUEpGYXZvcmVjaWRvIjoiMjE5MTAyNTQ1NTAiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtZTcwMzE1OTgtNzFlOC00Y2ExLWFhYjQtMWUxMDQ1NzU2YzVlIiwibnVtZXJvQ29udGFGYXZvcmVjaWRvIjoiOTg2NTMwNiIsIm51bWVyb0NvbnRhRGViaXRvIjoiMjIzMzAwMTEiLCJjbGllbnRBZGRyZXNzIjoiMTAuMTMwLjIuMSIsIm51bWVyb0JhbmNvRmF2b3JlY2lkbyI6IjAiLCJ0aXBvUGVzc29hRGViaXRvIjoiRiIsIm51bWVyb1BhIjoiMCIsIm5vbWVQZXNzb2FEZWJpdG8iOiJGVUxBTk8gREUgVEFMIENJQ0xBTk8gREEgU0lMVkEiLCJkYXRhTW92aW1lbnRvIjoiMjAyMi0wOC0wMSIsIm51bWVyb0NQRkNOUEpEZWJpdG8iOiIwMTY2Nzc4NjgwNiIsInRpcG9QZXNzb2FGYXZvcmVjaWRvIjoiRiIsInRpcG9Db250YURlYml0byI6IkNDIiwibm9tZVBlc3NvYUZhdm9yZWNpZG8iOiJDSUNMQU5PIERFIFRBTCBDSUNMQU5PIERBIFNJTFZBIiwidGlwb0NvbnRhRmF2b3JlY2lkbyI6IkNDIn0.XZRX9-efFxP409VzkcFJJ-TkGn2GWBdKp37BB91Ze3lJU-kAShTLVrDO0kvYwUa1W1RVtvvTEiTBLm79gqxULi1Y5O6Kjrwv26hHC4_ymLvLx6GLPGMXX5k3sn-VsxkKzq5iYntiicGpR4ftFq4Jy4RU0BDZuvMJgHMPeovGoZFkP8F9UF4UucwpfxTd5PanZugEGl6xYEcEwEhQw_DCXvJWeAjvU3A87ToTijn4j4hb6Avi22_ttJ-kgK-2wM9DxCKbiLaDgvZCpFf1_v_UdupYLfSBVCDI_llXw0_tbxSXOh3YbkP0zUFa1RR6JolFnMVkM-ZO9DUWWzz0egV02Q",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token/introspect",
+              "protocol": "https",
+              "host": [
+                "auth-hom",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "auth",
+                "realms",
+                "cooperado",
+                "protocol",
+                "openid-connect",
+                "token",
+                "introspect"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "HOMOL OPEN ESTRATEGIA",
+          "id": "1b436af9-4ecd-44f1-83bd-fb7ab9ce8395",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{id_token}}"
+              },
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "client_id",
+                "value": "{{client_id}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"dataMovimento\": \"2022-09-14\",\r\n    \"valor\": \"0.1\",\r\n    \"finalidade\": \"10\",\r\n    \"numeroCooperativa\": \"3164\",\r\n    \"numeroPa\": \"0\",\r\n    \"tipoContaDebito\": \"CC\",\r\n    \"numeroContaDebito\": \"1234005\",\r\n    \"numeroCPFCNPJDebito\": \"78325884037\",\r\n    \"nomePessoaDebito\": \"TESTE OBE\",\r\n    \"tipoPessoaDebito\": \"F\",\r\n    \"codigoISPBFavorecido\": \"\",\r\n    \"numeroBancoFavorecido\": \"104\",\r\n    \"numeroAgenciaFavorecido\": \"4002\",\r\n    \"tipoContaFavorecido\": \"PG\",\r\n    \"numeroContaFavorecido\": \"9865306\",\r\n    \"numeroCPFCNPJFavorecido\": \"21910254550\",\r\n    \"tipoPessoaFavorecido\": \"F\",\r\n    \"nomePessoaFavorecido\": \"FULANO DE TAL CICLANO DA SILVA\",\r\n    \"historico\": \"TEST PARA HISTORICO\"\r\n}"
+            },
+            "url": {
+              "raw": "https://apic-homol.sicoob.com.br/sicoob/externo/sspb/openbanking/estrategico/v1/ted/envio",
+              "protocol": "https",
+              "host": [
+                "apic-homol",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "externo",
+                "sspb",
+                "openbanking",
+                "estrategico",
+                "v1",
+                "ted",
+                "envio"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "https://apicinterno-homol.sicoob.com.br/sicoob/interno/fiscalizacao-sensoriamento/v2/dominios-bacen/cestas?codigo=1",
+          "id": "074f3c56-8b6c-404e-b8a3-3a35d8fc7ae2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "accept",
+                "value": "application/json",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "https://apicinterno-homol.sicoob.com.br/sicoob/interno/fiscalizacao-sensoriamento/v2/dominios-bacen/cestas?codigo=1",
+              "protocol": "https",
+              "host": [
+                "apicinterno-homol",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "interno",
+                "fiscalizacao-sensoriamento",
+                "v2",
+                "dominios-bacen",
+                "cestas"
+              ],
+              "query": [
+                {
+                  "key": "codigo",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "NUVEM SHOP",
+          "id": "b2075bc3-dbb6-450f-a343-058fabf72f2a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{id_token}}"
+              },
+              {
+                "key": "accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "https://apicinterno-homol.sicoob.com.br/sicoob/interno/nuvemshop/v2/pix/key-types",
+              "protocol": "https",
+              "host": [
+                "apicinterno-homol",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "interno",
+                "nuvemshop",
+                "v2",
+                "pix",
+                "key-types"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GATEWAY PAGAMENTOS",
+          "id": "a1d89e74-52c4-41fb-a7bf-722769c8d521",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{id_token}}"
+              },
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"amount\": 42.44424507,\r\n  \"attributes\": [\r\n    {\r\n      \"name\": \"Lawrence Wilson\",\r\n      \"value\": \"57.7\"\r\n    },\r\n    {\r\n      \"name\": \"Ernest Nguyen\",\r\n      \"value\": \"39.8\"\r\n    },\r\n    {\r\n      \"name\": \"Esther Bailey\",\r\n      \"value\": \"38.79\"\r\n    }\r\n  ],\r\n  \"recipients\": [\r\n    {\r\n      \"amount\": 89.26265985,\r\n      \"chargeProcessingFee\": true,\r\n      \"chargebackLiable\": true,\r\n      \"document\": \"imosubtefrupno\",\r\n      \"documentType\": \"RG\",\r\n      \"externalCode\": \"lubsecehbij\",\r\n      \"name\": \"Gary Mann\",\r\n      \"role\": \"aksatebazipuz\"\r\n    },\r\n    {\r\n      \"amount\": 84.49654163,\r\n      \"chargeProcessingFee\": false,\r\n      \"chargebackLiable\": true,\r\n      \"document\": \"favifzoh\",\r\n      \"documentType\": \"CNPJ\",\r\n      \"externalCode\": \"agofowjuh\",\r\n      \"name\": \"Kyle Perez\",\r\n      \"role\": \"odfet\"\r\n    },\r\n    {\r\n      \"amount\": 86.71952389,\r\n      \"chargeProcessingFee\": false,\r\n      \"chargebackLiable\": false,\r\n      \"document\": \"niuseduduvjez\",\r\n      \"documentType\": \"RG\",\r\n      \"externalCode\": \"feac\",\r\n      \"name\": \"Edgar Lambert\",\r\n      \"role\": \"emobukaatol\"\r\n    }\r\n  ],\r\n  \"transactionId\": 45222260\r\n}"
+            },
+            "url": {
+              "raw": "https://apicinterno-homol.sicoob.com.br/sicoob/interno/v2/acquirer/payment-gateway/payments/capture",
+              "protocol": "https",
+              "host": [
+                "apicinterno-homol",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "interno",
+                "v2",
+                "acquirer",
+                "payment-gateway",
+                "payments",
+                "capture"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "24210315-bc57-489e-b904-765a2b54eb9d"
+    },
+    {
+      "name": "CORRES. BANCARIO",
+      "item": [
+        {
+          "name": "TOKEN CORRESP. BANCARIO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"access_token\", json.access_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "70c393d1-4739-43e4-83f5-c001fcdd2c8b"
+              }
+            }
+          ],
+          "id": "2809c4d9-0316-4431-aa31-6450e4ba5c12",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic {{basic}}"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "terminal",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "text"
+                },
+                {
+                  "key": "numeroCooperativa",
+                  "value": "3066",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{URI}}",
+              "host": [
+                "{{URI}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "https://apic-ti.sicoob.com.br/sicoob/externo/correspondente-bancario/v1/pagamentos/75693901200000690591460901009929501050058001",
+          "id": "4f601e22-bf02-49f2-acb2-4b02fe421599",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "client_id",
+                "value": "{{client_id}}"
+              }
+            ],
+            "url": {
+              "raw": "{{URI_CORRES}}",
+              "host": [
+                "{{URI_CORRES}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SERVICO DELES",
+          "id": "11dd251f-5755-4b26-b43c-e98a78948d53",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://WASH036.homologacao.com.br:9080/correspondente-pagamentosopenbank-transacionalapi-war/api/terminais?cooperativa=3066&idDispositivo=DFDF899",
+              "protocol": "http",
+              "host": [
+                "WASH036",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "9080",
+              "path": [
+                "correspondente-pagamentosopenbank-transacionalapi-war",
+                "api",
+                "terminais"
+              ],
+              "query": [
+                {
+                  "key": "cooperativa",
+                  "value": "3066"
+                },
+                {
+                  "key": "idDispositivo",
+                  "value": "DFDF899"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "b61771c1-5851-4723-a2a7-36b96c797482"
+    },
+    {
+      "name": "CONTA CORRE POUP",
+      "item": [
+        {
+          "name": "TOKEN CONTA RHSSO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"access_token\", json.access_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "3fa397fe-c494-4611-acf6-8cc0b3cdb2b7"
+              }
+            }
+          ],
+          "id": "27759ce2-f62a-4cf6-99d2-82ed1e0c081b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "{{client_id}}",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "{{scope}}",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{URL}}",
+              "host": [
+                "{{URL}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CONTA V10 SICOOB",
+          "id": "20dec54b-c7d0-412b-82f0-dd37a10674ca",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "client_id",
+                "value": "{{client_id}}"
+              },
+              {
+                "key": "client_secret",
+                "value": "63f08503-2b1f-4efa-97f6-0776e94091d5",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "{{URL_RHSSOO}}",
+              "host": [
+                "{{URL_RHSSOO}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CONTA V10 SISBR",
+          "id": "a7881b45-55ab-4083-82c1-8a6385ad1971",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "client_id",
+                "value": "{{client_id}}"
+              },
+              {
+                "key": "client_secret",
+                "value": "63f08503-2b1f-4efa-97f6-0776e94091d5",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "{{URL_CONTA}}",
+              "host": [
+                "{{URL_CONTA}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POUPA v10 SISBR",
+          "id": "5b1fb5ce-c3c8-4d8d-94a8-24421d1feda3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "client_id",
+                "value": "{{client_id}}"
+              }
+            ],
+            "url": {
+              "raw": "{{URL_POUP}}",
+              "host": [
+                "{{URL_POUP}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POUPA v10 SICOOB",
+          "id": "4c070c34-1476-4902-ae2a-e0b8f81d094f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "client_id",
+                "value": "{{client_id}}"
+              }
+            ],
+            "url": {
+              "raw": "{{URL_RHSSO_POUP}}",
+              "host": [
+                "{{URL_RHSSO_POUP}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TOKEN POUPANCA WSO2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"access_token\", json.access_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "7413e9f6-8d71-4e49-9d20-110ac196b5bf"
+              }
+            }
+          ],
+          "id": "c1e1fa93-5023-4c66-af52-c85de433ab01",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic bWNxWktQRjBKTEJvbjd2RWNicTVkN2ZmMVFBYTpucGNVSHlacUJOOVNkUXNONlFTVVFScjVXclVh"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "scope",
+                  "value": "poupanca_saldo poupanca_contas poupanca_extrato",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://apimanager-homol.homologacao.com.br:8280/token?grant_type=client_credentials",
+              "protocol": "http",
+              "host": [
+                "apimanager-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8280",
+              "path": [
+                "token"
+              ],
+              "query": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Poupa SISBR",
+          "id": "a330be0b-0736-47a8-93c9-619ff12baf41",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "client_id",
+                "value": "mcqZKPF0JLBon7vEcbq5d7ff1QAa"
+              }
+            ],
+            "url": {
+              "raw": "https://apicv10-homol.homologacao.com.br/sisbr/interno/poupanca/v1/contas/64968952/saldo",
+              "protocol": "https",
+              "host": [
+                "apicv10-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sisbr",
+                "interno",
+                "poupanca",
+                "v1",
+                "contas",
+                "64968952",
+                "saldo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Poupa SICOOB",
+          "id": "04a958a8-ec6b-4f1f-8c5e-7b2549ab4c5c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "client_id",
+                "value": "mcqZKPF0JLBon7vEcbq5d7ff1QAa"
+              }
+            ],
+            "url": {
+              "raw": "https://apicv10-homol.homologacao.com.br/sicoob/interno/poupanca/v1/contas/64968952/saldo",
+              "protocol": "https",
+              "host": [
+                "apicv10-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "interno",
+                "poupanca",
+                "v1",
+                "contas",
+                "64968952",
+                "saldo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TOKEN CONTA WSO2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"access_token\", json.access_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "cee53992-5919-48a4-826d-bc71e383d26e"
+              }
+            }
+          ],
+          "id": "9cc9b3bc-2475-49b8-bf3b-4ff312551da5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic dzBtaXpMM3B3OENJTDAyX0tmUmxSTDV2bnRzYTo3b21tVE41UF9naWlmM2hDQ2tmZkZNNmZzVU1h"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "scope",
+                  "value": "cco_saldo cco_extrato",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://apimanager-homol.homologacao.com.br:8280/token?grant_type=client_credentials",
+              "protocol": "http",
+              "host": [
+                "apimanager-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "port": "8280",
+              "path": [
+                "token"
+              ],
+              "query": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CONTA SISBR",
+          "id": "1ade14a6-bf8e-434f-8301-20e16481ee92",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "client_id",
+                "value": "w0mizL3pw8CIL02_KfRlRL5vntsa"
+              },
+              {
+                "key": "Cookie",
+                "value": "59a348799fc005cfdd17deac67d27951=10a5d858d3f96595c86dfff6336f8a4d; 6b84ef8b2dfdd70541fb518239ac6f72=8234e10ed40e4b46a9cc032a87b9574e; BIGipServerpool-homol-backoffice-portal-cluster-9080=!QySksz7PDqbn75WGEzzEf2l/rpYsyKDWLVPuuNNDtyGf7C/QdYachtSsSd0+/nLBYrmSNXfN0whJww==; BIGipServerpool-homol-backoffice-sicoobnet-cluster-9080=!DeFL68f0guB+q8CGEzzEf2l/rpYsyLT2nd6HlKzfGPs/OmEi3UdvIiy2awY0pYtjoOCDzF2zf7WxSjs=; a39fbff657006e755861760d0dacea10=770614b4f887a9258a939ab4d829f8fd"
+              }
+            ],
+            "url": {
+              "raw": "https://apicinterno-homol.sicoob.com.br/sisbr/interno/v1/saldo?numeroContaCorrente=56566",
+              "protocol": "https",
+              "host": [
+                "apicinterno-homol",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sisbr",
+                "interno",
+                "v1",
+                "saldo"
+              ],
+              "query": [
+                {
+                  "key": "numeroContaCorrente",
+                  "value": "56566"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CONTA SICOOB",
+          "id": "172bf5b6-242e-46f2-bd99-6e82a19741aa",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "client_id",
+                "value": "w0mizL3pw8CIL02_KfRlRL5vntsa"
+              },
+              {
+                "key": "Cookie",
+                "value": "59a348799fc005cfdd17deac67d27951=10a5d858d3f96595c86dfff6336f8a4d; 6b84ef8b2dfdd70541fb518239ac6f72=8234e10ed40e4b46a9cc032a87b9574e; BIGipServerpool-homol-backoffice-portal-cluster-9080=!QySksz7PDqbn75WGEzzEf2l/rpYsyKDWLVPuuNNDtyGf7C/QdYachtSsSd0+/nLBYrmSNXfN0whJww==; BIGipServerpool-homol-backoffice-sicoobnet-cluster-9080=!DeFL68f0guB+q8CGEzzEf2l/rpYsyLT2nd6HlKzfGPs/OmEi3UdvIiy2awY0pYtjoOCDzF2zf7WxSjs=; a39fbff657006e755861760d0dacea10=770614b4f887a9258a939ab4d829f8fd"
+              }
+            ],
+            "url": {
+              "raw": "https://apicinterno-homol.sicoob.com.br/sicoob/interno/v1/saldo?numeroContaCorrente=56566",
+              "protocol": "https",
+              "host": [
+                "apicinterno-homol",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "interno",
+                "v1",
+                "saldo"
+              ],
+              "query": [
+                {
+                  "key": "numeroContaCorrente",
+                  "value": "56566"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "ded1358f-9600-4d62-932c-c02b85680ff2"
+    },
+    {
+      "name": "COOPERADO RHSSO",
+      "item": [
+        {
+          "name": "TOKEN POUPANCA",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Token gerado com sucesso\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const json = pm.response.json();\r",
+                  "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;\r",
+                  "    pm.collectionVariables.set(\"access_token\", json.access_token);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "id": "ae08f0ff-be23-4877-88ca-c0b3f45133a0"
+              }
+            }
+          ],
+          "id": "16c0b29b-4dcc-446b-b13e-298ba0d463f0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "{{client_id}}",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "{{scope}}",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{URL}}",
+              "host": [
+                "{{URL}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POUPANCA",
+          "id": "300f2d46-e1dd-41bf-a7b0-f8aacba178fc",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://apicv10-homol.homologacao.com.br/sicoob/cooperado/poupanca/v1/contas/1234/saldo",
+              "protocol": "https",
+              "host": [
+                "apicv10-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "cooperado",
+                "poupanca",
+                "v1",
+                "contas",
+                "1234",
+                "saldo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CONTA CORRENTE",
+          "id": "6a248743-5827-4b63-8427-f06a6630da44",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://apicv10-homol.homologacao.com.br/sicoob/cooperado/conta-corrente/v2/saldo?numeroContaCorrente=1234",
+              "protocol": "https",
+              "host": [
+                "apicv10-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "cooperado",
+                "conta-corrente",
+                "v2",
+                "saldo"
+              ],
+              "query": [
+                {
+                  "key": "numeroContaCorrente",
+                  "value": "1234"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CAPTACAO",
+          "id": "15b12c03-82aa-4b32-a1d1-6bb93247d89b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer REPLACE_BEARER_TOKEN"
+              },
+              {
+                "key": "accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://apicv10-homol.homologacao.com.br/sicoob/cooperado/caprem/v1/investimentos/total-bruto?numeroCooperativa=1234&numeroContaCorrente=2222",
+              "protocol": "https",
+              "host": [
+                "apicv10-homol",
+                "homologacao",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "cooperado",
+                "caprem",
+                "v1",
+                "investimentos",
+                "total-bruto"
+              ],
+              "query": [
+                {
+                  "key": "numeroCooperativa",
+                  "value": "1234"
+                },
+                {
+                  "key": "numeroContaCorrente",
+                  "value": "2222"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "569b9c66-3747-4fac-8554-32c423fd9f3c"
+    },
+    {
+      "name": "APIC 2018 TOKEN MTLS",
+      "item": [
+        {
+          "name": "PROD TOKEB mTLS",
+          "id": "861c5ed4-3112-4dff-840a-21d057f2baaa",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Client-Certificate",
+                "value": "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",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "qPN7SYtsbueEceTwoRFdnV4JV9Qa",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "VKmI3Xxh8rNy861km1Qf708mhG0a",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "default",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "X-Client-Certificate",
+                  "value": "MIIGcjCCBVqgAwIBAgITOAACgY5J3vM4ysiXBQABAAKBjjANBgkqhkiG9w0BAQsFADBXMRIwEAYKCZImiZPyLGQBGRYCYnIxEzARBgoJkiaJk/IsZAEZFgNjb20xFjAUBgoJkiaJk/IsZAEZFgZTSUNPT0IxFDASBgNVBAMTC0NBU3ViU0lDT09CMB4XDTIyMDUwMjE0MjgwOVoXDTI0MDUwMTE0MjgwOVowgbAxCzAJBgNVBAYTAkJSMQswCQYDVQQIEwJTQzEWMBQGA1UEBxMNRmxvcmlhbm9wb2xpczEcMBoGA1UEChMTQ1JFU09MIENPTkZFREVSQUNBTzELMAkGA1UECxMCVEkxJTAjBgNVBAMTHG10bHMtcHJvZHVjYW8uY3Jlc29sLmNvb3AuYnIxKjAoBgkqhkiG9w0BCQEWG2x1aXoudmljZW50ZUBjcmVzb2wuY29vcC5icjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL1/JnVnIAlf3hfO016z6T8Hh3xKXOiJGc15V8ssVHu0AfiGy/g0u/uK1CAbUzozb+Ntj5ahwgGLMQqZ25c09r8pjMwxrJaIVkk8Iwfv8Ca+Tf901vzT86mX8l00RTmgVImwDjt1Qg9ugQlKTMU/gGvmWB+ajKZn4ErLmpEn2P9X+1jG+levYSCcmtoUayV5lfFXL4whhKHI5EtJbAVfaPWTC6DyBmef4Nk1XVUY8tLU1VWQ5Dw99j9bxXjVWxi236tD99H8KwDsFRCjwyesVN7ai4AN9owtR5Mon1pBFAtU/NRE70JlIUyFSQmk0ktR/ZTU5NBbpcr+LgFf32dNSncCAwEAAaOCAtswggLXMB0GA1UdDgQWBBSeKghokUjOLACo7D+k8Jgfo8aWPjAfBgNVHSMEGDAWgBTquCdNEhAfU+PHhicQSSL8QJR3tDCCAQcGA1UdHwSB/zCB/DCB+aCB9qCB84aBt2xkYXA6Ly8vQ049Q0FTdWJTSUNPT0IsQ049UEtJUDEwMixDTj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049Q29uZmlndXJhdGlvbixEQz1TSUNPT0IsREM9Y29tLERDPWJyP2NlcnRpZmljYXRlUmV2b2NhdGlvbkxpc3Q/YmFzZT9vYmplY3RDbGFzcz1jUkxEaXN0cmlidXRpb25Qb2ludIY3aHR0cDovL3Npc3RlbWFzLnNpY29vYi5jb20uYnIvcGtpc2VydmVyL0NBU3ViU0lDT09CLmNybDCCAQoGCCsGAQUFBwEBBIH9MIH6MIGvBggrBgEFBQcwAoaBomxkYXA6Ly8vQ049Q0FTdWJTSUNPT0IsQ049QUlBLENOPVB1YmxpYyUyMEtleSUyMFNlcnZpY2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9U0lDT09CLERDPWNvbSxEQz1icj9jQUNlcnRpZmljYXRlP2Jhc2U/b2JqZWN0Q2xhc3M9Y2VydGlmaWNhdGlvbkF1dGhvcml0eTBGBggrBgEFBQcwAoY6aHR0cDovL3Npc3RlbWFzLnNpY29vYi5jb20uYnIvcGtpc2VydmVyL0NBU3ViU0lDT09CKDEpLmNydDALBgNVHQ8EBAMCBLAwPQYJKwYBBAGCNxUHBDAwLgYmKwYBBAGCNxUIgsDYTIL2kFuClZEhg9WNLoasygMBhsWsfoK60xoCAWQCAR0wEwYDVR0lBAwwCgYIKwYBBQUHAwIwGwYJKwYBBAGCNxUKBA4wDDAKBggrBgEFBQcDAjANBgkqhkiG9w0BAQsFAAOCAQEAG0ItM3R47CT5FXUtdgcTUjfqoQ9p4MJsRvVHvBwFseiyLMqod23yE9m1ZDK1JjOKrPc2Z3+tB+0IppRBqo8TFnsxLGEAgBrqbH40o1BH9JzFs/FrsehmQER2eUP9o0qfzdPhYqP/yQfiI0CZ9Y3vl8Zdy9T+/UYOMfbjlTs2mXZI85GsArY2iC1CWsDKUOX+kAaFDqeJXFlck+n3H5CQNmM2jhqhD3xrC+S0WwS+WRmTGUbCPTlDo0B3lPNADY9R2s0GGp8ZwnFdbD4+w3mbYu9zCKDtwspjTzqom8X586Vwc9pak6ZyFND3QZkikXgdiLT1tMESQAzHjk/xO/DRGQ==",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api.sisbr.com.br/sicoob/externo/mtls/oauth2/token",
+              "protocol": "https",
+              "host": [
+                "api",
+                "sisbr",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "externo",
+                "mtls",
+                "oauth2",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PROD VALIDAR CERTIFICADO",
+          "id": "5b40cd26-7caa-4a07-bf70-f3426993f1ab",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "client_id",
+                "value": "qPN7SYtsbueEceTwoRFdnV4JV9Qa",
+                "type": "text"
+              },
+              {
+                "key": "X-Client-Certificate",
+                "value": "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",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://acip107:9443/sicoob/externo/token-tls/v1/validate",
+              "protocol": "https",
+              "host": [
+                "acip107"
+              ],
+              "port": "9443",
+              "path": [
+                "sicoob",
+                "externo",
+                "token-tls",
+                "v1",
+                "validate"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PROD",
+          "id": "70c09f2e-1f78-41a1-8507-26f74435c630",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Client-Certificate",
+                "value": "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",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "qPN7SYtsbueEceTwoRFdnV4JV9Qa",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "VKmI3Xxh8rNy861km1Qf708mhG0a",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "default",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "X-Client-Certificate",
+                  "value": "MIIGcjCCBVqgAwIBAgITOAACgY5J3vM4ysiXBQABAAKBjjANBgkqhkiG9w0BAQsFADBXMRIwEAYKCZImiZPyLGQBGRYCYnIxEzARBgoJkiaJk/IsZAEZFgNjb20xFjAUBgoJkiaJk/IsZAEZFgZTSUNPT0IxFDASBgNVBAMTC0NBU3ViU0lDT09CMB4XDTIyMDUwMjE0MjgwOVoXDTI0MDUwMTE0MjgwOVowgbAxCzAJBgNVBAYTAkJSMQswCQYDVQQIEwJTQzEWMBQGA1UEBxMNRmxvcmlhbm9wb2xpczEcMBoGA1UEChMTQ1JFU09MIENPTkZFREVSQUNBTzELMAkGA1UECxMCVEkxJTAjBgNVBAMTHG10bHMtcHJvZHVjYW8uY3Jlc29sLmNvb3AuYnIxKjAoBgkqhkiG9w0BCQEWG2x1aXoudmljZW50ZUBjcmVzb2wuY29vcC5icjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL1/JnVnIAlf3hfO016z6T8Hh3xKXOiJGc15V8ssVHu0AfiGy/g0u/uK1CAbUzozb+Ntj5ahwgGLMQqZ25c09r8pjMwxrJaIVkk8Iwfv8Ca+Tf901vzT86mX8l00RTmgVImwDjt1Qg9ugQlKTMU/gGvmWB+ajKZn4ErLmpEn2P9X+1jG+levYSCcmtoUayV5lfFXL4whhKHI5EtJbAVfaPWTC6DyBmef4Nk1XVUY8tLU1VWQ5Dw99j9bxXjVWxi236tD99H8KwDsFRCjwyesVN7ai4AN9owtR5Mon1pBFAtU/NRE70JlIUyFSQmk0ktR/ZTU5NBbpcr+LgFf32dNSncCAwEAAaOCAtswggLXMB0GA1UdDgQWBBSeKghokUjOLACo7D+k8Jgfo8aWPjAfBgNVHSMEGDAWgBTquCdNEhAfU+PHhicQSSL8QJR3tDCCAQcGA1UdHwSB/zCB/DCB+aCB9qCB84aBt2xkYXA6Ly8vQ049Q0FTdWJTSUNPT0IsQ049UEtJUDEwMixDTj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049Q29uZmlndXJhdGlvbixEQz1TSUNPT0IsREM9Y29tLERDPWJyP2NlcnRpZmljYXRlUmV2b2NhdGlvbkxpc3Q/YmFzZT9vYmplY3RDbGFzcz1jUkxEaXN0cmlidXRpb25Qb2ludIY3aHR0cDovL3Npc3RlbWFzLnNpY29vYi5jb20uYnIvcGtpc2VydmVyL0NBU3ViU0lDT09CLmNybDCCAQoGCCsGAQUFBwEBBIH9MIH6MIGvBggrBgEFBQcwAoaBomxkYXA6Ly8vQ049Q0FTdWJTSUNPT0IsQ049QUlBLENOPVB1YmxpYyUyMEtleSUyMFNlcnZpY2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9U0lDT09CLERDPWNvbSxEQz1icj9jQUNlcnRpZmljYXRlP2Jhc2U/b2JqZWN0Q2xhc3M9Y2VydGlmaWNhdGlvbkF1dGhvcml0eTBGBggrBgEFBQcwAoY6aHR0cDovL3Npc3RlbWFzLnNpY29vYi5jb20uYnIvcGtpc2VydmVyL0NBU3ViU0lDT09CKDEpLmNydDALBgNVHQ8EBAMCBLAwPQYJKwYBBAGCNxUHBDAwLgYmKwYBBAGCNxUIgsDYTIL2kFuClZEhg9WNLoasygMBhsWsfoK60xoCAWQCAR0wEwYDVR0lBAwwCgYIKwYBBQUHAwIwGwYJKwYBBAGCNxUKBA4wDDAKBggrBgEFBQcDAjANBgkqhkiG9w0BAQsFAAOCAQEAG0ItM3R47CT5FXUtdgcTUjfqoQ9p4MJsRvVHvBwFseiyLMqod23yE9m1ZDK1JjOKrPc2Z3+tB+0IppRBqo8TFnsxLGEAgBrqbH40o1BH9JzFs/FrsehmQER2eUP9o0qfzdPhYqP/yQfiI0CZ9Y3vl8Zdy9T+/UYOMfbjlTs2mXZI85GsArY2iC1CWsDKUOX+kAaFDqeJXFlck+n3H5CQNmM2jhqhD3xrC+S0WwS+WRmTGUbCPTlDo0B3lPNADY9R2s0GGp8ZwnFdbD4+w3mbYu9zCKDtwspjTzqom8X586Vwc9pak6ZyFND3QZkikXgdiLT1tMESQAzHjk/xO/DRGQ==",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api.sisbr.com.br/sicoob/externo/mtls/oauth2/token",
+              "protocol": "https",
+              "host": [
+                "api",
+                "sisbr",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "externo",
+                "mtls",
+                "oauth2",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "HOMOL 2018",
+          "id": "a3a29bb0-3bc9-4113-8fc9-132d99afc874",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "X-Client-Certificate",
+                "value": "MIIGdDCCBVygAwIBAgITOAACgfz7AE2g3xPUPwABAAKB/DANBgkqhkiG9w0BAQsFADBXMRIwEAYKCZImiZPyLGQBGRYCYnIxEzARBgoJkiaJk/IsZAEZFgNjb20xFjAUBgoJkiaJk/IsZAEZFgZTSUNPT0IxFDASBgNVBAMTC0NBU3ViU0lDT09CMB4XDTIyMDYyMzE3MzcwOFoXDTI0MDYyMjE3MzcwOFowgbIxCzAJBgNVBAYTAkJSMRowGAYDVQQIExFSaW8gR3JhbmRlIGRvIFN1bDEVMBMGA1UEBxMMUG9ydG8gQWxlZ3JlMRowGAYDVQQKExFVbmljcmVkIGRvIEJyYXNpbDElMCMGA1UECxMcSW5mcmFlc3RydXR1cmEgZGUgVEkgQ2FydG9lczEtMCsGA1UEAxMkY2FydG9lcy1iYW5jb29iLWhsZy5lLXVuaWNyZWQuY29tLmJyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4iCT6OqyYtWsFxqa5K5ADrN9K8f1ezUCUqAmISC986TJDc0bPrp6AVqTVaqt5euJMd1aMZvS9qVmXcdAgpGEZVEvzFz17+M51jVnfqkzBQTw/+BW3gCvlksQkyqCh14NeoPbXbDqAqVoQwk2mofTd6tofiH59nugq9o6pol6oRFyAzfNi64d9YFIcTXW2dnR2B+NvT38BFzO/l+21J4hQHFD8A/dtZM1IoVEDRPBgNWKMSjm+zH4BbfdxCWmf1yAoiXOM+uiucqXo55ehDggkqXjPoai7YUKUAO/z5/uAZaMcA64jz7y20hWbcczn7yRs4i+CL32u7oepJJofPHt7QIDAQABo4IC2zCCAtcwHQYDVR0OBBYEFBVO/vg0aJf79ERf/z16XoAunm5fMB8GA1UdIwQYMBaAFOq4J00SEB9T48eGJxBJIvxAlHe0MIIBBwYDVR0fBIH/MIH8MIH5oIH2oIHzhoG3bGRhcDovLy9DTj1DQVN1YlNJQ09PQixDTj1QS0lQMTAyLENOPUNEUCxDTj1QdWJsaWMlMjBLZXklMjBTZXJ2aWNlcyxDTj1TZXJ2aWNlcyxDTj1Db25maWd1cmF0aW9uLERDPVNJQ09PQixEQz1jb20sREM9YnI/Y2VydGlmaWNhdGVSZXZvY2F0aW9uTGlzdD9iYXNlP29iamVjdENsYXNzPWNSTERpc3RyaWJ1dGlvblBvaW50hjdodHRwOi8vc2lzdGVtYXMuc2ljb29iLmNvbS5ici9wa2lzZXJ2ZXIvQ0FTdWJTSUNPT0IuY3JsMIIBCgYIKwYBBQUHAQEEgf0wgfowga8GCCsGAQUFBzAChoGibGRhcDovLy9DTj1DQVN1YlNJQ09PQixDTj1BSUEsQ049UHVibGljJTIwS2V5JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049Q29uZmlndXJhdGlvbixEQz1TSUNPT0IsREM9Y29tLERDPWJyP2NBQ2VydGlmaWNhdGU/YmFzZT9vYmplY3RDbGFzcz1jZXJ0aWZpY2F0aW9uQXV0aG9yaXR5MEYGCCsGAQUFBzAChjpodHRwOi8vc2lzdGVtYXMuc2ljb29iLmNvbS5ici9wa2lzZXJ2ZXIvQ0FTdWJTSUNPT0IoMSkuY3J0MAsGA1UdDwQEAwIEsDA9BgkrBgEEAYI3FQcEMDAuBiYrBgEEAYI3FQiCwNhMgvaQW4KVkSGD1Y0uhqzKAwGGxax+grrTGgIBZAIBHTATBgNVHSUEDDAKBggrBgEFBQcDAjAbBgkrBgEEAYI3FQoEDjAMMAoGCCsGAQUFBwMCMA0GCSqGSIb3DQEBCwUAA4IBAQAFEy3r71Xyr1oCH+0l1FvBAvZkdMCY4osJLGryWX4awX1HsaN14iuoelzsg2OfcGSmuklsHG79b7xtkTpROKPy/dSTJ2iC9unSj5gFCBWl43DP8pP1ljB/bZzuGyucDR1XaEx0GKMWJ12pWveKPrIGF0kXgugTkNdOBbKw0PWc+0CPrQUN04Jb7m0WhCzd7ZD5vq0O1B31chPuTJH29e/Oi1cMnjnpZhoAiz+2SV6uFpKhdI8bOGLqhe0dmIlQxEHrudQ4DUp9AzyGDPpXFqMSyE3159EvFXQLAebeXZ1lTksACF97Z2ZBBh5KPdFAUy4514q9e8ee8E/cz2jdgRg+",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "YPikqkydjd7WSATImC6SPV4YbLAa",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "mQpDOftGDaHmSViCzfIEILZfmhAa",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "default",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://apinterno-homol.sicoob.com.br/sicoob/externo/mtls/oauth2/token",
+              "protocol": "https",
+              "host": [
+                "apinterno-homol",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "externo",
+                "mtls",
+                "oauth2",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "HOMOL 2018 EXTERNO",
+          "id": "12762e25-9f86-4cff-99aa-aa8a6e3fe922",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "X-Client-Certificate",
+                "value": "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",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "YPikqkydjd7WSATImC6SPV4YbLAa",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "mQpDOftGDaHmSViCzfIEILZfmhAa",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "default",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api-homol.sicoob.com.br/sicoob/externo/mtls/oauth2/token",
+              "protocol": "https",
+              "host": [
+                "api-homol",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "externo",
+                "mtls",
+                "oauth2",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "HOMOL VALIDAR 2018",
+          "id": "cd65bd70-961c-40ed-8e87-e80a59135ec4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "client_id",
+                "value": "YPikqkydjd7WSATImC6SPV4YbLAa",
+                "type": "text"
+              },
+              {
+                "key": "X-Client-Certificate",
+                "value": "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",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://acih103:9443/sicoob/externo/token-tls/v1/validate",
+              "protocol": "https",
+              "host": [
+                "acih103"
+              ],
+              "port": "9443",
+              "path": [
+                "sicoob",
+                "externo",
+                "token-tls",
+                "v1",
+                "validate"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "HOMOL v10",
+          "id": "737a18a5-7094-441a-84f4-ffc5340aa35e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "YPikqkydjd7WSATImC6SPV4YbLAa",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "mQpDOftGDaHmSViCzfIEILZfmhAa",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "cobranca_boletos_consultar",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api-homol.sicoob.com.br/sicoob/externo/mtls/oauth2/token",
+              "protocol": "https",
+              "host": [
+                "api-homol",
+                "sicoob",
+                "com",
+                "br"
+              ],
+              "path": [
+                "sicoob",
+                "externo",
+                "mtls",
+                "oauth2",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "HOMOL VALIDAR v10",
+          "id": "ed227004-e04c-440b-bc36-14f5a0a0610a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "client_id",
+                "value": "YPikqkydjd7WSATImC6SPV4YbLAa",
+                "type": "text"
+              },
+              {
+                "key": "X-Client-Certificate",
+                "value": "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",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "https://acgh2002:9443/sicoob/externo/token-tls/v1/validate",
+              "protocol": "https",
+              "host": [
+                "acgh2002"
+              ],
+              "port": "9443",
+              "path": [
+                "sicoob",
+                "externo",
+                "token-tls",
+                "v1",
+                "validate"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "b00b6e86-c079-4f99-aa83-a765d62fc034"
+    }
+  ],
+  "variable": [
+    {
+      "key": "access_token",
+      "value": ""
+    },
+    {
+      "key": "id_token",
+      "value": ""
+    }
+  ]
+}

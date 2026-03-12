@@ -1,0 +1,619 @@
+{
+  "info": {
+    "_postman_id": "0150bcaf-6e43-4b1b-97c4-8cbffb6c4a23",
+    "name": "Token Exchange",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "/Token - Grant Password",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "bb031ed0-621f-477e-9938-11130e7cce8e",
+            "exec": [
+              "pm.collectionVariables.clear()",
+              "",
+              "pm.test(\"Token gerado com sucesso\", function() {",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    pm.environment.set(\"access_token_sicoob\", json.access_token);",
+              "    pm.environment.set(\"id_token_sicoob\", json.id_token);",
+              "});",
+              "",
+              "function jwt_decode(jwt) {",
+              "    var partes = jwt.split('.'); // header, payload, signature",
+              "    return JSON.parse(atob(partes[1]));",
+              "}",
+              "",
+              "pm.test(\"Mostra dados\", function () {  ",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    console.log(\"Chaves: \" + Object.keys(json));",
+              "",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    let decodificado = jwt_decode(json.access_token);",
+              "    console.log(\"Access Token: \" + JSON.stringify(decodificado));",
+              "",
+              "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;  ",
+              "     decodificado = jwt_decode(json.id_token);",
+              "    console.log(\"Id Token: \" + JSON.stringify(decodificado));",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "8c7828a9-3f4b-40c7-a28a-d27088f3ef7d",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer  {{access_token_finansystech}}",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "start-client",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "wdf9WkD5mJWH57BBnKqxBBF5mNZvn22j",
+              "description": "homol",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "0EIYGnU5PPhy0BrBd9fmKoUlJQghs47o",
+              "description": "ti",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "Y7IfMk2fkgWorJAXbvNKQ2HhDHumBZQt",
+              "description": "dev",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "username",
+              "value": "admin",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "admin",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "openid",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "sisbr",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "NgLkFU1qc3PJLMDRY1XVZRMF5ROGcGor",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "username",
+              "value": "teste-ti",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "password",
+              "value": "teste",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_id",
+              "value": "target-client",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "zIKsoHDa9xiEQOJx5WlvkiInYIAv4tzk",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{host-sso-sisbr}}/realms/master/protocol/openid-connect/token",
+          "host": [
+            "{{host-sso-sisbr}}"
+          ],
+          "path": [
+            "realms",
+            "master",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/Token Exchange",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "bb031ed0-621f-477e-9938-11130e7cce8e",
+            "exec": [
+              "pm.collectionVariables.clear()",
+              "",
+              "pm.test(\"Token gerado com sucesso\", function() {",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    pm.environment.set(\"access_token_sicoob\", json.access_token);",
+              "    pm.environment.set(\"id_token_sicoob\", json.id_token);",
+              "});",
+              "",
+              "function jwt_decode(jwt) {",
+              "    var partes = jwt.split('.'); // header, payload, signature",
+              "    return JSON.parse(atob(partes[1]));",
+              "}",
+              "",
+              "pm.test(\"Mostra dados\", function () {  ",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    console.log(\"Chaves: \" + Object.keys(json));",
+              "",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    let decodificado = jwt_decode(json.access_token);",
+              "    console.log(\"Access Token: \" + JSON.stringify(decodificado));",
+              "",
+              "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;  ",
+              "     decodificado = jwt_decode(json.id_token);",
+              "    console.log(\"Id Token: \" + JSON.stringify(decodificado));",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "7c21409b-d684-4d4b-bc21-c896a0e49fcd",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer  {{access_token_finansystech}}",
+            "type": "text",
+            "disabled": true
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          },
+          {
+            "key": "Host",
+            "value": "{{host_sso}}",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "start-client",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "wdf9WkD5mJWH57BBnKqxBBF5mNZvn22j",
+              "description": "homol",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "0EIYGnU5PPhy0BrBd9fmKoUlJQghs47o",
+              "description": "ti",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "grant_type",
+              "value": "urn:ietf:params:oauth:grant-type:token-exchange",
+              "type": "text"
+            },
+            {
+              "key": "subject_token",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZLVpILXU5NXp5UGNpWGtUNnVyYlFCeVl3aTc0RlNIcUotZ1V4b3U2TUNJIn0.eyJleHAiOjE2ODk5NzIwNDYsImlhdCI6MTY4OTk2NDg0NiwianRpIjoiYjBiM2NhMDYtZDEzOS00N2U1LWE1NzctYTM5YTQxOTIxNTZhIiwiaXNzIjoiaHR0cHM6Ly9pZHAtc2lzYnIuaG9tb2xvZ2FjYW8uY29tLmJyL2F1dGgvcmVhbG1zL21hc3RlciIsImF1ZCI6WyJzaXNici1yZWFsbSIsIm1hc3Rlci1yZWFsbSIsImFjY291bnQiXSwic3ViIjoiZDljMDUzZTgtMzlhNi00OTU1LWJjMGUtZTc4YjY1NTUzN2YwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3RhcnQtY2xpZW50Iiwic2Vzc2lvbl9zdGF0ZSI6IjgwMWE4MmY4LWQ1ZDUtNDAzNC1iMGZjLTQ4OTdkMjhmYjE0ZiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiY3JlYXRlLXJlYWxtIiwiZGVmYXVsdC1yb2xlcy1tYXN0ZXIiLCJvZmZsaW5lX2FjY2VzcyIsImFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJzaXNici1yZWFsbSI6eyJyb2xlcyI6WyJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsInZpZXctcmVhbG0iLCJtYW5hZ2UtaWRlbnRpdHktcHJvdmlkZXJzIiwiaW1wZXJzb25hdGlvbiIsImNyZWF0ZS1jbGllbnQiLCJtYW5hZ2UtdXNlcnMiLCJxdWVyeS1yZWFsbXMiLCJ2aWV3LWF1dGhvcml6YXRpb24iLCJxdWVyeS1jbGllbnRzIiwicXVlcnktdXNlcnMiLCJtYW5hZ2UtZXZlbnRzIiwibWFuYWdlLXJlYWxtIiwidmlldy1ldmVudHMiLCJ2aWV3LXVzZXJzIiwidmlldy1jbGllbnRzIiwibWFuYWdlLWF1dGhvcml6YXRpb24iLCJtYW5hZ2UtY2xpZW50cyIsInF1ZXJ5LWdyb3VwcyJdfSwibWFzdGVyLXJlYWxtIjp7InJvbGVzIjpbInZpZXctaWRlbnRpdHktcHJvdmlkZXJzIiwidmlldy1yZWFsbSIsIm1hbmFnZS1pZGVudGl0eS1wcm92aWRlcnMiLCJpbXBlcnNvbmF0aW9uIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiODAxYTgyZjgtZDVkNS00MDM0LWIwZmMtNDg5N2QyOGZiMTRmIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiJ9.j2XHDu5qjQTEyhbLste_N57PzTOwDhP_d_B5zt_cOEk3BY64t0sDGDb_CmZJhq6X_iZuIGKfFC0_Xt0EGnB3Yd7lJ_99uH93PPnod1aOB1p516Z2aCnGnOmdGBwlXzxlLBR7FcuaOKZNV9tUMwQqWQFS-woIeB1LactAN8RqK0BOuutvqol7gJzUWxFbTiVfwQyxAuNB8C7XlSybv5NQf_xh0bBTbM1mccsXtWpmh6jNbdh9-JUg5InGdQYeB8CxwrhIXh5Q7kMO3WQlGIPfc5W74Hdi-ciRcSAiqAXV5MRbAl7qOAWauMvcGGtX6qYhHSFnGQsvQQ3ey3KPoejFGw",
+              "type": "text"
+            },
+            {
+              "key": "subject_issuer",
+              "value": "http://localhost:8080/auth/realms/master",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "subject_token_type",
+              "value": "urn:ietf:params:oauth:token-type:access_token",
+              "type": "text"
+            },
+            {
+              "key": "requested_token_type",
+              "value": "urn:ietf:params:oauth:token-type:refresh_token",
+              "type": "text"
+            },
+            {
+              "key": "audience",
+              "value": "target-client",
+              "type": "text"
+            },
+            {
+              "key": "requested_issuer",
+              "value": "http://localhost:8080/auth/realms/master",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "requested_subject",
+              "value": "username",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_id",
+              "value": "target-client",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "zIKsoHDa9xiEQOJx5WlvkiInYIAv4tzk",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://idp-sisbr.homologacao.com.br/auth/realms/master/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "idp-sisbr",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "master",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/Other Token Exchange",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "bb031ed0-621f-477e-9938-11130e7cce8e",
+            "exec": [
+              "pm.collectionVariables.clear()",
+              "",
+              "pm.test(\"Token gerado com sucesso\", function() {",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    pm.environment.set(\"access_token_sicoob\", json.access_token);",
+              "    pm.environment.set(\"id_token_sicoob\", json.id_token);",
+              "});",
+              "",
+              "function jwt_decode(jwt) {",
+              "    var partes = jwt.split('.'); // header, payload, signature",
+              "    return JSON.parse(atob(partes[1]));",
+              "}",
+              "",
+              "pm.test(\"Mostra dados\", function () {  ",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    console.log(\"Chaves: \" + Object.keys(json));",
+              "",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    let decodificado = jwt_decode(json.access_token);",
+              "    console.log(\"Access Token: \" + JSON.stringify(decodificado));",
+              "",
+              "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;  ",
+              "     decodificado = jwt_decode(json.id_token);",
+              "    console.log(\"Id Token: \" + JSON.stringify(decodificado));",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "8ad8018c-37da-4408-88a0-b298682eb6fc",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer  {{access_token_finansystech}}",
+            "type": "text",
+            "disabled": true
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          },
+          {
+            "key": "Host",
+            "value": "{{host_sso}}",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "start-client",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "Y7IfMk2fkgWorJAXbvNKQ2HhDHumBZQt",
+              "description": "dev",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "0EIYGnU5PPhy0BrBd9fmKoUlJQghs47o",
+              "description": "ti",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "grant_type",
+              "value": "urn:ietf:params:oauth:grant-type:token-exchange",
+              "type": "text"
+            },
+            {
+              "key": "subject_token",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMYldta3VYNjZrQlRJVEtKYTNLbEE3Tm16Snc0ZWtiQTlaZTVobmNvVkdrIn0.eyJleHAiOjE2ODkxMDk3MzksImlhdCI6MTY4OTEwNjEzOSwianRpIjoiNTNjYjFlMTQtNjM2NC00NzEzLTlhNTQtOTM1MDg0YjIzZTk2IiwiaXNzIjoiaHR0cHM6Ly9pZHAtc2lzYnItdGkuaG9tb2xvZ2FjYW8uY29tLmJyL2F1dGgvcmVhbG1zL21hc3RlciIsImF1ZCI6WyJzaXNici1yZWFsbSIsIm1hc3Rlci1yZWFsbSIsImFjY291bnQiLCJ0YXJnZXQtY2xpZW50Il0sInN1YiI6IjlhNDhlOTZlLWMyOTktNDM1NC1hNGQyLWVkOWFlOGJiZjA4NCIsInR5cCI6IkJlYXJlciIsImF6cCI6InN0YXJ0LWNsaWVudCIsInNlc3Npb25fc3RhdGUiOiI2OTRhNDVhMi0xOTllLTQ1OTAtODIxYS1jNWM3NDQ1YzM2OGQiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImNyZWF0ZS1yZWFsbSIsImRlZmF1bHQtcm9sZXMtbWFzdGVyIiwib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic2lzYnItcmVhbG0iOnsicm9sZXMiOlsidmlldy1yZWFsbSIsInZpZXctaWRlbnRpdHktcHJvdmlkZXJzIiwibWFuYWdlLWlkZW50aXR5LXByb3ZpZGVycyIsImltcGVyc29uYXRpb24iLCJjcmVhdGUtY2xpZW50IiwibWFuYWdlLXVzZXJzIiwicXVlcnktcmVhbG1zIiwidmlldy1hdXRob3JpemF0aW9uIiwicXVlcnktY2xpZW50cyIsInF1ZXJ5LXVzZXJzIiwibWFuYWdlLWV2ZW50cyIsIm1hbmFnZS1yZWFsbSIsInZpZXctZXZlbnRzIiwidmlldy11c2VycyIsInZpZXctY2xpZW50cyIsIm1hbmFnZS1hdXRob3JpemF0aW9uIiwibWFuYWdlLWNsaWVudHMiLCJxdWVyeS1ncm91cHMiXX0sIm1hc3Rlci1yZWFsbSI6eyJyb2xlcyI6WyJ2aWV3LXJlYWxtIiwidmlldy1pZGVudGl0eS1wcm92aWRlcnMiLCJtYW5hZ2UtaWRlbnRpdHktcHJvdmlkZXJzIiwiaW1wZXJzb25hdGlvbiIsImNyZWF0ZS1jbGllbnQiLCJtYW5hZ2UtdXNlcnMiLCJxdWVyeS1yZWFsbXMiLCJ2aWV3LWF1dGhvcml6YXRpb24iLCJxdWVyeS1jbGllbnRzIiwicXVlcnktdXNlcnMiLCJtYW5hZ2UtZXZlbnRzIiwibWFuYWdlLXJlYWxtIiwidmlldy1ldmVudHMiLCJ2aWV3LXVzZXJzIiwidmlldy1jbGllbnRzIiwibWFuYWdlLWF1dGhvcml6YXRpb24iLCJtYW5hZ2UtY2xpZW50cyIsInF1ZXJ5LWdyb3VwcyJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCB0YXJnZXQtc2NvcGUgcHJvZmlsZSIsInNpZCI6IjY5NGE0NWEyLTE5OWUtNDU5MC04MjFhLWM1Yzc0NDVjMzY4ZCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4iLCJ1c2VybmFtZSI6ImFkbWluIn0.Zd_TT5jXtLVXzjOFBKYgppBml0P99PmN8BScWE7ydSwf6Bgwy6eNH9kCtQeUmX4gkMcifz9aieeDJfD3Idn7_KoUPzA0KSX9p5K8vz-4dQMCIM6AFKEDPO_eFaQrej9Tor4HXTBN3NcVvi-DHJtrga5u9biuYPIS_E8RimXcxHWvH97m89U050CA1rkaLMX0q4sn7-pN_-BHKcXqhrvYv6QB3J_I1WCh-6S-0pNMuE_YdJmvP6tg2PXoycgF_5sHiI93YiXu2RXEyNmsG6wl0_lp9ZPepJFUl-oW_4oEBTHvrTuNe8_YheQT0uCrS-TNtV8t8f7H3O2MFpUuEA0pxg",
+              "type": "text"
+            },
+            {
+              "key": "subject_issuer",
+              "value": "http://localhost:8080/auth/realms/master",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "subject_token_type",
+              "value": "urn:ietf:params:oauth:token-type:access_token",
+              "type": "text"
+            },
+            {
+              "key": "requested_token_type",
+              "value": "urn:ietf:params:oauth:token-type:refresh_token",
+              "type": "text"
+            },
+            {
+              "key": "audience",
+              "value": "other-client",
+              "type": "text"
+            },
+            {
+              "key": "requested_issuer",
+              "value": "http://localhost:8080/auth/realms/master",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "requested_subject",
+              "value": "username",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_id",
+              "value": "target-client",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "zIKsoHDa9xiEQOJx5WlvkiInYIAv4tzk",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{host_sso}}/realms/master/protocol/openid-connect/token",
+          "host": [
+            "{{host_sso}}"
+          ],
+          "path": [
+            "realms",
+            "master",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://sso.homologacao.com.br/auth/realms/sicoob/protocol/openid-connect/token",
+      "id": "13ea4ead-d118-4a18-9dcb-f7e6a2b96e8c",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "user_info",
+            "value": "eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoxMzEzMjkwLCJjcGZDbnBqIjoiNDI5OTEwNTIwMDAxMTciLCJpZFJlc3BvbnNhYmlsaWRhZGUiOjF9XSwibnVtQ29udGFDb3JyZW50ZSI6MTMxMzI5MCwibnVtQ29vcGVyYXRpdmEiOiI0MzY0IiwiaWRJbnN0aXR1aWNhbyI6NzAwLCJpZFVuaWRhZGVJbnN0aXR1aWNhbyI6MSwiZGVzY05vbWVQZXNzb2EiOiJBTkRSRUlBIENOQUJQSVgiLCJpc3BiIjoiMDU4NTY3MzYiLCJjb2RUaXBvUGVzc29hIjowLCJjaGF2ZUFjZXNzbyI6IkFTNjEyNyIsIm51bUNwZkNucGoiOiI4NTU1MjQ1NzUzNiIsImlkRGlzcG9zaXRpdm8iOiJiYWE3MDZiZDc2N2MwNGY2ZDg0NDVmYTNjOTE3ZmU5NjUzODY3YmI0NWNhOTg1MzgyOGI0NzA5NTAzYjA3YjE5Iiwic2VndXJhbmNhIjp7IjAwMjEyIjoiYmFhNzA2YmQ3NjdjMDRmNmQ4NDQ1ZmEzYzkxN2ZlOTY1Mzg2N2JiNDVjYTk4NTM4MjhiNDcwOTUwM2IwN2IxOSIsIjA5MDIwIjoiKjEwLjIyMC4xLjE1NzoyOTkyMCIsIjA5ODUzIjpmYWxzZX19"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "Cookie",
+            "value": "TS01b9851c=01983ed8117eaa7aa46332e3271e111bfae8f721ec4f64d436db5d87a9efa1b697fd5063cf9237d5f6952685a54c8f350b5da523ce52d3d3067a6663534193bca0408d4263c6a06da0611ffdb3014969a26894c81e; 00df9db7e5d9a28d4d6228746bf9851a=22a2b25062ec51bb8b592412f16b6915; TS01379ca8=01983ed8116d95f09bfee3839f4756cad637e292a64ed5bb32c70f641c1a8e2c631d7aa5169a1ff7ef6ae99d0a83b8cbe9ebe4fcef4f100db1dbbe568efae7bd9ea40b727aa7c1808c7b199371e0957fa14e63a847; f7965d7ec76ddc6459ebf45b304fffd5=efd5497238717478a6ad30b663484a5c"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "type": "text",
+              "key": "client_secret",
+              "value": "JkbbRMWIDhki2fARAlXgHQABmauvcRT6"
+            },
+            {
+              "type": "text",
+              "key": "client_id",
+              "value": "sicoobnet-empresarial"
+            },
+            {
+              "type": "text",
+              "key": "scope",
+              "value": "openid profile"
+            },
+            {
+              "type": "text",
+              "key": "grant_type",
+              "value": "password"
+            },
+            {
+              "type": "text",
+              "key": "password",
+              "value": "88888888"
+            },
+            {
+              "type": "text",
+              "key": "username",
+              "value": "pj:4364:AS6127"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://sso.homologacao.com.br/auth/realms/sicoob/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "sso",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "sicoob",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'https://sso.homologacao.com.br/auth/realms/sicoob/protocol/openid-connect/token' \\\n--header 'user_info: eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoxMzEzMjkwLCJjcGZDbnBqIjoiNDI5OTEwNTIwMDAxMTciLCJpZFJlc3BvbnNhYmlsaWRhZGUiOjF9XSwibnVtQ29udGFDb3JyZW50ZSI6MTMxMzI5MCwibnVtQ29vcGVyYXRpdmEiOiI0MzY0IiwiaWRJbnN0aXR1aWNhbyI6NzAwLCJpZFVuaWRhZGVJbnN0aXR1aWNhbyI6MSwiZGVzY05vbWVQZXNzb2EiOiJBTkRSRUlBIENOQUJQSVgiLCJpc3BiIjoiMDU4NTY3MzYiLCJjb2RUaXBvUGVzc29hIjowLCJjaGF2ZUFjZXNzbyI6IkFTNjEyNyIsIm51bUNwZkNucGoiOiI4NTU1MjQ1NzUzNiIsImlkRGlzcG9zaXRpdm8iOiJiYWE3MDZiZDc2N2MwNGY2ZDg0NDVmYTNjOTE3ZmU5NjUzODY3YmI0NWNhOTg1MzgyOGI0NzA5NTAzYjA3YjE5Iiwic2VndXJhbmNhIjp7IjAwMjEyIjoiYmFhNzA2YmQ3NjdjMDRmNmQ4NDQ1ZmEzYzkxN2ZlOTY1Mzg2N2JiNDVjYTk4NTM4MjhiNDcwOTUwM2IwN2IxOSIsIjA5MDIwIjoiKjEwLjIyMC4xLjE1NzoyOTkyMCIsIjA5ODUzIjpmYWxzZX19' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--header 'Cookie: TS01b9851c=01983ed8117eaa7aa46332e3271e111bfae8f721ec4f64d436db5d87a9efa1b697fd5063cf9237d5f6952685a54c8f350b5da523ce52d3d3067a6663534193bca0408d4263c6a06da0611ffdb3014969a26894c81e; 00df9db7e5d9a28d4d6228746bf9851a=22a2b25062ec51bb8b592412f16b6915; TS01379ca8=01983ed8116d95f09bfee3839f4756cad637e292a64ed5bb32c70f641c1a8e2c631d7aa5169a1ff7ef6ae99d0a83b8cbe9ebe4fcef4f100db1dbbe568efae7bd9ea40b727aa7c1808c7b199371e0957fa14e63a847; f7965d7ec76ddc6459ebf45b304fffd5=efd5497238717478a6ad30b663484a5c' \\\n--data-urlencode 'client_secret=JkbbRMWIDhki2fARAlXgHQABmauvcRT6' \\\n--data-urlencode 'client_id=sicoobnet-empresarial' \\\n--data-urlencode 'scope=openid profile' \\\n--data-urlencode 'grant_type=password' \\\n--data-urlencode 'password=88888888' \\\n--data-urlencode 'username=pj:4364:AS6127 '"
+      },
+      "response": []
+    },
+    {
+      "name": "http://backofficesicoobnetcluster-homol.homologacao.com.br:9080/sicoobnet-auth-api/rest-api/usuario/info-empresa",
+      "id": "2b2a0e53-7cb1-42d9-9492-3355728d74d4",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Cookie",
+            "value": "BIGipServerpool-homol-backoffice-sicoobnet-cluster-9080=!VpduBs6jDGE5+G85S3e+Woe5nHGXdHttPb7T/qgIA0pXiTN1+bX7AazXP88pJ6ZnprLebAcToOLeEZ8="
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"cooperativa\": \"4364\",\n    \"conta\": \"1212141\",\n    \"chaveAcesso\": \"uz4765\",\n    \"cpf\": \"95127446000198\",\n    \"canal\": 17,\n    \"uuid\": \"41454294-8216-45AC-9D7E-9D131D7B40DD\",\n    \"versao\": 4,\n    \"consultarDadosPoupanca\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://backofficesicoobnetcluster-homol.homologacao.com.br:9080/sicoobnet-auth-api/rest-api/usuario/info-empresa",
+          "protocol": "http",
+          "host": [
+            "backofficesicoobnetcluster-homol",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "port": "9080",
+          "path": [
+            "sicoobnet-auth-api",
+            "rest-api",
+            "usuario",
+            "info-empresa"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://backofficesicoobnetcluster-homol.homologacao.com.br:9080/sicoobnet-auth-api/rest-api/usuario/info-empresa' \\\n--header 'Content-Type: application/json' \\\n--header 'Cookie: BIGipServerpool-homol-backoffice-sicoobnet-cluster-9080=!VpduBs6jDGE5+G85S3e+Woe5nHGXdHttPb7T/qgIA0pXiTN1+bX7AazXP88pJ6ZnprLebAcToOLeEZ8=' \\\n--data '{\n    \"cooperativa\": \"4364\",\n    \"conta\": \"1212141\",\n    \"chaveAcesso\": \"uz4765\",\n    \"cpf\": \"95127446000198\",\n    \"canal\": 17,\n    \"uuid\": \"41454294-8216-45AC-9D7E-9D131D7B40DD\",\n    \"versao\": 4,\n    \"consultarDadosPoupanca\": true\n}'\n "
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "info": {
+    "_postman_id": "d1a6ef19-3672-4016-8ca8-f7b90e5cc22f",
+    "name": "Openbanking",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token",
+      "id": "4c816a94-84fa-4c73-9379-d8a168bed69c",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "type": "text",
+              "key": "grant_type",
+              "value": "client_credentials"
+            },
+            {
+              "type": "text",
+              "key": "client_id",
+              "value": "cooperado-client"
+            },
+            {
+              "type": "text",
+              "key": "scope",
+              "value": "poupanca_saldo poupanca_contas poupanca_extrato openid"
+            },
+            {
+              "type": "text",
+              "key": "client_secret",
+              "value": "eae0a499-602a-46e7-845a-b45923df3d4a"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "auth-hom",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "cooperado",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token",
+      "id": "9b93731e-3078-48ce-bb0b-17b0fd96ae33",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "type": "text",
+              "key": "grant_type",
+              "value": "client_credentials"
+            },
+            {
+              "type": "text",
+              "key": "client_id",
+              "value": "cooperado-client"
+            },
+            {
+              "type": "text",
+              "key": "scope",
+              "value": "poupanca_saldo poupanca_contas poupanca_extrato openid"
+            },
+            {
+              "type": "text",
+              "key": "client_secret",
+              "value": "eae0a499-602a-46e7-845a-b45923df3d4a"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "auth-hom",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "cooperado",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "IntegracaoConveniosCluster codigo-barras",
+      "id": "12b12e0c-2c6f-4ad9-a057-6c147f8512f0",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-JWT-Assertion",
+            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImFfamhOdXMyMUtWdW9GeDY1TG1rVzJPX2wxMCJ9.eyJodHRwOlwvXC93c28yLm9yZ1wvY2xhaW1zXC9hcHBsaWNhdGlvbnRpZXIiOiJVbmxpbWl0ZWQiLCJhcGxpY2FjYW8iOiJTR1ZzYkc5WGIzSnNaQ0JCY0hCc2FXTmhkR2x2Ymc9PVxyXG4iLCJodHRwOlwvXC93c28yLm9yZ1wvY2xhaW1zXC9rZXl0eXBlIjoiUFJPRFVDVElPTiIsImh0dHA6XC9cL3dzbzIub3JnXC9jbGFpbXNcL3ZlcnNpb24iOiJ2MSIsImlzcyI6IndzbzIub3JnXC9wcm9kdWN0c1wvYW0iLCJodHRwOlwvXC93c28yLm9yZ1wvY2xhaW1zXC9hcHBsaWNhdGlvbm5hbWUiOiJIZWxsb1dvcmxkIEFwcGxpY2F0aW9uIiwiaHR0cDpcL1wvd3NvMi5vcmdcL2NsYWltc1wvZW5kdXNlciI6ImFkbWluQGNhcmJvbi5zdXBlciIsImh0dHA6XC9cL3dzbzIub3JnXC9jbGFpbXNcL2VuZHVzZXJUZW5hbnRJZCI6Ii0xMjM0IiwidXN1YXJpb01vbml0b3JhY2FvQXVkaXRvcmlhIjoiZXlKdWRXMWxjbTlEYjI5d1pYSmhkR2wyWVNJNklqQXdNREVpTENKcFpHVnVkR2xtYVdOaFpHOXlJam9pUTBzNklGSmxZMnB6UmxVMVxyXG5iVmRyYjNwbU1scHdhMEYxWjJ0VGRWY3lhMkVpTENKcFpFbHVjM1JwZEhWcFkyRnZJam94ZlE9PVxyXG4iLCJodHRwOlwvXC93c28yLm9yZ1wvY2xhaW1zXC9zdWJzY3JpYmVyIjoiYWRtaW4iLCJodHRwOlwvXC93c28yLm9yZ1wvY2xhaW1zXC90aWVyIjoiVW5saW1pdGVkIiwiaHR0cDpcL1wvd3NvMi5vcmdcL2NsYWltc1wvYXBwbGljYXRpb25pZCI6IjY1IiwiaHR0cDpcL1wvd3NvMi5vcmdcL2NsYWltc1wvdXNlcnR5cGUiOiJBUFBMSUNBVElPTiIsImV4cCI6MTU0OTU1Nzc5NSwiaHR0cDpcL1wvd3NvMi5vcmdcL2NsYWltc1wvYXBpY29udGV4dCI6IlwvaGVsbG8td29ybGRcL3YxIn0=.R3/rJ0/DNYxj5dsVNi1NrQ+SxmN73XiYOlMqh97O+WHNJ4nf31uk7iDTNow4bGXPDdU3yZzY9FOCZ6f6gvFvsclJlHloDRAxgOt/l5JeJ6S5qUI31HCadfWA0q1UlMqjPhxtbnjfQYapocnJ376kFABwiaMjH8s2leG7Gnngq0I="
+          },
+          {
+            "key": "Cookie",
+            "value": "BIGipServerpool-homol-integracao-convenios-parceiro-cluster-9443=!/UerHqawmlz1RsbKa7MdAYt1W1LWM1uhAx7tDrSbUnwl6WenHEjzHJwmIgFGDpYq04xpd8lFzyIfpQ=="
+          }
+        ],
+        "url": {
+          "raw": "https://integracaoconveniosparceirocluster-homol/open-banking/convenios/arrecadacao/api/codigo-barras/84610000000753200240401304794036270715072105?transacao=123&dataPagamento=2021-07-15&canal=2",
+          "protocol": "https",
+          "host": [
+            "integracaoconveniosparceirocluster-homol"
+          ],
+          "path": [
+            "open-banking",
+            "convenios",
+            "arrecadacao",
+            "api",
+            "codigo-barras",
+            "84610000000753200240401304794036270715072105"
+          ],
+          "query": [
+            {
+              "key": "transacao",
+              "value": "123"
+            },
+            {
+              "key": "dataPagamento",
+              "value": "2021-07-15"
+            },
+            {
+              "key": "canal",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

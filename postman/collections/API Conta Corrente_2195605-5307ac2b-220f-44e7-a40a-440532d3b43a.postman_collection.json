@@ -1,0 +1,413 @@
+{
+  "info": {
+    "_postman_id": "5307ac2b-220f-44e7-a40a-440532d3b43a",
+    "name": "API Conta Corrente",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Obter Token CCO",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "cbb0f64d-2df9-419c-86de-5d615303316f",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "8fd03843-0033-45f0-bb01-4571ff6cf65c",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "value": "client_credentials",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "openid",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "teste-cco",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "bbzm0ejrXmd0Tuw1PeXN3QUP56eZPMMr",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "auth-hom",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "cooperado",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User Info CCO",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "cbb0f64d-2df9-419c-86de-5d615303316f",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "f41ee0a1-2555-4471-8fb4-6dd63d7a6831",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2Q1pZNXZvTmpmZzhNbXZ5SUhzS3U5Um8xaWZfMU5jckVqOTJVNEc1eGJNIn0.eyJleHAiOjE2NjYzMzYzNTksImlhdCI6MTY2NjMwMDM1OSwianRpIjoiODM0M2RiZDctYTZlNC00NjdmLTlmMGQtYjM5ODNhZWI1Njc5IiwiaXNzIjoiaHR0cHM6Ly9hdXRoLWhvbS5ob21vbG9nYWNhby5jb20uYnIvYXV0aC9yZWFsbXMvY29vcGVyYWRvIiwic3ViIjoiYmU2NjkzYmYtYjgxNC00ZjhjLThhMTktNWQ3OGQwMTAyYWFkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiMzJhZmM1MTEtYmFmNS00MTJjLWJmZWUtYTA3NmZhM2IyMzY1IiwiY25mIjp7Ing1dCNTMjU2IjoiMUFlM2lwMU1rYTV1TFdLVTBlQnlHXzJoTVBZak9JUE1oS1ZCSUxTNXVtSSJ9LCJzY29wZSI6Im9wZW5pZCIsImlkX3RpdHVsYXIiOiIxIiwiaWRJbnN0aXR1aWNhbyI6IjgwIiwiY2lkYWRlIjoiYnJhc2lsaWEiLCJjbGllbnRIb3N0IjoiMTAuMTMwLjIuMSIsImNsaWVudElkIjoiMzJhZmM1MTEtYmFmNS00MTJjLWJmZWUtYTA3NmZhM2IyMzY1Iiwic2VxTnVtIjoiY2FlYjAxMjBiMmRmNGMxZGEzMTcwMGU5OGQyYjRkZTIiLCJhcGxpY2FjYW8iOiJNekpoWm1NMU1URXRZbUZtTlMwME1USmpMV0ptWldVdFlUQTNObVpoTTJJeU16WTFJQT09IiwibnVtQ3BmQ25waiI6IjI5MTkxMzY0NjEyIiwiZGVzY05vbWVQZXNzb2EiOiJBTEVYQU5EUkUgSU5GT1JNQVRJQ0EgREUgSkVTVVMgQ0FNUE9TIDA5MjUwNDA1NzY2IiwibnVtQ2xpZW50ZSI6IjExNzAzMCIsImluZnJhQ29udHJvbCI6IjA4LzAyLzIwMjIiLCJpc3BiIjoiMDAwMDAwMDAiLCJjbGllbnRBZGRyZXNzIjoiMTAuMTMwLjIuMSIsImNlcCI6IjcxODgwMTI5IiwiY29kUGFyY2Vpcm8iOiI1NDg3OTYwNjAwMDE3OCIsInVmIjoiREYiLCJudW1lcm9fcGFjIjoiNCIsIm5vbWVGYW50YXNpYSI6IkFMRVhBTkRSRSBJTkZPUk1BVElDQSBERSBKRVNVUyBDQU1QT1MgMDkyNTA0MDU3NjYiLCJpZFJlc3BvbnNhYmlsaWRhZGUiOiIxIiwiY29vcGVyYXRpdmExIjoiNDM2NCIsImxvZ3JhZG91cm8iOiJlbmRlcmXDp28gbm92byAyIiwiY29udGFDb3JyZW50ZSI6IjE3MzUwOSIsIm51bUNvb3BlcmF0aXZhIjoiNDM2NCJ9.FDdmJ7cNbdJnHUUeFDd6ijAublIWrxNOYmzNnFIEdwDr6VHRHIRwljDi0eqjaFO2N9DK-CiPwbbkTIUWYSeVSY959p8N2Jznt_KCiJeM9QSDVobE4ArR6SzIHl_I25olgV7w36hKqrpsf3Ay7Kvy7D6D_DdNVeVC2bc9C8aSV9o-x9MBDzC6zlzHpmZZlaU3gx3hBFrmLeH_AnZxXULCRUuK3MMNa-VPFClNL9Nf7QyUKUsYcjX4FBiVMSqVvC_1t5nLgKsGUEJrarSUANZfAKu6Cb04E26JBAPsNEdDQLyMIGCLpmI1Sg29AmA4euATNC48A9UqFIYkAt8xGIx1mw",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "value": "client_credentials",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "openid",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "teste-cco",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "bbzm0ejrXmd0Tuw1PeXN3QUP56eZPMMr",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/userinfo",
+          "protocol": "https",
+          "host": [
+            "auth-hom",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "cooperado",
+            "protocol",
+            "openid-connect",
+            "userinfo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Extrato",
+      "id": "e29c0e25-61e0-4f67-8836-28c7a3e9229a",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2Q1pZNXZvTmpmZzhNbXZ5SUhzS3U5Um8xaWZfMU5jckVqOTJVNEc1eGJNIn0.eyJleHAiOjE2NjY5NDMwODcsImlhdCI6MTY2NjkwNzA4NywiYXV0aF90aW1lIjowLCJqdGkiOiJhZTUwOTZhZS0yMDVkLTQ1MTEtYmQxZC0wMjk3NGI0Yjk4MjEiLCJpc3MiOiJodHRwczovL2F1dGgtaG9tLmhvbW9sb2dhY2FvLmNvbS5ici9hdXRoL3JlYWxtcy9jb29wZXJhZG8iLCJhdWQiOiIzMmFmYzUxMS1iYWY1LTQxMmMtYmZlZS1hMDc2ZmEzYjIzNjUiLCJzdWIiOiJiZTY2OTNiZi1iODE0LTRmOGMtOGExOS01ZDc4ZDAxMDJhYWQiLCJ0eXAiOiJJRCIsImF6cCI6IjMyYWZjNTExLWJhZjUtNDEyYy1iZmVlLWEwNzZmYTNiMjM2NSIsImF0X2hhc2giOiJIaXZMTFZEaVdjQWhrSjU0SEFZN3pBIiwiaWRfdGl0dWxhciI6IjEiLCJpZEluc3RpdHVpY2FvIjoiODAiLCJjaWRhZGUiOiJicmFzaWxpYSIsImNsaWVudEhvc3QiOiIxMC4xMzAuMi4xIiwiY2xpZW50SWQiOiIzMmFmYzUxMS1iYWY1LTQxMmMtYmZlZS1hMDc2ZmEzYjIzNjUiLCJzZXFOdW0iOiJjYWViMDEyMGIyZGY0YzFkYTMxNzAwZTk4ZDJiNGRlMiIsImFwbGljYWNhbyI6Ik16SmhabU0xTVRFdFltRm1OUzAwTVRKakxXSm1aV1V0WVRBM05tWmhNMkl5TXpZMUlBPT0iLCJudW1DcGZDbnBqIjoiMjkxOTEzNjQ2MTIiLCJkZXNjTm9tZVBlc3NvYSI6IkFMRVhBTkRSRSBJTkZPUk1BVElDQSBERSBKRVNVUyBDQU1QT1MgMDkyNTA0MDU3NjYiLCJudW1DbGllbnRlIjoiMTE3MDMwIiwiaW5mcmFDb250cm9sIjoiMDgvMDIvMjAyMiIsImlzcGIiOiIwMDAwMDAwMCIsImNsaWVudEFkZHJlc3MiOiIxMC4xMzAuMi4xIiwiY2VwIjoiNzE4ODAxMjkiLCJjb2RQYXJjZWlybyI6IjU0ODc5NjA2MDAwMTc4IiwidWYiOiJERiIsIm51bWVyb19wYWMiOiI0Iiwibm9tZUZhbnRhc2lhIjoiQUxFWEFORFJFIElORk9STUFUSUNBIERFIEpFU1VTIENBTVBPUyAwOTI1MDQwNTc2NiIsImlkUmVzcG9uc2FiaWxpZGFkZSI6IjEiLCJjb29wZXJhdGl2YTEiOiI0MzY0IiwibG9ncmFkb3VybyI6ImVuZGVyZcOnbyBub3ZvIDIiLCJjb250YUNvcnJlbnRlIjoiMTczNTA5IiwibnVtQ29vcGVyYXRpdmEiOiI0MzY0In0.cpfypB9V0a4YRthKOxTXyZXjWGy1JvkWGDQ7ze-JbmW3uOsfMWSHhNXCp-vpFLUFuY-AXHdLTFD7Py36B3nCt2Gl7CNB9XrfLCUS7KqyzEYcvWnhvdwq0d4ca5N7RihiPQRMXMN5ZQ85qudp-LAs5rW-sc_yWP4AnWaI2sOM6EH0kNwDCzh1O-R2Jrc0rFxsfvVyFRstfbZGPU9FOy05TsMe7e4d0oEU6PkzdQgtOp1r46MjfNqbSN1ZplqQnNpcINlWzIMECPJ3WgfTfUneHsX1fb8oUICKZFTGMB-tMXKUkuBIZV1gfc0hGTj7WEnjhbZ3K1bbgkS-aj-Pk4WodA"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://apicv10-homol.homologacao.com.br/sicoob/cooperado/conta-corrente/v2/extrato/07/2022?numeroContaCorrente=173509",
+          "protocol": "https",
+          "host": [
+            "apicv10-homol",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "sicoob",
+            "cooperado",
+            "conta-corrente",
+            "v2",
+            "extrato",
+            "07",
+            "2022"
+          ],
+          "query": [
+            {
+              "key": "numeroContaCorrente",
+              "value": "173509"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Extrato Backend",
+      "id": "d04fb504-b16c-4ec3-9a5e-59d07edffd6a",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "X-JWT-Assertion",
+            "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2Q1pZNXZvTmpmZzhNbXZ5SUhzS3U5Um8xaWZfMU5jckVqOTJVNEc1eGJNIn0.eyJleHAiOjE2NjgwNTIwNjYsImlhdCI6MTY2ODAxNjA2NiwiYXV0aF90aW1lIjowLCJqdGkiOiJmMzExNzExNC1mZDI1LTQzOGUtODg4OS0xZGNjYmJkYjViZGEiLCJpc3MiOiJodHRwczovL2F1dGgtaG9tLmhvbW9sb2dhY2FvLmNvbS5ici9hdXRoL3JlYWxtcy9jb29wZXJhZG8iLCJhdWQiOiIzMmFmYzUxMS1iYWY1LTQxMmMtYmZlZS1hMDc2ZmEzYjIzNjUiLCJzdWIiOiJiZTY2OTNiZi1iODE0LTRmOGMtOGExOS01ZDc4ZDAxMDJhYWQiLCJ0eXAiOiJJRCIsImF6cCI6IjMyYWZjNTExLWJhZjUtNDEyYy1iZmVlLWEwNzZmYTNiMjM2NSIsImF0X2hhc2giOiJHbDhPRjZVaXh3MjRwZk5wVTg1ZnF3IiwiaWRfdGl0dWxhciI6IjEiLCJpZEluc3RpdHVpY2FvIjoiODAiLCJjaWRhZGUiOiJicmFzaWxpYSIsImNsaWVudEhvc3QiOiIxMC4xMjkuMi4xIiwiY2xpZW50SWQiOiIzMmFmYzUxMS1iYWY1LTQxMmMtYmZlZS1hMDc2ZmEzYjIzNjUiLCJzZXFOdW0iOiJjYWViMDEyMGIyZGY0YzFkYTMxNzAwZTk4ZDJiNGRlMiIsImFwbGljYWNhbyI6Ik16SmhabU0xTVRFdFltRm1OUzAwTVRKakxXSm1aV1V0WVRBM05tWmhNMkl5TXpZMUlBPT0iLCJudW1DcGZDbnBqIjoiMjkxOTEzNjQ2MTIiLCJkZXNjTm9tZVBlc3NvYSI6IkFMRVhBTkRSRSBJTkZPUk1BVElDQSBERSBKRVNVUyBDQU1QT1MgMDkyNTA0MDU3NjYiLCJudW1DbGllbnRlIjoiMTE3MDMwIiwiaW5mcmFDb250cm9sIjoiMDgvMDIvMjAyMiIsImlzcGIiOiIwMDAwMDAwMCIsImNsaWVudEFkZHJlc3MiOiIxMC4xMjkuMi4xIiwiY2VwIjoiNzE4ODAxMjkiLCJjb2RQYXJjZWlybyI6IjU0ODc5NjA2MDAwMTc4IiwidWYiOiJERiIsIm51bWVyb19wYWMiOiI0Iiwibm9tZUZhbnRhc2lhIjoiQUxFWEFORFJFIElORk9STUFUSUNBIERFIEpFU1VTIENBTVBPUyAwOTI1MDQwNTc2NiIsImlkUmVzcG9uc2FiaWxpZGFkZSI6IjEiLCJjb29wZXJhdGl2YTEiOiI0MzY0IiwibG9ncmFkb3VybyI6ImVuZGVyZcOnbyBub3ZvIDIiLCJjb250YUNvcnJlbnRlIjoiMTczNTA5IiwibnVtQ29vcGVyYXRpdmEiOiI0MzY0In0.Nb9URongt1DaUhj8SowWf8PzU7_XrWmlBMNhTOjMCZtRt-3xNgrU1YT_ABkFG2eaoHusbvhdbfGozy6DQyOypMmY-ZQcX-70utTTPc7lL46Vr_6s7o8UbuFwiaQNfmdYXk_z5sMEKWCSPIVLEszDzOg9X93pNPSKmR6nyg6n5FEAT480LFwm8Hh6LW6Reqc4G9IyWeSj34CYFw84o_fBqeQyE-WHF9dkCcRy3ibaYDL4S4FKeGq0-AvzZucFVD_p_oOQSCQbUEnr1zrHN5BH3l88FimIQxOIbXwF1LBGtyLlYYOz6jgA6aLMcYYE4EYaIIA3C-6DaBXGo5v7jEirGw"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://cco-minhasfinancas-integracao-wildfly-homol.homologacao.com.br/cco-openbanking-api/api/extrato/07/2022?numeroContaCorrente=173509",
+          "protocol": "http",
+          "host": [
+            "cco-minhasfinancas-integracao-wildfly-homol",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "cco-openbanking-api",
+            "api",
+            "extrato",
+            "07",
+            "2022"
+          ],
+          "query": [
+            {
+              "key": "numeroContaCorrente",
+              "value": "173509"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Saldo",
+      "id": "70599c70-32e4-4ddb-8e0d-00f71c06ecbf",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2Q1pZNXZvTmpmZzhNbXZ5SUhzS3U5Um8xaWZfMU5jckVqOTJVNEc1eGJNIn0.eyJleHAiOjE2NjY5NDE5OTQsImlhdCI6MTY2NjkwNTk5NCwiYXV0aF90aW1lIjowLCJqdGkiOiJkYmZhMTBlOC04M2NmLTQ0MmEtODEwZC00NzBmMGJjZWQ4NjYiLCJpc3MiOiJodHRwczovL2F1dGgtaG9tLmhvbW9sb2dhY2FvLmNvbS5ici9hdXRoL3JlYWxtcy9jb29wZXJhZG8iLCJhdWQiOiIzMmFmYzUxMS1iYWY1LTQxMmMtYmZlZS1hMDc2ZmEzYjIzNjUiLCJzdWIiOiJiZTY2OTNiZi1iODE0LTRmOGMtOGExOS01ZDc4ZDAxMDJhYWQiLCJ0eXAiOiJJRCIsImF6cCI6IjMyYWZjNTExLWJhZjUtNDEyYy1iZmVlLWEwNzZmYTNiMjM2NSIsImF0X2hhc2giOiJyUlRFQXRSeW1BbGhFOFoxZmZraFdRIiwiaWRfdGl0dWxhciI6IjEiLCJpZEluc3RpdHVpY2FvIjoiODAiLCJjaWRhZGUiOiJicmFzaWxpYSIsImNsaWVudEhvc3QiOiIxMC4xMzAuMi4xIiwiY2xpZW50SWQiOiIzMmFmYzUxMS1iYWY1LTQxMmMtYmZlZS1hMDc2ZmEzYjIzNjUiLCJzZXFOdW0iOiJjYWViMDEyMGIyZGY0YzFkYTMxNzAwZTk4ZDJiNGRlMiIsImFwbGljYWNhbyI6Ik16SmhabU0xTVRFdFltRm1OUzAwTVRKakxXSm1aV1V0WVRBM05tWmhNMkl5TXpZMUlBPT0iLCJudW1DcGZDbnBqIjoiMjkxOTEzNjQ2MTIiLCJkZXNjTm9tZVBlc3NvYSI6IkFMRVhBTkRSRSBJTkZPUk1BVElDQSBERSBKRVNVUyBDQU1QT1MgMDkyNTA0MDU3NjYiLCJudW1DbGllbnRlIjoiMTE3MDMwIiwiaW5mcmFDb250cm9sIjoiMDgvMDIvMjAyMiIsImlzcGIiOiIwMDAwMDAwMCIsImNsaWVudEFkZHJlc3MiOiIxMC4xMzAuMi4xIiwiY2VwIjoiNzE4ODAxMjkiLCJjb2RQYXJjZWlybyI6IjU0ODc5NjA2MDAwMTc4IiwidWYiOiJERiIsIm51bWVyb19wYWMiOiI0Iiwibm9tZUZhbnRhc2lhIjoiQUxFWEFORFJFIElORk9STUFUSUNBIERFIEpFU1VTIENBTVBPUyAwOTI1MDQwNTc2NiIsImlkUmVzcG9uc2FiaWxpZGFkZSI6IjEiLCJjb29wZXJhdGl2YTEiOiI0MzY0IiwibG9ncmFkb3VybyI6ImVuZGVyZcOnbyBub3ZvIDIiLCJjb250YUNvcnJlbnRlIjoiMTczNTA5IiwibnVtQ29vcGVyYXRpdmEiOiI0MzY0In0.HuJWbmXRv2dVXPythHzMxWQbd9pWcCWxh6XcnfFaUbkKz3E0ygnsqIyXR6HyRURMddFiq4O-nmidqvTg2RzifmwWtppuJYSBqYIGnqdjEluDfCPUxupQlRpa_f8EPfeAO_T3L-_f7W_Tg0nBnZYbbfN2azdn6l-Fph1B0_BuICeflYus8cKDIwxkC08uoq_HqghwF-9_nUrZDd21FAkB-2qK2BEsnmpROXXeNsFVYWzzkIhUxKdq7QNy9BbqPACh40wVkFCqgnvyk0o5YyIsmaVE7ZHozC2akeqPyM4tHHv97FQSk5e7Aij3EeN08Qy-pouJq1LKFLh3w87mlP2v6Q"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://apicv10-homol.homologacao.com.br/sicoob/cooperado/conta-corrente/v2/saldo?numeroContaCorrente=173509",
+          "protocol": "https",
+          "host": [
+            "apicv10-homol",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "sicoob",
+            "cooperado",
+            "conta-corrente",
+            "v2",
+            "saldo"
+          ],
+          "query": [
+            {
+              "key": "numeroContaCorrente",
+              "value": "173509"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Saldo Backend",
+      "id": "35bcc738-4a9d-4569-abac-83e50a03ecba",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2Q1pZNXZvTmpmZzhNbXZ5SUhzS3U5Um8xaWZfMU5jckVqOTJVNEc1eGJNIn0.eyJleHAiOjE2NjUyMDExNDgsImlhdCI6MTY2NTE2NTE0OCwianRpIjoiMjc4NzM2MTUtYjc5OS00OTA1LWE2YmMtMDJmNmJmMTIyMDkwIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLWhvbS5ob21vbG9nYWNhby5jb20uYnIvYXV0aC9yZWFsbXMvY29vcGVyYWRvIiwic3ViIjoiYmU2NjkzYmYtYjgxNC00ZjhjLThhMTktNWQ3OGQwMTAyYWFkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiMzJhZmM1MTEtYmFmNS00MTJjLWJmZWUtYTA3NmZhM2IyMzY1IiwiY25mIjp7Ing1dCNTMjU2IjoiMUFlM2lwMU1rYTV1TFdLVTBlQnlHXzJoTVBZak9JUE1oS1ZCSUxTNXVtSSJ9LCJzY29wZSI6ImNvYnJhbmNhX2JvbGV0b3NfbmVnYXRpdmFjb2VzX2FsdGVyYXIgY29icmFuY2FfYm9sZXRvc19wcm90ZXN0b3NfaW5jbHVpciBjb2JyYW5jYV9ib2xldG9zX2FiYXRpbWVudG9zIGNvYnJhbmNhX2JvbGV0b3NfbmVnYXRpdmFjb2VzX2JhaXhhciBjb2JyYW5jYV9ib2xldG9zX2VuY2FyZ29zX2p1cm9zX21vcmEgY29icmFuY2FfYm9sZXRvc19jb25zdWx0YXIgY29icmFuY2FfYm9sZXRvc19lbmNhcmdvc19tdWx0YXMgY29icmFuY2FfYm9sZXRvc192YWxvcl9ub21pbmFsIGNvYnJhbmNhX2JvbGV0b3NfaW5jbHVpciBjb2JyYW5jYV9ib2xldG9zX3JhdGVpb19jcmVkaXRvIGNvYnJhbmNhX2JvbGV0b3NfcGFnYWRvciBjb2JyYW5jYV9ib2xldG9zX3NlZ3VuZGFfdmlhIGNvYnJhbmNhX2JvbGV0b3NfcHJvdGVzdG9zX2Rlc2lzdGlyIGNvYnJhbmNhX2JvbGV0b3NfcHJvcnJvZ2Fjb2VzX2RhdGFfbGltaXRlX3BhZ2FtZW50byBjb2JyYW5jYV9ib2xldG9zX2JhaXhhIGNvYnJhbmNhX2JvbGV0b3NfcHJvdGVzdG9zX2FsdGVyYXIgY29icmFuY2FfYm9sZXRvc19zb2xpY2l0YWNhb19tb3ZpbWVudGFjYW9fY29uc3VsdGFyIGNvYnJhbmNhX2JvbGV0b3NfZGVzY29udG9zIGNvYnJhbmNhX2JvbGV0b3Nfc2V1X251bWVybyBjb2JyYW5jYV9ib2xldG9zX25lZ2F0aXZhY29lc19pbmNsdWlyIGNvYnJhbmNhX2JvbGV0b3NfZXNwZWNpZV9kb2N1bWVudG8gY29icmFuY2FfcGFnYWRvcmVzIGNvYnJhbmNhX2JvbGV0b3Nfc29saWNpdGFjYW9fbW92aW1lbnRhY2FvX2luY2x1aXIgY29icmFuY2FfYm9sZXRvc19wcm9ycm9nYWNvZXNfZGF0YV92ZW5jaW1lbnRvIGNvYnJhbmNhX2JvbGV0b3Nfc29saWNpdGFjYW9fbW92aW1lbnRhY2FvX2Rvd25sb2FkIiwiaWRfdGl0dWxhciI6IjEiLCJpZEluc3RpdHVpY2FvIjoiODAiLCJjaWRhZGUiOiJicmFzaWxpYSIsImNsaWVudEhvc3QiOiIxMC4xMzAuMi4xIiwiY2xpZW50SWQiOiIzMmFmYzUxMS1iYWY1LTQxMmMtYmZlZS1hMDc2ZmEzYjIzNjUiLCJzZXFOdW0iOiJjYWViMDEyMGIyZGY0YzFkYTMxNzAwZTk4ZDJiNGRlMiIsIm51bUNwZkNucGoiOiIyOTE5MTM2NDYxMiIsImRlc2NOb21lUGVzc29hIjoiQUxFWEFORFJFIElORk9STUFUSUNBIERFIEpFU1VTIENBTVBPUyAwOTI1MDQwNTc2NiIsIm51bUNsaWVudGUiOiIxMTcwMzAiLCJpbmZyYUNvbnRyb2wiOiIwOC8wMi8yMDIyIiwiaXNwYiI6IjAwMDAwMDAwIiwiY2xpZW50QWRkcmVzcyI6IjEwLjEzMC4yLjEiLCJjZXAiOiI3MTg4MDEyOSIsImNvZFBhcmNlaXJvIjoiNTQ4Nzk2MDYwMDAxNzgiLCJ1ZiI6IkRGIiwibnVtZXJvX3BhYyI6IjQiLCJub21lRmFudGFzaWEiOiJBTEVYQU5EUkUgSU5GT1JNQVRJQ0EgREUgSkVTVVMgQ0FNUE9TIDA5MjUwNDA1NzY2IiwiaWRSZXNwb25zYWJpbGlkYWRlIjoiMSIsImNvb3BlcmF0aXZhMSI6IjMwNjYiLCJsb2dyYWRvdXJvIjoiZW5kZXJlw6dvIG5vdm8gMiIsImNvbnRhQ29ycmVudGUiOiIxMzEyMTAiLCJpZFVuaWRhZGVJbnN0aXR1aWNhbyI6IjQiLCJudW1Db29wZXJhdGl2YSI6IjMwNjYifQ.N6Iv6k_hysRlHmjJFMVjoqcv1mztRvecuzbPDIfqEzeTwwq2dBsYsntdDOYr1jjfKV4ZbpJLfR1xOZFg-qW6IkJL1M5N6UE_Uqki3k3xNOxcSdJdQ0G1lUJgUDlREhEBZPSFtSwbWYrLd3DkPqBLnWXaX-rUJ2V6dgipNmhBpdPjuoOC9iNDS13669PGQdbgu3Gr6_ylRdYoc7_8UwM4CJyuSlqXw_3hFjiq2cK5QYAgn2yTGllZuT3NJAyr5mEmfT9Pe_EJdEPMYscVFgi4tohYSb7wYEJR6YvoRr_MqkXOrd2b6W3JqRB-WZUOv-cavCumiYVadC6r79seUjduoQ",
+            "disabled": true
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "x-jwt-assertion",
+            "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2Q1pZNXZvTmpmZzhNbXZ5SUhzS3U5Um8xaWZfMU5jckVqOTJVNEc1eGJNIn0.eyJleHAiOjE2NjgwNTIwNjYsImlhdCI6MTY2ODAxNjA2NiwiYXV0aF90aW1lIjowLCJqdGkiOiJmMzExNzExNC1mZDI1LTQzOGUtODg4OS0xZGNjYmJkYjViZGEiLCJpc3MiOiJodHRwczovL2F1dGgtaG9tLmhvbW9sb2dhY2FvLmNvbS5ici9hdXRoL3JlYWxtcy9jb29wZXJhZG8iLCJhdWQiOiIzMmFmYzUxMS1iYWY1LTQxMmMtYmZlZS1hMDc2ZmEzYjIzNjUiLCJzdWIiOiJiZTY2OTNiZi1iODE0LTRmOGMtOGExOS01ZDc4ZDAxMDJhYWQiLCJ0eXAiOiJJRCIsImF6cCI6IjMyYWZjNTExLWJhZjUtNDEyYy1iZmVlLWEwNzZmYTNiMjM2NSIsImF0X2hhc2giOiJHbDhPRjZVaXh3MjRwZk5wVTg1ZnF3IiwiaWRfdGl0dWxhciI6IjEiLCJpZEluc3RpdHVpY2FvIjoiODAiLCJjaWRhZGUiOiJicmFzaWxpYSIsImNsaWVudEhvc3QiOiIxMC4xMjkuMi4xIiwiY2xpZW50SWQiOiIzMmFmYzUxMS1iYWY1LTQxMmMtYmZlZS1hMDc2ZmEzYjIzNjUiLCJzZXFOdW0iOiJjYWViMDEyMGIyZGY0YzFkYTMxNzAwZTk4ZDJiNGRlMiIsImFwbGljYWNhbyI6Ik16SmhabU0xTVRFdFltRm1OUzAwTVRKakxXSm1aV1V0WVRBM05tWmhNMkl5TXpZMUlBPT0iLCJudW1DcGZDbnBqIjoiMjkxOTEzNjQ2MTIiLCJkZXNjTm9tZVBlc3NvYSI6IkFMRVhBTkRSRSBJTkZPUk1BVElDQSBERSBKRVNVUyBDQU1QT1MgMDkyNTA0MDU3NjYiLCJudW1DbGllbnRlIjoiMTE3MDMwIiwiaW5mcmFDb250cm9sIjoiMDgvMDIvMjAyMiIsImlzcGIiOiIwMDAwMDAwMCIsImNsaWVudEFkZHJlc3MiOiIxMC4xMjkuMi4xIiwiY2VwIjoiNzE4ODAxMjkiLCJjb2RQYXJjZWlybyI6IjU0ODc5NjA2MDAwMTc4IiwidWYiOiJERiIsIm51bWVyb19wYWMiOiI0Iiwibm9tZUZhbnRhc2lhIjoiQUxFWEFORFJFIElORk9STUFUSUNBIERFIEpFU1VTIENBTVBPUyAwOTI1MDQwNTc2NiIsImlkUmVzcG9uc2FiaWxpZGFkZSI6IjEiLCJjb29wZXJhdGl2YTEiOiI0MzY0IiwibG9ncmFkb3VybyI6ImVuZGVyZcOnbyBub3ZvIDIiLCJjb250YUNvcnJlbnRlIjoiMTczNTA5IiwibnVtQ29vcGVyYXRpdmEiOiI0MzY0In0.Nb9URongt1DaUhj8SowWf8PzU7_XrWmlBMNhTOjMCZtRt-3xNgrU1YT_ABkFG2eaoHusbvhdbfGozy6DQyOypMmY-ZQcX-70utTTPc7lL46Vr_6s7o8UbuFwiaQNfmdYXk_z5sMEKWCSPIVLEszDzOg9X93pNPSKmR6nyg6n5FEAT480LFwm8Hh6LW6Reqc4G9IyWeSj34CYFw84o_fBqeQyE-WHF9dkCcRy3ibaYDL4S4FKeGq0-AvzZucFVD_p_oOQSCQbUEnr1zrHN5BH3l88FimIQxOIbXwF1LBGtyLlYYOz6jgA6aLMcYYE4EYaIIA3C-6DaBXGo5v7jEirGw",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://cco-minhasfinancas-integracao-wildfly-homol/cco-openbanking-api/api/saldo?numeroContaCorrente=173509",
+          "protocol": "http",
+          "host": [
+            "cco-minhasfinancas-integracao-wildfly-homol"
+          ],
+          "path": [
+            "cco-openbanking-api",
+            "api",
+            "saldo"
+          ],
+          "query": [
+            {
+              "key": "numeroContaCorrente",
+              "value": "173509"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://apicv10-homol.homologacao.com.br/sicoob/cooperado/conta-corrente/v2/extrato/07/2022?numeroContaCorrente=1511556",
+      "id": "3bffa9fe-1565-4709-ba4d-9aee20cdf9ba",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2Q1pZNXZvTmpmZzhNbXZ5SUhzS3U5Um8xaWZfMU5jckVqOTJVNEc1eGJNIn0.eyJleHAiOjE2NjgxMzY4NzAsImlhdCI6MTY2ODEwMDg3MCwianRpIjoiZWQzNGY1MGQtOGU0ZS00NzQ1LTk4NmEtMTA3Mjk2YmE5NDlhIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLWhvbS5ob21vbG9nYWNhby5jb20uYnIvYXV0aC9yZWFsbXMvY29vcGVyYWRvIiwic3ViIjoiMGQxZDQzNzQtMjlhZi00ZjhjLWFhMmQtZTgwZGM4M2E2NDA0IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiNDQwNWE4NDUtMmY3ZS00MDYxLWE2MDUtY2MzYTgzYzA0ZDAwIiwiY25mIjp7Ing1dCNTMjU2IjoiMnA2VFQ4UWMyeG5mNEtocjNCZ1dRYUFjd0ZZTy1yX1JISTRnbHF3dmFSRSJ9LCJzY29wZSI6ImNjb19leHRyYXRvIGNjb19zYWxkbyIsImlkX3RpdHVsYXIiOiIxIiwiaWRJbnN0aXR1aWNhbyI6IjcwMCIsImNpZGFkZSI6Ik5VQ0xFTyBCQU5ERUlSQU5URSIsImNsaWVudEhvc3QiOiIxMC4xMzAuMi4xIiwiY2xpZW50SWQiOiI0NDA1YTg0NS0yZjdlLTQwNjEtYTYwNS1jYzNhODNjMDRkMDAiLCJzZXFOdW0iOiJjYWViMDEyMGIyZGY0YzFkYTMxNzAwZTk4ZDJiNGRlMiIsImFwbGljYWNhbyI6IjQ0MDVhODQ1LTJmN2UtNDA2MS1hNjA1LWNjM2E4M2MwNGQwMCIsIm51bUNwZkNucGoiOiI1NDg3OTYwNjAwMDE3OCIsImRlc2NOb21lUGVzc29hIjoiVklOSUNJVVMgU0VCQVNUScODTyBLQVXDiiBBUkFHw4NPIiwiaW5mcmFDb250cm9sIjoiMDgvMDIvMjAyMiIsImlzcGIiOiIwNTg1NjczNiIsImNsaWVudEFkZHJlc3MiOiIxMC4xMzAuMi4xIiwibnVtQ2xpZW50ZSI6IjMwODQ1NSIsImNlcCI6IjI2MzEyMjIyIiwidWYiOiJERiIsImNvZFBhcmNlaXJvIjoiNTU2NDk0MDQwMDAxMDAiLCJpZFJlc3BvbnNhYmlsaWRhZGUiOiIxIiwibm9tZUZhbnRhc2lhIjoiVklOSUNJVVMgU0VCQVNUScODTyBLQVXDiiBBUkFHw4NPIiwibnVtZXJvX3BhYyI6IjAiLCJjb29wZXJhdGl2YTEiOiI0MzY0IiwibG9ncmFkb3VybyI6IlRFU1RFIEVOREVSRcOHTyBOT1ZPIiwiY29udGFDb3JyZW50ZSI6IjE1MTE1NTYiLCJpZFVuaWRhZGVJbnN0aXR1aWNhbyI6IjAiLCJudW1Db29wZXJhdGl2YSI6IjQzNjQifQ.DH7kuHCUWO9_2nfYkEgzqqQoDTlW2IylNjrdq60ZWamLKJZ0styYAxGXoU7SljU5En9_MRQVHDACzgnbUxLtmyAlanIsLo8sBIgjX51kHhQE7ltA2CAL34eZT8KByjuFM8EuHCdxMtagjfDlL3Q2ZJssW6fHPvGy51mmt5z_ralBR9XaK0SV48lh0MIN-7Haqe8xOHYYNeQDqNAz_2rCpm_kbx_kY28qCo2spsxF87vO4bBgFurm4LksiNrl3wJh2QF1GStnzTxcgGIGzRH6dpLGW3cgKoGbGFusD77aQVGd2BjRud9vwDd0kFnu8vo-pGcAwpY_cN-ScI99rX4PJA"
+          },
+          {
+            "key": "Cookie",
+            "value": "59a348799fc005cfdd17deac67d27951=585959c95e89972f1bded3d474636b87"
+          }
+        ],
+        "url": {
+          "raw": "https://apicv10-homol.homologacao.com.br/sicoob/cooperado/conta-corrente/v2/extrato/08/2022?numeroContaCorrente=1511556",
+          "protocol": "https",
+          "host": [
+            "apicv10-homol",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "sicoob",
+            "cooperado",
+            "conta-corrente",
+            "v2",
+            "extrato",
+            "08",
+            "2022"
+          ],
+          "query": [
+            {
+              "key": "numeroContaCorrente",
+              "value": "1511556"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "access_token",
+      "value": ""
+    }
+  ]
+}
