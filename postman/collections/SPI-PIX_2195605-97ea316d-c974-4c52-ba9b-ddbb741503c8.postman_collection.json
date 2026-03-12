@@ -1,0 +1,118 @@
+{
+  "info": {
+    "_postman_id": "97ea316d-c974-4c52-ba9b-ddbb741503c8",
+    "name": "SPI-PIX",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "/confirmacao",
+      "id": "53dfea12-b4b2-4248-9132-cc59cbef5589",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "ispb",
+            "value": "05856736",
+            "type": "text"
+          },
+          {
+            "key": "client_id",
+            "value": "spi",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNQjNoS3VrX1FrS09HQVpKYWNiQXd5aVI2ODhHWndKeHVpVUM3TjUtMl9VIn0.eyJleHAiOjE2ODA2MjE2NDksImlhdCI6MTY4MDYxODA0OSwiYXV0aF90aW1lIjowLCJqdGkiOiJlOGExZTljOC1mM2FiLTRlODctYmIxMy1iYTUxYjYzNDQwZmEiLCJpc3MiOiJodHRwczovL3Nzby5ob21vbG9nYWNhby5jb20uYnIvYXV0aC9yZWFsbXMvc2ljb29iIiwiYXVkIjoic3BpIiwic3ViIjoiYzY2YWZiZDEtYjZiNC00ZDYyLTgxZDctYmMwZDE1NDMxYzJiIiwidHlwIjoiSUQiLCJhenAiOiJzcGkiLCJzZXNzaW9uX3N0YXRlIjoiY2M2MmY0YzYtYWRkNi00OTFlLTk5NWEtNzU0NWQ1MmE0MDgxIiwiYXRfaGFzaCI6InhGbEpMSEhObFM0dHdabWh1QmptQlEiLCJhY3IiOiIxIiwic2lkIjoiY2M2MmY0YzYtYWRkNi00OTFlLTk5NWEtNzU0NWQ1MmE0MDgxIiwiaWRJbnN0aXR1aWNhbyI6ODAsImNvZFRpcG9QZXNzb2EiOjAsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJjb250YXNQb3VwYW5jYSI6IltdIiwiaWREaXNwb3NpdGl2byI6ImFzZGZhc2RmIiwiYXBsaWNhY2FvIjoiYzNCcCIsIm51bUNMaWVudGUiOjE5LCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJwZmM6MzA2NjoxOjE5IiwibnVtQ3BmQ25waiI6IjIxMzMxMzIzNjgxIiwiZGVzY05vbWVQZXNzb2EiOiJHSVNFTEUgUEVSRUlSQSBHT01FUyIsImlzcGIiOiIwMjA5MDEyNiIsIm51bVBhYyI6MCwiY29udGFzQ29ycmVudGUiOlt7Im51bWVybyI6MTksImlkUmVzcG9uc2FiaWxpZGFkZSI6MSwiY3BmQ25waiI6IjIxMzMxMzIzNjgxIn1dLCJpZFVuaWRhZGVJbnN0aXR1aWNhbyI6MCwiZGF0YU5hc2NpbWVudG8iOiIxOTg0LTAzLTIwIiwibnVtY29udGFDb3JyZW50ZSI6MTksIm51bUNvb3BlcmF0aXZhIjozMDY2fQ.nvItvCuMHkpfIANb2YcRUDnn8V4krAj2413BbGagJ6u-0Z_FAdzwb2p6sDgQGGflPlQNsPgb2MnRdJny5x7DHQhOJGfSZX79YY-85e6yrxwuVpNYrpBwvq5JPUYgU8gNNAduHNTTsNcg6O_bFsGcsl5tS3OW7HSAG-iodyDOj6DcymTVkwiVoxniq7VCKq9ypHDhyEgGU8FkWXAq9v-cSv-zqpQkp7qLrh_qmADede0-sLBpRDoZ2ZEurqHt658CCKhq-jyJC1lxxEULFlMXQ_CisI0VEPi09mgcV0ie4wD5H0XoZwV2hMXR2f30XgBK2NcoILSfhG2jnxWlWjmFOA",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://apicv10-homol.homologacao.com.br/sicoob/spi/spi-cliente/v2/id-lancamentos?tipo=lancamento",
+          "protocol": "https",
+          "host": [
+            "apicv10-homol",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "sicoob",
+            "spi",
+            "spi-cliente",
+            "v2",
+            "id-lancamentos"
+          ],
+          "query": [
+            {
+              "key": "tipo",
+              "value": "lancamento"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://frontofficevalidacionalspidebitar-homol-mtls.homologacao.com.br/cte-api-manager/api/transacoes/canais/trfccopop",
+      "id": "c81faaff-902a-42ab-8f5c-6c7aa4eb83c4",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-jwt-assertion",
+            "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNQjNoS3VrX1FrS09HQVpKYWNiQXd5aVI2ODhHWndKeHVpVUM3TjUtMl9VIn0.eyJleHAiOjE2ODA2MjM3MDMsImlhdCI6MTY4MDYyMDEwMywiYXV0aF90aW1lIjowLCJqdGkiOiJkOGFiNWI1ZC0wMGNmLTRiZjgtYmM0Ni1hYzljOGU5YTE5YmMiLCJpc3MiOiJodHRwczovL3Nzby5ob21vbG9nYWNhby5jb20uYnIvYXV0aC9yZWFsbXMvc2ljb29iIiwiYXVkIjoic3BpIiwic3ViIjoiZDE0MTk4MWUtYjc1MC00NDAwLWIzNDUtYzcyZTFmYzQwMzcwIiwidHlwIjoiSUQiLCJhenAiOiJzcGkiLCJzZXNzaW9uX3N0YXRlIjoiNzI5ZDUyZjQtNTkxYy00NTliLTk1ZTYtZTI5MGNiZDM1ZDFjIiwiYXRfaGFzaCI6IjJBekhhX254QVpycGlCREtFOHhucEEiLCJhY3IiOiIxIiwic2lkIjoiNzI5ZDUyZjQtNTkxYy00NTliLTk1ZTYtZTI5MGNiZDM1ZDFjIiwiaWRJbnN0aXR1aWNhbyI6NzAwLCJjb2RUaXBvUGVzc29hIjowLCJ0ZWxlZm9uZSI6IjMwNzEzNDIwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImNvbnRhc1BvdXBhbmNhIjpbXSwiZGRkIjoiNDEzIiwiaWREaXNwb3NpdGl2byI6IjE2Nzk2Nzk5ODQzNTlfOTMwZGM3MGRhZmY1OTJjZjlkNjc2ODRhIiwiYXBsaWNhY2FvIjoiYzNCcCIsIm51bUNMaWVudGUiOjg4NjY4LCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJwZmM6NDM2NDoxOjI0MjE3OSIsIm51bUNwZkNucGoiOiIxMzkzMDg1NjAxOCIsImRlc2NOb21lUGVzc29hIjoiTUFSSUEgQ1JJU1RJTkEgQUxWRVMgREUgMyIsImlzcGIiOiIwNTg1NjczNiIsIm51bVBhYyI6MSwiY29udGFzQ29ycmVudGUiOlt7Im51bWVybyI6MjQyMTc5LCJpZFJlc3BvbnNhYmlsaWRhZGUiOjEsImNwZkNucGoiOiIxMzkzMDg1NjAxOCJ9XSwiaWRVbmlkYWRlSW5zdGl0dWljYW8iOjEsImRhdGFOYXNjaW1lbnRvIjoiMTk2Ni0wOS0xNiIsIm51bWNvbnRhQ29ycmVudGUiOjI0MjE3OSwibnVtQ29vcGVyYXRpdmEiOjQzNjR9.VcAyq4RC_j3iVo7h0AXXtkSxU13gmFLMx7w0YMmMazyKzxCt-icsq7VSXWd8gnYDUidbykH7Tltc0vlIcr3KLG071xdO8Dzw3qf09lSUtNtpqBnnhPYllBHsLa0JTjEhxL5-rYmhVRiY36pYQlY7qFvSgM10TQ3NbPs3hPE9kVvl835W8WYjq07OB3kPEXfHTotGcCOAeBOPAq0nBLTnnJMy1sbYsFFL78s1WaPFMShhigY5_rm9_OgG4vx2m_21A9aionBjg0fdP3y6Kih4x4PcWMAATtSaay465ItyJGDeF21010-JOYkxysKdyRDOVkesjvLQWg3QnW5ON2hwjA",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{   \"09631\": \"c67bbbabcb5c436199758bd45882ec3c\",   \"02000\": \"1.1\",   \"00025\": \"6\",   \"00030\": \"3245\",   \"00028\": \"3245\",   \"01402\": \"1004\",   \"01414\": \"1004\",   \"00026\": \"3105\",   \"01407\": \"625243781\",   \"01411\": \"3\",   \"01039\": \"20210315\",   \"01501\": \"teste pix\" }"
+        },
+        "url": {
+          "raw": "https://frontofficevalidacionalspidebitar-homol-mtls.homologacao.com.br/cte-api-manager/api/transacoes/canais/trfccopop",
+          "protocol": "https",
+          "host": [
+            "frontofficevalidacionalspidebitar-homol-mtls",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "cte-api-manager",
+            "api",
+            "transacoes",
+            "canais",
+            "trfccopop"
+          ],
+          "query": [
+            {
+              "key": "Content",
+              "value": null,
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

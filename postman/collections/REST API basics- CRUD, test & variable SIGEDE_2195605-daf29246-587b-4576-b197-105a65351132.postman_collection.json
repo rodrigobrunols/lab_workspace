@@ -1,0 +1,829 @@
+{
+  "info": {
+    "_postman_id": "daf29246-587b-4576-b197-105a65351132",
+    "name": "REST API basics: CRUD, test & variable SIGEDE",
+    "description": "# 🚀 Get started here\n\nOperações básicas do SIGEDE\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Tests\" tab**\n\nTests help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/b5f280a7-4b09-48ec-857f-0a7ed99d7ef8/U2NyZWVuc2hvdCAyMDIzLTAzLTI3IGF0IDkuNDcuMjggUE0ucG5n\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) in \"Tests\" to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Clientes",
+      "item": [
+        {
+          "name": "Incluir Cliente",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "1cad4bb6-1f0f-4b0e-9d17-2becc60ba799",
+                "exec": [
+                  "pm.test(\"Successful POST request\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "849ed6af-26af-4da9-8fc2-95337385b2fd",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"Rodrigo Sousa\",\n    \"cpfCnpj\": \"999.999.999.-00\",\n    \"endereco\": \"Rua 30 Norte\",\n    \"telefone\": \"6199998872\",\n    \"email\": \"rodrigo@email.com\",\n    \"cidade\": \"Brasilia\",\n    \"estado\":\"DF\",\n    \"cep\":\"70760-557\",\n    \"dataNascimento\":\"21-07-1989\"\n}\n\n\n\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/customers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            },
+            "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar Clientes",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "1cad4bb6-1f0f-4b0e-9d17-2becc60ba799",
+                "exec": [
+                  "pm.test(\"Successful POST request\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "4bd591f0-b79a-417b-909b-ae700f7687e1",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"id\": 2,\n    \"name\": \"Emily Dantas Sousa\",\n    \"cpfCnpj\": \"999.999.999.-00\",\n    \"endereco\": \"Arniqueiras\",\n    \"telefone\": \"6198277766644\",\n    \"email\": \"emily.dantas@email.com\",\n    \"cidade\": \"Brasilia\",\n    \"estado\":\"DF\",\n    \"cep\":\"70760-557\",\n    \"dataNascimento\":\"21-07-1998\"\n}\n\n\n\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/customers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            },
+            "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+          },
+          "response": []
+        },
+        {
+          "name": "Remover Clientes",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "32a8067e-87e7-4127-9a00-11fd348ca995",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "711e2126-81a2-4409-9208-47283bb90753",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/customers/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "customers",
+                "1"
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": []
+        },
+        {
+          "name": "Obter Clientes",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "32a8067e-87e7-4127-9a00-11fd348ca995",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "bf0fd5ce-552d-4d3b-948d-618a7a6cac68",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/customers/identificador/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "customers",
+                "identificador",
+                "1"
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Clientes",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "32a8067e-87e7-4127-9a00-11fd348ca995",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "aa0f7f6d-225f-4a61-9d83-bf316690eee5",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/customers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": []
+        },
+        {
+          "name": "Pesquisar Clientes",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "32a8067e-87e7-4127-9a00-11fd348ca995",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "b4ca783d-a612-41e1-917a-bf4f3c3ea754",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/customers/Emily",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "customers",
+                "Emily"
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": []
+        }
+      ],
+      "id": "04fffea6-4e94-4c47-aca4-8c2e796c9526"
+    },
+    {
+      "name": "Usuários",
+      "item": [
+        {
+          "name": "Incluir",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "1cad4bb6-1f0f-4b0e-9d17-2becc60ba799",
+                "exec": [
+                  "pm.test(\"Successful POST request\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "99cd1548-67dc-4af1-8166-7f5dd88177de",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"Admin\",\n    \"login\": \"admin\",\n    \"password\": \"admin\",\n    \"telefone\": \"61982887269\",\n    \"email\": \"admin@email.com\"\n}\n\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users"
+              ]
+            },
+            "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "1cad4bb6-1f0f-4b0e-9d17-2becc60ba799",
+                "exec": [
+                  "pm.test(\"Successful POST request\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "4217f6ac-0455-45d4-b18f-f84005ba0c47",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"Emily Dantas\",\n    \"cpfCnpj\": \"999.999.999.-00\",\n    \"endereco\": \"999.999.999.-00\",\n    \"telefone\": \"999.999.999.-00\",\n    \"email\": \"999.999.999.-00\",\n    \"cidade\": \"Brasilia\",\n    \"estado\":\"DF\",\n    \"cep\":\"70760-557\",\n    \"dataNascimento\":\"21-07-1989\"\n}\n\n\n\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "1"
+              ]
+            },
+            "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+          },
+          "response": []
+        },
+        {
+          "name": "Remover",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "32a8067e-87e7-4127-9a00-11fd348ca995",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "97e52e8c-2400-4683-abbb-a7412a397f0e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/users/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "1"
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": []
+        },
+        {
+          "name": "Obter",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "32a8067e-87e7-4127-9a00-11fd348ca995",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "e57bb74e-d742-4daa-a877-242f9d9a4775",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/users/identificador/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "identificador",
+                "1"
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": []
+        },
+        {
+          "name": "Listar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "32a8067e-87e7-4127-9a00-11fd348ca995",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "b29a1897-bb6c-4162-8167-1eda5e5b8d51",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/users",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users"
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": []
+        },
+        {
+          "name": "Pesquisar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "32a8067e-87e7-4127-9a00-11fd348ca995",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "0ebcc2bf-b24e-4fe7-a727-6c3739e8d753",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/users/admin",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "admin"
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": []
+        },
+        {
+          "name": "Pesquisar por login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "32a8067e-87e7-4127-9a00-11fd348ca995",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "8c4c8e2b-49c6-4ef3-a593-32ccd5650612",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/users/login/admin",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "login",
+                "admin"
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": []
+        }
+      ],
+      "id": "3f0dcc84-186e-45ef-854e-8c8ffda13017"
+    },
+    {
+      "name": "Boletos",
+      "item": [
+        {
+          "name": "Incluir",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "1cad4bb6-1f0f-4b0e-9d17-2becc60ba799",
+                "exec": [
+                  "pm.test(\"Successful POST request\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "aedcd84a-a6fc-4528-be9e-d577c3a13c05",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"valor\": \"123.45\",\n    \"descricao\": \"Boleto da Emily Dantas\",\n    \"dataVencimento\": \"10-10-2030\",\n    \"dataCadastro\": \"10-10-2020\",\n    \"dataPagamento\": \"10-10-2030\",\n    \"status\": \"PAGO\",\n    \"observacao\": \"Boleto d Emily Dantas\",\n    \"usuarioCadastro\": \"Fulano de Tal\"\n}\n\n\n\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/debts",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "debts"
+              ]
+            },
+            "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "1cad4bb6-1f0f-4b0e-9d17-2becc60ba799",
+                "exec": [
+                  "pm.test(\"Successful POST request\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "0c682d69-9432-4dd6-a27a-aa65baba7f71",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"id\": 1,\n    \"valor\": \"123.45\",\n    \"descricao\": \"Boleto da Emily Dantas\",\n    \"dataVencimento\": \"10-10-2030\",\n    \"dataCadastro\": \"10-10-2020\",\n    \"dataPagamento\": \"10-10-2030\",\n    \"status\": \"PAGO\",\n    \"observacao\": \"Boleto d Emily Dantas\",\n    \"usuarioCadastro\": \"Fulano de Tal\"\n}\n\n\n\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/debts",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "debts"
+              ]
+            },
+            "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+          },
+          "response": []
+        },
+        {
+          "name": "Remover",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "32a8067e-87e7-4127-9a00-11fd348ca995",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "cce528da-e681-4b80-9ee5-e9c694abd783",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/debts/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "debts",
+                "1"
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": []
+        },
+        {
+          "name": "Obter",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "32a8067e-87e7-4127-9a00-11fd348ca995",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "b9164418-c6c5-4803-8039-2a8faf95d452",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/debts/identificador/52",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "debts",
+                "identificador",
+                "52"
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": []
+        },
+        {
+          "name": "Listar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "32a8067e-87e7-4127-9a00-11fd348ca995",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "05a1da59-a090-4dae-bc93-3fac5c0d2991",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/debts",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "debts"
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": []
+        },
+        {
+          "name": "Pesquisar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "32a8067e-87e7-4127-9a00-11fd348ca995",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "id": "3d9d9d4f-030b-4d4b-bc10-0b4ea1b66d17",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/debts/Boleto",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "debts",
+                "Boleto"
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": []
+        }
+      ],
+      "id": "39bdaa55-9520-495e-86ce-4fbf42ff8a58"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "315bf25a-2778-43f1-a62d-4e62d71d92d4",
+      "key": "id",
+      "value": "1"
+    },
+    {
+      "id": "ecfe1aee-5d14-444d-9176-182a19d022ee",
+      "key": "base_url",
+      "value": "https://postman-rest-api-learner.glitch.me/"
+    }
+  ]
+}

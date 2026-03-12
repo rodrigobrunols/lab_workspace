@@ -1,0 +1,128 @@
+{
+  "info": {
+    "_postman_id": "ae773d1a-c465-4f2d-84ba-be4ea6ed4619",
+    "name": "Integracao Conta Corrente",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "IntegracaoCCOOpenBankingCluster-homol:9080/cco-openbanking-api/api/v3/extrato/4/2012?numeroContaCorrente=19&diaInicial=1&diaFinal=30&agruparCNAB=false",
+      "id": "ceb30e5c-38ed-4b1e-be06-890a1d452349",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "client_id",
+            "value": "Be122f37-d517-45b2-8fc0-4b8a0ec0bd93"
+          },
+          {
+            "key": "X-JWT-Assertion",
+            "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2Q1pZNXZvTmpmZzhNbXZ5SUhzS3U5Um8xaWZfMU5jckVqOTJVNEc1eGJNIn0.eyJleHAiOjE2OTY2NDE4NDUsImlhdCI6MTY5NjYwNTg0NSwiYXV0aF90aW1lIjowLCJqdGkiOiJmNjViMzM1My03NWM3LTQwM2QtYmJhMS1lZDcxZjNmODljMTEiLCJpc3MiOiJodHRwczovL2F1dGgtaG9tLmhvbW9sb2dhY2FvLmNvbS5ici9hdXRoL3JlYWxtcy9jb29wZXJhZG8iLCJhdWQiOiJiZTEyMmYzNy1kNTE3LTQ1YjItOGZjMC00YjhhMGVjMGJkOTMiLCJzdWIiOiI3MGU0MTFiOS03NmM0LTQyNjctOTVmOC01ZDk1NTcyMmIxMjkiLCJ0eXAiOiJJRCIsImF6cCI6ImJlMTIyZjM3LWQ1MTctNDViMi04ZmMwLTRiOGEwZWMwYmQ5MyIsImF0X2hhc2giOiI0U3U1bTJ3bEZZMlgzZVRqcThhNmlnIiwiaWRfdGl0dWxhciI6IjEiLCJjaWRhZGUiOiJDdXJpdGliYSIsInByZWZlcnJlZF91c2VybmFtZSI6InBmYzozMDY2OjE6NTI2NjU3IiwiZGVzY05vbWVQZXNzb2EiOiJCQU5DTyBJVEFVIFNBIiwiaW5mcmFDb250cm9sIjoiMDgvMDIvMjAyMiIsImNsaWVudEFkZHJlc3MiOiIxMC4xMjkuMi4xIiwiY2VwIjoiODE2NzAwMDAiLCJ1ZiI6IlBSIiwiY29kUGFyY2Vpcm8iOiI2MDcwMTE5MDAwMDEwNCIsIm5vbWVGYW50YXNpYSI6IkJBTkNPIElUQVUgU0EiLCJjb29wZXJhdGl2YTEiOiIzMTY2IiwiY29udGFzQ29ycmVudGUiOlt7Im51bWVybyI6MTksImlkUmVzcG9uc2FiaWxpZGFkZSI6MSwiY3BmQ25waiI6IjYwNzAxMTkwMDAwMTA0In1dLCJpZFVuaWRhZGVJbnN0aXR1aWNhbyI6IjQiLCJpZEluc3RpdHVpY2FvIjoiODAiLCJjbGllbnRJZCI6ImJlMTIyZjM3LWQ1MTctNDViMi04ZmMwLTRiOGEwZWMwYmQ5MyIsImNsaWVudEhvc3QiOiIxMC4xMjkuMi4xIiwiY29udGFzUG91cGFuY2EiOltdLCJzZXFOdW0iOiJjYWViMDEyMGIyZGY0YzFkYTMxNzAwZTk4ZDJiNGRlMiIsImFwbGljYWNhbyI6ImJlMTIyZjM3LWQ1MTctNDViMi04ZmMwLTRiOGEwZWMwYmQ5MyIsImNvbnRhUG91cGFuY2EiOiItIiwidXN1YXJpb19hdXRlbnRpY2FkbyI6eyJyZXN1bHRhZG8iOnsiY29udGFzQ29ycmVudGUiOlt7Im51bWVybyI6MTksImlkUmVzcG9uc2FiaWxpZGFkZSI6MSwiY3BmQ25waiI6IjYwNzAxMTkwMDAwMTA0In1dLCJjb250YXNQb3VwYW5jYSI6W10sIm51bUNvb3BlcmF0aXZhIjozMTY2LCJjb2RUaXBvUGVzc29hIjowLCJudW1jb250YUNvcnJlbnRlIjoiMTkiLCJudW1QYWMiOjQsImlkSW5zdGl0dWljYW8iOjgwLCJpZFVuaWRhZGVJbnN0aXR1aWNhbyI6NCwiaXNwYiI6IjAyMDkwMTI2IiwiY2lkYWRlIjoiQ3VyaXRpYmEiLCJjb2RQYXJjZWlybyI6IjYwNzAxMTkwMDAwMTA0IiwidGlwbyI6MCwibnVtQ3BmQ25waiI6IjYwNzAxMTkwMDAwMTA0IiwibnVtQ0xpZW50ZSI6MTksImxvZ3JhZG91cm8iOiJBdmVuaWRhIE1hcmVjaGFsIEZsb3JpYW5vIFBlaXhvdG8iLCJkZXNjTm9tZVBlc3NvYSI6IkJBTkNPIElUQVUgU0EiLCJub21lRmFudGFzaWEiOiJCQU5DTyBJVEFVIFNBIiwiZGRkIjoiNjEiLCJ0ZWxlZm9uZSI6Ijk4NDExMjAzNCIsImVtYWlsIjoibmFzY2ltZW50by5maWxob0Bmb3JuZWNlZG9yZXMuc2ljb29iLmNvbSIsImRhdGFOYXNjaW1lbnRvIjoiMTk4NC0wNy0wNCIsImlkRGlzcG9zaXRpdm8iOiIiLCJjZXAiOiI4MTY3MDAwMCIsInVmIjoiUFIifX0sIm51bUNwZkNucGoiOiI2MDcwMTE5MDAwMDEwNCIsIm51bUNsaWVudGUiOiIxOSIsImlzcGIiOiIwMjA5MDEyNiIsIm51bWVyb19wYWMiOiI0IiwiaWRSZXNwb25zYWJpbGlkYWRlIjoiMSIsImNoYXZlQWNlc3NvIjoiRVUwMDAyIiwibG9ncmFkb3VybyI6IkF2ZW5pZGEgTWFyZWNoYWwgRmxvcmlhbm8gUGVpeG90byIsImNvbnRhQ29ycmVudGUiOiIxOSIsIm51bUNvb3BlcmF0aXZhIjoiMzE2NiJ9.lwIIpHOthCVBabKEAa1Z6Rn9cgf7_B4dpTDKFhOL-thgsYtuIC74RdCXp3Cb91LurX5K4jyo9KWdf6g3aGTvsSElyXs88A9LULz7w9RSV54NbTD_REFrGcCjY_XRJXYJGHok_2i6JZtghQnF7isf__nqSiRQyZ3IXYVBSuCVID0EXeOU-essZGKH-K99d-G7w9R_gLWJJk_-SNgYGFE-Xg8sbsEWYPMvFsC3Ut3nNxGoQPlL-IOJUTg1sbM4M5SkCyyXZVFX6qK1FG9bkNcdN9Rf75JaFLA_pau-x6htPHQUF_OQtbbQacDzSckOwaTivFfQZoXpVW5bPUcg5c7-OA"
+          }
+        ],
+        "url": {
+          "raw": "IntegracaoCCOOpenBankingCluster-homol:9080/cco-openbanking-api/api/v3/extrato/4/2012?numeroContaCorrente=19&diaInicial=1&diaFinal=30&agruparCNAB=false",
+          "host": [
+            "IntegracaoCCOOpenBankingCluster-homol"
+          ],
+          "port": "9080",
+          "path": [
+            "cco-openbanking-api",
+            "api",
+            "v3",
+            "extrato",
+            "4",
+            "2012"
+          ],
+          "query": [
+            {
+              "key": "numeroContaCorrente",
+              "value": "19"
+            },
+            {
+              "key": "diaInicial",
+              "value": "1"
+            },
+            {
+              "key": "diaFinal",
+              "value": "30"
+            },
+            {
+              "key": "agruparCNAB",
+              "value": "false"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token",
+      "id": "ad0bffd6-24cc-4bfc-babb-4f7a33caaebf",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "Cookie",
+            "value": "447fb61b35fb4f9d67cbcbbebfb597fc=860e22fdc45fe537b5dba863c0bc8e82",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "type": "text",
+              "key": "grant_type",
+              "value": "client_credentials"
+            },
+            {
+              "type": "text",
+              "key": "client_id",
+              "value": "Be122f37-d517-45b2-8fc0-4b8a0ec0bd93"
+            },
+            {
+              "type": "text",
+              "key": "scope",
+              "value": "cco_extrato cco_saldo openid"
+            },
+            {
+              "key": "client_secret",
+              "value": "AK7FzVI17Gpuf72SDRif17yBRuOhuglK",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://auth-hom.homologacao.com.br/auth/realms/cooperado/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "auth-hom",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "cooperado",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

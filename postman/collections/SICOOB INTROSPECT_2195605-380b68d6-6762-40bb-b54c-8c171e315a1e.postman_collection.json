@@ -1,0 +1,241 @@
+{
+  "info": {
+    "_postman_id": "380b68d6-6762-40bb-b54c-8c171e315a1e",
+    "name": "SICOOB INTROSPECT",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "SICOOB INTROSPECT DESENVOLVIMENTO",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "a761cacd-56fc-4726-97c4-ce5abfcb58e6",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "  pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "id": "d29f0f3a-bc9c-4287-aa5a-a7ff8e2b9251",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic c3ZjLWlibS1hcGktY29ubmVjdDpjZDFhZGVhNy02MTA0LTQzZDgtYjE1Zi1lMDk2NDVkZTcwYWQ=",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "svc-ibm-api-connect",
+              "type": "default",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "cd1adea7-6104-43d8-b15f-e09645de70ad",
+              "type": "default",
+              "disabled": true
+            },
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJQY3FVcGJIUm5rYjdTNXQ2MmxXYkx6aXpCMFhNZHdoV3M1UTNWWmxKM2lrIn0.eyJleHAiOjE3MjkyNjQ2NDksImlhdCI6MTcyOTI2Mjg0OSwianRpIjoiNWJiZTY3MDAtOGExYy00MzljLTliZTYtYTc0Y2M4MDMwNGVjIiwiaXNzIjoiaHR0cHM6Ly9zc28uc2ljb29iLmNvbS5ici9hdXRoL3JlYWxtcy9zaWNvb2IiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMmNhMDNlYjgtOGRhMi00MmIwLTgwZWMtNGJhNDk3NzY2NThmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2FwX21vYmlsZSIsInNlc3Npb25fc3RhdGUiOiI3ZjU5ZmZiNC0zMTkwLTQ0ODgtYmY3My0yY2Q5ZDc3MjdjZjAiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtc2ljb29iIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiI3ZjU5ZmZiNC0zMTkwLTQ0ODgtYmY3My0yY2Q5ZDc3MjdjZjAiLCJpZEluc3RpdHVpY2FvIjoxLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiY29udGFzUG91cGFuY2EiOltdLCJhcGxpY2FjYW8iOiJiVzlpYVd4bENnPT0iLCJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjo3MDAwMjI1MzgsImlkUmVzcG9uc2FiaWxpZGFkZSI6MSwiY3BmQ25waiI6IjA1ODM0Mzc3NDU5In1dLCJ1c3VhcmlvX2F1dGVudGljYWRvIjp7InJlc3VsdGFkbyI6eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjo3MDAwMjI1MzgsImlkUmVzcG9uc2FiaWxpZGFkZSI6MSwiY3BmQ25waiI6IjA1ODM0Mzc3NDU5In1dLCJjb250YXNQb3VwYW5jYSI6W10sIm51bWNvbnRhQ29ycmVudGUiOjcwMDAyMjUzOCwibnVtQ29vcGVyYXRpdmEiOjEsIm51bVBhYyI6OCwiaWRJbnN0aXR1aWNhbyI6MSwiaWRVbmlkYWRlSW5zdGl0dWljYW8iOjExLCJpc3BiIjoiMDAwMDAwMDAiLCJjb2RUaXBvUGVzc29hIjowLCJudW1DcGZDbnBqIjoiMDU4MzQzNzc0NTkiLCJudW1DTGllbnRlIjoxNjk4NjUzOSwiZGVzY05vbWVQZXNzb2EiOiJST0RSSUdPIEJSVU5PIExFT05DSU8gREUgU09VU0EiLCJkZGQiOiI2MSIsInRlbGVmb25lIjoiOTgyODg3MjY5IiwicmFtYWwiOiIiLCJlbWFpbCI6InJvZHJpZ29icnVub2xzQGdtYWlsLmNvbSIsImRhdGFOYXNjaW1lbnRvIjoiMTk4Ny0wNy0yMSIsImlkRGlzcG9zaXRpdm8iOiIxNjkxMTczNjI0ODE0XzI2NmRhNzdhOTIzMGZhNzNkMWYxNmU3NCIsImNvbnRyb2xlTGltaXRlIjp0cnVlfX0sInByZWZlcnJlZF91c2VybmFtZSI6InBmYzoxOjE6NzAwMDIyNTM4IiwibnVtQ29vcGVyYXRpdmEiOjF9.ayzkOu3qE_jEKXI-lLpS40xVJmnT72iz1KQp1-RN79JvXOlVZZpgFG0MNCBBhZXq88OQFrjbIIPSE3DjcB0y6ZqflhGRElnDoWqWCUzpsRspIuZgS69yXvolTk7MQXwXDlh_eSLKTlQPdvd7bwFaBSxcuP-im3nv9j_bdqGIMFRD5e1frsOT_y9n_FwaHMuMnxxeDinKXT-Eob9duijTst-e8evQyC4EMMEMMYlMaYu7U3uUZK8KVhyYdJTnNkIoUjDICMrXB_14-gRtjpAY2mmoQeHw3RTwNRVvWZ2IsdABvNjsEZkoOmx9IN34rASFxNv9RAxlzIJSQNYBqFURxw",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{sicoob-introspect-url}}/token/introspect",
+          "host": [
+            "{{sicoob-introspect-url}}"
+          ],
+          "path": [
+            "token",
+            "introspect"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sso/introspect",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "955f3e5a-e180-4d8e-be73-a1e835b43189",
+            "exec": [
+              "pm.test(\"Response status code is 200\", function () {",
+              "  pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "id": "2a9fce79-1049-4473-8da5-49e1559267ae",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic bW9iaWxlOjZtZlRpUmIwQ1VmV1BDSVlRdHhjeFBSM2FnTGVZblJy",
+            "disabled": true
+          },
+          {
+            "key": "client_id",
+            "value": "mobile",
+            "disabled": true
+          },
+          {
+            "key": "client_secret",
+            "value": "6mfTiRb0CUfWPCIYQtxcxPR3agLeYnRr",
+            "disabled": true
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic c3ZjLXNpY29vYi1pbnRyb3NwZWN0OllhWlRDczJGRW9yNjZSY3RJTnJNTmN0YUUzdDFtSk13"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "token",
+              "value": "eyJraWQiOiJEd0t6R3FpbDV2N1k1OTkwWm9jdEtwVGxpTzduZUNuTEE5T3FZSUgtZHNZIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJ1c2VyLWlkIiwiaWRJbnN0aXR1aWNhbyI6IjE3MSIsImNvZFRpcG9QZXNzb2EiOiIxIiwiaWREaXNwb3NpdGl2byI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCJzZWd1cmFuY2EuMDk4NTMiOiJmYWxzZSIsImlzcyI6Imh0dHBzOi8vc3NvLmhvbW9sb2dhY2FvLmNvbS5ici9hdXRoL3JlYWxtcy9zaWNvb2IiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJwZmM6MzA1NToxOjg5NDU2NyIsImNvbnRhc0NvcnJlbnRlWzBdLmlkUmVzcG9uc2FiaWxpZGFkZSI6IjAiLCJudW1DcGZDbnBqIjoiNDgwMTk5MjUwMTUiLCJzZWd1cmFuY2EuMDkwMjAiOiIxMC4yMjAuMS4xNTciLCJhdWQiOiJhY2NvdW50IiwiY29udGFzQ29ycmVudGVbMF0ubnVtZXJvIjoiMjMyMzEzMyIsInNlZ3VyYW5jYS4wMDIxMiI6ImM2NDQ3ZGU3YmFlMGMzYTI0NzlhMWMxNmE3MTE2M2NlZWJmZjA5OTMwNmM4YzI0ZjYyOTNkMzMzNDlkMDIyZGQiLCJhenAiOiJhcHAtc2ljb29iLXBlc3NvYWwiLCJjb250YXNDb3JyZW50ZVswXS5jcGZDbnBqIjoiODgyMTIwNzIwMDAxNDMiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIiwiY29udGFzQ29ycmVudGUiOlt7ImlkUmVzcG9uc2FiaWxpZGFkZSI6IjAiLCJudW1lcm8iOiIyMzIzMTMzIiwiY3BmQ25waiI6Ijg4MjEyMDcyMDAwMTQzIn1dLCJleHAiOjE3MzA0MzE3MTgsInNlc3Npb25fc3RhdGUiOiIwMDJlZTVhNi04MjEzLTQ2Y2MtYmY4OC0xZWU4N2U3ZDU5YjgiLCJpYXQiOjE3MzA0MjgxMTgsIm51bWNvbnRhQ29ycmVudGUiOiIyMzIzMTMzIiwibnVtQ29vcGVyYXRpdmEiOiIzMTY0In0.PTPBTeOLB6Oyw9ErCRV65r7D2m8hbjGag48h3CZutqmrPyE1IR0aYP7qFIpoKjacTKrw3TkxzDlyRPREGkV48kyUJ9vL0dquRnJ-k5sI6P49HuSVYdZQ0oxvYHe2qozA0kqvmJHK8OIPW8fGtc42HV0boVGQTTLCDJBlAFtxGxXv4Clc9ZpOkqzQ7643ijYIhP02FJVFAM85wAKuNvM9geAjkHLOPF5dLf6nWz0RYChjajzravY69k3mZLAL0f5vjYmgRu2208nuQSc5A3omzADoG-w3g2b0WSqCjuMV2Ngi_bAc4uKh9ofH5MehjqugfcqiEjsDNn0XuPjrXEyPog",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{host_sso}}/auth/realms/sicoob/protocol/openid-connect/token/introspect",
+          "host": [
+            "{{host_sso}}"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "sicoob",
+            "protocol",
+            "openid-connect",
+            "token",
+            "introspect"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "actuator",
+      "id": "d16a00b7-469d-4f63-bf92-265f8c66743d",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"token.introspection.online-validation\",\n    \"value\": \"false\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/actuator/env",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "actuator",
+            "env"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "actuator",
+      "id": "2f149403-0cb9-4fa4-a018-9c61ff2849ad",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"sicoob.introspect.online-validation\",\n    \"value\": \"false\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/actuator/env/sicoob.introspect.online-validation",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "actuator",
+            "env",
+            "sicoob.introspect.online-validation"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "token-openid",
+      "value": ""
+    },
+    {
+      "key": "id_token",
+      "value": ""
+    },
+    {
+      "key": "id_token1",
+      "value": ""
+    },
+    {
+      "key": "access_token",
+      "value": ""
+    }
+  ]
+}

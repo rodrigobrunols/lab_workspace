@@ -1,0 +1,243 @@
+{
+  "info": {
+    "_postman_id": "e06f6467-a01f-45e4-89e1-02cf8c134b2d",
+    "name": "Autenticacao SicoobNet-auth",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Senha Usuário Pessoa Física Correntista",
+      "id": "da3b1566-f145-4dc0-9e88-af33a9f96c47",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{   \n\t\"cooperativa\": \"4364\",\n    \"titularidade\": 1,\n    \"conta\": \"27\",\n    \"senha\": \"88888888\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoobnet-auth-url}}/sicoobnet-auth-api/rest-api/usuario/autenticar",
+          "host": [
+            "{{sicoobnet-auth-url}}"
+          ],
+          "path": [
+            "sicoobnet-auth-api",
+            "rest-api",
+            "usuario",
+            "autenticar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Senha Usuário Pessoa Física Não Correntista",
+      "id": "1111c4a2-7a5f-41ad-b999-f18ea28c0598",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{   \n\t\"cooperativa\": 4364,\n    \"cpfCnpj\": \"17780423689\",\n    \"senha\": \"88888888\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoobnet-auth-url}}/sicoobnet-auth-api/rest-api/usuario/autenticar-nao-correntista",
+          "host": [
+            "{{sicoobnet-auth-url}}"
+          ],
+          "path": [
+            "sicoobnet-auth-api",
+            "rest-api",
+            "usuario",
+            "autenticar-nao-correntista"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Senha Usuário Pessoa Jurídica",
+      "id": "4cac580f-b0d1-4743-9295-f79fed5021aa",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "// {   \n// \t\"cooperativa\": 4364,\n//     \"chaveAcesso\": \"KP9684\",\n//     \"senha\": \"88888888\",\n//     \"idSessaoServidor\": \"B7742492-96CB-47FC-B993-05740B6EE74D\"\n// }\n{   \n\t\"cooperativa\": 3333,\n    \"chaveAcesso\": \"KY4407\",\n    \"senha\": \"22096027\",\n    \"idSessaoServidor\": \"B7742492-96CB-47FC-B993-05740B6EE74D\"\n}\n// {   \n// \t\"cooperativa\": 4487,\n//     \"chaveAcesso\": \"rd1678\",\n//     \"senha\": \"88888888\",\n//     \"idSessaoServidor\": \"B7742492-96CB-47FC-B993-05740B6EE74D\"\n// }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoobnet-auth-url}}/sicoobnet-auth-api/rest-api/usuario/autenticar-chave-acesso",
+          "host": [
+            "{{sicoobnet-auth-url}}"
+          ],
+          "path": [
+            "sicoobnet-auth-api",
+            "rest-api",
+            "usuario",
+            "autenticar-chave-acesso"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Info Usuário Pessoa Jurídica",
+      "id": "36887a87-63dd-419e-aeca-89af00d85c78",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "// {   \n// \t\"cooperativa\": 4364,\n//     \"chaveAcesso\": \"KP9684\",\n//     \"senha\": \"88888888\",\n//     \"idSessaoServidor\": \"B7742492-96CB-47FC-B993-05740B6EE74D\"\n// }\n{   \n\t\"cooperativa\": 3333,\n    \"chaveAcesso\": \"KY4407\"\n    // \"senha\": \"22096027\",\n    // \"idSessaoServidor\": \"B7742492-96CB-47FC-B993-05740B6EE74D\"\n}\n// {   \n// \t\"cooperativa\": 4487,\n//     \"chaveAcesso\": \"rd1678\",\n//     \"senha\": \"88888888\",\n//     \"idSessaoServidor\": \"B7742492-96CB-47FC-B993-05740B6EE74D\"\n// }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoobnet-auth-url}}/sicoobnet-auth-api/rest-api/usuario/info-empresa",
+          "host": [
+            "{{sicoobnet-auth-url}}"
+          ],
+          "path": [
+            "sicoobnet-auth-api",
+            "rest-api",
+            "usuario",
+            "info-empresa"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Info Usuário Pessoa Física",
+      "id": "0d993de4-5391-425b-b2e5-fafbb34e8888",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "// {   \n// \t\"cooperativa\": 4364,\n//     \"chaveAcesso\": \"KP9684\",\n//     \"senha\": \"88888888\",\n//     \"idSessaoServidor\": \"B7742492-96CB-47FC-B993-05740B6EE74D\"\n// }\n{   \n\t\"cooperativa\": 3333,\n    \"chaveAcesso\": \"KY4407\"\n    // \"senha\": \"22096027\",\n    // \"idSessaoServidor\": \"B7742492-96CB-47FC-B993-05740B6EE74D\"\n}\n// {   \n// \t\"cooperativa\": 4487,\n//     \"chaveAcesso\": \"rd1678\",\n//     \"senha\": \"88888888\",\n//     \"idSessaoServidor\": \"B7742492-96CB-47FC-B993-05740B6EE74D\"\n// }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoobnet-auth-url}}/sicoobnet-auth-api/rest-api/usuario/info-empresa",
+          "host": [
+            "{{sicoobnet-auth-url}}"
+          ],
+          "path": [
+            "sicoobnet-auth-api",
+            "rest-api",
+            "usuario",
+            "info-empresa"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Info Usuário Pessoa Física Nao Correntista",
+      "id": "7ed4d531-41f6-437e-ba5f-5bba10e59023",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "// {   \n// \t\"cooperativa\": 4364,\n//     \"chaveAcesso\": \"KP9684\",\n//     \"senha\": \"88888888\",\n//     \"idSessaoServidor\": \"B7742492-96CB-47FC-B993-05740B6EE74D\"\n// }\n{   \n\t\"cooperativa\": 3333,\n    \"chaveAcesso\": \"KY4407\"\n    // \"senha\": \"22096027\",\n    // \"idSessaoServidor\": \"B7742492-96CB-47FC-B993-05740B6EE74D\"\n}\n// {   \n// \t\"cooperativa\": 4487,\n//     \"chaveAcesso\": \"rd1678\",\n//     \"senha\": \"88888888\",\n//     \"idSessaoServidor\": \"B7742492-96CB-47FC-B993-05740B6EE74D\"\n// }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoobnet-auth-url}}/sicoobnet-auth-api/rest-api/usuario/info-empresa",
+          "host": [
+            "{{sicoobnet-auth-url}}"
+          ],
+          "path": [
+            "sicoobnet-auth-api",
+            "rest-api",
+            "usuario",
+            "info-empresa"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

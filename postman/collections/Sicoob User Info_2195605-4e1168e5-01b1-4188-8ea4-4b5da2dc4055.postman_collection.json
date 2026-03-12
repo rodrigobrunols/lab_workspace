@@ -1,0 +1,228 @@
+{
+  "info": {
+    "_postman_id": "4e1168e5-01b1-4188-8ea4-4b5da2dc4055",
+    "name": "Sicoob User Info",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GetLegalPersonUser",
+      "id": "62445036-9707-4a6d-bc0c-8b24908f34cd",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Cookie",
+            "value": "BIGipServerpool-homol-backoffice-sicoobnet-cluster-9080=!uhayxX9mHakWrZDPWvO0b5VBu7gNWzHAadwI1ImUR6taTc88pyr2a/KQB3uBE5ahkPsBl3HWqeyG6gQ=",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"cooperativa\": 1,\n    \"chaveAcesso\":\"II7022\",\n    \"canal\": 5,\n    \"idDispositivo\": \"teste\"\n}"
+        },
+        "url": {
+          "raw": "{{backoffice-sicoobnet-cluster}}/sicoobnet-auth-api/rest-api/usuario/info-empresa",
+          "host": [
+            "{{backoffice-sicoobnet-cluster}}"
+          ],
+          "path": [
+            "sicoobnet-auth-api",
+            "rest-api",
+            "usuario",
+            "info-empresa"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UserInfo PJ",
+      "id": "8f6c93c4-7765-44de-b5f5-9a78aad9b345",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNQjNoS3VrX1FrS09HQVpKYWNiQXd5aVI2ODhHWndKeHVpVUM3TjUtMl9VIn0.eyJleHAiOjE3MDMxMzI3NTQsImlhdCI6MTcwMzEyNTU1NCwianRpIjoiZmNjMDg3ZmQtODI1NC00MDQ4LTg0ZTYtZGI1MzhhYjgzZGUyIiwiaXNzIjoiaHR0cHM6Ly9zc28uaG9tb2xvZ2FjYW8uY29tLmJyL2F1dGgvcmVhbG1zL3NpY29vYiIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJkNzJkMmQ3My04YmZkLTRhMmQtYTAwYS05OTIyNDlhM2NhZmIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtb29iLXByaXZhZG8tbW9iaWxlIiwic2Vzc2lvbl9zdGF0ZSI6ImFmOWQyZTYyLTdlODYtNGZhNi1iZjBmLTU1ZmJlYmQ5ZjMzNSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtc2ljb29iIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiJhZjlkMmU2Mi03ZTg2LTRmYTYtYmYwZi01NWZiZWJkOWYzMzUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoicGo6MzA4NDprcDc4MDgifQ.pthc9lTyc1cqpxIo28ifnkjY6zdOAb-t7QQ_VjUb-7fOXom5h4wtARTOCQvTVBaQnDSG9mhq-PLo_rluK5ck6VVt2J3wMZXvCwBQX5-rb-h-jdOw3__lrK3DtWlwPxAJ7GE2WyQKSdnT-mNM1tObOL-nPKpk_Zsg8OtJA482sDbWxcEY_jLrzm3OJiUr2ZCazIkbjJkFsqyQdUNvwwY8xxwqktQFUy_OcmQogl71Vk-4QmfXfYMtBU8OTQFkyAV8jLGkGbS9oyzXb477SIEYRftm6boAH1DovQZpk45yG5aYZ9zjvCbBx74-5r7n5zHxEG-sMPR9GPP9I55YwSjYsw\"",
+            "type": "text"
+          },
+          {
+            "key": "client_id",
+            "value": "",
+            "type": "text",
+            "disabled": true
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNQjNoS3VrX1FrS09HQVpKYWNiQXd5aVI2ODhHWndKeHVpVUM3TjUtMl9VIn0.eyJleHAiOjE2OTcyMDY3NzYsImlhdCI6MTY5NzIwNjM1NiwianRpIjoiOWY5YTI2MzUtMTgwYi00YjY3LWIzZmYtMzVkYzY2MjA4N2I0IiwiaXNzIjoiaHR0cHM6Ly9zc28uaG9tb2xvZ2FjYW8uY29tLmJyL2F1dGgvcmVhbG1zL3NpY29vYiIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOTYyMjIzMy1iMzkwLTRjMzMtYjMyNy0yZDdjZGRjYWZjNGQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtb2JpbGUiLCJzZXNzaW9uX3N0YXRlIjoiMDNiZWRhYjktNTgwMC00YjRiLWEwM2ItZGRiN2FkMTYzNWE2IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLXNpY29vYiIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiMDNiZWRhYjktNTgwMC00YjRiLWEwM2ItZGRiN2FkMTYzNWE2IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJwajowMDAyOmlpNzAyMSJ9.HL15R0U6kurIQf3zyCo1V7XbHjTwfJeUEF34mhlrSlQd6Le1YWrG28geDoxPJoMwx7MM9inmhhjQ8oTs6b_ooCoYBoHhThHTYfBftXa7QwRD5GW2ymyrO9myoGDtVP55zBNMzmuIJU_R_6uxFupMDPkN5MB9sesLNzdq7LU15VAbQGPneVmg2ybOA5xQ84VmkEKeJ5aaZCFb3weAjVVAmfoz0XCUq_6DjjCaGLhsEEaqEJ1Ds80XYqhwetT-g6CJCJsGxZ6cHMsZJivags0cPJDD88e2dOVCAmMx2m5G4_Sdc14jIvABsOFAGsY1SPc0HwcW0T43g4fsFXYZN8SB0Q",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "{{user-info-host}}/userinfo",
+          "host": [
+            "{{user-info-host}}"
+          ],
+          "path": [
+            "userinfo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UserInfo PF",
+      "id": "6d87e315-6f1b-431c-900a-2ab452cb3c15",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{user-info-token-pf}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNQjNoS3VrX1FrS09HQVpKYWNiQXd5aVI2ODhHWndKeHVpVUM3TjUtMl9VIn0.eyJleHAiOjE2OTQ1NDU3MzcsImlhdCI6MTY5NDU0NTMxNywianRpIjoiMTJlNDU5OTEtY2VkMS00NjdmLWI4NzUtODY2OTM1OGY2ZDY5IiwiaXNzIjoiaHR0cHM6Ly9zc28uaG9tb2xvZ2FjYW8uY29tLmJyL2F1dGgvcmVhbG1zL3NpY29vYiIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxMjFjOTk1Ni1mMWY4LTRkMzQtODYwNy04NGEyNGJiZDc2MjkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtb2JpbGUiLCJzZXNzaW9uX3N0YXRlIjoiZGViMjkxODYtOTVjMC00NTI3LTg2ZjEtNTgzZGVmYmY0MjJiIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLXNpY29vYiIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiZGViMjkxODYtOTVjMC00NTI3LTg2ZjEtNTgzZGVmYmY0MjJiIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJwZmM6MzE4ODoxOjI0MzYzOSJ9.DkxEaI6D75bFS2qI3Xpx9QjKtmXBmCK6FvvelnFiKg-qbTWyJ0e7Ihs6HsJkZvh2hkWt143uCNPVMGegmp51cP0FzwCfcFHVavQuh6c4jLBGvRbN0sXYoBsLzN-tqHhXnx51QgKoPOv2KrJ7Ha2ffK5jtl9CRxLn8HCr6kX2deXlhndjj1JnMm3_JSCoq18wZd-poBPXo1cZjtqjjynip1R_w7FSK6GRaLhMomF16Ijv025fmuEPb-1TAPpmTjPnDp8-s2xvgigew3cBwQeEoiHMmSHgQoaa7GQ6GuIIEEMk6ABSDwmgEp0_A7AgZPBq46Y6IhBwsmxo9syUh3KomQ",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "{{user-info-host}}/userinfo",
+          "host": [
+            "{{user-info-host}}"
+          ],
+          "path": [
+            "userinfo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UserInfo PFNC",
+      "id": "07fa04ca-c4ac-4a4f-8d63-c80c405d15d4",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNQjNoS3VrX1FrS09HQVpKYWNiQXd5aVI2ODhHWndKeHVpVUM3TjUtMl9VIn0.eyJleHAiOjE3MDAyNTk4NTYsImlhdCI6MTcwMDI1MjY1NiwianRpIjoiMjBkZDhkNmUtMzQ2ZS00MDBkLThlNWQtOWE3NzA5NjliYzFmIiwiaXNzIjoiaHR0cHM6Ly9zc28uaG9tb2xvZ2FjYW8uY29tLmJyL2F1dGgvcmVhbG1zL3NpY29vYiIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIyNzUyZWFiZi1lZjNmLTRmN2MtYjE4OC01M2FkZTU1ZWJkOGIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJwb3J0YWwtZGV2ZWxvcGVycyIsInNlc3Npb25fc3RhdGUiOiJjNWIzZTZlYS1lYjdkLTQ5MzMtYmMyZi04NzZhNWU2M2ViMTQiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtc2ljb29iIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiJjNWIzZTZlYS1lYjdkLTQ5MzMtYmMyZi04NzZhNWU2M2ViMTQiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoicGZuYzoxOjE0MzcxODIxOTQ0IiwiZGVzY05vbWVQZXNzb2EiOiJQT1AgT1BFTkJBTksiLCJpc3BiIjoiMDIwMzgyMzIifQ.VaJCVjd40nRfgyA94GwdZLfT0XZmMETihteTFJyktbYjUoXWbljkbqJXDcX_mD7BiCszcHb1yN_ZD7yrXuY6A0VJbduWtA1OL14RJJEP2dFXaoj6WsdAHmOk6HQAUbVRdlRBtAHW1SzSp56fXdNk4DxDMGk22d078fHTjS7AHGJugsxFUc4WdIKXcYmEJuVVt6hWgAgcy2bPZKdjqVCSkXtcCRLAJW7Bh_SPnXtj0_xB-iKYjOh99XqOWS-fErJ3JnaJyL3yJVPNKIAmYavqPfs4hxBor5W_DmNxkQyYodBBKSxH4YnG-4GlM3qoYgibHxf6SVeeaeB6-KjW0GBtJQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": " Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNQjNoS3VrX1FrS09HQVpKYWNiQXd5aVI2ODhHWndKeHVpVUM3TjUtMl9VIn0.eyJleHAiOjE2OTU2NjIxMjgsImlhdCI6MTY5NTY2MTcwOCwianRpIjoiY2JlYzgxZTMtMTE3OS00YTczLTk0YzAtNmY2NjZjNThhNjVmIiwiaXNzIjoiaHR0cHM6Ly9zc28uaG9tb2xvZ2FjYW8uY29tLmJyL2F1dGgvcmVhbG1zL3NpY29vYiIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNDQ4NDQ2Mi0wYzJlLTQzMmItOTI0ZC0wYTU5ZTA0ZTVhYTQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtb2JpbGUiLCJzZXNzaW9uX3N0YXRlIjoiM2QwNGVlNDktOTc3MS00ZTU0LWI2OTQtMjhmMzAxN2Q2YTAzIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLXNpY29vYiIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiM2QwNGVlNDktOTc3MS00ZTU0LWI2OTQtMjhmMzAxN2Q2YTAzIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6InBmbmM6MzE4ODo2NTI5MTQ2MDMyNiJ9.Lj4ZnrgwpR2Ss-Hx-WaFb6ZQEkgR0ZCy-9XNP8QSHFXUGsCrwwGKlM87rfG-4N9_6P0luSyAWICKsfvMiWb_zDh2z29T0zRSzNC3intw9GbZS6_biNJ5WfdOmxJ2APidS4ZwiROPqLtkCB_Wse1kBa8WaMw6twtMi9OEP1qltW7Pctcx1W-nZM2swS8p2dm0GyHN_9zMOYfTyfQyyF8nJkeofgzJPJz-7jFTa4NwCczoS5QrU9j9ZfDku-5ieX8kF7mDGvo7HJE3AXv-o4gHMIIZuAUIeyoLJgffUEe_UniOVWd8p2PxIo-yZBeFv8JoXXhnqTNJ9xLuBk7-x54ljQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{user-info-host}}/userinfo",
+          "host": [
+            "{{user-info-host}}"
+          ],
+          "path": [
+            "userinfo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UserInfo Clear Cache",
+      "id": "045075fc-3b63-4508-a203-a60a755e071a",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": " Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNQjNoS3VrX1FrS09HQVpKYWNiQXd5aVI2ODhHWndKeHVpVUM3TjUtMl9VIn0.eyJleHAiOjE2OTU2NjIxMjgsImlhdCI6MTY5NTY2MTcwOCwianRpIjoiY2JlYzgxZTMtMTE3OS00YTczLTk0YzAtNmY2NjZjNThhNjVmIiwiaXNzIjoiaHR0cHM6Ly9zc28uaG9tb2xvZ2FjYW8uY29tLmJyL2F1dGgvcmVhbG1zL3NpY29vYiIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNDQ4NDQ2Mi0wYzJlLTQzMmItOTI0ZC0wYTU5ZTA0ZTVhYTQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtb2JpbGUiLCJzZXNzaW9uX3N0YXRlIjoiM2QwNGVlNDktOTc3MS00ZTU0LWI2OTQtMjhmMzAxN2Q2YTAzIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLXNpY29vYiIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiM2QwNGVlNDktOTc3MS00ZTU0LWI2OTQtMjhmMzAxN2Q2YTAzIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6InBmbmM6MzE4ODo2NTI5MTQ2MDMyNiJ9.Lj4ZnrgwpR2Ss-Hx-WaFb6ZQEkgR0ZCy-9XNP8QSHFXUGsCrwwGKlM87rfG-4N9_6P0luSyAWICKsfvMiWb_zDh2z29T0zRSzNC3intw9GbZS6_biNJ5WfdOmxJ2APidS4ZwiROPqLtkCB_Wse1kBa8WaMw6twtMi9OEP1qltW7Pctcx1W-nZM2swS8p2dm0GyHN_9zMOYfTyfQyyF8nJkeofgzJPJz-7jFTa4NwCczoS5QrU9j9ZfDku-5ieX8kF7mDGvo7HJE3AXv-o4gHMIIZuAUIeyoLJgffUEe_UniOVWd8p2PxIo-yZBeFv8JoXXhnqTNJ9xLuBk7-x54ljQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{user-info-host}}/userinfo/no-cache",
+          "host": [
+            "{{user-info-host}}"
+          ],
+          "path": [
+            "userinfo",
+            "no-cache"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://sicoob-user-info-backoffice-springboot.apphom.homologacao.com.br/userinfo",
+      "id": "0cd886dd-46b7-4551-a320-059e18ff35be",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eeyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNQjNoS3VrX1FrS09HQVpKYWNiQXd5aVI2ODhHWndKeHVpVUM3TjUtMl9VIn0.eyJleHAiOjE3MDMyNzk4NzUsImlhdCI6MTcwMzI3MjY3NSwianRpIjoiM2Q2NWFjOWUtMTJlNC00MzcyLWEwMjQtMzRkZjQ0YzJkMWJkIiwiaXNzIjoiaHR0cHM6Ly9zc28uaG9tb2xvZ2FjYW8uY29tLmJyL2F1dGgvcmVhbG1zL3NpY29vYiIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJkNzJkMmQ3My04YmZkLTRhMmQtYTAwYS05OTIyNDlhM2NhZmIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtb29iLXByaXZhZG8tbW9iaWxlIiwic2Vzc2lvbl9zdGF0ZSI6ImYyNjBlMWRiLWVhYTEtNGY1ZC1iZDM5LTg0ZDk3NjJmMDJlNCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtc2ljb29iIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiJmMjYwZTFkYi1lYWExLTRmNWQtYmQzOS04NGQ5NzYyZjAyZTQiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiY2hhdmVBY2Vzc28iOiJLUDc4MDgiLCJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjoxMjM0NTUsImlkUmVzcG9uc2FiaWxpZGFkZSI6MSwiY3BmQ25waiI6IjA2MzAxNDY4MDAwMTAwIn0seyJudW1lcm8iOjQ1NjYxNiwiaWRSZXNwb25zYWJpbGlkYWRlIjoxLCJjcGZDbnBqIjoiMTA0NDY0NTYzNjUifSx7Im51bWVybyI6NTk3ODY0LCJpZFJlc3BvbnNhYmlsaWRhZGUiOjEsImNwZkNucGoiOiIwNjMwMTQ2ODAwMDEwMCJ9XSwibnVtQ3BmQ25waiI6IjEwNDQ2NDU2MzY1IiwicHJlZmVycmVkX3VzZXJuYW1lIjoicGo6MzA4NDprcDc4MDgiLCJudW1jb250YUNvcnJlbnRlIjoxMjM0NTV9.mq3rzhcwdgvrC5i0MmkuVSUkNJ7i4nLHZz8a3gUFn1fS31eJhD6ojCNuTjA9SDY6SZlWZLtU3xxFf9qpfgRJcYaSAM_tVijeIPSZTIq8O00009HeH2ExTxetXGO3BxVvlrrHxfCphpGz1T_uWV2fb9wbUxmg5MsEJDI-MWMJwW1eymrzMfwteAGqkiihtf4abdrrd1VU2TGak9W00ucuRwscZcEr8cC4aJxJQ_unF39b7vRPlj39radO51pHQZFSlO4xHDrqDU9BzfqqRUPJ-zt11ku_QNRkR3_FNyXONRcysu8cbrJ-bjaZuqm2QyytTX-f-85x6VnQjG_BrC_XCw"
+          },
+          {
+            "key": "Cookie",
+            "value": "15f697c31e6f1ec58d2b641c013a213c=941f6edcd51326d70d988fc7f6fb2196",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "http://sicoob-user-info-backoffice-springboot.apphom.homologacao.com.br/userinfo",
+          "protocol": "http",
+          "host": [
+            "sicoob-user-info-backoffice-springboot",
+            "apphom",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "userinfo"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

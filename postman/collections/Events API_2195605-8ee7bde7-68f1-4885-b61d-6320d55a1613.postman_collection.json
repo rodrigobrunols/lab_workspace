@@ -1,0 +1,51 @@
+{
+  "info": {
+    "_postman_id": "8ee7bde7-68f1-4885-b61d-6320d55a1613",
+    "name": "Events API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "https://sso.homologacao.com.br/auth/admin/realms/sicoob/events?first=0&max=5",
+      "id": "2f52eea2-6fb8-411d-8494-1a0c55fb7209",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1YW5BV1hIMHEyenNiNjkySUJycmNyUUowZldkR2pJVjB0dm9oWjk1WkdjIn0.eyJleHAiOjE2ODAxMjIzMzIsImlhdCI6MTY4MDEyMjI3MiwianRpIjoiY2Q2MzFhZjYtYmY5Ni00Yjc4LTk2ZTctODY5NmM5NDUyYTdkIiwiaXNzIjoiaHR0cHM6Ly9zc28uaG9tb2xvZ2FjYW8uY29tLmJyL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImIzMDkxYWUyLTA4ZGYtNGVkMC1iMWFlLWY4NGI1NWNlZGNkYiIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiI4MmNlMGUwMC0zOTMwLTRmYjgtYTQ2Yy0yMzVjZDg1NTNhNWMiLCJhY3IiOiIxIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInNpZCI6IjgyY2UwZTAwLTM5MzAtNGZiOC1hNDZjLTIzNWNkODU1M2E1YyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IlJvZHJpZ28gQnJ1bm8gTGVvbmNpbyBkZSBCcnVubyBMZW9uY2lvIGRlIFNvdXNhIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicm9kcmlnby5sZW9uY2lvIiwiZ2l2ZW5fbmFtZSI6IlJvZHJpZ28gQnJ1bm8gTGVvbmNpbyBkZSIsImZhbWlseV9uYW1lIjoiQnJ1bm8gTGVvbmNpbyBkZSBTb3VzYSIsImVtYWlsIjoicm9kcmlnby5sZW9uY2lvQGZvcm5lY2Vkb3Jlcy5zaWNvb2IuY29tLmJyIn0.TgEHGgTe7NpzzwM2AqboBiYI4vJ_kPZZ1WSIVEMEUXivNxucsk4mK1BnBu675sHEJg2JD6C1KpmHWX3kBImxSjRWvHqiieLn1ZY-m8boiY5vi6iJz02RMXzDlFKycuovcd8mE8C9hyQts-g25rEYTtlVK-OZ4v-D-_BihodE0-xBElpV3KfQ38a7mfAxzcsF4ookbCkShxWyNvbLc1iZL5lsdNfKi76T1KcTIu9JH5Ht_tk2_yQalmDPk7hznC_fOwvt9YjPkv-PKdo2dZNo9Haa52xMylqkd5eZhPHKI6IM16jGleigaTD2hrmhQyxD_hA1NHFtXZo9OUsp7CCmWQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://{{host_sso}}/auth/admin/realms/sicoob/events?first=0&max=5",
+          "protocol": "https",
+          "host": [
+            "{{host_sso}}"
+          ],
+          "path": [
+            "auth",
+            "admin",
+            "realms",
+            "sicoob",
+            "events"
+          ],
+          "query": [
+            {
+              "key": "first",
+              "value": "0"
+            },
+            {
+              "key": "max",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,576 @@
+{
+  "info": {
+    "_postman_id": "41d165e7-7b41-49ba-a8b3-13703c14b08a",
+    "name": "Segregacao SSO Canais",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "SICOOB INTROSPECT DESENVOLVIMENTO Copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "a761cacd-56fc-4726-97c4-ce5abfcb58e6",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "  pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "id": "b426515f-444f-4aef-aa8f-b4627ce1946a",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic c3ZjLWlibS1hcGktY29ubmVjdDpjZDFhZGVhNy02MTA0LTQzZDgtYjE1Zi1lMDk2NDVkZTcwYWQ=",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "svc-ibm-api-connect",
+              "type": "default",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "cd1adea7-6104-43d8-b15f-e09645de70ad",
+              "type": "default",
+              "disabled": true
+            },
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJQY3FVcGJIUm5rYjdTNXQ2MmxXYkx6aXpCMFhNZHdoV3M1UTNWWmxKM2lrIn0.eyJleHAiOjE3MjkyNzM2NTUsImlhdCI6MTcyOTI3MTg1NSwianRpIjoiZDZmMDRjMTUtZTMzOC00OWNmLTg0M2QtYzU3NWNlOTMwNGYwIiwiaXNzIjoiaHR0cHM6Ly9zc29wai5zaWNvb2IuY29tLmJyL2F1dGgvcmVhbG1zL3NpY29vYiIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIyY2EwM2ViOC04ZGEyLTQyYjAtODBlYy00YmE0OTc3NjY1OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjb2JyYW5jYS1hZG1pbmlzdHJhdGl2YSIsInNlc3Npb25fc3RhdGUiOiIxNzlmM2E1Ni0wNGQzLTQ0ZDgtODQ5ZS0zMjk1MjEzMzFlY2EiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtc2ljb29iIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiIxNzlmM2E1Ni0wNGQzLTQ0ZDgtODQ5ZS0zMjk1MjEzMzFlY2EiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoicGZjOjE6MTo3MDAwMjI1MzgifQ.etx4m9X9vERpVcNlUS1aDDVzlMDpuPlGcz0Cqt8v9PEnHlyINGshPdLRqmNtfVwauSsM9jw27pHDotme1w0O9atdPgTiSqFekTnU_7UpKCHGgAdHkj_JK5v9P-IjbxQiwh3e7NzROixHEdEOaL8cnZgab-GM6B_GumCo_psfx0TyOWpiHUArvVZ0_x35MmRBRep5VZBkvJI6FuRnRPd_PxBKYLGBAz7ynZ0XgI_EQro9SbU21xJFL7ranLNP9Tj0xVfb2q82ycM8eqq80CNt-fvjV3a4Vzk8pVyMKgpPWaLI-QChAOeUqeHKyCjPv9onqpB1-5ZTwfFXZLuZlbe3iQ",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{sicoob-introspect-url}}/token/introspect",
+          "host": [
+            "{{sicoob-introspect-url}}"
+          ],
+          "path": [
+            "token",
+            "introspect"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/Certs",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "a761cacd-56fc-4726-97c4-ce5abfcb58e6",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "  pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "id": "28e7b763-979e-4b06-8474-dc7e8099a2b1",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic c3ZjLWlibS1hcGktY29ubmVjdDpjZDFhZGVhNy02MTA0LTQzZDgtYjE1Zi1lMDk2NDVkZTcwYWQ=",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "svc-ibm-api-connect",
+              "type": "default",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "cd1adea7-6104-43d8-b15f-e09645de70ad",
+              "type": "default",
+              "disabled": true
+            },
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJQY3FVcGJIUm5rYjdTNXQ2MmxXYkx6aXpCMFhNZHdoV3M1UTNWWmxKM2lrIn0.eyJleHAiOjE3MjkyNzM2NTUsImlhdCI6MTcyOTI3MTg1NSwianRpIjoiZDZmMDRjMTUtZTMzOC00OWNmLTg0M2QtYzU3NWNlOTMwNGYwIiwiaXNzIjoiaHR0cHM6Ly9zc29wai5zaWNvb2IuY29tLmJyL2F1dGgvcmVhbG1zL3NpY29vYiIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIyY2EwM2ViOC04ZGEyLTQyYjAtODBlYy00YmE0OTc3NjY1OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjb2JyYW5jYS1hZG1pbmlzdHJhdGl2YSIsInNlc3Npb25fc3RhdGUiOiIxNzlmM2E1Ni0wNGQzLTQ0ZDgtODQ5ZS0zMjk1MjEzMzFlY2EiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtc2ljb29iIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiIxNzlmM2E1Ni0wNGQzLTQ0ZDgtODQ5ZS0zMjk1MjEzMzFlY2EiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoicGZjOjE6MTo3MDAwMjI1MzgifQ.etx4m9X9vERpVcNlUS1aDDVzlMDpuPlGcz0Cqt8v9PEnHlyINGshPdLRqmNtfVwauSsM9jw27pHDotme1w0O9atdPgTiSqFekTnU_7UpKCHGgAdHkj_JK5v9P-IjbxQiwh3e7NzROixHEdEOaL8cnZgab-GM6B_GumCo_psfx0TyOWpiHUArvVZ0_x35MmRBRep5VZBkvJI6FuRnRPd_PxBKYLGBAz7ynZ0XgI_EQro9SbU21xJFL7ranLNP9Tj0xVfb2q82ycM8eqq80CNt-fvjV3a4Vzk8pVyMKgpPWaLI-QChAOeUqeHKyCjPv9onqpB1-5ZTwfFXZLuZlbe3iQ",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{sicoob-introspect-url}}/token/introspect",
+          "host": [
+            "{{sicoob-introspect-url}}"
+          ],
+          "path": [
+            "token",
+            "introspect"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Token PF",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "b6557ccd-de44-4fd2-ba4e-6e0e56aca872",
+            "exec": [
+              "pm.collectionVariables.set(\"token_rrhsso\", pm.response.json()['access_token']);  "
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "id": "b5cae53f-d2b6-4127-936c-dfc3af60a2d4",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "user_info",
+            "value": "eyJwcmVmZXJyZWRfdXNlcm5hbWUiOiJUZXN0ZSA6KSIsImlkRGlzcG9zaXRpdm8iOiI5ZTJhZGExMjU5NjYyMzQ3YWMyMjBjYjAwMDEwMTczZTk1YjA1MGM0YWY3Mzc0MGQ0ZDk4YjQwYjdjNTkzOGZlIiwiY29udGFzQ29ycmVudGUiOlt7Im51bWVybyI6MjcsImlkUmVzcG9uc2FiaWxpZGFkZSI6MSwiY3BmQ25waiI6Ijg3ODA5MTY5Mjk3In1dLCJzZWd1cmFuY2EiOnsiMDk4NTMiOmZhbHNlLCIwMDIxMiI6IjllMmFkYTEyNTk2NjIzNDdhYzIyMGNiMDAwMTAxNzNlOTViMDUwYzRhZjczNzQwZDRkOThiNDBiN2M1OTM4ZmUiLCIwOTAyMCI6IjEwLjIyMC4xLjE1NyJ9fQ"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "scope",
+              "value": "openid",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text"
+            },
+            {
+              "key": "username",
+              "value": "pfc:3105:1:27",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "password",
+              "value": "88888888",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "CUaMZPgvutod0qmUijSZXn65qCoWh6LJ",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_id",
+              "value": "nec-nova-experiencia-cartoes",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "username",
+              "value": "pfc:1:1:700022538",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "19870609",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "sap_mobile",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "ERtyfqRAH3tEGoG7GHu1OhraTLjHD29L",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{url_rhsso_canais}}/realms/sicoob/protocol/openid-connect/token",
+          "host": [
+            "{{url_rhsso_canais}}"
+          ],
+          "path": [
+            "realms",
+            "sicoob",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Token PJ",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "c6128448-d8d9-41f0-93b3-601fdea002b4",
+            "exec": [
+              "pm.collectionVariables.set(\"token_rrhsso\", pm.response.json()['access_token']);  "
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "id": "71f0ceab-d098-49fd-8125-1b118fefb4ee",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_secret",
+              "value": "dAXXnls0wfHGTxsQ9KhGgOTu0rz87TrX",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "cobranca-administrativa",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "openid",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text"
+            },
+            {
+              "key": "username",
+              "value": "pj:4364:WB3370",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "69696969",
+              "type": "text"
+            },
+            {
+              "key": "username",
+              "value": "pj:4364:TD6834",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_id",
+              "value": "sap_mobile",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "ERtyfqRAH3tEGoG7GHu1OhraTLjHD29L",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "username",
+              "value": "pfc:1:1:700022538",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "password",
+              "value": "19870609",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{url-sso-canais-pj}}/realms/sicoob/protocol/openid-connect/token",
+          "host": [
+            "{{url-sso-canais-pj}}"
+          ],
+          "path": [
+            "realms",
+            "sicoob",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/user/pessoa-juridica",
+      "id": "51443d3a-bb7a-4518-b99a-60a258af734b",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"numCooperativa\" : 4364,\n    \"chaveAcesso\" : \"TD6834\" ,\n    \"senha\": \"69696969\" ,\n    \"titularidade\" : 1,\n    \"ativo\" : true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://sicoob-idp-api-pj-integracao-springboot-route-sicoob-sso.apps.hom.homologacao.com.br/user/pessoa-juridica",
+          "protocol": "https",
+          "host": [
+            "sicoob-idp-api-pj-integracao-springboot-route-sicoob-sso",
+            "apps",
+            "hom",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "user",
+            "pessoa-juridica"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/user/pessoa-juridica",
+      "id": "ac36e7e0-99c9-4759-9860-bc9286876211",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"numCooperativa\" : 4364,\n    \"chaveAcesso\" : \"WB3370\" ,\n    \"senha\": \"69696969\" ,\n    \"titularidade\" : 1,\n    \"ativo\" : true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoob-idp-api-endpoint-pj}}/user/pessoa-juridica",
+          "host": [
+            "{{sicoob-idp-api-endpoint-pj}}"
+          ],
+          "path": [
+            "user",
+            "pessoa-juridica"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/user/pessoa-juridica Copy",
+      "id": "d3378062-28f2-4a0a-b588-b15c2a53adea",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"numCooperativa\" : 4364,\n    \"chaveAcesso\" : \"WB3370\" ,\n    \"senha\": \"69696969\" ,\n    \"titularidade\" : 1,\n    \"ativo\" : true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoob-idp-api-endpoint-pj}}/user/pessoa-juridica",
+          "host": [
+            "{{sicoob-idp-api-endpoint-pj}}"
+          ],
+          "path": [
+            "user",
+            "pessoa-juridica"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/user/pessoa-fisica-correntista",
+      "id": "847ff01e-7952-49a6-b72d-940d2374b7ea",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"numCooperativa\" : 1,\n    \"numContaCorrente\" : 27,\n    \"senha\": \"88888888\" ,\n    \"titularidade\" : 1,\n    \"ativo\" : true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoob-idp-api-endpoint}}/user/pessoa-fisica-correntista",
+          "host": [
+            "{{sicoob-idp-api-endpoint}}"
+          ],
+          "path": [
+            "user",
+            "pessoa-fisica-correntista"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/user/pessoa-fisica-correntista",
+      "id": "4d2a0520-bb0d-44eb-a7ca-27fc76bd6b8d",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"numCooperativa\" : 1234,\n    \"numContaCorrente\" : 123456,\n    \"senha\": \"88888888\" ,\n    \"titularidade\" : 1,\n    \"ativo\" : true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoob-idp-api-endpoint}}/user/pessoa-fisica-correntista",
+          "host": [
+            "{{sicoob-idp-api-endpoint}}"
+          ],
+          "path": [
+            "user",
+            "pessoa-fisica-correntista"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/auth/{username} Copy",
+      "id": "742a977e-28db-4047-a7b2-d0c82e9e8ef4",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://sicoob-idp-api-pj-integracao-springboot-route-sicoob-sso.apps.hom.homologacao.com.br/auth/pj:4364:WB3370",
+          "protocol": "http",
+          "host": [
+            "sicoob-idp-api-pj-integracao-springboot-route-sicoob-sso",
+            "apps",
+            "hom",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "pj:4364:WB3370"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/auth/{username} Copy 2",
+      "id": "1ef1ed07-f01a-4083-aa02-f387942bae1f",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://sicoob-idp-api-pj-integracao-springboot-route-sicoob-sso.apps.hom.homologacao.com.br/auth/pj:4364:WB3370",
+          "protocol": "http",
+          "host": [
+            "sicoob-idp-api-pj-integracao-springboot-route-sicoob-sso",
+            "apps",
+            "hom",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "pj:4364:WB3370"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "token_rrhsso",
+      "value": ""
+    }
+  ]
+}

@@ -1,0 +1,447 @@
+{
+  "info": {
+    "_postman_id": "fc26eb4d-00e0-47f7-9f13-d68882e2c0df",
+    "name": "SICOOB IDP API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "/auth/{username}",
+      "id": "06270aa7-be11-4e96-90b7-338af8de085d",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{sicoob-idp-api-endpoint}}/auth/:username",
+          "host": [
+            "{{sicoob-idp-api-endpoint}}"
+          ],
+          "path": [
+            "auth",
+            ":username"
+          ],
+          "variable": [
+            {
+              "key": "username",
+              "value": "pj:3055:fm5870",
+              "description": "\n"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/auth/{username} Copy",
+      "id": "fd55b853-1ad3-4fad-816b-edbf43062eba",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{sicoob-idp-api-endpoint}/v2/api-docs",
+          "host": [
+            "{{sicoob-idp-api-endpoint}"
+          ],
+          "path": [
+            "v2",
+            "api-docs"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/auth/{username}",
+      "id": "b4e34998-c348-43b8-90e8-215663d5c848",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"password\" : \"88888888\"\n    \n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoob-idp-api-endpoint}}/auth/:username",
+          "host": [
+            "{{sicoob-idp-api-endpoint}}"
+          ],
+          "path": [
+            "auth",
+            ":username"
+          ],
+          "variable": [
+            {
+              "key": "username",
+              "value": "pfc:4364:1:9916409005"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/user/pessoa-fisica-correntista",
+      "id": "32452834-00f8-4839-b082-cb6f3db510ba",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"numCooperativa\" : 1,\n    \"numContaCorrente\" : 27,\n    \"senha\": \"88888888\" ,\n    \"titularidade\" : 1,\n    \"ativo\" : true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://sicoob-idp-api-openbanking.apphom.homologacao.com.br/user/pessoa-fisica-correntista",
+          "protocol": "https",
+          "host": [
+            "sicoob-idp-api-openbanking",
+            "apphom",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "user",
+            "pessoa-fisica-correntista"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sync/user/pessoa-fisica-correntista",
+      "id": "af82046a-9fd8-4dae-bf4c-440778ba600b",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"numCooperativa\" : 3066,\n    \"numContaCorrente\" : 19,  \n    \"titularidade\" : 1,\n    \"senha\": \"88888888\" ,\n    \"ativo\" : true,\n    \"atributos\" : {\n                    \"idInstituicao\": [117],\n                    \"idUnidadeInstituicao\": [0],\n                    \"ispb\": [\"00804046\"],\n                    \"numPac\": [0],\n                    \"codTipoPessoa\": [0],\"numCpfCnpj\": [\"87809169297\"],\"numCLiente\": [27],\"descNomePessoa\": [\"MARCOS GIRASSOL DE MORAIS\"], \"ddd\": [\"866\"],\"telefone\": [\"98035389\"],\"ramal\": [\"22\"],\"dataNascimento\": [\"1984-03-20\"],\"contasCorrente\":[\"{\\\"numero\\\": 27,\\\"idResponsabilidade\\\": 1,\\\"cpfCnpj\\\": \\\"87809169297\\\"}\"],\"contasPoupanca\":[\"{\\\"numero\\\": 628365462,\\\"cpfCnpj\\\": \\\"87809169297\\\"}\"]\n                  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoob-idp-api-endpoint}}/sync/user/pessoa-fisica-correntista",
+          "host": [
+            "{{sicoob-idp-api-endpoint}}"
+          ],
+          "path": [
+            "sync",
+            "user",
+            "pessoa-fisica-correntista"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/user/pessoa-fisica-correntista",
+      "id": "b4e852fb-8e0a-4422-abf7-6f09c87b5751",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"numCooperativa\" : 1,\n    \"numContaCorrente\" : 27,\n    \"senha\": \"88888888\" ,\n    \"titularidade\" : 1,\n    \"ativo\" : true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoob-idp-api-endpoint}}/user/pessoa-fisica-correntista",
+          "host": [
+            "{{sicoob-idp-api-endpoint}}"
+          ],
+          "path": [
+            "user",
+            "pessoa-fisica-correntista"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/user/pessoa-fisica-correntista sync",
+      "id": "556b1e93-050f-4d05-a525-2a8306823659",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"numCooperativa\" : 1,\n    \"numContaCorrente\" : 27,\n    \"senha\": \"88888888\" ,\n    \"titularidade\" : 1,\n    \"ativo\" : true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoob-idp-api-endpoint}}/sync/user/pessoa-fisica-correntista",
+          "host": [
+            "{{sicoob-idp-api-endpoint}}"
+          ],
+          "path": [
+            "sync",
+            "user",
+            "pessoa-fisica-correntista"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/user/pessoa-fisica-nao-correntista",
+      "id": "2989501c-4b74-42e1-b779-41cbea2c92b6",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"numCooperativa\" : 1234,\n    \"cpf\" : \"72197535005\" ,\n    \"senha\": \"88888888\" ,\n    \"titularidade\" : 1,\n    \"ativo\" : true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7777/user/pessoa-fisica-nao-correntista",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7777",
+          "path": [
+            "user",
+            "pessoa-fisica-nao-correntista"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sync/user/pessoa-fisica-nao-correntista",
+      "id": "c97a0889-77f1-4427-9d09-269a1edfa99e",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"numCooperativa\" : 1234,\n    \"cpf\" : \"72197535005\" ,\n    \"senha\": \"88888888\" ,\n    \"titularidade\" : 1,\n    \"ativo\" : true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7777/sync/user/pessoa-fisica-nao-correntista",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7777",
+          "path": [
+            "sync",
+            "user",
+            "pessoa-fisica-nao-correntista"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/user/pessoa-fisica-nao-correntista",
+      "id": "9e11c4cf-89db-464a-ac7b-a47f9b1afb5a",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"numCooperativa\" : 1234,\n    \"cpf\" : \"72197535005\" ,\n    \"senha\": \"88888888\" ,\n    \"titularidade\" : 1,\n    \"ativo\" : true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7777/user/pessoa-fisica-nao-correntista",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7777",
+          "path": [
+            "user",
+            "pessoa-fisica-nao-correntista"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/user/pessoa-juridica",
+      "id": "dfb8db6b-c530-4f24-ad8b-a1051177950d",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"numCooperativa\" : 4155,\n    \"chaveAcesso\" : \"EU6215\" ,\n    \"senha\": \"88888888\" ,\n    \"titularidade\" : 1,\n    \"ativo\" : true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7777/user/pessoa-juridica",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7777",
+          "path": [
+            "user",
+            "pessoa-juridica"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sync/user/pessoa-juridica",
+      "id": "bf98da4e-0589-4307-a8c9-a3a65cfce717",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"numCooperativa\" : 4155,\n    \"chaveAcesso\" : \"EU6215\" ,\n    \"senha\": \"88888888\" ,\n    \"titularidade\" : 1,\n    \"ativo\" : true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7777/symc/user/pessoa-juridica",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7777",
+          "path": [
+            "symc",
+            "user",
+            "pessoa-juridica"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/user/pessoa-juridica",
+      "id": "1625bc83-89ce-4226-a3ab-fce884551596",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"numCooperativa\" : 4155,\n    \"chaveAcesso\" : \"EU6215\" ,\n    \"senha\": \"88888888\" ,\n    \"titularidade\" : 1,\n    \"ativo\" : true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://sicoob-idp-api-pj-integracao-springboot-route-sicoob-sso.apps.hom.homologacao.com.br/user/pessoa-juridica",
+          "protocol": "http",
+          "host": [
+            "sicoob-idp-api-pj-integracao-springboot-route-sicoob-sso",
+            "apps",
+            "hom",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "user",
+            "pessoa-juridica"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

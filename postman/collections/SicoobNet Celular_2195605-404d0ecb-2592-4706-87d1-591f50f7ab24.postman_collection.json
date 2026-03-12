@@ -1,0 +1,263 @@
+{
+  "info": {
+    "_postman_id": "404d0ecb-2592-4706-87d1-591f50f7ab24",
+    "name": "SicoobNet Celular",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Valida usuário Pessoa Física Correntista",
+      "id": "ad43c18d-ec0e-4cd9-84e2-af472327e4f1",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{   \n\t\"cooperativa\": 3105,\n    \"conta\": 27,\n    \"titularidade\": 1,\n    \"consultarDadosPoupanca\": false\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoobnet-auth-url}}/sicoobnet-auth-api/rest-api/usuario/info",
+          "host": [
+            "{{sicoobnet-auth-url}}"
+          ],
+          "path": [
+            "sicoobnet-auth-api",
+            "rest-api",
+            "usuario",
+            "info"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Valida usuário Pessoa Jurídica",
+      "id": "77aa5738-6f56-4e3a-8451-493c1510d19a",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{   \n\t\"cooperativa\": 4364,\n    \"chaveAcesso\": \"SL0001\",\n    \"consultarDadosPoupanca\": false\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://backofficesicoobnetcluster-homol.homologacao.com.br:9080/sicoobnet-auth-api/rest-api/usuario/info-empresa",
+          "protocol": "http",
+          "host": [
+            "backofficesicoobnetcluster-homol",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "port": "9080",
+          "path": [
+            "sicoobnet-auth-api",
+            "rest-api",
+            "usuario",
+            "info-empresa"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Valida usuário Pessoa Física Não Correntista",
+      "id": "919e8061-e258-4be2-9358-1cd8ca358bb9",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{   \n\t\"cooperativa\": 4364,\n    \"cpf\": \"57784518064\",\n    \"consultarDadosPoupanca\": false\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoobnet-auth-url}}/sicoobnet-auth-api/rest-api/usuario/info-nao-correntista",
+          "host": [
+            "{{sicoobnet-auth-url}}"
+          ],
+          "path": [
+            "sicoobnet-auth-api",
+            "rest-api",
+            "usuario",
+            "info-nao-correntista"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Senha Usuário Pessoa Física Correntista",
+      "id": "96d41c31-e709-4492-a214-ad4aaa35eaca",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{   \n\t\"cooperativa\": \"4364\",\n    \"titularidade\": 1,\n    \"conta\": \"27\",\n    \"senha\": \"88888888\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://backofficesicoobnetcluster-homol.homologacao.com.br:9080/sicoobnet-auth-api/rest-api/usuario/autenticar",
+          "protocol": "http",
+          "host": [
+            "backofficesicoobnetcluster-homol",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "port": "9080",
+          "path": [
+            "sicoobnet-auth-api",
+            "rest-api",
+            "usuario",
+            "autenticar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Senha Usuário Pessoa Física Não Correntista",
+      "id": "6be73e3a-abef-4e71-968d-318257c19d54",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{   \n\t\"cooperativa\": 3105,\n    \"cpfCnpj\": \"00503888192\",\n    \"senha\": \"88888888\",\n    \"idSessaoServidor\": \"B7742492-96CB-47FC-B993-05740B6EE74D\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{sicoobnet-auth-url}}/sicoobnet-auth-api/rest-api/usuario/autenticar-nao-correntista",
+          "host": [
+            "{{sicoobnet-auth-url}}"
+          ],
+          "path": [
+            "sicoobnet-auth-api",
+            "rest-api",
+            "usuario",
+            "autenticar-nao-correntista"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Senha Usuário Pessoa Jurídica",
+      "id": "b63342a7-9120-4d84-971d-8f10c947d809",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{   \n\t\"cooperativa\": 4364,\n    \"chaveAcesso\": \"SL0001\",\n    \"senha\": \"88888888\",\n    \"idSessaoServidor\": \"B7742492-96CB-47FC-B993-05740B6EE74D\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://backofficesicoobnetcluster-homol.homologacao.com.br:9080/sicoobnet-auth-api/rest-api/usuario/autenticar-chave-acesso",
+          "protocol": "http",
+          "host": [
+            "backofficesicoobnetcluster-homol",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "port": "9080",
+          "path": [
+            "sicoobnet-auth-api",
+            "rest-api",
+            "usuario",
+            "autenticar-chave-acesso"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

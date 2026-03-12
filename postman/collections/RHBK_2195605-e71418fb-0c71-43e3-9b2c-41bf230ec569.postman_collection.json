@@ -1,0 +1,313 @@
+{
+  "info": {
+    "_postman_id": "e71418fb-0c71-43e3-9b2c-41bf230ec569",
+    "name": "RHBK",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "introspect",
+      "id": "416e2dc0-8e4a-4929-b41d-877bc15b4477",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "mutZVzdlBh7iKWY348gNWguqXnimOe9i",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "app-sicoob-pessoal",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJPRWdVUGFJVVNPckFNSm8zV2VkWjVhM0VJODN5Qzc2ako4clBGRlZTbHZZIn0.eyJleHAiOjE3NjAxMDk5NTcsImlhdCI6MTc2MDEwOTY1NywianRpIjoidHJydGNjOjJhYzYxNzE3LTQ2YWMtNGIzMS1iYWNjLTBkZjlmMWZkZTU2MCIsImlzcyI6Imh0dHBzOi8vc3NvLWF3cy0wMS5ob21vbG9nYWNhby5jb20uYnIvcmVhbG1zL2NhbmFpcyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI4MjY3ODEzYi0xN2NlLTRkZTMtOTc0My1hNWQ5ODUyNjI0NTgiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcHAtc2ljb29iLXBlc3NvYWwiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1jYW5haXMiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRIb3N0IjoiMTAuMTMxLjEwLjEzIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LWFwcC1zaWNvb2ItcGVzc29hbCIsImNsaWVudEFkZHJlc3MiOiIxMC4xMzEuMTAuMTMiLCJjbGllbnRfaWQiOiJhcHAtc2ljb29iLXBlc3NvYWwifQ.B3NO7e33hWSkP9oPUEaPrWoAe00et0upwtaoLC3jAgAVtHP0B7vvqCFDByn3QpBkRudp5lr5mHqHX4wgEhXBUwiadm6nJjnqRAQtgLJK90fVKk6OJl0QcB-2kDMYxWv6OmTrBr09lgR0TeBC97ZxzsaS4w8Np1JoDR-09jIIr1T11HiRJGLa0xUGu8ichdgDFlp6hqMfOESWlv4F9VWWct2eSSCV5Ra5X4nMA3eyGsD2fGbsuT4zS77CRxGpryUs0YXcMHWg7T0ic0Sy_aQtqoQs1aAnFRsTPosPIFcxuJdW9hhcjeah78pSHQnI0wX2vjNKJnjOtBvIRzCb4Z5YTQ",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://sso-aws.homologacao.com.br/realms/canais/protocol/openid-connect/token/introspect",
+          "protocol": "https",
+          "host": [
+            "sso-aws",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "realms",
+            "canais",
+            "protocol",
+            "openid-connect",
+            "token",
+            "introspect"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "refresh token",
+      "id": "a8d6acce-1c09-461e-9c16-be00cc15cf2a",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "refresh_token",
+              "value": "eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0OWFhNGE1ZC1mOWU0LTQ4NGMtOWI4OS0wZDY3ODJlODhlMmIifQ.eyJleHAiOjE3NjAxMTkxNDMsImlhdCI6MTc2MDExNzM0MywianRpIjoiNmI4NDNiODEtMDkzMC00YjE2LWI0NjMtMDE3ZTI3ZWUyOTFmIiwiaXNzIjoiaHR0cHM6Ly9zc28tYXdzLTAxLmhvbW9sb2dhY2FvLmNvbS5ici9yZWFsbXMvY2FuYWlzIiwiYXVkIjoiaHR0cHM6Ly9zc28tYXdzLTAxLmhvbW9sb2dhY2FvLmNvbS5ici9yZWFsbXMvY2FuYWlzIiwic3ViIjoiYjE3NDI5MDktM2ZkOC00ODNkLTlmYWUtYWVmMmI3M2JiMmIwIiwidHlwIjoiUmVmcmVzaCIsImF6cCI6ImFwcC1zaWNvb2ItcGVzc29hbCIsInNpZCI6ImQ1Mjk2ZmVkLWY3MjktNDVmNC05MjhjLWQxNGE5ZmUyYTljNyIsInNjb3BlIjoic2VydmljZV9hY2NvdW50IGVtYWlsIHByb2ZpbGUgd2ViLW9yaWdpbnMgYmFzaWMgYWNyIHJvbGVzIn0.vHH403f_kTc7CFqDRJly3TUVWvd2msR4argZN-QJzsNCw5KwIxhulIVT69oXkywkHrESgqvgeDzaV7KOKjDZSQ",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "refresh_token",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "mutZVzdlBh7iKWY348gNWguqXnimOe9i",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "app-sicoob-pessoal",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://sso-aws.homologacao.com.br/realms/canais/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "sso-aws",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "realms",
+            "canais",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'https://sso-aws.homologacao.com.br/auth/realms/sicoob/protocol/openid-connect/token' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2ZGI1ODVkZC1lYjMwLTRjZmUtODI1NS0xNjliOGFiZmMzMzgifQ.eyJleHAiOjE3MTY0MTMwODgsImlhdCI6MTcxNjQwOTQ4OCwianRpIjoiODNjMDdkMWEtM2QwZi00YjQ0LTliM2ItZGI0NGEwNjA5OTdmIiwiaXNzIjoiaHR0cHM6Ly9zc28uc2ljb29iLmNvbS5ici9hdXRoL3JlYWxtcy9zaWNvb2IiLCJhdWQiOiJodHRwczovL3Nzby5zaWNvb2IuY29tLmJyL2F1dGgvcmVhbG1zL3NpY29vYiIsInN1YiI6IjdiNWQ2MjVkLTM0OTAtNDZjNi04Mzc1LWUwY2IyNDIwZjYwNSIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJob21lLWJyb2tlci1zaWNvb2IiLCJzZXNzaW9uX3N0YXRlIjoiNTU5NjdmZTQtMjk4OS00YTFjLTlkMDMtN2MzYTFmMWNlMDBmIiwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjU1OTY3ZmU0LTI5ODktNGExYy05ZDAzLTdjM2ExZjFjZTAwZiJ9.l4txj7tt2GKwhTpIQaWvl03MHumprTt4vYcvaJEl078' \\\n--data-urlencode 'grant_type=refresh_token' \\\n--data-urlencode 'client_secret=mutZVzdlBh7iKWY348gNWguqXnimOe9i' \\\n--data-urlencode 'client_id=app-sicoob-pessoal'"
+      },
+      "response": []
+    },
+    {
+      "name": "Logout user [SAT]",
+      "id": "467e0dc9-8f3c-4fa4-a846-ea15120511a8",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "mutZVzdlBh7iKWY348gNWguqXnimOe9i",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "app-sicoob-pessoal",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "{{url_rhsso_canais}}/admin/realms/{{realm}}/users/{{userId}}/logout",
+          "host": [
+            "{{url_rhsso_canais}}"
+          ],
+          "path": [
+            "admin",
+            "realms",
+            "{{realm}}",
+            "users",
+            "{{userId}}",
+            "logout"
+          ]
+        },
+        "description": "Remove all user sessions associated with the user Also send notification to all clients that have an admin URL to invalidate the sessions for the particular user.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "token_rhbk",
+      "id": "4cdf6807-bd43-4032-b619-43568748053b",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "Accept-Encoding",
+            "value": "gzip, deflate"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_secret",
+              "value": "mutZVzdlBh7iKWY348gNWguqXnimOe9i",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text"
+            },
+            {
+              "key": "username",
+              "value": "pfc_0001_1_00367754",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "Qap2025!278",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "app-sicoob-pessoal",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://sso-aws.homologacao.com.br/realms/canais/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "sso-aws",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "realms",
+            "canais",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Client credentials",
+      "id": "33db8684-4631-49e4-9fd8-fcdb86ae371a",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_secret",
+              "value": "mutZVzdlBh7iKWY348gNWguqXnimOe9i",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "app-sicoob-pessoal",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "openid",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "client_credentials",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://sso-aws.homologacao.com.br/realms/canais/protocol/openid-connect/token",
+          "protocol": "https",
+          "host": [
+            "sso-aws",
+            "homologacao",
+            "com",
+            "br"
+          ],
+          "path": [
+            "realms",
+            "canais",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'https://sso-aws.homologacao.com.br/realms/canais/protocol/openid-connect/token' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'client_secret=ReFSWXQLWHkLkZ21mYtHaKjaRKDRHnOT' \\\n--data-urlencode 'client_id=app-sicoob-pessoal' \\\n--data-urlencode 'scope=openid' \\\n--data-urlencode 'grant_type=client_credentials'"
+      },
+      "response": []
+    }
+  ]
+}

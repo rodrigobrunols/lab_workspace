@@ -1,0 +1,58 @@
+{
+  "info": {
+    "_postman_id": "936ff7a0-c2a4-4ec2-822f-060899666083",
+    "name": "Api Investidor",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "/investidor",
+      "id": "eb371bea-96ee-4a66-9a45-1436862b28d1",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNQjNoS3VrX1FrS09HQVpKYWNiQXd5aVI2ODhHWndKeHVpVUM3TjUtMl9VIn0.eyJleHAiOjE2NzQ4MzAxMzQsImlhdCI6MTY3NDgyNjUzNCwiYXV0aF90aW1lIjowLCJqdGkiOiI2MzliMmRlOC0yM2E1LTRjZGItODQxNy0zNDBiNmFmY2JkMTIiLCJpc3MiOiJodHRwczovL3Nzby5ob21vbG9nYWNhby5jb20uYnIvYXV0aC9yZWFsbXMvc2ljb29iIiwiYXVkIjoiaG9tZS1icm9rZXItc2ljb29iIiwic3ViIjoiM2Y2NTUyYzYtNmZmMy00MTM1LWJmZTYtZjkxMmNhN2I2NzFmIiwidHlwIjoiSUQiLCJhenAiOiJob21lLWJyb2tlci1zaWNvb2IiLCJzZXNzaW9uX3N0YXRlIjoiY2JhNTk3YmEtOGVjNS00NzQ4LWExYWYtMTRlNWEyNDFhYTNjIiwiYXRfaGFzaCI6Ii1sTnZOWlc0blJUM2RvRDVVcUlsVHciLCJhY3IiOiIxIiwic2lkIjoiY2JhNTk3YmEtOGVjNS00NzQ4LWExYWYtMTRlNWEyNDFhYTNjIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm51bVBhYyI6IjAiLCJ1c3VhcmlvX2F1dGVudGljYWRvIjp7InJlc3VsdGFkbyI6eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjozOTM5MCwiaWRSZXNwb25zYWJpbGlkYWRlIjoxLCJjcGZDbnBqIjoiMDE3NTU0MzQxMDMifV0sImNvbnRhc1BvdXBhbmNhIjpbeyJudW1lcm8iOjYyODM3MzQ4MSwiY3BmQ25waiI6IjAxNzU1NDM0MTAzIn1dLCJudW1jb250YUNvcnJlbnRlIjozOTM5MCwibnVtQ29vcGVyYXRpdmEiOjEsIm51bVBhYyI6MCwiaWRJbnN0aXR1aWNhbyI6MSwiaWRVbmlkYWRlSW5zdGl0dWljYW8iOjEsImlzcGIiOiIwMjAzODIzMiIsImNvZFRpcG9QZXNzb2EiOjAsIm51bUNwZkNucGoiOiIwMTc1NTQzNDEwMyIsIm51bUNMaWVudGUiOjg4OTU4NTE1LCJkZXNjTm9tZVBlc3NvYSI6IlRISUFHTyBERSBKRVNVUyBST0NIQSIsImRkZCI6IjYxIiwidGVsZWZvbmUiOiI5OTgxMjMwMzAiLCJyYW1hbCI6IiIsImVtYWlsIjoidGhpYWdvLmplc3VzQGZvcm5lY2Vkb3Jlcy5zaWNvb2IuY29tLmJyIiwiZGF0YU5hc2NpbWVudG8iOiIxOTg3LTAxLTIzIiwiaWREaXNwb3NpdGl2byI6IiJ9fSwibnVtQ3BmQ25waiI6IjAxNzU1NDM0MTAzIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicGZjOjAwMDE6MTozOTM5MCIsImRlc2NOb21lUGVzc29hIjoiVEhJQUdPIERFIEpFU1VTIFJPQ0hBIiwibnVtQ29vcGVyYXRpdmEiOiIxIiwibnVtY29udGFDb3JyZW50ZSI6IjM5MzkwIn0.ZHlbEvAKl28Bn1bVZbv9rjkHlGtZ4IEl8lYjqM8vAVR4yAUwqCn7MA9IOjBfwKkHMw5NDsLuLtVGcAX7VrzajCUZRpkju132SSLkyz_hDXgkeDXTMuMlss7bPWFbN9OXrbeIOxx4j6f0B5sanGDrHPKL9GiiB3AL_-A3NuyX_8jHKFuZsnuwhDQc8Tu6bwf2thQ37WnN5ueX7r43N7QptyD3zPpckOLu50ZgQ6uV9Yr0UxSTPrhxZMf7AEGbvDRuuR6gPlbvbau8mvhq5UTKGLu6SZ0UrGMN5xTJx6V1BlGbusZztZdsqwi5CXUdGwpVFVzTCaV2devvTjlYDX5N5Q"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "client_id",
+            "value": "home-broker-sicoob",
+            "type": "text"
+          },
+          {
+            "key": "id_token",
+            "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNQjNoS3VrX1FrS09HQVpKYWNiQXd5aVI2ODhHWndKeHVpVUM3TjUtMl9VIn0.eyJleHAiOjE2NzQ4MzAxMzQsImlhdCI6MTY3NDgyNjUzNCwiYXV0aF90aW1lIjowLCJqdGkiOiI2MzliMmRlOC0yM2E1LTRjZGItODQxNy0zNDBiNmFmY2JkMTIiLCJpc3MiOiJodHRwczovL3Nzby5ob21vbG9nYWNhby5jb20uYnIvYXV0aC9yZWFsbXMvc2ljb29iIiwiYXVkIjoiaG9tZS1icm9rZXItc2ljb29iIiwic3ViIjoiM2Y2NTUyYzYtNmZmMy00MTM1LWJmZTYtZjkxMmNhN2I2NzFmIiwidHlwIjoiSUQiLCJhenAiOiJob21lLWJyb2tlci1zaWNvb2IiLCJzZXNzaW9uX3N0YXRlIjoiY2JhNTk3YmEtOGVjNS00NzQ4LWExYWYtMTRlNWEyNDFhYTNjIiwiYXRfaGFzaCI6Ii1sTnZOWlc0blJUM2RvRDVVcUlsVHciLCJhY3IiOiIxIiwic2lkIjoiY2JhNTk3YmEtOGVjNS00NzQ4LWExYWYtMTRlNWEyNDFhYTNjIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm51bVBhYyI6IjAiLCJ1c3VhcmlvX2F1dGVudGljYWRvIjp7InJlc3VsdGFkbyI6eyJjb250YXNDb3JyZW50ZSI6W3sibnVtZXJvIjozOTM5MCwiaWRSZXNwb25zYWJpbGlkYWRlIjoxLCJjcGZDbnBqIjoiMDE3NTU0MzQxMDMifV0sImNvbnRhc1BvdXBhbmNhIjpbeyJudW1lcm8iOjYyODM3MzQ4MSwiY3BmQ25waiI6IjAxNzU1NDM0MTAzIn1dLCJudW1jb250YUNvcnJlbnRlIjozOTM5MCwibnVtQ29vcGVyYXRpdmEiOjEsIm51bVBhYyI6MCwiaWRJbnN0aXR1aWNhbyI6MSwiaWRVbmlkYWRlSW5zdGl0dWljYW8iOjEsImlzcGIiOiIwMjAzODIzMiIsImNvZFRpcG9QZXNzb2EiOjAsIm51bUNwZkNucGoiOiIwMTc1NTQzNDEwMyIsIm51bUNMaWVudGUiOjg4OTU4NTE1LCJkZXNjTm9tZVBlc3NvYSI6IlRISUFHTyBERSBKRVNVUyBST0NIQSIsImRkZCI6IjYxIiwidGVsZWZvbmUiOiI5OTgxMjMwMzAiLCJyYW1hbCI6IiIsImVtYWlsIjoidGhpYWdvLmplc3VzQGZvcm5lY2Vkb3Jlcy5zaWNvb2IuY29tLmJyIiwiZGF0YU5hc2NpbWVudG8iOiIxOTg3LTAxLTIzIiwiaWREaXNwb3NpdGl2byI6IiJ9fSwibnVtQ3BmQ25waiI6IjAxNzU1NDM0MTAzIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicGZjOjAwMDE6MTozOTM5MCIsImRlc2NOb21lUGVzc29hIjoiVEhJQUdPIERFIEpFU1VTIFJPQ0hBIiwibnVtQ29vcGVyYXRpdmEiOiIxIiwibnVtY29udGFDb3JyZW50ZSI6IjM5MzkwIn0.ZHlbEvAKl28Bn1bVZbv9rjkHlGtZ4IEl8lYjqM8vAVR4yAUwqCn7MA9IOjBfwKkHMw5NDsLuLtVGcAX7VrzajCUZRpkju132SSLkyz_hDXgkeDXTMuMlss7bPWFbN9OXrbeIOxx4j6f0B5sanGDrHPKL9GiiB3AL_-A3NuyX_8jHKFuZsnuwhDQc8Tu6bwf2thQ37WnN5ueX7r43N7QptyD3zPpckOLu50ZgQ6uV9Yr0UxSTPrhxZMf7AEGbvDRuuR6gPlbvbau8mvhq5UTKGLu6SZ0UrGMN5xTJx6V1BlGbusZztZdsqwi5CXUdGwpVFVzTCaV2devvTjlYDX5N5Q",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://{{apic-gateway}}/sicoob/externo/hbs/v2/investidor",
+          "protocol": "https",
+          "host": [
+            "{{apic-gateway}}"
+          ],
+          "path": [
+            "sicoob",
+            "externo",
+            "hbs",
+            "v2",
+            "investidor"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

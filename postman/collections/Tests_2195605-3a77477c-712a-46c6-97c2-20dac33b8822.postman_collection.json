@@ -1,0 +1,143 @@
+{
+  "info": {
+    "_postman_id": "3a77477c-712a-46c6-97c2-20dac33b8822",
+    "name": "Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "http://localhost:8080/employees",
+      "id": "1fcd99c9-bc81-45c3-948c-f0bfa8a97af6",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n \"id\": 12,\n \"name\": \"John\",\n \"address\": \"BR\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/employees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employees"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/employees",
+      "id": "cb69e0e1-864b-4325-93d9-aff004e8be34",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": 1,\n \"name\": \"John\",\n \"address\": \"BR\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/employees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employees"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/employees/1",
+      "id": "af2aa005-e2f0-48aa-bd5e-ed6a958150c8",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": 1,\n \"name\": \"John\",\n \"address\": \"BR\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/employees/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employees",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/employees/delete1",
+      "id": "1ea72b78-efe6-47d1-992d-219b45630326",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": 1,\n \"name\": \"John\",\n \"address\": \"BR\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/employees/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employees",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,785 @@
+{
+  "info": {
+    "_postman_id": "e27f18f3-a7c8-4669-8620-0766162f199f",
+    "name": "Token no RHSSO Canais",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "/Token - Grant Password",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "bb031ed0-621f-477e-9938-11130e7cce8e",
+            "exec": [
+              "pm.collectionVariables.clear()",
+              "",
+              "pm.test(\"Token gerado com sucesso\", function() {",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    pm.environment.set(\"access_token_sicoob\", json.access_token);",
+              "    pm.environment.set(\"id_token_sicoob\", json.id_token);",
+              "});",
+              "",
+              "function jwt_decode(jwt) {",
+              "    var partes = jwt.split('.'); // header, payload, signature",
+              "    return JSON.parse(atob(partes[1]));",
+              "}",
+              "",
+              "pm.test(\"Mostra dados\", function () {  ",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    console.log(\"Chaves: \" + Object.keys(json));",
+              "",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    let decodificado = jwt_decode(json.access_token);",
+              "    console.log(\"Access Token: \" + JSON.stringify(decodificado));",
+              "",
+              "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;  ",
+              "     decodificado = jwt_decode(json.id_token);",
+              "    console.log(\"Id Token: \" + JSON.stringify(decodificado));",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "0f25777f-bd22-4106-925f-d8ab2c8fbd28",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer  {{access_token_finansystech}}",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "portal-developers",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_id",
+              "value": "mobile",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "vLDydtnBIO4pb7OJobxZXgKEs5R5IkuV",
+              "description": "portal-developers-homol",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "1MizTA1LlpDEVcMAZ8G6kDvYIUYTqDUA",
+              "description": "producao app-sicoob-pessoal",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "yNo2vEKnLPTMvxkKybXCyY15ER6IAeVT",
+              "description": "mobile dev",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "6mfTiRb0CUfWPCIYQtxcxPR3agLeYnRr",
+              "description": "mobile homol",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "0980234d-f80d-4316-b8a0-6cfa4e335969",
+              "type": "text",
+              "description": "mobile prod",
+              "disabled": true
+            },
+            {
+              "key": "username",
+              "value": "pfc:3105:1:27",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "username",
+              "value": "pfc:3066:1:66435",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "username",
+              "value": "pfc:4364:1:39390",
+              "description": "prod",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "username",
+              "value": "pj:4155:eu0002",
+              "type": "text"
+            },
+            {
+              "key": "username",
+              "value": "Pfnc:1:14371821944",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "password",
+              "value": "88888888",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "19870609",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "openid",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "nec-nova-experiencia-cartoes",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "{{nec-secret}}",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_id",
+              "value": "spi",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "72UyWjbqf0hLW8IaF0PdgNtyVJnvgpx7",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_id",
+              "value": "mobile",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "client_secret",
+              "value": "0980234d-f80d-4316-b8a0-6cfa4e335969",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "username",
+              "value": "pfc:3155:1:239429",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{host_sso}}/realms/sicoob/protocol/openid-connect/token",
+          "host": [
+            "{{host_sso}}"
+          ],
+          "path": [
+            "realms",
+            "sicoob",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/Token - Grant Client Credentials",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "bb031ed0-621f-477e-9938-11130e7cce8e",
+            "exec": [
+              "pm.collectionVariables.clear()",
+              "",
+              "pm.test(\"Token gerado com sucesso\", function() {",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    pm.environment.set(\"access_token_sicoob\", json.access_token);",
+              "    pm.environment.set(\"id_token_sicoob\", json.id_token);",
+              "});",
+              "",
+              "function jwt_decode(jwt) {",
+              "    var partes = jwt.split('.'); // header, payload, signature",
+              "    return JSON.parse(atob(partes[1]));",
+              "}",
+              "",
+              "pm.test(\"Mostra dados\", function () {  ",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    console.log(\"Chaves: \" + Object.keys(json));",
+              "",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    let decodificado = jwt_decode(json.access_token);",
+              "    console.log(\"Access Token: \" + JSON.stringify(decodificado));",
+              "",
+              "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;  ",
+              "     decodificado = jwt_decode(json.id_token);",
+              "    console.log(\"Id Token: \" + JSON.stringify(decodificado));",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "c1eaf8e7-9763-4a10-9fd3-1ce0578709e6",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer  {{access_token_finansystech}}",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "b13a825f-ce0b-4085-87f1-cea80286550e",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "client_credentials",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "K3wH1vERThUpnDZmFlrqYZScxj2xSUAa",
+              "description": "admin homol",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{url-token-cooperado}}",
+          "host": [
+            "{{url-token-cooperado}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/Token - Refresh Token Grant",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "bb031ed0-621f-477e-9938-11130e7cce8e",
+            "exec": [
+              "pm.collectionVariables.clear()",
+              "",
+              "pm.test(\"Token gerado com sucesso\", function() {",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    pm.environment.set(\"access_token_sicoob\", json.access_token);",
+              "    pm.environment.set(\"id_token_sicoob\", json.id_token);",
+              "});",
+              "",
+              "function jwt_decode(jwt) {",
+              "    var partes = jwt.split('.'); // header, payload, signature",
+              "    return JSON.parse(atob(partes[1]));",
+              "}",
+              "",
+              "pm.test(\"Mostra dados\", function () {  ",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    console.log(\"Chaves: \" + Object.keys(json));",
+              "",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    let decodificado = jwt_decode(json.access_token);",
+              "    console.log(\"Access Token: \" + JSON.stringify(decodificado));",
+              "",
+              "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;  ",
+              "     decodificado = jwt_decode(json.id_token);",
+              "    console.log(\"Id Token: \" + JSON.stringify(decodificado));",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "a3fb24a5-2d04-4451-8975-6d7b767d9e49",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer  {{access_token_finansystech}}",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "home-broker-sicoob",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "wzY9LBciCDgRpPhFs4DMtpE4efWbuC6a",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "refresh_token",
+              "type": "text"
+            },
+            {
+              "key": "refresh_token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2ZGI1ODVkZC1lYjMwLTRjZmUtODI1NS0xNjliOGFiZmMzMzgifQ.eyJleHAiOjE2ODU1NTk0NTIsImlhdCI6MTY4NTU1NzY1MiwianRpIjoiMTcyNTViNGUtMmMyNi00NTI1LTg5YjEtOGMwYWZmNmI0YTQ5IiwiaXNzIjoiaHR0cHM6Ly9zc28uc2ljb29iLmNvbS5ici9hdXRoL3JlYWxtcy9zaWNvb2IiLCJhdWQiOiJodHRwczovL3Nzby5zaWNvb2IuY29tLmJyL2F1dGgvcmVhbG1zL3NpY29vYiIsInN1YiI6IjE0ZDc1MjhlLTg1NGItNGM4NS1hMWRmLTYzZGI5NjdkN2MyMyIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJob21lLWJyb2tlci1zaWNvb2IiLCJzZXNzaW9uX3N0YXRlIjoiMmI1YzFjYTgtYzY5MS00MjZkLTliYmEtOGE0ZWI1ZjhlMDc5Iiwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjJiNWMxY2E4LWM2OTEtNDI2ZC05YmJhLThhNGViNWY4ZTA3OSJ9.tdow6n4x3f_syl2JJZLCDSFcUEZZrfdv6ElzgYcVRkM",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "openid",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{host_sso}}/realms/sicoob/protocol/openid-connect/token",
+          "host": [
+            "{{host_sso}}"
+          ],
+          "path": [
+            "realms",
+            "sicoob",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/Token - Refresh Token Grant Copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "bb031ed0-621f-477e-9938-11130e7cce8e",
+            "exec": [
+              "pm.collectionVariables.clear()",
+              "",
+              "pm.test(\"Token gerado com sucesso\", function() {",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    pm.environment.set(\"access_token_sicoob\", json.access_token);",
+              "    pm.environment.set(\"id_token_sicoob\", json.id_token);",
+              "});",
+              "",
+              "function jwt_decode(jwt) {",
+              "    var partes = jwt.split('.'); // header, payload, signature",
+              "    return JSON.parse(atob(partes[1]));",
+              "}",
+              "",
+              "pm.test(\"Mostra dados\", function () {  ",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    console.log(\"Chaves: \" + Object.keys(json));",
+              "",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    let decodificado = jwt_decode(json.access_token);",
+              "    console.log(\"Access Token: \" + JSON.stringify(decodificado));",
+              "",
+              "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;  ",
+              "     decodificado = jwt_decode(json.id_token);",
+              "    console.log(\"Id Token: \" + JSON.stringify(decodificado));",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "580e7dc9-ae7c-47be-af14-33203868f454",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer  {{access_token_finansystech}}",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "home-broker-sicoob",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "wzY9LBciCDgRpPhFs4DMtpE4efWbuC6a",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "refresh_token",
+              "type": "text"
+            },
+            {
+              "key": "refresh_token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2ZGI1ODVkZC1lYjMwLTRjZmUtODI1NS0xNjliOGFiZmMzMzgifQ.eyJleHAiOjE2ODU1NTk0NTIsImlhdCI6MTY4NTU1NzY1MiwianRpIjoiMTcyNTViNGUtMmMyNi00NTI1LTg5YjEtOGMwYWZmNmI0YTQ5IiwiaXNzIjoiaHR0cHM6Ly9zc28uc2ljb29iLmNvbS5ici9hdXRoL3JlYWxtcy9zaWNvb2IiLCJhdWQiOiJodHRwczovL3Nzby5zaWNvb2IuY29tLmJyL2F1dGgvcmVhbG1zL3NpY29vYiIsInN1YiI6IjE0ZDc1MjhlLTg1NGItNGM4NS1hMWRmLTYzZGI5NjdkN2MyMyIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJob21lLWJyb2tlci1zaWNvb2IiLCJzZXNzaW9uX3N0YXRlIjoiMmI1YzFjYTgtYzY5MS00MjZkLTliYmEtOGE0ZWI1ZjhlMDc5Iiwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjJiNWMxY2E4LWM2OTEtNDI2ZC05YmJhLThhNGViNWY4ZTA3OSJ9.tdow6n4x3f_syl2JJZLCDSFcUEZZrfdv6ElzgYcVRkM",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "openid",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{host_sso}}/realms/sicoob/protocol/openid-connect/token",
+          "host": [
+            "{{host_sso}}"
+          ],
+          "path": [
+            "realms",
+            "sicoob",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/UserInfo",
+      "id": "9160aee4-bd8e-405a-a073-23ea6eaac72e",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{acess_token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://{{host_sso}}/auth/realms/sicoob/protocol/openid-connect/userinfo",
+          "protocol": "https",
+          "host": [
+            "{{host_sso}}"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "sicoob",
+            "protocol",
+            "openid-connect",
+            "userinfo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/OpenId-configuration",
+      "id": "e9b4f56b-0579-43b6-b50e-f5485ab7a0af",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{acess_token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://{{host_sso}}/auth/realms/sicoob/.well-known/openid-configuration",
+          "protocol": "https",
+          "host": [
+            "{{host_sso}}"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "sicoob",
+            ".well-known",
+            "openid-configuration"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Recuperar Chaves",
+      "id": "7b333b5c-5e51-4da8-a817-9c018d8457c6",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://sso.sicoob.com.br/auth/realms/sicoob/protocol/openid-connect/certs",
+          "protocol": "https",
+          "host": [
+            "sso",
+            "sicoob",
+            "com",
+            "br"
+          ],
+          "path": [
+            "auth",
+            "realms",
+            "sicoob",
+            "protocol",
+            "openid-connect",
+            "certs"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Device Authorization Grant Token",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "bb031ed0-621f-477e-9938-11130e7cce8e",
+            "exec": [
+              "pm.collectionVariables.clear()",
+              "",
+              "pm.test(\"Token gerado com sucesso\", function() {",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    pm.environment.set(\"access_token_sicoob\", json.access_token);",
+              "    pm.environment.set(\"id_token_sicoob\", json.id_token);",
+              "});",
+              "",
+              "function jwt_decode(jwt) {",
+              "    var partes = jwt.split('.'); // header, payload, signature",
+              "    return JSON.parse(atob(partes[1]));",
+              "}",
+              "",
+              "pm.test(\"Mostra dados\", function () {  ",
+              "    pm.response.to.have.status(200);",
+              "    const json = pm.response.json();",
+              "    console.log(\"Chaves: \" + Object.keys(json));",
+              "",
+              "    pm.expect(json).to.have.property('access_token').and.to.not.be.undefined;  ",
+              "    let decodificado = jwt_decode(json.access_token);",
+              "    console.log(\"Access Token: \" + JSON.stringify(decodificado));",
+              "",
+              "    pm.expect(json).to.have.property('id_token').and.to.not.be.undefined;  ",
+              "     decodificado = jwt_decode(json.id_token);",
+              "    console.log(\"Id Token: \" + JSON.stringify(decodificado));",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "fe86bd54-66be-4a5d-9157-c70f2899b43b",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer  {{access_token_finansystech}}",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "device-client",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "AbqZGDzKtXteP1dnsLiK3ZFlzooJQLqZ",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "urn:ietf:params:oauth:grant-type:device_code",
+              "type": "text"
+            },
+            {
+              "key": "device_code",
+              "value": "6Hz_Enx52WSie_Xqbg3l8prD5_vMXKBErAgPczM9foM",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{host_sso}}/realms/sicoob/protocol/openid-connect/token",
+          "host": [
+            "{{host_sso}}"
+          ],
+          "path": [
+            "realms",
+            "sicoob",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Device Authorization Grant Code",
+      "id": "5baaff01-4035-4a7c-aa0f-c9c1d16fb2cf",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "type": "text",
+              "key": "client_id",
+              "value": "device-client"
+            },
+            {
+              "type": "text",
+              "key": "client_secret",
+              "value": "AbqZGDzKtXteP1dnsLiK3ZFlzooJQLqZ"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{host_sso}}/realms/sicoob/protocol/openid-connect/auth/device",
+          "host": [
+            "{{host_sso}}"
+          ],
+          "path": [
+            "realms",
+            "sicoob",
+            "protocol",
+            "openid-connect",
+            "auth",
+            "device"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Device Authorization Grant User Code",
+      "id": "a59ef696-5646-4678-978d-6ae330cade3b",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/auth/realms/sicoob/device?user_code=JMLB-QRBH",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "auth",
+            "realms",
+            "sicoob",
+            "device"
+          ],
+          "query": [
+            {
+              "key": "user_code",
+              "value": "JMLB-QRBH"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
